@@ -1,0 +1,613 @@
+
+/* for book room*/
+#sg-book-room {
+    width: 360px;
+    border-radius: 15px;
+    border: 1px rgb(226, 224, 224) solid;
+    box-sizing: border-box;
+    padding: 25px 20px;
+    position: relative;
+    margin: 20px 0;
+    box-shadow: 0 0 10px 1px #c0c0c0;
+}
+
+.book-room-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+}
+
+.book-room-header-price {
+    color: rgb(99, 98, 98);
+    font-size: 17px;
+}
+
+.book-room-header-price span {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.book-room-assess {
+    display: flex;
+    align-items: center;
+}
+
+.book-room-assess p {
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.book-room-assess h3 {
+    font-size: 15px;
+}
+
+.book-room-main {
+    border: 1px rgb(148, 148, 148) solid;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 25px 0;
+}
+
+.book-room-calendar-title {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+}
+
+.book-room-calendar-title {
+    border-bottom: 1px rgb(148, 148, 148) solid;
+}
+
+.book-room-checkin {
+    border-right: 1px rgb(148, 148, 148) solid;
+}
+
+.book-room-checkin,
+.book-room-checkout {
+    padding: 10px 20px;
+    width: 50%;
+    cursor: pointer;
+}
+
+.book-room-checkin:hover,
+.book-room-checkout:hover {
+    background-color: rgb(243, 241, 241);
+}
+
+.book-room-detail {
+    color: rgb(136, 133, 133);
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.customer-select {
+    padding: 10px 20px;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.book-room-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(12, 12, 12);
+    font-family: 'Roboto', sans-serif;
+}
+
+.book-room-flex {
+    padding: 15px;
+}
+
+.customer {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.customer .s {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.customer .s.selecting {
+    background-color: rgb(226, 226, 225);
+}
+
+.customer .s:hover {
+    background-color: rgb(241, 241, 239);
+}
+
+.book-room-submit {
+    display: flex;
+    justify-content: center;
+}
+
+button.book-room-submit-btn {
+    margin: 10px auto;
+    padding: 15px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #f13255;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button.book-room-submit:hover {
+    background-color: #fd274e;
+    box-shadow: 0 0 10px 1px rgb(139, 139, 139);
+}
+
+/* For Calendar */
+
+:root {
+    --dark-body: #4d4c5a;
+    --dark-main: #141529;
+    --dark-second: #79788c;
+    --dark-hover: #323048;
+    --dark-text: #f8fbff;
+    --light-body: #f3f8fe;
+    --light-main: #fdfdfd;
+    --light-second: #c3c2c8;
+    --light-hover: #edf0f5;
+    --light-text: #1b1a30;
+    --blue: #0000ff;
+    --white: #fff;
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --font-family: cursive;
+}
+
+.dark {
+    --bg-body: var(--dark-body);
+    --bg-main: var(--dark-main);
+    --bg-second: var(--dark-second);
+    --color-hover: var(--dark-hover);
+    --color-txt: var(--dark-text);
+}
+
+.light {
+    --bg-body: var(--light-body);
+    --bg-main: var(--light-main);
+    --bg-second: var(--light-second);
+    --color-hover: var(--light-hover);
+    --color-txt: var(--light-text);
+}
+
+
+.calendar {
+    height: max-content;
+    width: max-content;
+    background-color: var(--bg-main);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.light .calendar {
+    box-shadow: var(--shadow);
+}
+
+#sg-control {
+    height: 530px;
+    transition: height 1s linear;
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-txt);
+    padding: 10px;
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+.calendar-week-day {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    height: 50px;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--bg-second);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.calendar-days div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    color: var(--color-txt);
+    animation: to-top 1s forwards;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: var(--color-hover);
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    place-items: center;
+    margin: 0 10px;
+    display: grid;
+    cursor: pointer;
+}
+
+.year-change:hover {
+    background-color: var(--color-hover);
+}
+
+.calendar-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.calendar-footer h3 {
+    text-decoration: underline;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 4px 5px 10px 5px;
+    border-radius: 5px;
+}
+
+.calendar-footer h3:hover {
+    background-color: rgb(236, 235, 233);
+}
+
+.calendar-footer button {
+    background-color: #f13255;
+    padding: 5px 10px 10px 10px;
+    border-radius: 5px;
+    border: none;
+    color: #edf0f5;
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.calendar-footer button:hover {
+    box-shadow: 0 0 10px 2px rgb(187, 182, 182);
+}
+
+.toggle {
+    display: flex;
+}
+
+.toggle span {
+    margin-right: 10px;
+    color: var(--color-txt);
+}
+
+.dark-mode-switch {
+    position: relative;
+    width: 48px;
+    height: 25px;
+    border-radius: 14px;
+    background-color: var(--bg-second);
+    cursor: pointer;
+}
+
+.dark-mode-switch-ident {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: var(--bg-main);
+    position: relative;
+    top: 2px;
+    left: 3px;
+    transition: left 0.2s ease-in-out;
+}
+
+.dark .dark-mode-switch .dark-mode-switch-ident {
+    top: 2px;
+    left: calc(2px + 50%);
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+.calendar-days div:hover span {
+    transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
+}
+
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days div:hover span:nth-child(1),
+.calendar-days div:hover span:nth-child(3) {
+    height: 100%;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    height: 2px;
+    width: 0;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(4) {
+    right: 0;
+    bottom: 0;
+}
+
+.calendar-days div:hover span:nth-child(2),
+.calendar-days div:hover span:nth-child(4) {
+    width: 100%;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div:hover span:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.calendar-days div:hover span:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.calendar-days div:hover span:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+.calendar-days div.curr-date {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.calendar-days div.selecting {
+    background-color: #f13255;
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.calendar-days div.selecting span {
+    display: none;
+}
+
+.calendar-days div.betweenSelecting {
+    background-color: #e6e3e4;
+    color: rgb(29, 151, 56);
+    border-radius: 50%;
+}
+
+.calendar-days div.betweenSelecting span {
+    display: none;
+}
+
+.calendar-days div.last-day {
+    color: rgb(163, 160, 160);
+}
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-main);
+    color: var(--color-txt);
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    padding: 20px;
+    gap: 5px;
+    transform: scale(1.5);
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list > div > div {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list > div > div:hover {
+    background-color: var(--color-hover);
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#sg-control.show-calendar {
+    visibility: visible;
+}
+
+.book-room-checkin.selecting,
+.book-room-checkout.selecting {
+    background-color: rgb(221, 220, 220);
+}
+
+/* CSS for ORDER CUSTOMER */
+
+.customer-order {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 317px;
+    cursor: default;
+    padding: 10px;
+    border: 1px rgb(219, 219, 219) solid;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgb(211, 209, 209);
+    top: 55px;
+    visibility: hidden;
+    align-items: flex-end;
+}
+
+.customer-order.show {
+    visibility: visible;
+}
+
+.customer-order-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+
+.order-button {
+    display: flex;
+    align-items: center;
+}
+
+.order-button-number {
+    margin: 0 20px;
+}
+
+.order-button-ed {
+    border-radius: 50%;
+}
+
+.order-button-ed- {
+    padding: 2px 11px 4px 11px;
+}
+
+.order-button-ed-- {
+    padding: 5px 10px;
+}
+
+.order-button-ed-enable {
+    border: 1px rgb(116, 116, 116) solid;
+    color: rgb(116, 116, 116);
+    cursor: pointer;
+}
+
+.order-button-ed-disable {
+    cursor: not-allowed;
+    border: 1px rgb(218, 216, 216) solid;
+    color: rgb(218, 216, 216);
+}
+
+.customer-order-main > p {
+    margin: 10px;
+    font-size: 13px;
+}
+
+.customer-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.customer-footer button {
+    margin: 15px;
+    background-color: #f13255;
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+.customer-footer button:hover {
+    background-color: #fd274e;
+    box-shadow: 0 0 10px 1px rgb(177, 176, 176);
+}
+
+.infoDetailRoom {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoDetail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoDetail span {
+    margin: 10px 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
