@@ -100,7 +100,7 @@
                     <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a">Trang Chủ</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="<c:url value='/danh-muc'/>> " class="navbar-item-a">DANH MỤC</a>
+                    <a href="<c:url value='/danh-muc'/>" class="navbar-item-a">DANH MỤC</a>
                 </li>
                 <li class="navbar-item">
                     <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a">TRẢI NGHIỆM</a>

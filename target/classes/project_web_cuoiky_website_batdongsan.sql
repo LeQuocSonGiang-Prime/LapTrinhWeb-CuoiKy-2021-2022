@@ -104,10 +104,9 @@ DROP TABLE IF EXISTS `house`;
 CREATE TABLE `house`  (
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'loại phòng , loại nhà',
+  `type` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'loại phòng , loại nhà',
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `detail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'chi tiết căn phòng',
-  `foryou` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'NƠI NÀY CÓ NHỮNG GÌ CHO BẠN',
   `price` int NOT NULL,
   `saleprice` int NULL DEFAULT NULL,
   `time_checkin` datetime NULL DEFAULT NULL,
@@ -118,10 +117,9 @@ CREATE TABLE `house`  (
 -- ----------------------------
 -- Records of house
 -- ----------------------------
-INSERT INTO `house` VALUES ('HOUSE10001', '', '', '', '', '', 0, NULL, NULL, NULL);
-INSERT INTO `house` VALUES ('HOUSE10002', '', '', '', '', '', 0, NULL, NULL, NULL);
-INSERT INTO `house` VALUES ('HOUSE20001', 'DFDFDFDFD', '', '', '', '', 0, NULL, NULL, NULL);
-INSERT INTO `house` VALUES ('LHM0000001', 'Zanic Atula New 2021', '1', 'Quận 1, Hồ Chí Minh, Việt Nam', '100M², 4 Người, 2 Phòng Ngủ, 2 Giường, 1 Phòng Tắm', 'Dầu gội đầu;Tiện nghi thiết yếu:Khăn tắm, khăn trải giường, xà phòng và giấy vệ sinh;Wi-fi;Lối vào riêng:Đường hoặc lối vào tòa nhà riêng;Sân sau:Không gian ngoài trời tại chỗ ở thường có cỏ bao phủ;Chỗ đỗ xe miễn phí tại nơi ở; Bể bơi; ; ; ; ; ; ; ; ; ', 50, 40, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `house` VALUES ('HOUSE10001', '', '', '', '', 0, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE10002', '', '', '', '', 0, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE20001', 'DFDFDFDFD', '',  '', '', 0, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for image_house
