@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "trang-chu", value = "/trang-chu")
-public class ControllerWebServlet extends HttpServlet {
+public class ControllerIndex extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/views/web/index.jsp").forward(request,response);
