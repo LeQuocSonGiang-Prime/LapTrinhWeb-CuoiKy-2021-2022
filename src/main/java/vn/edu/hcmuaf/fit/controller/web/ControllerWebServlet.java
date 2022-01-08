@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ControllerWebServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("/views/web/index.jsp").forward(request,response);
     }
 
     @Override

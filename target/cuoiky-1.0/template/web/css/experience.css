@@ -1,0 +1,596 @@
+
+
+/* Trải nghiệm*/
+
+.experience {
+    padding-bottom: 4rem;
+}
+
+.experience-title {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+}
+
+.experience-title span {
+    color: var(--primary-color);
+}
+
+.experience-title:hover {
+    animation: title 1.25s infinite;
+}
+
+.experience-img-slider {
+    margin-top: 40px;
+    width: 100%;
+    height: 260px;
+    transition: 0.3s;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.slider-ex1 {
+    background: url(../../img/experience/ex1/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex1 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex1/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex1/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex1/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex2 {
+    background: url(../../img/experience/ex2/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex2 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex2/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex2/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex2/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex3 {
+    background: url(../../img/experience/ex3/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex3 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex3/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex3/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex3/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex4 {
+    background: url(../../img/experience/ex4/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex4 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex4/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex4/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex4/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex5 {
+    background: url(../../img/experience/ex5/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex5 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex5/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex5/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex5/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex6 {
+    background: url(../../img/experience/ex6/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex6 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex6/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex6/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex6/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex7 {
+    background: url(../../img/experience/ex7/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex7 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex7/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex7/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex7/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex8 {
+    background: url(../../img/experience/ex8/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex8 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex8/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex8/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex8/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex9 {
+    background: url(../../img/experience/ex9/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex9 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex9/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex9/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex9/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex10 {
+    background: url(../../img/experience/ex10/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex10 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex10/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex10/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex10/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex11 {
+    background: url(../../img/experience/ex11/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex11 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex11/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex11/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex11/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex12 {
+    background: url(../../img/experience/ex12/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex12 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex12/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex12/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex12/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex13 {
+    background: url(../../img/experience/ex13/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex13 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex13/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex13/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex13/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex14 {
+    background: url(../../img/experience/ex14/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex14 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex14/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex14/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex14/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex15 {
+    background: url(../../img/experience/ex15/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex15 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex15/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex15/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex15/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex16 {
+    background: url(../../img/experience/ex16/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex16 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex16/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex16/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex16/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex17 {
+    background: url(../../img/experience/ex17/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex17 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex17/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex17/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex17/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex18 {
+    background: url(../../img/experience/ex18/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex18 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex18/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex18/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex18/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex19 {
+    background: url(../../img/experience/ex19/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex19 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex19/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex19/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex19/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex20 {
+    background: url(../../img/experience/ex20/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex20 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex20/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex20/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex20/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex21 {
+    background: url(../../img/experience/ex21/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex21 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex21/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex21/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex21/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex22 {
+    background: url(../../img/experience/ex22/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex22 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex22/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex22/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex22/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex23 {
+    background: url(../../img/experience/ex23/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex23 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex23/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex23/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex23/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.slider-ex24 {
+    background: url(../../img/experience/ex24/img.png) center center/cover no-repeat;
+}
+
+.experience-singer-link-a:hover > .slider-ex24 {
+    animation: change 5s linear infinite;
+}
+
+@keyframes change {
+    33% {
+        background: url(../../img/experience/ex24/img_1.png) center center/cover no-repeat;
+    }
+    66% {
+        background: url(../../img/experience/ex24/img_2.png) center center/cover no-repeat;
+    }
+    100% {
+        background: url(../../img/experience/ex24/img_3.png) center center/cover no-repeat;
+    }
+}
+
+.fa-heart {
+    font-size: 2rem;
+    color: var(--black-color);
+    height: 30px;
+    width: 135px;
+    position: absolute;
+    right: -75px;
+    top: 10%;
+    padding: 10px 0 25px 20px;
+    transition: 0.3s;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.experience-evaluate {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    margin-top: 0.5rem;
+}
+
+.star2 {
+    color: #ff385c;
+    font-size: 2rem;
+}
+
+.text {
+    font-size: 1.5rem;
+    margin-left: 0.8rem;
+    text-decoration: none;
+    color: var(--black-color);
+    display: flex;
+}
+
+.text-2 {
+    margin-left: 3px;
+    color: #79858e;
+}
+
+.experience-text {
+    font-size: 1.5rem;
+    color: var(--black-color);
+    margin: 10px 0;
+    letter-spacing: 1px;
+    height: 2rem;
+}
+
+.experience-item-text:hover {
+    cursor: pointer;
+}
+
+.experience-price {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--black-color);
+}
+
+.discount {
+    text-decoration-line: line-through;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: gray;
+}
+
+.bold_1 {
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--black-color);
+}
+
+.price {
+    text-decoration: none;
+    font-size: 1.4rem;
+    line-height: 18px;
+    color: var(--black-color);
+}

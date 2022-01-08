@@ -14,6 +14,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="cuoiky" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: opensymphony:sitemesh:2.4.2" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/cuoiky-1.0/META-INF/MANIFEST.MF" />
