@@ -29,6 +29,10 @@ public class UserModel implements Serializable {
         this.avatar = avatar;
     }
 
+    public UserModel() {
+
+    }
+
     public String getUsername() {
         return username;
     }
