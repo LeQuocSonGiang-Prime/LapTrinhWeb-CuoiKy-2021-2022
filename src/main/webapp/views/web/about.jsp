@@ -77,28 +77,27 @@
             </ul>
         </div>
         <nav class="header__navbar">
-            <a href="./index.html">
+            <a href="${pageContext.request.contextPath}/trang-chu">
                 <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
-                    <a href="index.html" class="navbar-item-a">Trang Chủ</a>
+                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a">Trang Chủ</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="catalog.html" class="navbar-item-a">DANH MỤC</a>
+                    <a href="<c:url value='/danh-muc'/>" class="navbar-item-a">DANH MỤC</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="experience.html" class="navbar-item-a">Trải Nghiệm</a>
+                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a">TRẢI NGHIỆM</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="services.html" class="navbar-item-a">Dịch vụ</a>
+                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a">Dịch vụ</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="about.html" class="navbar-item-a">Chúng tôi</a>
+                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a">Chúng tôi</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="contact.html" class="navbar-item-a">Liên hệ</a>
-
+                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a">Liên hệ</a>
                 </li>
             </ul>
         </nav>
@@ -106,7 +105,7 @@
         <label for="navbar-checked" class="navbar-btn" id="mobile-menu-btn">
             <i class="ti-view-list"></i>
         </label>
-        <a href="./index.html">
+        <a href="${pageContext.request.contextPath}/trang-chu">
             <img src="./img/logo-dark.png" alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
@@ -115,24 +114,24 @@
             <label for="navbar-checked" class="fas fa-times icon-close"></label>
             <ul>
                 <li class="navbar-item-mobile">
-                    <a href="./index.html" class="navbar-item-a-mobile"><i class="fas fa-home"></i> Trang Chủ</a>
+                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a-mobile"><i class="fas fa-home"></i> Trang Chủ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./catalog.html" class="navbar-item-a-mobile"><i class="fas fa-laptop-house"></i> Danh Mục
+                    <a href="${pageContext.request.contextPath}/danh-muc" class="navbar-item-a-mobile"><i class="fas fa-laptop-house"></i> Danh Mục
                         <span>739</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./experience.html" class="navbar-item-a-mobile"><i class="fas fa-running"></i> Trải
+                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a-mobile"><i class="fas fa-running"></i> Trải
                         Nghiệm<span>127</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./services.html" class="navbar-item-a-mobile"><i class="far fa-handshake"></i>Dịch vụ</a>
+                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a-mobile"><i class="far fa-handshake"></i>Dịch vụ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./about.html" class="navbar-item-a-mobile"><i class="fas fa-users"></i>Chúng tôi</a>
+                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a-mobile"><i class="fas fa-users"></i>Chúng tôi</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./contact.html" class="navbar-item-a-mobile"><i class="fas fa-phone-alt"></i> Liên hệ</a>
+                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i class="fas fa-phone-alt"></i> Liên hệ</a>
                 </li>
                 <li class="navbar-item-mobile">
                     <button class="header__info-item-a navbar-item-a-mobile"  onclick="show()"><i
@@ -140,6 +139,7 @@
                     </button>
                 </li>
             </ul>
+        </div>
         </div>
         <!-- </div> -->
     </div>
