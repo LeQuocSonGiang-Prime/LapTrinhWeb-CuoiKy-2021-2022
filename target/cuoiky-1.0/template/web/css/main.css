@@ -147,7 +147,7 @@
 }
 
 .slider {
-    background: url(../../img/introduce/italy-mountains-dawn-daybreak-147411.jpeg) bottom center/cover no-repeat;
+    background: url(/image/imagebasic/house/house1.jpeg) bottom center/cover no-repeat;
     width: 100%;
     height: 100vh;
     position: relative;
@@ -159,10 +159,10 @@
 
 @keyframes slide {
     33% {
-        background: url(../../img/house/vidar-nordli-mathisen-vN01MT3NsDQ-unsplash.jpg) center center/cover no-repeat;
+        background: url(/image/imagebasic/house/house2.jpg) center center/cover no-repeat;
     }
     67% {
-        background: url(../../img/house/rowan-heuvel-bjej8BY1JYQ-unsplash.jpg) bottom center/cover no-repeat;
+        background: url(/image/imagebasic/house/house3.jpg) bottom center/cover no-repeat;
     }
 }
 

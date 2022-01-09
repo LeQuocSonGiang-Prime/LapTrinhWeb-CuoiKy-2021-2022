@@ -75,5 +75,15 @@
                 <version>3.3.1</version>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>/*</directory>
+                <includes>
+                    <include>*.png</include>
+                    <include>*.jpg</include>
+                    <include>*.jpeg</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>

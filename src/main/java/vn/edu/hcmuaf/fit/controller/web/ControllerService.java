@@ -9,7 +9,7 @@ import java.io.IOException;
 public class ControllerService extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/web/service.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/web/services.jsp").forward(request, response);
     }
 
     @Override
