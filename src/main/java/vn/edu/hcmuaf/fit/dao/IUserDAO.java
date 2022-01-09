@@ -6,7 +6,9 @@ import java.sql.Connection;
 import java.util.List;
 
 public interface IUserDAO {
-    public Connection getConnection();
+     Connection getConnection();
 
-    public List<UserModel> findAll();
+     List<UserModel> findAll();
+
+     boolean checkLogin(String username, String password);
 }

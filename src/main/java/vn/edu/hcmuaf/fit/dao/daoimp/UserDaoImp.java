@@ -26,7 +26,7 @@ public class UserDaoImp implements IUserDAO {
     @Override
     public List<UserModel> findAll() {
         List<UserModel> result = new ArrayList<UserModel>();
-        String sql  = "SELECT * FROM user";
+        String sql = "SELECT * FROM user";
         Connection connection = getConnection();
         PreparedStatement preStatement = null;
         ResultSet resultSet = null;
@@ -45,15 +45,44 @@ public class UserDaoImp implements IUserDAO {
                     user.setFullName(resultSet.getString("fullname"));
                     result.add(user);
                 }
-                if (connection != null) {
+                return result;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
                     connection.close();
+                    if (preStatement != null) {
+                        preStatement.close();
+                    }
+                    if (resultSet != null) {
+                        resultSet.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
-                preStatement.close();
-                resultSet.close();
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public boolean checkLogin(String username, String password) {
+        List<UserModel> result = new ArrayList<UserModel>();
+        Connection connection = getConnection();
+        String sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+        if (connection != null) {
+            try {
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1, username);
+                statement.setString(1, password);
+                ResultSet rs = statement.executeQuery();
+                if(rs.next())
+                    return true;
+                connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        return result;
+        return false;
     }
 }
