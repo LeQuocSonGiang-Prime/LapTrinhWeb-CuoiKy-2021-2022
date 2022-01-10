@@ -215,7 +215,7 @@
                 <div class="row">
                     <!-- Item 1 -->
                     <div class="col l-4 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="catalog-singer-link-a" href="./detail.html">
+                        <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet">
                             <img src="./img/buy/buy-4.jpg" alt="" class="buy-img">
                             <h6 class="buy-item-price" style="--h:#74b9ff">2809$ / Ngày</h6>
                             <div class="buy-info-item">
