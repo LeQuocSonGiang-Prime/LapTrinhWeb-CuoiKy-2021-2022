@@ -703,7 +703,7 @@
 <script>
     AOS.init();
 </script>
-<script src="assets/js/appfunction.js"></script>
+<script src="<c:url value='/template/web/js/appfunction.js' />"></script>
 
 </body>
 

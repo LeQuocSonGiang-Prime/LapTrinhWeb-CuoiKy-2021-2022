@@ -52,8 +52,8 @@
             <img src="img/login-reg-img/tw.png" alt="">
         </div>
         <form id="login" class="input-group" action="">
-            <input type="text" class="input-field" placeholder="Tài Khoản" required>
-            <input type="password" class="input-field" placeholder="Mật Khẩu" required>
+            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
+            <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>
             <input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span>
             <button type="submit" class="submit-btn">Đăng Nhập</button>
         </form>

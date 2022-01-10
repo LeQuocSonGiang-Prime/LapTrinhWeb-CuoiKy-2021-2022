@@ -5,8 +5,10 @@ import vn.edu.hcmuaf.fit.model.UserModel;
 import java.sql.Connection;
 import java.util.List;
 
-public interface IUserDAO {
-    public Connection getConnection();
+public interface IUserDAO extends IGenericDAO<UserModel>{
+     Connection getConnection();
 
-    public List<UserModel> findAll();
+     List<UserModel> findAll();
+
+     List<UserModel> checkLogin(String username, String password);
 }

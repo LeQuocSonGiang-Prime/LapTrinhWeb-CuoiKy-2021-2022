@@ -660,10 +660,7 @@
 
 </script>
 
-<script src="assets/js/appfunction.js">
-    showSlides();
-
-</script>
-<script src="./assets/js/bookroom.js"></script>
+<script src="<c:url value='/template/web/js/appfunction.js' />">showSlides();</script>
+<script src="<c:url value='/template/web/js/bookroom.js' />"></script>
 </body>
 </html>
