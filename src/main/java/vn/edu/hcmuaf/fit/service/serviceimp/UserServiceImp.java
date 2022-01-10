@@ -8,8 +8,11 @@ import javax.inject.Inject;
 public class UserServiceImp implements IUserService {
     @Inject
     private IUserDAO userDAO;
+
     @Override
     public boolean checkLogin(String username, String password) {
-        return userDAO.checkLogin(username,password);
+        if (userDAO.checkLogin(username, password) != null && userDAO.checkLogin(username, password).size() > 0)
+            return true;
+        return false;
     }
 }
