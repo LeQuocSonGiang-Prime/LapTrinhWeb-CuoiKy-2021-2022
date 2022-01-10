@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 100421
  Source Host           : localhost:3306
- Source Schema         : project_web_cuoiky_website_batdongsan
+ Source Schema         : database
 
  Target Server Type    : MySQL
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 07/01/2022 08:45:48
+ Date: 10/01/2022 21:57:00
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,7 @@ CREATE TABLE `admin`  (
   `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_admin`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of admin
@@ -46,12 +46,8 @@ CREATE TABLE `bill`  (
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `time_checkin` datetime NOT NULL,
   `time_checkout` datetime NOT NULL,
-  PRIMARY KEY (`id_bill`) USING BTREE,
-  INDEX `fk_billuser`(`id_user`) USING BTREE,
-  INDEX `fk_billhouse`(`id_house`) USING BTREE,
-  CONSTRAINT `fk_billhouse` FOREIGN KEY (`id_house`) REFERENCES `house` (`id_house`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_billuser` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`id_bill`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of bill
@@ -68,13 +64,8 @@ CREATE TABLE `comment`  (
   `comment` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `star` tinyint NOT NULL,
   `timecmt` datetime NULL DEFAULT NULL,
-  PRIMARY KEY (`id_comment`) USING BTREE,
-  INDEX `FK_cmt`(`id_user`) USING BTREE,
-  INDEX `fk_placecomment`(`id_house`) USING BTREE,
-  CONSTRAINT `FK_cmt` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `FK_comment` FOREIGN KEY (`id_house`) REFERENCES `house` (`id_house`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_placecomment` FOREIGN KEY (`id_house`) REFERENCES `place` (`id_place`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`id_comment`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of comment
@@ -88,10 +79,8 @@ CREATE TABLE `favourite`  (
   `id_favor` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_user` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id_favor`) USING BTREE,
-  INDEX `fk_favo_user`(`id_user`) USING BTREE,
-  INDEX `fk_favo_place`(`id_house`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`id_favor`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of favourite
@@ -112,14 +101,14 @@ CREATE TABLE `house`  (
   `time_checkin` datetime NULL DEFAULT NULL,
   `time_checkout` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id_house`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of house
 -- ----------------------------
 INSERT INTO `house` VALUES ('HOUSE10001', '', '', '', '', 0, NULL, NULL, NULL);
 INSERT INTO `house` VALUES ('HOUSE10002', '', '', '', '', 0, NULL, NULL, NULL);
-INSERT INTO `house` VALUES ('HOUSE20001', 'DFDFDFDFD', '',  '', '', 0, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE20001', 'DFDFDFDFD', '', '', '', 0, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for image_house
@@ -130,10 +119,8 @@ CREATE TABLE `image_house`  (
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `alt` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id_image`) USING BTREE,
-  INDEX `fk_imageplace`(`id_house`) USING BTREE,
-  CONSTRAINT `FK_house` FOREIGN KEY (`id_house`) REFERENCES `house` (`id_house`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`id_image`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of image_house
@@ -148,7 +135,7 @@ CREATE TABLE `place`  (
   `id_place` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_place`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of place
@@ -165,10 +152,8 @@ CREATE TABLE `request_booking`  (
   `id_user` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `time_checkin` datetime NOT NULL,
   `time_checkout` datetime NOT NULL,
-  PRIMARY KEY (`id_request`) USING BTREE,
-  INDEX `fk_req_user`(`id_user`) USING BTREE,
-  INDEX `fk_req_house`(`id_house`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`id_request`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of request_booking
@@ -188,10 +173,13 @@ CREATE TABLE `user`  (
   `phone` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `avatar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_user`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('USER000001', 'songiang', '12345', 'Lê Quốc Sơn Giang', 'songiang@gmail.com', NULL, NULL, NULL);
+INSERT INTO `user` VALUES ('USER000002', 'dinhdanh', '12345', 'Trần Đình Danh', 'ttDanh@gmail.com', NULL, NULL, NULL);
+INSERT INTO `user` VALUES ('USER000003', 'congdanh', '12345', 'Phạm Công Danh', 'cd@gmail.com', NULL, NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

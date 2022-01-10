@@ -41,26 +41,48 @@ window.addEventListener("scroll", function () {
 
 // SLIDER BAR PR
 // HIDE AND SHOW FORM LOGIN
-var a;
+// var a;
+//
+// function show() {
+//     if (a === 1) {
+//         document.getElementById("modal").style.display = "block";
+//     } else {
+//         document.getElementById("modal").style.display = "none"
+//         return a = 1;
+//     }
+// }
 
-function show() {
-    if (a === 1) {
-        document.getElementById("modal").style.display = "block";
-    } else {
-        document.getElementById("modal").style.display = "none"
-        return a = 1;
-    }
+function showModal() {
+    document.getElementById("modal").style.display = "block";
+    console.log("on")
 }
 
-
-function hide() {
-    if (a === 1) {
-        document.getElementById("modal").style.display = "none";
-    } else {
-        document.getElementById("modal").style.display = "block"
-        return a = 1;
-    }
+function hideModal() {
+    document.getElementById("modal").style.display = "none";
+    console.log("off")
 }
+//  document.querySelector("#header__info-item-a").onClick = function(){
+//      console.log("jojojo");
+//     document.querySelector("#modal").style.display = "block";
+//  }
+
+
+//
+// $(document).ready(function(){
+//     $("#header__info-item-a").click(function(){
+//         $("modal").css("display", "block");
+//         console.log("jojojo");
+//     });
+// });
+//
+// function hide() {
+//     if (a === 1) {
+//         document.getElementById("modal").style.display = "none";
+//     } else {
+//         document.getElementById("modal").style.display = "block"
+//         return a = 1;
+//     }
+// }
 
 
 // Next/previous controls
@@ -176,3 +198,26 @@ function showSlides(n) {
 //     })
 // })
 
+// SignIn signUp
+function signIn(){
+
+    let data = $("#login").serialize()
+    let msg = null
+    console.log("hello anh giang")
+
+    $.ajax({
+        url : "/dang-nhap",
+        type : "POST",
+        data:data,
+        dataType: "JSON",
+        success(data){
+            msg = data.msg;
+            window.location.replace("indevvx.jsp");
+            if(msg === "1"){
+                $("#modal").innerHTML = "";
+            }else{
+
+            }
+        }
+    })
+}

@@ -51,13 +51,13 @@
             <img src="img/login-reg-img/gp.png" alt="">
             <img src="img/login-reg-img/tw.png" alt="">
         </div>
-        <form id="login" class="input-group" action="">
+        <form id="login" name="form-signin" class="input-group" >
             <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
             <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>
             <input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span>
-            <button type="submit" class="submit-btn">Đăng Nhập</button>
+            <button  class="submit-btn" id="btn-login">Đăng Nhập</button>
         </form>
-        <form id="register" class="input-group" action="">
+        <form id="register"name="form-signup" class="input-group" action="">
             <input type="text" class="input-field" placeholder="Tài Khoản" required>
             <input type="password" class="input-field" placeholder="Mật Khẩu" required>
             <input type="password" class="input-field" placeholder="Nhập Lại Mật Khẩu" required>
@@ -79,7 +79,7 @@
         <div class="header__info">
             <ul class="header__info-list">
                 <li class="header__info-item">
-                    <button class="header__info-item-a" onclick="show()">Đăng Nhập</button>
+                    <button id="header__info-item-a" class="header__info-item-a" style="cursor: pointer" onclick="show()" >Đăng Nhập</button>
                 </li>
             </ul>
             <ul class="header__info-list">
@@ -497,10 +497,19 @@
 </script>
 <script src="<c:url value='/template/web/js/appfunction.js' />"></script>
 
+<script>
+    document.querySelector("#btn-login").onclick = function(e){
+        e.preventDefault();
+        signIn();
+    }
+
+</script>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
+
 
 
 </body>
