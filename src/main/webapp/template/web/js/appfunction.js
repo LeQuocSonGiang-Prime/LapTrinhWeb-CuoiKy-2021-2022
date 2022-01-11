@@ -93,84 +93,6 @@ function showSlides(n) {
 
 }
 
-//
-// $(document).ready(function () {
-//     $(".navbar-btn").click(function () {
-//         $(".header__navbar-mobile").show();
-//         // $(".navbar-list-mobile").removeClass("hidden");
-//         // $(".header__navbar-mobile").addClass("hidden");
-//     });
-//     $(".ti-close").click(function () {
-//         $(".header__navbar-mobile").hide();
-//     });
-//
-//     //for show, hide navbar
-//     $("#header-repon").click(function (){
-//         $(".header__navbar-mobile").hide();
-//         // $(".header__navbar-mobile").addClass("hidden");
-//         // $(".navbar-list-mobile").addClass("hidden");
-//     });
-// });
-
-// // Hide Menu on on scroll down
-// var didScroll;
-// var lastScrollTop = 0;
-// var delta = 5;
-// var navbarHeight = $('.menu').outerHeight();
-
-// $(window).scroll(function(event){
-//     didScroll = true;
-// });
-
-// setInterval(function() {
-//     if (didScroll) {
-//         hasScrolled();
-//         didScroll = false;
-//     }
-// }
-// let sidebar = document.querySelector(".side-bar");
-// let sidebarBtn = document.querySelector(".side-btn");
-
-// sidebarBtn.onclick = function(){
-//      sidebar.classList.toggle("active");
-// } 
-
-// function hasScrolled() {
-//     var st = $(this).scrollTop();
-
-//     // Make sure they scroll more than delta
-//     if(Math.abs(lastScrollTop - st) <= delta)
-//         return;
-
-//     // If they scrolled down and are past the navbar, add class .nav-up.
-//     // This is necessary so you never see what is "behind" the navbar.
-//     if (st > lastScrollTop && st > navbarHeight){
-//         // Scroll Down
-//         $('.menu').removeClass('nav-down').addClass('nav-up');
-//     } else {
-//         // Scroll Up
-//         if(st + $(window).height() < $(document).height()) {
-//             $('.menu').removeClass('nav-up').addClass('nav-down');
-//         }
-//     }
-
-//     lastScrollTop = st;
-// }
-
-//handling event for search-txt, slider ad
-// $(document).ready(function () {
-//     $(".search-txt").on({
-//         focus: function () {
-//             $(".search-txt").css({"width": "300px"})
-//             $(".search-btn").css({"cursor": "pointer", "background": "#ff5252"})
-//         },
-//         blur: function () {
-//             $(".search-txt").css("width", "0")
-//             $(".search-btn").css({"background": "var(--primary-color)"})
-//         }
-//     })
-// })
-
 
 document.querySelector("#btn-login").onclick = function (e) {
     e.preventDefault();
@@ -197,9 +119,9 @@ document.querySelector("#btn-login").onclick = function (e) {
                 document.querySelector("#login").innerHTML =
                     '            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>\n' +
                     '            <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>\n' +
-                    '            <input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span>\n' +
+                    '            <div><input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span></div>\n' +
                     '            <p>Mật khẩu không đúng, vui lòng nhập lại</p>'  +
-                    '            <button  class="submit-btn" id="btn-login">Đăng Nhập</button>\n'
+                    '            <button  class="submit-btn" id="btn-login">Đăng Nhập</button>'
 
             }
         }

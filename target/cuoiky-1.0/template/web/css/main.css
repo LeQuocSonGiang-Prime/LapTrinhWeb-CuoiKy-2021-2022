@@ -1769,6 +1769,7 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     margin: 6% auto;
     overflow: hidden;
     animation: modal ease-in-out 0.5s;
+    border-radius: 10px;
 }
 
 .login-colose-btn {
@@ -1788,6 +1789,17 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
+}
+
+#login div{
+    align-items: center;
+    display: flex;
+}
+#login p {
+    font-size: 1.3rem;
+    color: red;
+    display: flex;
+    justify-content: center;
 }
 
 .toggle-btn {
@@ -1835,7 +1847,7 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
 
 .input-field {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 0 5px 5px;
     margin: 5px 0;
     border-left: 0;
     border-top: 0;
@@ -1844,7 +1856,6 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     outline: none;
     background: transparent;
     font-size: 1.3rem;
-    padding-left: 5px;
 }
 
 .submit-btn {
@@ -1868,8 +1879,7 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
 .checkbox-remember {
     color: #777;
     font-size: 1.2rem;
-    bottom: 51px;
-    position: absolute;
+
 }
 
 #login {

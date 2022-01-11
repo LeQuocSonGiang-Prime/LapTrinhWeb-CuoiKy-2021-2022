@@ -14,6 +14,10 @@ public class UserServiceImp implements IUserService {
 
     @Override
     public UserModel checkLogin(String username, String password) {
-        return userDAO.getUserByUsernamePassword(username, password).get(0);
+        if (userDAO.getUserByUsernamePassword(username, password).size() > 0) {
+            return userDAO.getUserByUsernamePassword(username, password).get(0);
+        } else {
+            return null;
+        }
     }
 }
