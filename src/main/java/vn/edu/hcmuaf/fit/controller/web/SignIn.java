@@ -1,6 +1,5 @@
 package vn.edu.hcmuaf.fit.controller.web;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import vn.edu.hcmuaf.fit.model.UserModel;
 import vn.edu.hcmuaf.fit.service.IUserService;
@@ -13,9 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 
 @WebServlet(name = "SignIn", value = "/dang-nhap")
@@ -31,24 +27,26 @@ public class SignIn extends HttpServlet {
 
 
         JSONObject jsonOb = new JSONObject();
-        UserModel user = userService.checkLogin(username,password);
+        UserModel user = userService.checkLogin(username, password);
 
-        String msg ;
-        if(user != null){
+        String msg;
+        if (user != null) {
             msg = "1";
-            jsonOb.put("msg", msg );
+            jsonOb.put("msg", msg);
             // if user has full name
-            if(user.getFullName()!=null &&user.getFullName().trim().equals("") ){
+            if (user.getFullName() != null && !user.getFullName().trim().equals("")) {
                 jsonOb.put("name", user.getFullName());
-            }else{
+                System.out.println(user.getFullName());
+                System.out.println("Lê Quốc Sơn Giang");
+            } else {
                 jsonOb.put("name", username);
             }
             os.print(jsonOb.toJSONString());
 
 
-        }else{
+        } else {
             msg = "3";
-            jsonOb.put("msg", msg );
+            jsonOb.put("msg", msg);
             os.print(jsonOb.toJSONString());
 
 

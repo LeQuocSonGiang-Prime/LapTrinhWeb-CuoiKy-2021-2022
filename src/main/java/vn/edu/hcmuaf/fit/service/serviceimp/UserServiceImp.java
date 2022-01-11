@@ -6,6 +6,7 @@ import vn.edu.hcmuaf.fit.service.IUserService;
 
 import javax.annotation.ManagedBean;
 import javax.inject.Inject;
+import java.util.List;
 
 @ManagedBean
 public class UserServiceImp implements IUserService {
@@ -19,5 +20,10 @@ public class UserServiceImp implements IUserService {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public boolean checkUserExist(String username) {
+        return userDAO.getUserByUsername(username).size() > 0;
     }
 }

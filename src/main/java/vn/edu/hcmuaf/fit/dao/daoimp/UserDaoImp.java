@@ -22,4 +22,10 @@ public class UserDaoImp extends AbstractDAO<UserModel> implements IUserDAO {
         return query(sql, new UserMapper(), username, password);
     }
 
+    @Override
+    public List<UserModel> getUserByUsername(String username) {
+        String sql = "SELECT * FROM user WHERE username = ?";
+        return query(sql, new UserMapper(), username);
+    }
+
 }

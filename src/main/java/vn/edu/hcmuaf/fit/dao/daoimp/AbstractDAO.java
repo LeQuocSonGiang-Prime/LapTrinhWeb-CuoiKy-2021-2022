@@ -16,7 +16,7 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String URL = "jdbc:mysql://localhost:3306/databasebatdongsan";
+            String URL = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8";
             String user = "root";
             String password = "";
             return DriverManager.getConnection(URL, user, password);

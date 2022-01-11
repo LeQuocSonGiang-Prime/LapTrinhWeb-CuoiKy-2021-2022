@@ -93,10 +93,9 @@ function showSlides(n) {
 
 }
 
-
+// SIGN IN
 document.querySelector("#btn-login").onclick = function (e) {
     e.preventDefault();
-
 
     let data = $("#login").serialize()
     let msg = null
@@ -123,6 +122,35 @@ document.querySelector("#btn-login").onclick = function (e) {
                     '            <p>Mật khẩu không đúng, vui lòng nhập lại</p>'  +
                     '            <button  class="submit-btn" id="btn-login">Đăng Nhập</button>'
 
+            }
+        }
+    })
+}
+
+//SIGN UP
+document.querySelector("#btn-signup").onclick = function(e){
+    e.preventDefault();
+    let data = $("#register").serialize();
+    let msg = null;
+    $.ajax({
+        url:"dang-ky",
+        type: "POST",
+        data:data,
+        dataType: "JSON",
+        success(data){
+            msg = data.msg;
+            if(msg==="1"){
+                document.querySelector("#register").innerHTML =
+                '<input type="text" class="input-field" placeholder="Tài Khoản" required>\n' +
+                '            <input type="email" class="input-field" placeholder="email" required>\n' +
+                '            <input type="password" class="input-field" placeholder="Mật Khẩu" required>\n' +
+                '            <input type="password" class="input-field" placeholder="Nhập Lại Mật Khẩu" required>\n' +
+                '            <div>\n' +
+                '                <input type="checkbox" class="check-box">\n' +
+                '                <span class="checkbox-remember">Tôi đồng ý với các Điều khoản & Điều kiện</span>\n' +
+                '            </div>' +
+                    '<p>Tài khoản đã tồn tại, vui lòng nhập lại</p>' +
+                '            <button type="submit" class="submit-btn" id="btn-signup">Đăng Kí</button>'
             }
         }
     })
