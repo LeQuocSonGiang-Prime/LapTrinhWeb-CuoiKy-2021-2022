@@ -38,9 +38,9 @@
 
 <body>
 
-<div class="modal" id="modal">
+<div class="modal" id="modal" onclick="hideModal()">
     <div class="form-box">
-        <i id="close" onclick="hide()" class="login-colose-btn ti-close"></i>
+        <i id="close" onclick="hideModal()" class="login-colose-btn ti-close"></i>
         <div class="button-box">
             <div id="btn-login-modal"></div>
             <button type="button" class="toggle-btn" onclick="login()">Đăng Nhập</button>
@@ -78,8 +78,8 @@
         <!-- HEADER -->
         <div class="header__info">
             <ul class="header__info-list">
-                <li class="header__info-item">
-                    <button id="header__info-item-a" class="header__info-item-a" style="cursor: pointer" onclick="show()" >Đăng Nhập</button>
+                <li class="header__info-item" id="header__info-login">
+                    <button id="header__info-item-a" class="header__info-item-a" style="cursor: pointer" onclick="showModal()" >Đăng Nhập</button>
                 </li>
             </ul>
             <ul class="header__info-list">
@@ -498,10 +498,6 @@
 <script src="<c:url value='/template/web/js/appfunction.js' />"></script>
 
 <script>
-    document.querySelector("#btn-login").onclick = function(e){
-        e.preventDefault();
-        signIn();
-    }
 
 </script>
 

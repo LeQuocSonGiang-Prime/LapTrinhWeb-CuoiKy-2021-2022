@@ -41,16 +41,7 @@ window.addEventListener("scroll", function () {
 
 // SLIDER BAR PR
 // HIDE AND SHOW FORM LOGIN
-// var a;
-//
-// function show() {
-//     if (a === 1) {
-//         document.getElementById("modal").style.display = "block";
-//     } else {
-//         document.getElementById("modal").style.display = "none"
-//         return a = 1;
-//     }
-// }
+
 
 function showModal() {
     document.getElementById("modal").style.display = "block";
@@ -61,28 +52,10 @@ function hideModal() {
     document.getElementById("modal").style.display = "none";
     console.log("off")
 }
-//  document.querySelector("#header__info-item-a").onClick = function(){
-//      console.log("jojojo");
-//     document.querySelector("#modal").style.display = "block";
-//  }
 
-
-//
-// $(document).ready(function(){
-//     $("#header__info-item-a").click(function(){
-//         $("modal").css("display", "block");
-//         console.log("jojojo");
-//     });
-// });
-//
-// function hide() {
-//     if (a === 1) {
-//         document.getElementById("modal").style.display = "none";
-//     } else {
-//         document.getElementById("modal").style.display = "block"
-//         return a = 1;
-//     }
-// }
+document.querySelector(".form-box").addEventListener("click", function (event) {
+    event.stopPropagation()
+})
 
 
 // Next/previous controls
@@ -198,24 +171,35 @@ function showSlides(n) {
 //     })
 // })
 
-// SignIn signUp
-function signIn(){
+
+document.querySelector("#btn-login").onclick = function (e) {
+    e.preventDefault();
+
 
     let data = $("#login").serialize()
     let msg = null
-    console.log("hello anh giang")
+    console.log(data)
 
     $.ajax({
-        url : "/dang-nhap",
-        type : "POST",
-        data:data,
+        url: "dang-nhap",
+        type: "POST",
+        data: data,
         dataType: "JSON",
-        success(data){
+        success(data) {
             msg = data.msg;
-            window.location.replace("indevvx.jsp");
-            if(msg === "1"){
-                $("#modal").innerHTML = "";
-            }else{
+
+            if (msg === "1") {
+                console.log(data.name)
+                document.querySelector("#modal").style.display = "none"
+                document.querySelector("#header__info-item-a").style.display = "none"
+                document.querySelector("#header__info-login").innerHTML = data.name;
+            } else {
+                document.querySelector("#login").innerHTML =
+                    '            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>\n' +
+                    '            <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>\n' +
+                    '            <input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span>\n' +
+                    '            <p>Mật khẩu không đúng, vui lòng nhập lại</p>'  +
+                    '            <button  class="submit-btn" id="btn-login">Đăng Nhập</button>\n'
 
             }
         }

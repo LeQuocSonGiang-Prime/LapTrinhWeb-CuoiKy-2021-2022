@@ -26,23 +26,32 @@ public class SignIn extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter os = response.getWriter();
-        Connection connection;
-        PreparedStatement stm;
-        ResultSet rs;
-        JSONArray list = new JSONArray();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
+
         JSONObject jsonOb = new JSONObject();
-        UserModel checkSignIn = userService.checkLogin(username,password);
+        UserModel user = userService.checkLogin(username,password);
+
         String msg ;
-        if(checkSignIn != null){
+        if(user != null){
             msg = "1";
             jsonOb.put("msg", msg );
+            // if user has full name
+            if(user.getFullName()!=null &&user.getFullName().trim().equals("") ){
+                jsonOb.put("name", user.getFullName());
+            }else{
+                jsonOb.put("name", username);
+            }
             os.print(jsonOb.toJSONString());
+
+
         }else{
             msg = "3";
             jsonOb.put("msg", msg );
             os.print(jsonOb.toJSONString());
+
+
         }
         os.flush();
         os.close();

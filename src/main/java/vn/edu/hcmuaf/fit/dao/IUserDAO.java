@@ -10,5 +10,5 @@ public interface IUserDAO extends IGenericDAO<UserModel>{
 
      List<UserModel> findAll();
 
-     List<UserModel> checkLogin(String username, String password);
+     List<UserModel> getUserByUsernamePassword(String username, String password);
 }

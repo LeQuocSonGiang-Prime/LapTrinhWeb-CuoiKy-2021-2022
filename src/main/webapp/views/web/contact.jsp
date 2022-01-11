@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@include file="/common/taglib.jsp"%>
 
 <html lang="en">
 <head>
@@ -23,13 +23,13 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
-    <link rel="stylesheet" href="./assets/css/base.css" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="./assets/css/grid.css" />
-    <link rel="stylesheet" href="./assets/css/reponsive.css" />
+    <link rel="stylesheet" href="<c:url value='/template/web/css/base.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/main.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
-    <link rel="stylesheet" href="./font/themify-icons/themify-icons.css" />
     <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
             rel="stylesheet"
@@ -128,27 +128,27 @@
             </ul>
         </div>
         <nav class="header__navbar">
-            <a href="./index.html">
-                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img" />
+            <a href="${pageContext.request.contextPath}/trang-chu">
+                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
-                    <a href="./index.html" class="navbar-item-a">Trang Chủ</a>
+                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a">Trang Chủ</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./catalog.html" class="navbar-item-a">DANH MỤC</a>
+                    <a href="<c:url value='/danh-muc'/>" class="navbar-item-a">DANH MỤC</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./experience.html" class="navbar-item-a">Trải Nghiệm</a>
+                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a">TRẢI NGHIỆM</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./services.html" class="navbar-item-a">Dịch vụ</a>
+                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a">Dịch vụ</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./about.html" class="navbar-item-a">Chúng tôi</a>
+                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a">Chúng tôi</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./contact.html" class="navbar-item-a">Liên hệ</a>
+                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a">Liên hệ</a>
                 </li>
             </ul>
         </nav>
@@ -156,7 +156,7 @@
         <label for="navbar-checked" class="navbar-btn" id="mobile-menu-btn">
             <i class="ti-view-list"></i>
         </label>
-        <a href="./index.html">
+        <a href="${pageContext.request.contextPath}/trang-chu">
             <img src="./img/logo-dark.png" alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
@@ -165,24 +165,24 @@
             <label for="navbar-checked" class="fas fa-times icon-close"></label>
             <ul>
                 <li class="navbar-item-mobile">
-                    <a href="./index.html" class="navbar-item-a-mobile"><i class="fas fa-home"></i> Trang Chủ</a>
+                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a-mobile"><i class="fas fa-home"></i> Trang Chủ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./catalog.html" class="navbar-item-a-mobile"><i class="fas fa-laptop-house"></i> Danh Mục
+                    <a href="${pageContext.request.contextPath}/danh-muc" class="navbar-item-a-mobile"><i class="fas fa-laptop-house"></i> Danh Mục
                         <span>739</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./experience.html" class="navbar-item-a-mobile"><i class="fas fa-running"></i> Trải
+                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a-mobile"><i class="fas fa-running"></i> Trải
                         Nghiệm<span>127</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./services.html" class="navbar-item-a-mobile"><i class="far fa-handshake"></i>Dịch vụ</a>
+                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a-mobile"><i class="far fa-handshake"></i>Dịch vụ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./about.html" class="navbar-item-a-mobile"><i class="fas fa-users"></i>Chúng tôi</a>
+                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a-mobile"><i class="fas fa-users"></i>Chúng tôi</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="./contact.html" class="navbar-item-a-mobile"><i class="fas fa-phone-alt"></i> Liên hệ</a>
+                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i class="fas fa-phone-alt"></i> Liên hệ</a>
                 </li>
                 <li class="navbar-item-mobile">
                     <button class="header__info-item-a navbar-item-a-mobile"  onclick="show()"><i
@@ -372,6 +372,6 @@
     </footer>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="./assets/js/appfunction.js"></script>
+<script src="<c:url value='/template/web/js/appfunction.js' />"></script>
 </body>
 </html>

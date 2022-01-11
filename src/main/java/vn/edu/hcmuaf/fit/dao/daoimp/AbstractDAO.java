@@ -3,18 +3,20 @@ package vn.edu.hcmuaf.fit.dao.daoimp;
 import vn.edu.hcmuaf.fit.dao.IGenericDAO;
 import vn.edu.hcmuaf.fit.mapper.IRowMapper;
 
+import javax.annotation.ManagedBean;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@ManagedBean
 public class AbstractDAO<T> implements IGenericDAO<T> {
 
 
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String URL = "jdbc:mysql://localhost:3306/database";
+            String URL = "jdbc:mysql://localhost:3306/databasebatdongsan";
             String user = "root";
             String password = "";
             return DriverManager.getConnection(URL, user, password);
@@ -55,6 +57,7 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
                     rs.close();
                 }
             } catch (SQLException e) {
+                e.printStackTrace();
                 return null;
             }
         }
@@ -64,14 +67,14 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
         try {
             for (int i = 0; i < parameters.length; i++) {
                 Object parameter = parameters[i];
-                int index = i++;
+                int index = i+1;
                 if (parameter instanceof Long) {
                     stm.setLong(index, (Long) parameter);
                 } else if (parameter instanceof String) {
                     stm.setString(index, (String) parameter);
                 } else if (parameter instanceof Double) {
                     stm.setDouble(index, (Double) parameter);
-                } else if (parameter instanceof Date){
+                } else if (parameter instanceof Date) {
                     stm.setDate(index, (java.sql.Date) parameter);
                 }
             }
