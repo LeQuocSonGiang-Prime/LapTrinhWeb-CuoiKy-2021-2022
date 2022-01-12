@@ -63,12 +63,12 @@
         </form>
         <form id="register" name="form-signup" class="input-group" action="">
             <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
-            <input type="email" class="input-field" placeholder="email" name="email" required>
+            <input type="email" class="input-field" placeholder="email" name="email" id="register-email" required>
             <input type="text" class="input-field" placeholder="họ tên" name="fullname" required>
             <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>
             <input type="password" class="input-field" placeholder="Nhập Lại Mật Khẩu" name="repassword" required>
             <div>
-                <input type="checkbox" name="checking" class="check-box">
+                <input type="checkbox" name="checking" class="check-box" id="checkingregister">
                 <span class="checkbox-remember">Tôi đồng ý với các Điều khoản & Điều kiện</span>
             </div>
             <button type="submit" class="submit-btn" id="btn-signup">Đăng Kí</button>
@@ -513,6 +513,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
     $(document).ready(function () {
         $("img[loading != 'lazy']").attr("loading", "lazy");

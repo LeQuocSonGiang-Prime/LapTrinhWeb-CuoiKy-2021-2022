@@ -134,11 +134,12 @@ document.querySelector("#btn-signup").onclick = function (e) {
     console.log(data)
     let arrayInfo = data.split('&')
     let username = arrayInfo[0]
-    let email = arrayInfo[1]
+    let email = document.querySelector("#register-email").value
+    console.log(email)
     let fullname = arrayInfo[2]
     let password = arrayInfo[3]
     let repassword = arrayInfo[4]
-    let inputChecked = document.querySelector("input[name='checking']")
+    let inputChecked = document.querySelector("input#checkingregister")
     console.log(inputChecked)
     let msg = null;
     $.ajax({
@@ -161,6 +162,22 @@ document.querySelector("#btn-signup").onclick = function (e) {
                     '            </div>' +
                     '<p>Tài khoản đã tồn tại, vui lòng nhập lại</p>' +
                     '            <button type="submit" class="submit-btn" id="btn-signup">Đăng Kí</button>'
+            }else{
+                function sendEmail() {
+                    Email.send({
+                        Host: "smtp.gmail.com",
+                        Username: "batdongsanprime@gmail.com",
+                        Password: "rxlamslbhdnozezj",
+                        To: email,
+                        From:"batdongsanprime@gmail.com",
+                        Subject: "Xác nhận đăng ký tài khoản",
+                        Body:'Click vào <a href="http://localhost:8080/cuoiky/xac-nhan-dang-ky">đây</a> để xác nhận đăng ký',
+                    })
+                        .then(function (message) {
+                            alert("mail sent successfully")
+                        });
+                }
+                sendEmail()
             }
         }
     })
