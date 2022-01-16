@@ -1,9 +1,10 @@
 E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\model\CommentModel.java
-E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\model\billModel.java
+E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\model\BillModel.java
 E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\controller\web\SignUp.java
 E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\dao\IUserDAO.java
 E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\service\IUserService.java
 E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\mapper\IRowMapper.java
+E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\controller\web\confirmSignUp.java
 E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\controller\web\ControllerIndex.java
 E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\controller\web\ControllerAbout.java
 E:\Tai Lieu Cac Mon Hoc\Lap Trinh Web\Project\cuoiky\src\main\java\vn\edu\hcmuaf\fit\model\HouseModel.java

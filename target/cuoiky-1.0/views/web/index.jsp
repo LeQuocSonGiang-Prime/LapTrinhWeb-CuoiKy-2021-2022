@@ -47,9 +47,9 @@
             <button type="button" class="toggle-btn" onclick="register()">Đăng Kí</button>
         </div>
         <div class="social-icons">
-            <img src="img/login-reg-img/fb.png" alt="">
-            <img src="img/login-reg-img/gp.png" alt="">
-            <img src="img/login-reg-img/tw.png" alt="">
+            <img src="${pageContext.request.contextPath}/image/basic/icon/fb.png" alt="">
+            <img src="${pageContext.request.contextPath}/image/basic/icon/gp.png" alt="">
+            <img src="${pageContext.request.contextPath}/image/basic/icon/tw.png" alt="">
         </div>
         <form id="login" name="form-signin" class="input-group">
             <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
@@ -62,11 +62,24 @@
             <button class="submit-btn" id="btn-login">Đăng Nhập</button>
         </form>
         <form id="register" name="form-signup" class="input-group" action="">
-            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
-            <input type="email" class="input-field" placeholder="email" name="email" id="register-email" required>
-            <input type="text" class="input-field" placeholder="họ tên" name="fullname" required>
-            <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>
-            <input type="password" class="input-field" placeholder="Nhập Lại Mật Khẩu" name="repassword" required>
+            <div>
+                <input type="text" class="input-field" placeholder="Tài Khoản" name="username" id="register-username"
+                       required>
+            </div>
+            <div>
+                <input type="email" class="input-field" placeholder="email" name="email" id="register-email" required>
+            </div>
+
+            <div>
+                <input type="text" class="input-field" placeholder="họ tên" name="fullname" id="register-fullname"
+                       required>
+            </div>
+            <div>
+                <input type="password" class="input-field" placeholder="Mật Khẩu" name="password"
+                       id="register-password" required></div>
+            <div>
+                <input type="password" class="input-field" placeholder="Nhập Lại Mật Khẩu" name="repassword"
+                       id="register-repassword" required></div>
             <div>
                 <input type="checkbox" name="checking" class="check-box" id="checkingregister">
                 <span class="checkbox-remember">Tôi đồng ý với các Điều khoản & Điều kiện</span>
@@ -103,7 +116,7 @@
 
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
+                <img src="${pageContext.request.contextPath}/image/basic/logo/logo.png" alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -196,7 +209,7 @@
                 <div class="row">
 
                     <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <img src="./img/introduce/pexels-photo-2581922.jpeg" alt="" class="introduce-img">
+                        <img src="${pageContext.request.contextPath}/image/basic/typeHouse/nature.jpeg" alt="" class="introduce-img">
                         <div class="intro-content">
                             <h3 class="intro-content-title">Thiên Nhiên</h3>
                             <p class="intro-option">5 Lựa Chọn</p>
@@ -204,7 +217,7 @@
                         </div>
                     </div>
                     <div class="introduce-backgroud col l-3 m-6 c-12 " data-aos="fade-up" data-aos-duration="1000">
-                        <img src="./img/introduce/terrah-holly-pmhdkgRCbtE-unsplash.jpg" alt="" class="introduce-img">
+                        <img src="${pageContext.request.contextPath}/image/basic/typeHouse/intimate.jpg" alt="" class="introduce-img">
                         <div class="intro-content">
                             <h3 class="intro-content-title">Ấm Cúng</h3>
                             <p class="intro-option">28 Lựa Chọn</p>
@@ -212,7 +225,7 @@
                         </div>
                     </div>
                     <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="fade-up" data-aos-duration="1000">
-                        <img src="./img/introduce/Can-ho-studio-3.jpg" alt="" class="introduce-img">
+                        <img src="${pageContext.request.contextPath}/image/basic/typeHouse/studio.jpg" alt="" class="introduce-img">
                         <div class="intro-content">
                             <h3 class="intro-content-title">Studio</h3>
                             <p class="intro-option">9 Lựa Chọn</p>
@@ -220,7 +233,7 @@
                         </div>
                     </div>
                     <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <img src="./img/introduce/lissete-laverde-7OFTxbGWqwk-unsplash.jpg" alt=""
+                        <img src="${pageContext.request.contextPath}/image/basic/typeHouse/formal.jpg" alt=""
                              class="introduce-img">
                         <div class="intro-content">
                             <h3 class="intro-content-title">Sang Trọng</h3>
@@ -529,7 +542,15 @@
 <script>
     AOS.init();
 </script>
-
+<script>
+    Validator({
+        form: "#register",
+        rules: [
+            Validator.isRequired("#fullname"),
+            Validator.isEmail("email")
+        ]
+    });
+</script>
 
 </body>
 

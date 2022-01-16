@@ -160,25 +160,64 @@ document.querySelector("#btn-signup").onclick = function (e) {
                     '                <input type="checkbox" class="check-box">\n' +
                     '                <span class="checkbox-remember">Tôi đồng ý với các Điều khoản & Điều kiện</span>\n' +
                     '            </div>' +
-                    '<p>Tài khoản đã tồn tại, vui lòng nhập lại</p>' +
+                    '            <p>Email đã được sử dụng, vui lòng nhập lại</p>' +
                     '            <button type="submit" class="submit-btn" id="btn-signup">Đăng Kí</button>'
-            }else{
+            } else {
                 function sendEmail() {
                     Email.send({
                         Host: "smtp.gmail.com",
                         Username: "batdongsanprime@gmail.com",
                         Password: "rxlamslbhdnozezj",
                         To: email,
-                        From:"batdongsanprime@gmail.com",
+                        From: "batdongsanprime@gmail.com",
                         Subject: "Xác nhận đăng ký tài khoản",
-                        Body:"Click vào <a href="+`http://localhost:8080/cuoiky/xac-nhan-dang-ky?email=${email}` +">đây</a> để xác nhận đăng ký"
+                        Body: "Click vào <a href=" + `http://localhost:8080/cuoiky/xac-nhan-dang-ky?email=${email}` + ">đây</a> để xác nhận đăng ký"
                     })
                         .then(function (message) {
                             alert("mail sent successfully")
                         });
                 }
+
                 sendEmail()
             }
         }
     })
+}
+
+
+function Validator(options) {
+    var formelement = document.querySelector(options.form);
+
+    if (formelement) {
+        options.rules.forEach(function (rule) {
+            var inputElement = formelement.querySelector(rule.selector)
+            if(inputElement){
+                inputElement.onBlur = function(){
+                    var messError = rule.test(inputElement.value);
+                    var inputError = inputElement.parentElement.querySelector("")
+                    if(messError){
+
+                    }
+                }
+            }
+        })
+    }
+}
+
+Validator.isRequired = function (selector) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return value.trim() ? undefined: "Vui lòng nhập trường này"
+        }
+    };
+}
+
+Validator.isEmail = function (selector) {
+    return {
+        selector: selector,
+        test: function () {
+
+        }
+    };
 }

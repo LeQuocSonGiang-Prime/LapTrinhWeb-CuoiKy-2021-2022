@@ -94,7 +94,7 @@
     line-height: 1rem;
 }
 
-.header__navbar > a {
+.header__navbar>a {
     position: relative;
     top: 10px;
 }
@@ -147,7 +147,7 @@
 }
 
 .slider {
-    background: url(/image/imagebasic/house/house1.jpeg) bottom center/cover no-repeat;
+    background: url(../../../image/basic/home/house1.jpeg) bottom center/cover no-repeat;
     width: 100%;
     height: 100vh;
     position: relative;
@@ -159,10 +159,10 @@
 
 @keyframes slide {
     33% {
-        background: url(/image/imagebasic/house/house2.jpg) center center/cover no-repeat;
+        background: url(../../../image/basic/home/house2.jpg) center center/cover no-repeat;
     }
     67% {
-        background: url(/image/imagebasic/house/house3.jpg) bottom center/cover no-repeat;
+        background: url(../../../image/basic/home/house3.jpg) bottom center/cover no-repeat;
     }
 }
 
@@ -207,7 +207,7 @@
     display: flex;
 }
 
-.slider-ad:hover > .search-txt {
+.slider-ad:hover>.search-txt {
     width: 300px;
     padding-left: 20px;
 }
@@ -228,7 +228,7 @@
     cursor: pointer;
 }
 
-.slider-ad:hover > .search-btn {
+.slider-ad:hover>.search-btn {
     /* background-color: #fdb12d; */
     background: #ff5252;
 }
@@ -379,7 +379,7 @@
     background-color: var(--h);
 }
 
-.catalog-singer-link-a:hover > .buy-item-price {
+.catalog-singer-link-a:hover>.buy-item-price {
     transform: translateY(-30px);
     transform: translateX(-8px);
     background-color: #fd7272;
@@ -387,11 +387,11 @@
     font-size: 1.7rem;
 }
 
-.catalog-singer-link-a:hover > .buy-img {
+.catalog-singer-link-a:hover>.buy-img {
     transform: scale(0.95);
 }
 
-.catalog-singer-link-a:hover > .buy-img1 {
+.catalog-singer-link-a:hover>.buy-img1 {
     transform: scale(0.95);
 }
 
@@ -549,7 +549,7 @@
 }
 
 .parallax-sevices {
-    background: url(../../img/slider/pexels-daniel-frank-323314.jpg) center center/cover no-repeat;
+    background: url(../../../image/basic/home/header.jpg) center center/cover no-repeat;
     height: 640px;
     position: relative;
     color: var(--white-color);
@@ -593,7 +593,7 @@
     transform: translateY(100px);
 }
 
-.parallax-item:hover > .parallax-hover {
+.parallax-item:hover>.parallax-hover {
     opacity: 1;
     transform: translateY(15px);
 }
@@ -721,7 +721,7 @@
     /* padding-bottom: 20px; */
     /* background: linear-gradient(315deg, #fff 0%, var(--primary-color) 94%); */
     background-color: #faf361;
-background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
+    background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
 }
 
 .person {
@@ -745,7 +745,7 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     transition: 0.3s;
 }
 
-.person:hover > .person-img {
+.person:hover>.person-img {
     filter: grayscale(0);
 }
 
@@ -795,7 +795,6 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     background-color: transparent;
     transform: scale(1.5);
 }
-
 
 .footer {
     padding-top: 16px;
@@ -869,11 +868,13 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     margin: 0 0 5px 0;
     color: #b7b7b7;
 }
-.footer-li{
+
+.footer-li {
     display: flex;
     align-items: center;
     margin-top: 7px;
 }
+
 
 /* ABOUT */
 
@@ -1107,8 +1108,7 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
 
 /* CONTACT */
 
-.layout-contact {
-}
+.layout-contact {}
 
 .contact-test {
     display: grid;
@@ -1336,10 +1336,10 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     transition: 0.3s;
 }
 
-.contact-container-form .formBox .inputBox input:focus ~ span,
-.contact-container-form .formBox .inputBox input:valid ~ span,
-.contact-container-form .formBox .inputBox textarea:focus ~ span,
-.contact-container-form .formBox .inputBox textarea:valid ~ span {
+.contact-container-form .formBox .inputBox input:focus~span,
+.contact-container-form .formBox .inputBox input:valid~span,
+.contact-container-form .formBox .inputBox textarea:focus~span,
+.contact-container-form .formBox .inputBox textarea:valid~span {
     transform: translateY(-20px);
     font-size: 1.3rem;
     font-weight: 500;
@@ -1364,8 +1364,7 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
 
 /* DETAIL */
 
-.detail {
-}
+.detail {}
 
 .detail-info {
     padding: 3rem 0;
@@ -1521,11 +1520,9 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     margin: 1.3rem 0 1rem 0;
 }
 
-.house-detail2 {
-}
+.house-detail2 {}
 
-.house-info2 {
-}
+.house-info2 {}
 
 .house-info2 p {
     margin: 0.8rem 0;
@@ -1556,11 +1553,11 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     display: none;
 }
 
-#navbar-checked:checked ~ .navbar-mobile-over {
+#navbar-checked:checked~.navbar-mobile-over {
     display: block;
 }
 
-#navbar-checked:checked ~ .navbar-list-mobile {
+#navbar-checked:checked~.navbar-list-mobile {
     transform: translateX(0%);
 }
 
@@ -1575,15 +1572,16 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     animation: modal2 ease-in-out 0.5s;
 }
 
-.icon-close{
+.icon-close {
     font-size: 40px;
     font-weight: 900;
     padding: 15px 20px;
 }
 
-.icon-close:hover{
+.icon-close:hover {
     color: var(--primary-color);
 }
+
 @keyframes modal2 {
     from {
         /*transform: translateX(320px);*/
@@ -1649,7 +1647,7 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     justify-content: flex-end;
     padding-right: 20px;
     font-size: 10px;
-    color:red;
+    color: red;
 }
 
 .navbar-item-mobile button {
@@ -1661,7 +1659,7 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     justify-content: center;
     align-items: center;
     min-height: 85vh;
-    background: url(../../img/slider/contact.jpg) center center/cover no-repeat;
+    background: url(../../../image/basic/home/house4.jpg) center center/cover no-repeat;
 }
 
 .tool-ser {
@@ -1791,11 +1789,12 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     border-radius: 30px;
 }
 
-.input-group div{
+.input-group div {
     align-items: center;
     display: flex;
     justify-content: center;
 }
+
 .input-group p {
     font-size: 1.3rem;
     color: red;
@@ -1880,7 +1879,6 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
 .checkbox-remember {
     color: #777;
     font-size: 1.2rem;
-
 }
 
 #login {
@@ -1892,11 +1890,13 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     left: 450px;
     top: 150px;
 }
-#register div{
+
+#register div {
     height: 20px;
     margin-bottom: 5px;
     margin-top: 10px;
 }
+
 
 /* Mui ten lên dau trang */
 
@@ -1934,4 +1934,3 @@ background-image: linear-gradient(90deg, #faf361 0%, #b81cf7 100%);
     background-color: rgb(204, 204, 204);
     border-radius: 6px;
 }
-
