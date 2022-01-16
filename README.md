@@ -1,7 +1,7 @@
 # ProjectWeb-cuoiky-2021-2022
 
 Những thứ cần làm ngay bầy giờ:
-- validate form signin,signup, 
+- validate form signin,signup, check email is exists
 - check email có tồn tại hay không, 
-- sử lý đăng ký bằng form -> xác nhận bằng email
+- sử lý đăng ký bằng form -> xác nhận bằng email --> complete
 - code thêm file error, để khi người ta nhập sai link thì nó trỏ tới đó hoặc  ...
