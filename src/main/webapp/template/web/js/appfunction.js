@@ -151,10 +151,10 @@ document.querySelector("#btn-signup").onclick = function (e) {
             msg = data.msg;
             if (msg === "1") {
                 document.querySelector("#register").innerHTML =
-                    '<input type="text" class="input-field" placeholder="Tài Khoản" required>\n' +
-                    '            <input type="email" class="input-field" placeholder="email" required>\n' +
+                    '            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>\n' +
+                    '            <input type="email" class="input-field" placeholder="email" name="email" required>\n' +
                     '            <input type="text" class="input-field" placeholder="họ tên" name="fullname" required>' +
-                    '            <input type="password" class="input-field" placeholder="Mật Khẩu" required>\n' +
+                    '            <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>\n' +
                     '            <input type="password" class="input-field" placeholder="Nhập Lại Mật Khẩu" required>\n' +
                     '            <div>\n' +
                     '                <input type="checkbox" class="check-box">\n' +
@@ -171,7 +171,7 @@ document.querySelector("#btn-signup").onclick = function (e) {
                         To: email,
                         From:"batdongsanprime@gmail.com",
                         Subject: "Xác nhận đăng ký tài khoản",
-                        Body:'Click vào <a href="http://localhost:8080/cuoiky/xac-nhan-dang-ky">đây</a> để xác nhận đăng ký',
+                        Body:"Click vào <a href="+`http://localhost:8080/cuoiky/xac-nhan-dang-ky?email=${email}` +">đây</a> để xác nhận đăng ký"
                     })
                         .then(function (message) {
                             alert("mail sent successfully")

@@ -9,7 +9,6 @@ import java.sql.SQLException;
 public class UserMapper implements IRowMapper<UserModel> {
     @Override
     public UserModel mapRow(ResultSet resultSet) {
-
         try {
             UserModel user = new UserModel();
             user.setUsername(resultSet.getString("username"));

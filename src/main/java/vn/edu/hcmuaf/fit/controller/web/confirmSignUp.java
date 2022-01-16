@@ -16,12 +16,24 @@ public class confirmSignUp extends HttpServlet {
     private IUserService userService;
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //Get email
+        String email = request.getParameter("email");
+        boolean userExists = userService.checkUserExist(email);
         PrintWriter print = response.getWriter();
         response.setContentType("text/html;charset=UTF-8");
-        print.println("<h2 style='color:green;'>Dang ky thanh cong</h2>");
+        if(userExists){
+           userService.activateUser(email);
+            print.println("<h2 style='color:green;'>Dang ky thanh cong</h2>");
+        }else{
+            print.println("<h2 style='color:green;'>Da say ra loi gi do, vui long dang ky lai</h2>");
+        }
+
+
+
+
+
 
     }
-
 
 }

@@ -23,7 +23,23 @@ public class UserServiceImp implements IUserService {
     }
 
     @Override
-    public boolean checkUserExist(String username) {
-        return userDAO.getUserByUsername(username).size() > 0;
+    public boolean checkUserExist(String email) {
+        return userDAO.getUserByEmail(email) != null;
+    }
+
+    @Override
+    public void insertUser(UserModel user) {
+        System.out.println("userService");
+        userDAO.insertUser(user);
+    }
+
+    @Override
+    public void updateUser(UserModel user) {
+        userDAO.updateUser(user);
+    }
+
+    @Override
+    public void activateUser(String email) {
+        userDAO.activateUser(email);
     }
 }

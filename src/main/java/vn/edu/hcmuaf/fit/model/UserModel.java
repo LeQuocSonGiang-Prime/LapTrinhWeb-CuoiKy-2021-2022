@@ -11,6 +11,7 @@ public class UserModel implements Serializable {
     private String phone;
     private String address;
     private String avatar;
+    private int status;
 
     public UserModel(String username, String password, String fullName, String email) {
         this.username = username;
@@ -19,7 +20,7 @@ public class UserModel implements Serializable {
         this.email = email;
     }
 
-    public UserModel(String username, String password, String fullName, String email, String phone, String address, String avatar) {
+    public UserModel(String username, String password, String fullName, String email, String phone, String address, String avatar,int status) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;
@@ -27,10 +28,19 @@ public class UserModel implements Serializable {
         this.phone = phone;
         this.address = address;
         this.avatar = avatar;
+        this.status = status;
     }
 
     public UserModel() {
 
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getUsername() {

@@ -16,4 +16,15 @@ public interface IUserDAO extends IGenericDAO<UserModel>{
       check username for SIGNUP
       */
      List<UserModel> getUserByUsername(String username);
+
+     UserModel getUserByEmail(String email);
+
+     UserModel getUserById(String id);
+
+
+
+     void updateUser(UserModel user);
+     void deleteUser(UserModel user);
+     void insertUser(UserModel user);
+     void activateUser(String email);
 }

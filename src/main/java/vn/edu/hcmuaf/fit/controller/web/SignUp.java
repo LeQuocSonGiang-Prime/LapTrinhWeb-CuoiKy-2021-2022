@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.fit.controller.web;
 
 import org.json.simple.JSONObject;
+import vn.edu.hcmuaf.fit.model.UserModel;
 import vn.edu.hcmuaf.fit.service.IUserService;
 
 import javax.inject.Inject;
@@ -21,7 +22,8 @@ private IUserService userService;
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        boolean userExist = userService.checkUserExist(username);
+        String fullname= request.getParameter("fullname");
+        boolean userExist = userService.checkUserExist(email);
         String msg = null;
         if(userExist){
             //user is exist
@@ -29,6 +31,8 @@ private IUserService userService;
             jsonOb.put("msg", msg);
         }else{
             msg = "2";
+            UserModel user = new UserModel(username, password, fullname,email);
+            userService.insertUser(user);
             jsonOb.put("msg", msg);
         }
         os.print(jsonOb);
