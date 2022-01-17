@@ -11,7 +11,7 @@
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 14/01/2022 15:10:59
+ Date: 17/01/2022 21:17:48
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,7 @@ CREATE TABLE `admin`  (
   `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_admin`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of admin
@@ -47,7 +47,7 @@ CREATE TABLE `bill`  (
   `time_checkin` datetime NOT NULL,
   `time_checkout` datetime NOT NULL,
   PRIMARY KEY (`id_bill`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of bill
@@ -65,7 +65,7 @@ CREATE TABLE `comment`  (
   `star` tinyint NOT NULL,
   `timecmt` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id_comment`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of comment
@@ -80,7 +80,7 @@ CREATE TABLE `favourite`  (
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_user` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_favor`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of favourite
@@ -94,21 +94,21 @@ CREATE TABLE `house`  (
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `type` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'loại phòng , loại nhà',
+  `tutorial` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Đặc biệt, đây là HomeStay duy nhất có thiết kế giường Dorm đôi độc nhất vô nhị, phù hợp với các bạn trẻ, nhóm bạn phượt hoặc đi trăng mật.',
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `detail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'chi tiết căn phòng',
+  `foryou` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'xem chi tiet trong file rules',
   `price` int NOT NULL,
   `saleprice` int NULL DEFAULT NULL,
   `time_checkin` datetime NULL DEFAULT NULL,
   `time_checkout` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id_house`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of house
 -- ----------------------------
-INSERT INTO `house` VALUES ('HOUSE10001', '', '', '', '', 0, NULL, NULL, NULL);
-INSERT INTO `house` VALUES ('HOUSE10002', '', '', '', '', 0, NULL, NULL, NULL);
-INSERT INTO `house` VALUES ('HOUSE20001', 'DFDFDFDFD', '', '', '', 0, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE00000', 'An Nhiên ', '1', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', ' Vũng Tàu', ' 100M², 4 Người, 2 Phòng Ngủ, 2 Giường, 1 Phòng Tắm', '', 0, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for image_house
@@ -120,7 +120,7 @@ CREATE TABLE `image_house`  (
   `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `alt` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_image`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of image_house
@@ -135,7 +135,7 @@ CREATE TABLE `place`  (
   `id_place` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_place`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of place
@@ -153,7 +153,7 @@ CREATE TABLE `request_booking`  (
   `time_checkin` datetime NOT NULL,
   `time_checkout` datetime NOT NULL,
   PRIMARY KEY (`id_request`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of request_booking
@@ -172,14 +172,17 @@ CREATE TABLE `user`  (
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `phone` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `avatar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` tinyint NULL DEFAULT 0,
   PRIMARY KEY (`id_user`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('USER000001', 'songiang', '12345', 'Lê Quốc Sơn Giang', 'songiang@gmail.com', NULL, NULL, NULL);
-INSERT INTO `user` VALUES ('USER000002', 'dinhdanh', '12345', 'Trần Đình Danh', 'ttDanh@gmail.com', NULL, NULL, NULL);
-INSERT INTO `user` VALUES ('USER000003', 'congdanh', '12345', 'Phạm Công Danh', 'cd@gmail.com', NULL, NULL, NULL);
+INSERT INTO `user` VALUES ('USER000001', 'songiang', '12345', 'Lê Quốc Sơn Giang', 'songiang@gmail.com', NULL, NULL, NULL, 1);
+INSERT INTO `user` VALUES ('USER000002', 'dinhdanh', '12345', 'Trần Đình Danh', 'ttDanh@gmail.com', NULL, NULL, NULL, 1);
+INSERT INTO `user` VALUES ('USER000003', 'congdanh', '12345', 'Phạm Công Danh', 'cd@gmail.com', NULL, NULL, NULL, 1);
+INSERT INTO `user` VALUES ('USER000004', 'thuhuong', '12345', 'Đặng Thị Thu Hương', 'lequocsongiang@gmail.com', NULL, NULL, NULL, 1);
+INSERT INTO `user` VALUES ('USER000006', 'lequocsongiang', '12345', 'Sơn Giang', '19130060@st.hcmuaf.edu.vn', NULL, NULL, NULL, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
