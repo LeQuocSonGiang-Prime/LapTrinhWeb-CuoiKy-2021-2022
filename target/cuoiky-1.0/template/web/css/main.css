@@ -527,7 +527,7 @@
 }
 
 .parallax {
-    background: url(../../../image/basic/home/header.jpg) center center/cover no-repeat;
+    background: url(../../img/slider/parallax.jpg) center center/cover no-repeat;
     height: 600px;
     position: relative;
     color: var(--white-color);

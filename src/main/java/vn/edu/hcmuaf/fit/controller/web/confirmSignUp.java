@@ -18,6 +18,8 @@ public class confirmSignUp extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Get email
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         String email = request.getParameter("email");
         boolean userExists = userService.checkUserExist(email);
         PrintWriter print = response.getWriter();

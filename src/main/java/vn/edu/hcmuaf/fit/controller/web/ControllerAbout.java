@@ -11,6 +11,8 @@ import java.io.IOException;
 public class ControllerAbout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         request.getRequestDispatcher("/views/web/about.jsp").forward(request, response);
     }
 

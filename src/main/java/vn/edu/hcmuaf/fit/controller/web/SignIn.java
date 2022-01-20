@@ -21,6 +21,8 @@ public class SignIn extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter os = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");

@@ -17,6 +17,8 @@ public class SignUp extends HttpServlet {
 private IUserService userService;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter os = response.getWriter();
         JSONObject jsonOb = new JSONObject();
         String username = request.getParameter("username");
