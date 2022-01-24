@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : cuoiky
+ Source Server         : MySQL
  Source Server Type    : MySQL
  Source Server Version : 100421
  Source Host           : localhost:3306
- Source Schema         : database
+ Source Schema         : database1
 
  Target Server Type    : MySQL
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 17/01/2022 21:17:48
+ Date: 20/01/2022 20:43:03
 */
 
 SET NAMES utf8mb4;
@@ -140,7 +140,30 @@ CREATE TABLE `place`  (
 -- ----------------------------
 -- Records of place
 -- ----------------------------
-INSERT INTO `place` VALUES ('PLACE00001', 'HSUDGSHUDGSUGDSUD');
+INSERT INTO `place` VALUES ('PLACE00001', 'Nhiếp ảnh gia cá nhân của bạn tại Hà Nội');
+INSERT INTO `place` VALUES ('PLACE00002', "Hanoi's urban art galleries&best Pho");
+INSERT INTO `place` VALUES ('PLACE00003', 'HaLong Bay One Day Tour From Hanoi');
+INSERT INTO `place` VALUES ('PLACE00004', 'Chuyến đi đến những khu vực hẻo lánh nhất của Hà Giang');
+INSERT INTO `place` VALUES ('PLACE00005', 'Tonkin Adventure - Hidden Hanoi with Local');
+INSERT INTO `place` VALUES ('PLACE00006', 'The Famous Ha Giang Loop Adventure');
+INSERT INTO `place` VALUES ('PLACE00007', 'Buổi chụp hình đêm tại Hà Nội');
+INSERT INTO `place` VALUES ('PLACE00008', 'UNIQUE LOCAL BEER ADVENTURER');
+INSERT INTO `place` VALUES ('PLACE00009', 'HanoiSoul-Street Food With Local Guide');
+INSERT INTO `place` VALUES ('PLACE00010', 'Học chụp ảnh với máy ảnh phim tại Hà Nội');
+INSERT INTO `place` VALUES ('PLACE00011', 'Biking & Foodie Tour around Old Quarter');
+INSERT INTO `place` VALUES ('PLACE00012', 'Hanoi Street Food Tour with Real Foodie');
+INSERT INTO `place` VALUES ('PLACE00013', 'Street Foodtour with Expert Tourguide');
+INSERT INTO `place` VALUES ('PLACE00014', 'FOOD WALKING TOUR THROUGH BACK ALLEYS');
+INSERT INTO `place` VALUES ('PLACE00015', 'Touching Hanoi - veg/vegan food tour');
+INSERT INTO `place` VALUES ('PLACE00016', 'ULTIMATE STREET FOOD & HIDDEN MUSIC');
+INSERT INTO `place` VALUES ('PLACE00017', 'DragonSails Luxury Halong Day Trip');
+INSERT INTO `place` VALUES ('PLACE00018', 'Khám phá sáng sớm Hà Nội bằng xe máy');
+INSERT INTO `place` VALUES ('PLACE00019', 'Hoa Lu- Mua Cave-Tam Coc Luxury Trip');
+INSERT INTO `place` VALUES ('PLACE00020', 'Bai Dinh Pagoda- Trang An Boat Cave Tour');
+INSERT INTO `place` VALUES ('PLACE00021', 'Ultimate Street Tour on a Motorbike');
+INSERT INTO `place` VALUES ('PLACE00022', "Hanoi's Vegan Culinary Treasures");
+INSERT INTO `place` VALUES ('PLACE00023', 'French culture & Maison Centrale');
+INSERT INTO `place` VALUES ('PLACE00024', 'Ultimate Street Tour on a Motorbike');
 
 -- ----------------------------
 -- Table structure for request_booking

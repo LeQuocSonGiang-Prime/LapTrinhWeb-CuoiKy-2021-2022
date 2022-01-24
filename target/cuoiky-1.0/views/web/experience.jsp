@@ -88,28 +88,27 @@
             </ul>
         </div>
         <nav class="header__navbar">
-            <a href="./index.html">
-                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
+            <a href="${pageContext.request.contextPath}/trang-chu">
+                <img src="${pageContext.request.contextPath}/image/basic/logo/logo.png" alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
-                    <a href="./index.html" class="navbar-item-a">Trang Chủ</a>
+                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a">Trang Chủ</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./catalog.html" class="navbar-item-a">DANH MỤC</a>
+                    <a href="<c:url value='/danh-muc'/>" class="navbar-item-a">DANH MỤC</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./experience.html" class="navbar-item-a">Trải Nghiệm</a>
+                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a">TRẢI NGHIỆM</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./services.html" class="navbar-item-a">Dịch vụ</a>
+                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a">Dịch vụ</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./about.html" class="navbar-item-a">Chúng tôi</a>
+                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a">Chúng tôi</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="./contact.html" class="navbar-item-a">Liên hệ</a>
-
+                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a">Liên hệ</a>
                 </li>
             </ul>
         </nav>
