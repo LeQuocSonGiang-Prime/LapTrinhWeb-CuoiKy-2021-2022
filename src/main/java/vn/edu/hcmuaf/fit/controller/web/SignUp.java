@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.fit.controller.web;
 import org.json.simple.JSONObject;
 import vn.edu.hcmuaf.fit.model.UserModel;
 import vn.edu.hcmuaf.fit.service.IUserService;
+import vn.edu.hcmuaf.fit.service.SendMail;
 
 import javax.inject.Inject;
 import javax.servlet.*;
@@ -34,6 +35,8 @@ public class SignUp extends HttpServlet {
             jsonOb.put("msg", msg);
         } else {
             msg = "2";
+            SendMail sendMail = new SendMail();
+            sendMail.sendMailLogin(email);
             UserModel user = new UserModel(username, password, fullname, email);
             userService.insertUser(username, password, email, fullname);
             jsonOb.put("msg", msg);

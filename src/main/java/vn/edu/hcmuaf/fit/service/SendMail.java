@@ -18,11 +18,10 @@ import javax.mail.internet.MimeMessage;
 public class SendMail {
 
 
+    private static final String username = "homestayprime365@gmail.com";
+    private static final String password = "a123456789A@";
 
-    private static String username = "homestayprime365@gmail.com";
-    private static String password = "a123456789A@";
-
-    public  void sendMail(String to, String subject, String content) {
+    public void sendMail(String to, String subject, String content) {
         Session session = connect();
         try {
             Message message = new MimeMessage(session);
@@ -30,8 +29,8 @@ public class SendMail {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
             message.setSubject(subject);
 
-          //  messmage.setText(content);
-            message.setContent(content,"text/html; charset=UTF-8");
+            //  messmage.setText(content);
+            message.setContent(content, "text/html; charset=UTF-8");
             Transport.send(message);
 
         } catch (MessagingException | UnsupportedEncodingException e) {
@@ -40,7 +39,7 @@ public class SendMail {
         }
     }
 
-    private  Session connect() {
+    private Session connect() {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -54,8 +53,7 @@ public class SendMail {
         });
     }
 
-    private void completeContent(String recipient){
-        String content = "Click vào <a href=http://localhost:8080/cuoiky/xac-nhan-dang-ky?email=" + recipient + ">đây</a> để xác nhận đăng ký";
+    public void sendMailLogin(String recipient) {
 
         String contentMail = "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
@@ -67,10 +65,12 @@ public class SendMail {
                 "    <link rel=\"stylesheet\" href=\"email.css\">\n" +
                 "\n" +
                 "    <style>\n" +
+                "        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');\n"+
                 "        body{\n" +
                 "            margin: 0;\n" +
                 "            padding: 0;\n" +
                 "            \n" +
+                "            font-family: 'Roboto', sans-serif; \n "+
                 "        }\n" +
                 "        .container{\n" +
                 "            background-color: #FFDEE9;\n" +
@@ -125,7 +125,7 @@ public class SendMail {
                 "                <h1>Welcome To Prime HomeStay</h1>\n" +
                 "                <p>Xin Chào!!!</p>\n" +
                 "                <p>Bạn đang đăng kí tài khoản của chúng tôi</p>\n" +
-                "                <p>Vui lòng nhấp vào liên kết dưới đây để xác nhận địa chỉ email của bạn: <a href=\"#\">Click vào đây</a></p> \n" +
+                "                <p>Vui lòng nhấp vào liên kết dưới đây để xác nhận địa chỉ email của bạn: <a href='http://localhost:8080/cuoiky/xac-nhan-dang-ky?email=" + recipient + " '>Click vào đây</a></p> \n" +
                 "            </div>\n" +
                 "            <div class=\"content2\">\n" +
                 "                <p>Chúng tôi gửi email này cho bạn để xác nhận xem địa chỉ email liên kết với tài khoản Prime HomeStay của bạn.</p>\n" +
@@ -140,13 +140,8 @@ public class SendMail {
         sendMail(recipient, "Homestay Prime", contentMail);
     }
 
-    public SendMail(String recipient){
-        completeContent(recipient);
-    }
+    public SendMail() {
 
-    public static void main(String[] args) {
-
-       new SendMail("lequocsongiang@gmail.com");
     }
 
 }
