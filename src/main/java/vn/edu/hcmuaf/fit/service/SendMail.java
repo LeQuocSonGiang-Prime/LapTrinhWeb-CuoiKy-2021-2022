@@ -22,21 +22,21 @@ public class SendMail {
     private static String username = "homestayprime365@gmail.com";
     private static String password = "a123456789A@";
 
-    public  boolean sendMail(String to, String subject, String content) {
+    public  void sendMail(String to, String subject, String content) {
         Session session = connect();
         try {
-            Message messmage = new MimeMessage(session);
-            messmage.setFrom(new InternetAddress(username, "Homestay Prime"));
-            messmage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            messmage.setSubject(subject);
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username, "Homestay Prime"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+            message.setSubject(subject);
 
           //  messmage.setText(content);
-            messmage.setContent(content,"text/html");
-            Transport.send(messmage);
-            return true;
+            message.setContent(content,"text/html; charset=UTF-8");
+            Transport.send(message);
+
         } catch (MessagingException | UnsupportedEncodingException e) {
             e.printStackTrace();
-            return false;
+
         }
     }
 
@@ -56,7 +56,88 @@ public class SendMail {
 
     private void completeContent(String recipient){
         String content = "Click vào <a href=http://localhost:8080/cuoiky/xac-nhan-dang-ky?email=" + recipient + ">đây</a> để xác nhận đăng ký";
-        sendMail(recipient, "Homestay Prime", content);
+
+        String contentMail = "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <title>SubmitEmail</title>\n" +
+                "    <link rel=\"stylesheet\" href=\"email.css\">\n" +
+                "\n" +
+                "    <style>\n" +
+                "        body{\n" +
+                "            margin: 0;\n" +
+                "            padding: 0;\n" +
+                "            \n" +
+                "        }\n" +
+                "        .container{\n" +
+                "            background-color: #FFDEE9;\n" +
+                "            background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);\n" +
+                "            width: 100%;\n" +
+                "            height: 100vh;\n" +
+                "            position: relative;\n" +
+                "        }\n" +
+                "        .container .top {\n" +
+                "            position: absolute;\n" +
+                "            left: 50%;\n" +
+                "            top: 7%;\n" +
+                "            transform: translate(-50%,-50%);\n" +
+                "        }\n" +
+                "        .container .content{\n" +
+                "            background-color: rgba(83, 63, 63, 0.2);\n" +
+                "            backdrop-filter: blur(0.5rem);\n" +
+                "            height: 70%;\n" +
+                "            width: 70%;\n" +
+                "            border-radius: 10px;\n" +
+                "            padding: 30px;\n" +
+                "            position: relative;\n" +
+                "            left: 50%;\n" +
+                "            top: 50%;\n" +
+                "            transform: translate(-50%,-50%);\n" +
+                "        }\n" +
+                "        .container .content h1{\n" +
+                "            color: #192a56;\n" +
+                "            text-align: center;\n" +
+                "        }\n" +
+                "        .container .content p{\n" +
+                "            font-weight: 800;\n" +
+                "            font-size: 15px;\n" +
+                "        }\n" +
+                "        .container .content img{\n" +
+                "            width: 160px;\n" +
+                "            height: 160px;\n" +
+                "            object-fit: cover;\n" +
+                "            position: absolute;\n" +
+                "            left: 50%;\n" +
+                "            transform: translate(-50%);\n" +
+                "        }\n" +
+                "    </style>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "    <div class=\"container\">\n" +
+                "        <div class=\"top\">\n" +
+                "            <img src=\"./logo-dark.png\" alt=\"\">\n" +
+                "        </div>\n" +
+                "        <div class=\"content\">\n" +
+                "            <div class=\"content1\">\n" +
+                "                <h1>Welcome To Prime HomeStay</h1>\n" +
+                "                <p>Xin Chào!!!</p>\n" +
+                "                <p>Bạn đang đăng kí tài khoản của chúng tôi</p>\n" +
+                "                <p>Vui lòng nhấp vào liên kết dưới đây để xác nhận địa chỉ email của bạn: <a href=\"#\">Click vào đây</a></p> \n" +
+                "            </div>\n" +
+                "            <div class=\"content2\">\n" +
+                "                <p>Chúng tôi gửi email này cho bạn để xác nhận xem địa chỉ email liên kết với tài khoản Prime HomeStay của bạn.</p>\n" +
+                "                <p>Nếu có sự nhầm lẫn gì ở đây. Vui lòng liên hệ lại với chúng tôi.</p>\n" +
+                "                <h2 style=\"text-transform: capitalize; color: #192a56;\">cảm ơn bạn đã tin tưởng chúng tôi. </h2>\n" +
+                "            </div>\n" +
+                "            <img src=\"./unnamed.png\" alt=\"\" >\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "</body>\n" +
+                "</html>";
+        sendMail(recipient, "Homestay Prime", contentMail);
     }
 
     public SendMail(String recipient){
