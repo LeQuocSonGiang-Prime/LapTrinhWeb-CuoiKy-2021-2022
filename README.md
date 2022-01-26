@@ -20,6 +20,13 @@
 
 ![img.png](img.png)
 
+
+<h2> - Phạm Công Danh</h2>
+
+
+- validate form signin,signup, check email is exists
+
+
 <h1>###########################</h1>
 
 <i>Tui thấy tình hình làm việc nhóm như này không ổn lắm, chắc có lẽ kỳ sau tui phải xem lại rồi!</i>
