@@ -8,10 +8,7 @@
 
 
 <h1>* Bởi vì để công việc chung thì k ai làm nên tôi chia ra như sau</h1>
-<h2> - Phạm Công Danh</h2>
 
-
-- validate form signin,signup, check email is exists 
 
 <h2> - Trần Đình Danh</h2>
 
