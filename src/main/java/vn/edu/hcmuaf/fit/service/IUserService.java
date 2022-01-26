@@ -9,7 +9,7 @@ public interface IUserService {
 
     boolean checkUserExist(String email);
 
-    void insertUser(UserModel user);
+    void insertUser(String username, String password, String email, String fullname);
 
     void updateUser(UserModel user);
 

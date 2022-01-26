@@ -22,7 +22,7 @@ public class UserDaoImp extends AbstractDAO<UserModel> implements IUserDAO {
 
     @Override
     public List<UserModel> getUserByUsernamePassword(String username, String password) {
-        String sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+        String sql = "SELECT * FROM user WHERE username = ? AND password = ? AND status = 1";
         return query(sql, new UserMapper(), username, password);
     }
 

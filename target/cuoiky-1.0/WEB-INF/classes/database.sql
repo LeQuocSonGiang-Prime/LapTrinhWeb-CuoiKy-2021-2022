@@ -189,7 +189,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
   `id_user` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `username` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Tai Khoan',
-  `password` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Mat Khau',
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Mat Khau',
   `fullname` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
@@ -202,10 +202,5 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('USER000001', 'songiang', '12345', 'Lê Quốc Sơn Giang', 'songiang@gmail.com', NULL, NULL, NULL, 1);
-INSERT INTO `user` VALUES ('USER000002', 'dinhdanh', '12345', 'Trần Đình Danh', 'ttDanh@gmail.com', NULL, NULL, NULL, 1);
-INSERT INTO `user` VALUES ('USER000003', 'congdanh', '12345', 'Phạm Công Danh', 'cd@gmail.com', NULL, NULL, NULL, 1);
-INSERT INTO `user` VALUES ('USER000004', 'thuhuong', '12345', 'Đặng Thị Thu Hương', 'lequocsongiang@gmail.com', NULL, NULL, NULL, 1);
-INSERT INTO `user` VALUES ('USER000006', 'lequocsongiang', '12345', 'Sơn Giang', '19130060@st.hcmuaf.edu.vn', NULL, NULL, NULL, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

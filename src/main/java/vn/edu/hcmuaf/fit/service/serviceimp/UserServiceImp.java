@@ -6,7 +6,8 @@ import vn.edu.hcmuaf.fit.service.IUserService;
 
 import javax.annotation.ManagedBean;
 import javax.inject.Inject;
-import java.util.List;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 
 @ManagedBean
 public class UserServiceImp implements IUserService {
@@ -15,8 +16,8 @@ public class UserServiceImp implements IUserService {
 
     @Override
     public UserModel checkLogin(String username, String password) {
-        if (userDAO.getUserByUsernamePassword(username, password).size() > 0) {
-            return userDAO.getUserByUsernamePassword(username, password).get(0);
+        if (userDAO.getUserByUsernamePassword(username, hashPasword(password)).size() > 0) {
+            return userDAO.getUserByUsernamePassword(username, hashPasword(password)).get(0);
         } else {
             return null;
         }
@@ -27,9 +28,11 @@ public class UserServiceImp implements IUserService {
         return userDAO.getUserByEmail(email) != null;
     }
 
+
+
     @Override
-    public void insertUser(UserModel user) {
-        System.out.println("userService");
+    public void insertUser(String username, String password, String email, String fullname) {
+       UserModel user = new UserModel(username, hashPasword(password), email, fullname);
         userDAO.insertUser(user);
     }
 
@@ -41,5 +44,18 @@ public class UserServiceImp implements IUserService {
     @Override
     public void activateUser(String email) {
         userDAO.activateUser(email);
+    }
+
+    private String hashPasword(String pass) {
+        try {
+            MessageDigest ma = MessageDigest.getInstance("MD5");
+            ma.update(pass.getBytes());
+            byte[] byteData = ma.digest();
+            BigInteger number = new BigInteger(1, byteData);
+            return number.toString(16);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
