@@ -37,7 +37,7 @@ public class SignUp extends HttpServlet {
             msg = "2";
             SendMail sendMail = new SendMail();
             sendMail.sendMailLogin(email);
-            UserModel user = new UserModel(username, password, fullname, email);
+            UserModel user = new UserModel(username, password, email, fullname);
             userService.insertUser(username, password, email, fullname);
             jsonOb.put("msg", msg);
         }

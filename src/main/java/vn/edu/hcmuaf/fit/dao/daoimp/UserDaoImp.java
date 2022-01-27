@@ -3,12 +3,9 @@ package vn.edu.hcmuaf.fit.dao.daoimp;
 import vn.edu.hcmuaf.fit.dao.IUserDAO;
 import vn.edu.hcmuaf.fit.mapper.imp.UserMapper;
 import vn.edu.hcmuaf.fit.model.UserModel;
+import vn.edu.hcmuaf.fit.service.serviceimp.UserServiceImp;
 
 import javax.annotation.ManagedBean;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 @ManagedBean
@@ -94,5 +91,10 @@ public class UserDaoImp extends AbstractDAO<UserModel> implements IUserDAO {
         update(sql, next_id, user.getUsername(), user.getPassword(), user.getFullName(), user.getEmail());
     }
 
+    public static void main(String[] args) {
+        UserDaoImp userServiceImp = new UserDaoImp();
+        System.out.println(userServiceImp.getUserByEmail("lequocsongiang@gmail.com"));
+        System.out.println(userServiceImp.getUserById("USER000001"));
+    }
 
 }

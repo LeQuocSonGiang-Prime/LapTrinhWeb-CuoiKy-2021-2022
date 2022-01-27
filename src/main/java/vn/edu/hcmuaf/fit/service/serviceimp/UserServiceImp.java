@@ -58,4 +58,9 @@ public class UserServiceImp implements IUserService {
             return null;
         }
     }
+
+    public static void main(String[] args) {
+        UserServiceImp userServiceImp = new UserServiceImp();
+        userServiceImp.insertUser("songiang","12345","lequocsongiang@gmail.com","Lê Quốc Sơn Giang");
+    }
 }

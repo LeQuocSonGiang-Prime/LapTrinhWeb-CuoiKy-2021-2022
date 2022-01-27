@@ -23,9 +23,11 @@ public class confirmSignUp extends HttpServlet {
         String email = request.getParameter("email");
         boolean userExists = userService.checkUserExist(email);
         PrintWriter print = response.getWriter();
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");System.out.println(email);
+        System.out.println(userExists);
         if(userExists){
            userService.activateUser(email);
+
             print.println("<h2 style='color:green;'>Dang ky thanh cong</h2>");
         }else{
             print.println("<h2 style='color:green;'>Da say ra loi gi do, vui long dang ky lai</h2>");

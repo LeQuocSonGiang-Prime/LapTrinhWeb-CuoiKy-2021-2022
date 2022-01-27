@@ -13,7 +13,7 @@ public class UserModel implements Serializable {
     private String avatar;
     private int status;
 
-    public UserModel(String username, String password, String fullName, String email) {
+    public UserModel(String username, String password, String email, String fullName) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;

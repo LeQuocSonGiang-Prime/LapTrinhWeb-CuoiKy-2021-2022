@@ -4,6 +4,7 @@ vn\edu\hcmuaf\fit\controller\web\ControllerConfirm.class
 vn\edu\hcmuaf\fit\model\FavouriteModel.class
 vn\edu\hcmuaf\fit\dao\IGenericDAO.class
 vn\edu\hcmuaf\fit\model\BillModel.class
+vn\edu\hcmuaf\fit\service\SendMail$1.class
 vn\edu\hcmuaf\fit\model\AdminModel.class
 vn\edu\hcmuaf\fit\controller\web\confirmSignUp.class
 vn\edu\hcmuaf\fit\dao\daoimp\AbstractDAO.class
@@ -11,6 +12,7 @@ vn\edu\hcmuaf\fit\controller\web\ControllerDetail.class
 vn\edu\hcmuaf\fit\service\serviceimp\UserServiceImp.class
 vn\edu\hcmuaf\fit\controller\web\SignIn.class
 vn\edu\hcmuaf\fit\model\UserModel.class
+vn\edu\hcmuaf\fit\service\SendMail.class
 vn\edu\hcmuaf\fit\model\HouseModel.class
 vn\edu\hcmuaf\fit\controller\web\ControllerContact.class
 vn\edu\hcmuaf\fit\service\IUserService.class

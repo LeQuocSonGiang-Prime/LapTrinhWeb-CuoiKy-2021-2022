@@ -163,22 +163,7 @@ document.querySelector("#btn-signup").onclick = function (e) {
                     '            <p>Email đã được sử dụng, vui lòng nhập lại</p>' +
                     '            <button type="submit" class="submit-btn" id="btn-signup">Đăng Kí</button>'
             } else {
-                function sendEmail() {
-                    Email.send({
-                        Host: "smtp.gmail.com",
-                        Username: "batdongsanprime@gmail.com",
-                        Password: "rxlamslbhdnozezj",
-                        To: email,
-                        From: "batdongsanprime@gmail.com",
-                        Subject: "Xác nhận đăng ký tài khoản",
-                        Body: "Click vào <a href=" + `http://localhost:8080/cuoiky/xac-nhan-dang-ky?email=${email}` + ">đây</a> để xác nhận đăng ký"
-                    })
-                        .then(function (message) {
-                            alert("mail sent successfully")
-                        });
-                }
-
-                sendEmail()
+               //day la noi ong su ly JS cua phan hide, show cua phan nay
             }
         }
     })
