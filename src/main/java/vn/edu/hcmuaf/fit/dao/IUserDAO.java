@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.util.List;
 
 public interface IUserDAO extends IGenericDAO<UserModel>{
-     Connection getConnection();
+
 
      List<UserModel> findAll();
 

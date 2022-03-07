@@ -3,17 +3,22 @@ package vn.edu.hcmuaf.fit.model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class HouseModel implements Serializable {
+public class HouseModel extends AbstractModel<HouseModel> implements Serializable {
 
     private String name;
     private int type;
+    private String tutorial;
     private String address;
     private String detail;
+    private String forYou;
     private int price;
     private int salePrice;
     private Date time_Checkin;
     private Date time_Checkout;
+    private String image;
 
+
+    public HouseModel(){}
     public HouseModel(String name, int type, String address, String detail, int price, int salePrice, Date time_Checkin, Date time_Checkout) {
         this.name = name;
         this.type = type;
@@ -23,6 +28,30 @@ public class HouseModel implements Serializable {
         this.salePrice = salePrice;
         this.time_Checkin = time_Checkin;
         this.time_Checkout = time_Checkout;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getTutorial() {
+        return tutorial;
+    }
+
+    public void setTutorial(String tutorial) {
+        this.tutorial = tutorial;
+    }
+
+    public String getForYou() {
+        return forYou;
+    }
+
+    public void setForYou(String forYou) {
+        this.forYou = forYou;
     }
 
     public String getName() {

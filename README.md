@@ -23,6 +23,10 @@
 - image house đặt chung trong một thư folder /image/imagehouse
 - ![img_1.png](img_1.png)
 
+
+- tui mới cho load image từ database lên, còn vài chỗ nhìn không được đẹp, ông xem chỉnh lại nha, vidu như chỗ cái price
+- ![img_2.png](img_2.png)
+
 <h2> - Phạm Công Danh</h2>
 
 
@@ -33,4 +37,3 @@
 
 <h1>###########################</h1>
 
-<i>Tui thấy tình hình làm việc nhóm như này không ổn lắm, chắc có lẽ kỳ sau tui phải xem lại rồi!</i>
