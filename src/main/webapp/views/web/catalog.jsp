@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="<c:url value='/template/web/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/dividePage.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
 
 
@@ -242,7 +243,9 @@
                         </div>
                     </c:forEach>
                 </div>
-
+                <div class="num-page" style="display: flex;justify-content: center;margin-top: 3rem;">
+                    <ul class="pagination" id="pagination" style="font-size: 2rem;"></ul>
+                </div>
             </div>
         </div>
     </div>
@@ -335,6 +338,7 @@
     AOS.init();
 </script>
 <script src="<c:url value='/template/web/js/appfunction.js' />"></script>
+<script src="<c:url value='/template/web/js/dividePage.js' />"></script>
 
 </body>
 
