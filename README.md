@@ -4,10 +4,7 @@
 
 - Tìm hiểu AJAX
 - Tìm hiểu phân trang (video hướng dẫn của thầy Long).
-- Vấn đề push/pull code. Tui hy vọng rằng mấy ông có thể push code ít nhất 2 lần 1 ngày, để công việc giao trên này thuận lợi hơn
 
-
-<h1>* Bởi vì để công việc chung thì k ai làm nên tôi chia ra như sau</h1>
 
 
 <h2> - Trần Đình Danh</h2>
