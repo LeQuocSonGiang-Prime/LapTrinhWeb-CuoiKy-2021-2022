@@ -192,65 +192,67 @@
     </div>
 
     <!-- CATALOG -->
-    <div class="content">
-        <div class="grid wide">
-            <div class="buy ">
-                <div class="select">
-                    <select class="select-option">
-                        <option disabled selected>ALL</option>
-                        <option value="">Thiên Nhiên</option>
-                        <option value="">Ấm Cúng</option>
-                        <option value="">Studio</option>
-                        <option value="">Sang Trọng</option>
-                    </select>
-                    <select class="select-option">
-                        <option disabled selected>Tỉnh-Thành Phố</option>
-                        <option value="">Hồ Chí Minh</option>
-                        <option value="">Đà Lạt</option>
-                        <option value="">Vũng Tàu</option>
-                        <option value="">Nha Trang</option>
-                        <option value="">Phú Quốc</option>
-                        <option value="">Bình Định</option>
+    <form action="<c:url value='/danh-muc' />" id="data-catalog">
+        <div class="content">
+            <div class="grid wide">
+                <div class="buy ">
+                    <div class="select">
+                        <select class="select-option">
+                            <option disabled selected>ALL</option>
+                            <option value="">Thiên Nhiên</option>
+                            <option value="">Ấm Cúng</option>
+                            <option value="">Studio</option>
+                            <option value="">Sang Trọng</option>
+                        </select>
+                        <select class="select-option">
+                            <option disabled selected>Tỉnh-Thành Phố</option>
+                            <option value="">Hồ Chí Minh</option>
+                            <option value="">Đà Lạt</option>
+                            <option value="">Vũng Tàu</option>
+                            <option value="">Nha Trang</option>
+                            <option value="">Phú Quốc</option>
+                            <option value="">Bình Định</option>
 
-                    </select>
-                    <!-- <div class="slider-bar">
-                        <input type="range" min="0" max="1000" class="slider-bar-price">
-                        <div>1000$</div>
-                    </div> -->
+                        </select>
+                        <!-- <div class="slider-bar">
+                            <input type="range" min="0" max="1000" class="slider-bar-price">
+                            <div>1000$</div>
+                        </div> -->
 
-                    <button>Tìm Kiếm</button>
-                </div>
-                <h1 class="buy-title"><span>Lựa Chọn</span> Yêu Thích</h1>
-                <div class="row">
-                    <jsp:useBean id="model" scope="request" type="vn.edu.hcmuaf.fit.model.AbstractModel"/>
-                    <c:forEach var="item" items="${model.listResult}">
-                        <div class="col l-4 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet">
-                                <img src="${item.image}" alt="" class="buy-img">
-                                <h6 class="buy-item-price" style="--h:#74b9ff">${item.price}đ / Ngày</h6>
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">${item.name}</h5>
-                                    <h6>${item.address}</h6>
-                                    <ul class="buy-item-list">
-                                        <c:set var="d" value="${fn:split(item.detail,',')}"/>
-                                        <li class="list-room">${d[0]}</li>
-                                        <li class="list-room">${d[1]}</li>
-                                        <li class="list-room">${d[2]}</li>
-                                    </ul>
-                                    <p class="buy-text">${item.tutorial}</p>
-                                </div>
-                            </a>
-                        </div>
-                    </c:forEach>
-                </div>
-                <div class="num-page" style="display: flex;justify-content: center;margin-top: 3rem;">
-                    <ul class="pagination" id="pagination" style="font-size: 2rem;"></ul>
+                        <button>Tìm Kiếm</button>
+                    </div>
+                    <h1 class="buy-title"><span>Lựa Chọn</span> Yêu Thích</h1>
+                    <div class="row">
+                        <jsp:useBean id="model" scope="request" type="vn.edu.hcmuaf.fit.model.AbstractModel"/>
+                        <c:forEach var="item" items="${model.listResult}">
+                            <div class="col l-4 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
+                                <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet">
+                                    <img src="${item.image}" alt="" class="buy-img">
+                                    <h6 class="buy-item-price" style="--h:#74b9ff">${item.price}đ / Ngày</h6>
+                                    <div class="buy-info-item">
+                                        <h5 class="buy-item-name">${item.name}</h5>
+                                        <h6>${item.address}</h6>
+                                        <ul class="buy-item-list">
+                                            <c:set var="d" value="${fn:split(item.detail,',')}"/>
+                                            <li class="list-room">${d[0]}</li>
+                                            <li class="list-room">${d[1]}</li>
+                                            <li class="list-room">${d[2]}</li>
+                                        </ul>
+                                        <p class="buy-text">${item.tutorial}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </c:forEach>
+                    </div>
+                    <div class="num-page" style="display: flex;justify-content: center;margin-top: 3rem;">
+                        <ul class="pagination" id="pagination" style="font-size: 2rem;"></ul>
+                    </div>
+                    <input type="hidden" name="currentPage" id="input-currentPage" value="">
+                    <input type="hidden" name="">
                 </div>
             </div>
         </div>
-    </div>
-
-
+    </form>
     <!-- FOOTER -->
     <footer class="footer">
         <div class="grid wide">

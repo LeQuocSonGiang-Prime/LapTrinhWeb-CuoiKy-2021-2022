@@ -40,7 +40,6 @@ function showNumPage() {
 
 showNumPage()
 
-
 for (let i = 0; i < numPage.length; i++) {
     numPage[i].children[0].onclick = function () {
         if (!numPage[i].classList.contains("active")) {
@@ -52,6 +51,7 @@ for (let i = 0; i < numPage.length; i++) {
                 numPage[j].classList.remove("active")
             }
         }
+        setValueForInputPageCurrent()
     }
 }
 
@@ -65,9 +65,7 @@ function clickArrowChangeNumPage(n) {
     }
     numPage[currentPage - 1].classList.add("active");
 
-    if (maxPageShow - minPageShow < 5) {
-
-    }
+    if (maxPageShow - minPageShow < 5) {}
 
     if (currentPage === maxPageShow) {
         arrowElement[1].style.cursor = "not-allowed"
@@ -83,6 +81,25 @@ function clickArrowChangeNumPage(n) {
     } else {
         arrowElement[0].style.cursor = "pointer"
         if (!arrowElement[0].classList.contains("num-page-item-arrow-enable")) arrowElement[0].classList.add("num-page-item-arrow-enable")
-    }
+    } console.log("hehehehe")
+    setValueForInputPageCurrent()
 }
+
+function setValueForInputPageCurrent(){
+    let inputCurrentPage = document.querySelector("#input-currentPage")
+    inputCurrentPage.value = currentPage
+    console.log("hehehehe")
+    //document.querySelector("#data-catalog").submit()
+    let data = $("#data-catalog").serialize()
+    $.ajax({
+        url: "danh-muc",
+        type:"POST",
+        data: data,
+        dataType: "JSON",
+        success(data){
+            
+        }
+    })
+}
+
 

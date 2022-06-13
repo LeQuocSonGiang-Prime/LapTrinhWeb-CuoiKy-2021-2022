@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.controller.web;
 
+import org.json.simple.JSONObject;
 import vn.edu.hcmuaf.fit.model.HouseModel;
 import vn.edu.hcmuaf.fit.service.IHouseService;
 
@@ -10,21 +11,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet(name = "ControllerCatalog", value = "/danh-muc")
 public class ControllerCatalog extends HttpServlet {
     @Inject
     private IHouseService houseService;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         HouseModel houseModel = new HouseModel();
-        houseModel.setListResult(houseService.selectAll());
+        try {
+
+            int currentPageParameter = Integer.parseInt(request.getParameter("currentPage"));
+            houseModel.setListResult(houseService.select24Element(currentPageParameter));
+            JSONObject jsonObject = new JSONObject();
+            List<HouseModel> listHouseModel = houseModel.getListResult();
+            PrintWriter writer = response.getWriter();
+            jsonObject.put("msg",listHouseModel );
+            writer.print(jsonObject.toJSONString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            houseModel.setListResult(houseService.select24Element(1));
+        }
         request.setAttribute("model", houseModel);
 
 
-
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         request.getRequestDispatcher("/views/web/catalog.jsp").forward(request, response);
     }
 

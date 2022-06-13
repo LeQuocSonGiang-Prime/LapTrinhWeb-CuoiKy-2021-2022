@@ -27,7 +27,6 @@ public class SignIn extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-
         JSONObject jsonOb = new JSONObject();
         UserModel user = userService.checkLogin(username, password);
 
@@ -38,24 +37,17 @@ public class SignIn extends HttpServlet {
             // if user has full name
             if (user.getFullName() != null && !user.getFullName().trim().equals("")) {
                 jsonOb.put("name", user.getFullName());
-                System.out.println(user.getFullName());
-                System.out.println("Lê Quốc Sơn Giang");
             } else {
                 jsonOb.put("name", username);
             }
             os.print(jsonOb.toJSONString());
-
-
         } else {
             msg = "3";
             jsonOb.put("msg", msg);
             os.print(jsonOb.toJSONString());
-
-
         }
         os.flush();
         os.close();
     }
-
 
 }

@@ -18,7 +18,9 @@ public class HouseModel extends AbstractModel<HouseModel> implements Serializabl
     private String image;
 
 
-    public HouseModel(){}
+    public HouseModel() {
+    }
+
     public HouseModel(String name, int type, String address, String detail, int price, int salePrice, Date time_Checkin, Date time_Checkout) {
         this.name = name;
         this.type = type;
@@ -117,4 +119,9 @@ public class HouseModel extends AbstractModel<HouseModel> implements Serializabl
     public void setTime_Checkout(Date time_Checkout) {
         this.time_Checkout = time_Checkout;
     }
+
+    public String toString() {
+        return "{name:" + name + ",type:" + type + ",address:" + address + ",detail:" + detail + ",price:" + price + ",salePrice:" + salePrice + ",time_checkin:" + time_Checkin + ",time_checkout:" + time_Checkout + "}";
+    }
+
 }

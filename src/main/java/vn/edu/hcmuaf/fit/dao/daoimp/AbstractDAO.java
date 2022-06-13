@@ -26,7 +26,6 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
         return null;
     }
 
-
     @Override
     public <T> List<T> query(String sql, IRowMapper<T> row, Object... parameter) {
         List<T> result = new ArrayList<T>();
