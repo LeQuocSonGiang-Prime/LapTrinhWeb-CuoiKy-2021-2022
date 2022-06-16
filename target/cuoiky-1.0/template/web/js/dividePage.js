@@ -81,23 +81,24 @@ function clickArrowChangeNumPage(n) {
     } else {
         arrowElement[0].style.cursor = "pointer"
         if (!arrowElement[0].classList.contains("num-page-item-arrow-enable")) arrowElement[0].classList.add("num-page-item-arrow-enable")
-    } console.log("hehehehe")
+    }
     setValueForInputPageCurrent()
 }
 
 function setValueForInputPageCurrent(){
     let inputCurrentPage = document.querySelector("#input-currentPage")
     inputCurrentPage.value = currentPage
-    console.log("hehehehe")
-    //document.querySelector("#data-catalog").submit()
-    let data = $("#data-catalog").serialize()
+
     $.ajax({
-        url: "danh-muc",
-        type:"POST",
-        data: data,
-        dataType: "JSON",
+        url: "ControllerCatalogAjax",
+        type:"get",
+        data: {currentPage : currentPage},
         success(data){
-            
+            $('.row')[0].innerHTML = data
+            console.log(data)
+        },
+        error : function(error){
+            console.log( "error"+error)
         }
     })
 }

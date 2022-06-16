@@ -15,11 +15,12 @@ public class HouseService implements IHouseService {
 
     @Override
     public List<HouseModel> selectAll() {
-        return  houseDAO.selectAll();
+        return houseDAO.selectAll();
     }
 
     @Override
     public List<HouseModel> select24Element(int offSet) {
-        return houseDAO.select24Element(offSet);
+
+        return houseDAO.select24Element((offSet - 1) * 24 + 1);
     }
 }

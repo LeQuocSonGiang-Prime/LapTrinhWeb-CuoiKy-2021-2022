@@ -24,23 +24,25 @@ public class ControllerCatalog extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         HouseModel houseModel = new HouseModel();
-        try {
+        //try {
+//
+//            int currentPageParameter = Integer.parseInt(request.getParameter("currentPage"));
+//            houseModel.setListResult(houseService.select24Element(currentPageParameter));
+//            JSONObject jsonObject = new JSONObject();
+//            List<HouseModel> listHouseModel = houseModel.getListResult();
+//            PrintWriter writer = response.getWriter();
+//            jsonObject.put("listhouse", listHouseModel);
+//            writer.print(jsonObject.toJSONString());
+//            writer.flush();
+//            writer.close();
+//            System.out.println(jsonObject.toJSONString());
+//            System.out.println(listHouseModel.size());
+        //       } catch (Exception e) {
+        //           e.printStackTrace();
+        houseModel.setListResult(houseService.select24Element(1));
 
-            int currentPageParameter = Integer.parseInt(request.getParameter("currentPage"));
-            houseModel.setListResult(houseService.select24Element(currentPageParameter));
-            JSONObject jsonObject = new JSONObject();
-            List<HouseModel> listHouseModel = houseModel.getListResult();
-            PrintWriter writer = response.getWriter();
-            jsonObject.put("msg",listHouseModel );
-            writer.print(jsonObject.toJSONString());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            houseModel.setListResult(houseService.select24Element(1));
-        }
+        //    }
         request.setAttribute("model", houseModel);
-
-
         request.getRequestDispatcher("/views/web/catalog.jsp").forward(request, response);
     }
 

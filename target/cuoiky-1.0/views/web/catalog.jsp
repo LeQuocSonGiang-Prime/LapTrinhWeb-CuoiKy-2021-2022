@@ -225,7 +225,7 @@
                     <div class="row">
                         <jsp:useBean id="model" scope="request" type="vn.edu.hcmuaf.fit.model.AbstractModel"/>
                         <c:forEach var="item" items="${model.listResult}">
-                            <div class="col l-4 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
+                            <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up" data-aos-duration="1000">
                                 <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet">
                                     <img src="${item.image}" alt="" class="buy-img">
                                     <h6 class="buy-item-price" style="--h:#74b9ff">${item.price}đ / Ngày</h6>
