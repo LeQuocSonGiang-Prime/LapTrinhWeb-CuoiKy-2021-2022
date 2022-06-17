@@ -95,7 +95,6 @@ function setValueForInputPageCurrent(){
         data: {currentPage : currentPage},
         success(data){
             $('.row')[0].innerHTML = data
-            console.log(data)
         },
         error : function(error){
             console.log( "error"+error)

@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : MySQL
+ Source Server         : Web
  Source Server Type    : MySQL
  Source Server Version : 100421
  Source Host           : localhost:3306
- Source Schema         : database1
+ Source Schema         : database
 
  Target Server Type    : MySQL
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 20/01/2022 20:43:03
+ Date: 17/06/2022 00:28:40
 */
 
 SET NAMES utf8mb4;
@@ -44,8 +44,8 @@ CREATE TABLE `bill`  (
   `id_bill` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_user` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `time_checkin` datetime NOT NULL,
-  `time_checkout` datetime NOT NULL,
+  `time_checkin` datetime(0) NOT NULL,
+  `time_checkout` datetime(0) NOT NULL,
   PRIMARY KEY (`id_bill`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
@@ -63,7 +63,7 @@ CREATE TABLE `comment`  (
   `id_user` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `comment` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `star` tinyint NOT NULL,
-  `timecmt` datetime NULL DEFAULT NULL,
+  `timecmt` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id_comment`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
@@ -100,15 +100,21 @@ CREATE TABLE `house`  (
   `foryou` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'xem chi tiet trong file rules',
   `price` int NOT NULL,
   `saleprice` int NULL DEFAULT NULL,
-  `time_checkin` datetime NULL DEFAULT NULL,
-  `time_checkout` datetime NULL DEFAULT NULL,
+  `time_checkin` datetime(0) NULL DEFAULT NULL,
+  `time_checkout` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id_house`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of house
 -- ----------------------------
-INSERT INTO `house` VALUES ('HOUSE00000', 'An Nhiên ', '1', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', ' Vũng Tàu', ' 100M², 4 Người, 2 Phòng Ngủ, 2 Giường, 1 Phòng Tắm', '', 0, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('', '', '', '', '', '', '', 0, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE00000', 'Phú Thuận', '4', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên làng đại học', 'tp.Thủ Đức, tp.Hồ Chí Minh', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 279, NULL, '2022-04-10 03:33:37', '2022-04-10 03:33:37');
+INSERT INTO `house` VALUES ('HOUSE00001', 'An Nhiên ', '1', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', ' Vũng Tàu', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 200, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE00002', 'Jubiter Long An', '2', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 199, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE00003', 'APPS Hà Nội', '3', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Hà Nội', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 299, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE00004', 'TURAL Bình Định', '2', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Bình Định', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 349, NULL, NULL, NULL);
+INSERT INTO `house` VALUES ('HOUSE00005', 'DIUQWGDIQWG', '2', 'CIJQAWGDIYUASGDCIASB', 'ICHWUICGHQWUICG', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 564, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for image_house
@@ -117,15 +123,21 @@ DROP TABLE IF EXISTS `image_house`;
 CREATE TABLE `image_house`  (
   `id_image` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `alt` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `image` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `alt` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_image`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of image_house
 -- ----------------------------
-INSERT INTO `image_house` VALUES ('IMAGED1001', 'HOUSE10002', 'efded', 'dsdsdsd');
+INSERT INTO `image_house` VALUES ('', '', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2FLamarStorm_', NULL);
+INSERT INTO `image_house` VALUES ('IMAGE10002', 'HOUSE00002', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-10.jpg?alt=media&token=25579f33-b3dc-42b0-b7a1-6beba295edcd', 'QWEDQWD');
+INSERT INTO `image_house` VALUES ('IMAGE10003', 'HOUSE00003', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-item3.jpg?alt=media&token=c46d5ab8-fcac-45d0-8b3f-b824906c08bc', 'RGE');
+INSERT INTO `image_house` VALUES ('IMAGE10043', 'HOUSE00005', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-26.jpg?alt=media&token=85b072d2-2064-42e2-9523-28c4480bc416', 'GIANG');
+INSERT INTO `image_house` VALUES ('IMAGE20004', 'HOUSE00004', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-12.jpg?alt=media&token=61e24745-e494-400b-9c1c-3469eae48f2f', 'DGWUI\\');
+INSERT INTO `image_house` VALUES ('IMAGE20398', 'HOUSE00000', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-11.jpg?alt=media&token=c7d9b314-5346-486b-8518-9ea8fdc8608a', 'TUYET');
+INSERT INTO `image_house` VALUES ('IMAGED1001', 'HOUSE00001', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-1.jpg?alt=media&token=3f06eab3-0a46-4e02-9b5b-b0937fec96ff', 'img1');
 
 -- ----------------------------
 -- Table structure for place
@@ -141,7 +153,7 @@ CREATE TABLE `place`  (
 -- Records of place
 -- ----------------------------
 INSERT INTO `place` VALUES ('PLACE00001', 'Nhiếp ảnh gia cá nhân của bạn tại Hà Nội');
-INSERT INTO `place` VALUES ('PLACE00002', "Hanoi's urban art galleries&best Pho");
+INSERT INTO `place` VALUES ('PLACE00002', 'Hanoi\'s urban art galleries&best Pho');
 INSERT INTO `place` VALUES ('PLACE00003', 'HaLong Bay One Day Tour From Hanoi');
 INSERT INTO `place` VALUES ('PLACE00004', 'Chuyến đi đến những khu vực hẻo lánh nhất của Hà Giang');
 INSERT INTO `place` VALUES ('PLACE00005', 'Tonkin Adventure - Hidden Hanoi with Local');
@@ -161,7 +173,7 @@ INSERT INTO `place` VALUES ('PLACE00018', 'Khám phá sáng sớm Hà Nội bằ
 INSERT INTO `place` VALUES ('PLACE00019', 'Hoa Lu- Mua Cave-Tam Coc Luxury Trip');
 INSERT INTO `place` VALUES ('PLACE00020', 'Bai Dinh Pagoda- Trang An Boat Cave Tour');
 INSERT INTO `place` VALUES ('PLACE00021', 'Ultimate Street Tour on a Motorbike');
-INSERT INTO `place` VALUES ('PLACE00022', "Hanoi's Vegan Culinary Treasures");
+INSERT INTO `place` VALUES ('PLACE00022', 'Hanoi\'s Vegan Culinary Treasures');
 INSERT INTO `place` VALUES ('PLACE00023', 'French culture & Maison Centrale');
 INSERT INTO `place` VALUES ('PLACE00024', 'Ultimate Street Tour on a Motorbike');
 
@@ -173,8 +185,8 @@ CREATE TABLE `request_booking`  (
   `id_request` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `id_user` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `time_checkin` datetime NOT NULL,
-  `time_checkout` datetime NOT NULL,
+  `time_checkin` datetime(0) NOT NULL,
+  `time_checkout` datetime(0) NOT NULL,
   PRIMARY KEY (`id_request`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
@@ -202,5 +214,10 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('USER000001', 'ewfwefwe', '847dc0f7420f7d9b30abccf8729bd028', 'efe', 'fwef', NULL, NULL, NULL, 0);
+INSERT INTO `user` VALUES ('USER000002', 'ewfwefwe', '847dc0f7420f7d9b30abccf8729bd028', 'efe', 'fwef', NULL, NULL, NULL, 0);
+INSERT INTO `user` VALUES ('USER000003', 'ewfwefwe', '847dc0f7420f7d9b30abccf8729bd028', 'efe', 'fwef', NULL, NULL, NULL, 0);
+INSERT INTO `user` VALUES ('USER000004', 'ewfwefwe', '847dc0f7420f7d9b30abccf8729bd028', 'efe', 'fwef', NULL, NULL, NULL, 0);
+INSERT INTO `user` VALUES ('USER000005', 'ewfwefwe', '847dc0f7420f7d9b30abccf8729bd028', 'efe', 'fwef', NULL, NULL, NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
