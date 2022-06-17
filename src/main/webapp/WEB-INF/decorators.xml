@@ -3,7 +3,7 @@
 <!--    <excludes>-->
 <!--        <pattern>/404-page.html</pattern>-->
 <!--    </excludes>-->
-<!--    <decorator name="admin" page="admin.jsp">-->
+<!--    <decorator name="admin" page="home.jsp">-->
 <!--        <pattern>/admin*</pattern>-->
 <!--    </decorator>-->
 <!--    <decorator name="public" page="web.jsp">-->

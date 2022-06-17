@@ -13,7 +13,7 @@ public class ControllerAdminServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/home.jsp").forward(request, response);
     }
 
     @Override
