@@ -17,6 +17,6 @@
 
 - validate form signin,signup, check email is exists
 - hoàn thành các trang: Trải nghiệm, dịch vụ, liên hệ (front-end lẫn back-end)
-
+- code trang USER, trang này có nhiệm vụ là hiển thị thông tin người dùng, có 1 số các chức năng như, update user, xem thông tin người dùng, xem nhà đặt v.v...
 <h1>###########################</h1>
 

@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="<c:url value='/template/admin/select2/select2.min.css'/>">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="<c:url value='/template/admin/css/util.css'/>">
-    <link rel="stylesheet" href="<c:url value='/template/admin/css/main.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/admin/css/login.css'/>">
     <!--===============================================================================================-->
 </head>
 <body>
@@ -40,7 +40,7 @@
                 <img src="<c:url value='/template/admin/images/img-01.png'/>" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form">
+            <form class="login100-form validate-form" id="form-login">
 					<span class="login100-form-title">
 						Admin Login
 					</span>
@@ -54,15 +54,19 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <input class="input100" type="password" name="password" placeholder="Password" id="password">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
                 </div>
 
+                <div style="display: none;justify-content:center;" id="mess-err">
+                    <p style="color: red; font-family: 'Roboto', sans-serif;">Email or Password is incorrect</p>
+                </div>
+
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                    <button class="login100-form-btn" id="btn-login">
                         Login
                     </button>
                 </div>
@@ -95,6 +99,6 @@
     })
 </script>
 <!--===============================================================================================-->
-<script src="<c:url value='/template/admin/js/main.js'/>"></script>
+<script src="<c:url value='/template/admin/js/login.js'/>"></script>
 </body>
 </html>

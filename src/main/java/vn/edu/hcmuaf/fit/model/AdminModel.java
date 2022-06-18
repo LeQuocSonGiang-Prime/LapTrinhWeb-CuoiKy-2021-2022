@@ -6,10 +6,23 @@ public class AdminModel implements Serializable {
 
     private String username;
     private String password;
+    private String avatar;
+    private String name;
 
-    public AdminModel(String username, String password) {
+    public AdminModel(){}
+    public AdminModel(String username, String password, String avatar,String name) {
         this.username = username;
         this.password = password;
+        this.avatar = avatar;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {
@@ -26,5 +39,13 @@ public class AdminModel implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }
