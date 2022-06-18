@@ -7,6 +7,7 @@
     var input = $('.validate-input .input100');
 
     $('.validate-form').on('submit', function (e) {
+        e.preventDefault();
 
         var check = true;
         for (var i = 0; i < input.length; i++) {
@@ -16,16 +17,16 @@
             }
         }
         if(check===true){
-            e.preventDefault();
             let data = $("#form-login").serialize()
             $.ajax({
-                url:"servletLogin",
+                url:"loginAdmin",
                 type:"get",
                 data:data,
                 success(data){
                     if (data === "1"){
                         $('#password').val('')
                         $('#mess-err').css("display", "flex")
+                        console.log("dang nhap sai")
                     }
                 },
                 error(e){

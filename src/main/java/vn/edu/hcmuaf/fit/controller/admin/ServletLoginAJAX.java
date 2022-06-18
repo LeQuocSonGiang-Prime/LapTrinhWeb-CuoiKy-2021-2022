@@ -14,30 +14,27 @@ import java.io.PrintWriter;
 public class ServletLoginAJAX extends HttpServlet {
     @Inject
     private IAdminService adminService;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         String email = request.getParameter("email");
-        PrintWriter send = response.getWriter();
         String password = request.getParameter("password");
-        if(adminService.checkLogin(email,password) == null){ // dang nhap sai
+        PrintWriter send = response.getWriter();
+        if (adminService.checkLogin(email, password) == null) { // dang nhap sai
             send.print("1");
-        }else{
-            send.print("2");
-            try{
-                request.getRequestDispatcher("/views/admin/home.jsp").forward(request, response);
-                System.out.println("success");
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-
+            send.close();
+        } else {
+            //send.print("2");
+            send.close();
+            response.sendRedirect("admin-trang-chu");
+            return;
         }
-        response.sendRedirect("admin-trang-chu");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 }

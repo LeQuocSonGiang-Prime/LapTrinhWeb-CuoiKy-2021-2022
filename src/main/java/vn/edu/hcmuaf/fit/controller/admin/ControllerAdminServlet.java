@@ -14,6 +14,7 @@ public class ControllerAdminServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         request.getRequestDispatcher("/views/admin/home.jsp").forward(request, response);
+       // response.sendRedirect("loginAdmin");
     }
 
     @Override
