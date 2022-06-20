@@ -29,10 +29,12 @@ public class ControllerLoginAdmin extends HttpServlet {
                 send.print("2");
                 send.close();
                 System.out.println("success");
-                response.sendRedirect("admin-trang-chu");
+                String  s= "/views/admin/home.jsp";
+                request.getRequestDispatcher(s).forward(request,response);
                 return;
             }
         } else {
+            System.out.println("fail");
             request.getRequestDispatcher("/views/admin/login.jsp").forward(request, response);
         }
 
