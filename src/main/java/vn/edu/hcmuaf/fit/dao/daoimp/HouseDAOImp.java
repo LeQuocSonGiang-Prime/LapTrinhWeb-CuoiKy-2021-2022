@@ -10,13 +10,13 @@ public class HouseDAOImp extends AbstractDAO<HouseModel> implements IHouseDAO {
 
     @Override
     public List<HouseModel> selectAll() {
-        String sql = "SELECT name, type, tutorial, address, detail, foryou, price, saleprice, time_checkin, time_checkout, image FROM house LEFT JOIN image_house ON image_house.id_house = house.id_house";
+        String sql = "SELECT name, type, tutorial, address, detail, foryou, price, saleprice, image FROM house LEFT JOIN image_house ON image_house.id_house = house.id_house";
         return query(sql, new HouseMapper());
     }
 
     @Override
     public List<HouseModel> select24Element(int offSet) {
-        String sql = "SELECT name, type, tutorial, address, detail, foryou, price, saleprice, time_checkin, time_checkout, image FROM house LEFT JOIN image_house ON image_house.id_house = house.id_house LIMIT ?, 24";
+        String sql = "SELECT name, type, tutorial, address, detail, foryou, price, saleprice, image FROM house LEFT JOIN image_house ON image_house.id_house = house.id_house LIMIT ?, 24";
         return query(sql, new HouseMapper(), offSet);
     }
 }

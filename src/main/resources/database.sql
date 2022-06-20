@@ -46,6 +46,7 @@ CREATE TABLE `bill`  (
   `id_house` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `time_checkin` datetime(0) NOT NULL,
   `time_checkout` datetime(0) NOT NULL,
+  `time_order` datetime(0) NOT NULL,
   PRIMARY KEY (`id_bill`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 

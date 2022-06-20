@@ -1,11 +1,14 @@
 package vn.edu.hcmuaf.fit.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class HouseModel extends AbstractModel<HouseModel> implements Serializable {
 
     private String name;
+    private String id;
     private int type;
     private String tutorial;
     private String address;
@@ -13,23 +16,27 @@ public class HouseModel extends AbstractModel<HouseModel> implements Serializabl
     private String forYou;
     private int price;
     private int salePrice;
-    private Date time_Checkin;
-    private Date time_Checkout;
     private String image;
 
 
     public HouseModel() {
     }
 
-    public HouseModel(String name, int type, String address, String detail, int price, int salePrice, Date time_Checkin, Date time_Checkout) {
+    public HouseModel(String name, int type, String address, String detail, int price, int salePrice) {
         this.name = name;
         this.type = type;
         this.address = address;
         this.detail = detail;
         this.price = price;
         this.salePrice = salePrice;
-        this.time_Checkin = time_Checkin;
-        this.time_Checkout = time_Checkout;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getImage() {
@@ -104,24 +111,8 @@ public class HouseModel extends AbstractModel<HouseModel> implements Serializabl
         this.salePrice = salePrice;
     }
 
-    public Date getTime_Checkin() {
-        return time_Checkin;
-    }
-
-    public void setTime_Checkin(Date time_Checkin) {
-        this.time_Checkin = time_Checkin;
-    }
-
-    public Date getTime_Checkout() {
-        return time_Checkout;
-    }
-
-    public void setTime_Checkout(Date time_Checkout) {
-        this.time_Checkout = time_Checkout;
-    }
-
     public String toString() {
-        return "{name:" + name + ",type:" + type + ",address:" + address + ",detail:" + detail + ",price:" + price + ",salePrice:" + salePrice + ",time_checkin:" + time_Checkin + ",time_checkout:" + time_Checkout + "}";
+        return "{name:" + name + ",type:" + type + ",address:" + address + ",detail:" + detail + ",price:" + price + ",salePrice:" + salePrice + "}";
     }
 
 }

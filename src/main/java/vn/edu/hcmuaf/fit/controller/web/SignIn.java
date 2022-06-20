@@ -26,7 +26,7 @@ public class SignIn extends HttpServlet {
         PrintWriter os = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
+        response.sendRedirect("loginAdmin");
         JSONObject jsonOb = new JSONObject();
         UserModel user = userService.checkLogin(username, password);
 
@@ -48,6 +48,7 @@ public class SignIn extends HttpServlet {
         }
         os.flush();
         os.close();
+
     }
 
 }

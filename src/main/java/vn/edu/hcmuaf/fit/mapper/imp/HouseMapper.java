@@ -13,6 +13,7 @@ public class HouseMapper implements IRowMapper<HouseModel> {
     public HouseModel mapRow(ResultSet resultSet) {
         try {
             HouseModel house = new HouseModel();
+            house.setId(resultSet.getString("id_house"));
             house.setName(resultSet.getString("name"));
             house.setType(resultSet.getInt("type"));
             house.setTutorial(resultSet.getString("tutorial"));
@@ -21,8 +22,6 @@ public class HouseMapper implements IRowMapper<HouseModel> {
             house.setForYou(resultSet.getString("foryou"));
             house.setPrice(resultSet.getInt("price"));
             house.setSalePrice(resultSet.getInt("saleprice"));
-            house.setTime_Checkin(resultSet.getDate("time_checkin"));
-            house.setTime_Checkout(resultSet.getDate("time_checkout"));
             house.setImage(resultSet.getString("image"));
             return house;
         } catch (SQLException e) {
