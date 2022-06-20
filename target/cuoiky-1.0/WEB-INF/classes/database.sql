@@ -11,7 +11,7 @@
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 17/06/2022 00:28:40
+ Date: 20/06/2022 12:24:28
 */
 
 SET NAMES utf8mb4;
@@ -23,18 +23,20 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin`  (
   `id_admin` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `avatar` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_admin`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES ('', '', '');
-INSERT INTO `admin` VALUES ('ADMIN00001', 'songiang123', '123456789');
-INSERT INTO `admin` VALUES ('ADMIN00002', 'congdanh456', '123456789');
-INSERT INTO `admin` VALUES ('ADMIN00003', 'dinhdanh789', '123456789');
+INSERT INTO `admin` VALUES ('', '', '', '', NULL);
+INSERT INTO `admin` VALUES ('ADMIN00001', 'SƠN GIANG', 'lequocsongiang@gmail.com', '12', NULL);
+INSERT INTO `admin` VALUES ('ADMIN00002', 'CÔNG DANH', 'congdanh456', '12', NULL);
+INSERT INTO `admin` VALUES ('ADMIN00003', 'ĐÌNH DANH', 'dinhdanh789', '12', NULL);
 
 -- ----------------------------
 -- Table structure for bill
