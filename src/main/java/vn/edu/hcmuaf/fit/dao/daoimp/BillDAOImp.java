@@ -10,6 +10,7 @@ import java.util.List;
 public class BillDAOImp extends AbstractDAO<BillModel>  implements IBillDAO {
     @Override
     public int totalBill() {
+        System.out.println("totalBill: "+sizeTable(2));
         return sizeTable(2);
     }
 
@@ -33,5 +34,11 @@ public class BillDAOImp extends AbstractDAO<BillModel>  implements IBillDAO {
     public List<BillModel> findBillByUser(String id_user) {
         String sql = "SELECT id_bill, id_house, email, time_checkin, time_checkout, time_order FROM bill INNER JOIN user WHERE user.id_user = bill.id_user AND bill.id_user = ?";
         return query(sql, new BillMapper(), id_user);
+    }
+
+    @Override
+    public List<BillModel> newBill() {
+        String sql = "SELECT * FROM bill WHERE time_checkout > CURRENT_DATE";
+        return query(sql, new BillMapper());
     }
 }

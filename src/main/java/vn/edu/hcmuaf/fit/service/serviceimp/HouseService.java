@@ -23,4 +23,14 @@ public class HouseService implements IHouseService {
 
         return houseDAO.select24Element((offSet - 1) * 24 + 1);
     }
+
+    @Override
+    public int totalHouse() {
+        return houseDAO.totalHouse();
+    }
+
+    @Override
+    public HouseModel selectHouseById(String id_house) {
+        return houseDAO.selectById(id_house);
+    }
 }

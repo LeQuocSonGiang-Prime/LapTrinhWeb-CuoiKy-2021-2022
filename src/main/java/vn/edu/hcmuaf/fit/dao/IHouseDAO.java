@@ -13,5 +13,9 @@ public interface IHouseDAO extends IGenericDAO<HouseModel> {
 
     List<HouseModel> select24Element(int offSet);
 
+    int totalHouse();
+
+    HouseModel selectById(String id_house);
+
 
 }

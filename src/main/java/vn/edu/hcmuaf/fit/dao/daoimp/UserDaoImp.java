@@ -18,6 +18,11 @@ public class UserDaoImp extends AbstractDAO<UserModel> implements IUserDAO {
     }
 
     @Override
+    public int totalUser() {
+        return sizeTable(7);
+    }
+
+    @Override
     public List<UserModel> getUserByUsernamePassword(String username, String password) {
         String sql = "SELECT * FROM user WHERE username = ? AND password = ? AND status = 1";
         return query(sql, new UserMapper(), username, password);
@@ -59,6 +64,12 @@ public class UserDaoImp extends AbstractDAO<UserModel> implements IUserDAO {
     }
 
     @Override
+    public UserModel selectById(String id_user) {
+        String sql = "SELECT * FROM user WHERE id_user = ?";
+        return query(sql, new UserMapper(), id_user).get(0);
+    }
+
+    @Override
     public void deleteUser(UserModel user) {
 
     }
@@ -75,8 +86,8 @@ public class UserDaoImp extends AbstractDAO<UserModel> implements IUserDAO {
         String next_id = "USER" + next_number_id;
         //CHECK ID is EXISTS
         UserModel userExit = getUserById(next_id);
-        System.out.println("userExit:"+userExit);
-        System.out.println("ID user:"+next_id);
+        System.out.println("userExit:" + userExit);
+        System.out.println("ID user:" + next_id);
         int i = 0;
         while (userExit != null) {
             i++;

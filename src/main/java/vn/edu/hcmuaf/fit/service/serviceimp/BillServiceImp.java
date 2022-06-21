@@ -11,6 +11,12 @@ public class BillServiceImp implements IBillService {
 
     @Inject
     private IBillDAO billDAO;
+
+    @Override
+    public int totalBill() {
+        return billDAO.totalBill();
+    }
+
     @Override
     public int totalBillOfUser(String id_user) {
         return billDAO.totalBillOfUser(id_user);
@@ -29,5 +35,10 @@ public class BillServiceImp implements IBillService {
     @Override
     public List<BillModel> findBillByHouse(String id_house) {
         return billDAO.findBillByHouse(id_house);
+    }
+
+    @Override
+    public List<BillModel> newBill() {
+        return billDAO.newBill();
     }
 }

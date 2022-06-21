@@ -19,4 +19,15 @@ public class HouseDAOImp extends AbstractDAO<HouseModel> implements IHouseDAO {
         String sql = "SELECT name, type, tutorial, address, detail, foryou, price, saleprice, image FROM house LEFT JOIN image_house ON image_house.id_house = house.id_house LIMIT ?, 24";
         return query(sql, new HouseMapper(), offSet);
     }
+
+    @Override
+    public int totalHouse() {
+        return sizeTable(5);
+    }
+
+    @Override
+    public HouseModel selectById(String id_house) {
+        String sql = "SELECT * FROM house WHERE id_house = ?";
+        return query(sql, new HouseMapper(),id_house).get(0);
+    }
 }

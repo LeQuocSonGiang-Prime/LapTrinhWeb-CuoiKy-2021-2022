@@ -3,8 +3,10 @@ package vn.edu.hcmuaf.fit.service;
 import vn.edu.hcmuaf.fit.model.UserModel;
 
 
-
 public interface IUserService {
+
+    int totalUser();
+
     UserModel checkLogin(String username, String password);
 
     boolean checkUserExist(String email);
@@ -14,4 +16,6 @@ public interface IUserService {
     void updateUser(UserModel user);
 
     void activateUser(String email);
+
+    UserModel selectById(String id_user);
 }

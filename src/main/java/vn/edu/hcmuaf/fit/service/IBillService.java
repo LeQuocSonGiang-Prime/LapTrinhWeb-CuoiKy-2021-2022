@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface IBillService {
 
+    int totalBill();
+
     int totalBillOfUser(String id_user);
 
     int totalBillOfHouse(String id_house);
@@ -13,5 +15,7 @@ public interface IBillService {
     List<BillModel> findBillByUser(String id_user);
 
     List<BillModel> findBillByHouse(String id_house);
+
+    List<BillModel> newBill();
 
 }

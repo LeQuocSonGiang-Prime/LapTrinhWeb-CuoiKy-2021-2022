@@ -10,6 +10,8 @@ public interface IUserDAO extends IGenericDAO<UserModel>{
 
      List<UserModel> findAll();
 
+     int totalUser();
+
      List<UserModel> getUserByUsernamePassword(String username, String password);
 
      /**
@@ -27,4 +29,6 @@ public interface IUserDAO extends IGenericDAO<UserModel>{
      void deleteUser(UserModel user);
      void insertUser(UserModel user);
      void activateUser(String email);
+
+     UserModel selectById(String id_user);
 }

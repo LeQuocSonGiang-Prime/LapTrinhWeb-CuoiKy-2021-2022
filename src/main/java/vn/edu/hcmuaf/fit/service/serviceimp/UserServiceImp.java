@@ -15,6 +15,11 @@ public class UserServiceImp implements IUserService {
     private IUserDAO userDAO;
 
     @Override
+    public int totalUser() {
+        return userDAO.totalUser();
+    }
+
+    @Override
     public UserModel checkLogin(String username, String password) {
         if (userDAO.getUserByUsernamePassword(username, hashPasword(password)).size() > 0) {
             return userDAO.getUserByUsernamePassword(username, hashPasword(password)).get(0);
@@ -44,6 +49,11 @@ public class UserServiceImp implements IUserService {
     @Override
     public void activateUser(String email) {
         userDAO.activateUser(email);
+    }
+
+    @Override
+    public UserModel selectById(String id_user) {
+        return userDAO.selectById(id_user);
     }
 
     private String hashPasword(String pass) {

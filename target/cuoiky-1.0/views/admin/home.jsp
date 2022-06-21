@@ -28,6 +28,11 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <% String totalBill = ""+ request.getAttribute("totalBill"); %>
+
+
+
 </head>
 <body>
 <!-- NAVBAR -->
@@ -37,7 +42,7 @@
     </div>
     <div class="admin-info">
         <img src="https://image-us.24h.com.vn/upload/1-2021/images/2021-03-18/gia-nhap-duong-dua-bikini-tieu-thu-ha-noi-chiem-tron-song-bb9-5639403-1616037657-573-width800height999.jpg" alt="">
-        <h3>ADMIN</h3>
+        <h3>${adminCurrent.name}</h3>
         <div class="admin-info-icon">
             <i class="ti-user"></i>
             <i class="ti-email"></i>
@@ -92,7 +97,7 @@
                 <i class="ti-email"></i>
             </div>
             <div class="profile-admin-info">
-                <span>ADMIN</span>
+                <span></span>
                 <i class="ti-angle-down"></i>
             </div>
             <div class="profile-admin-icon">
@@ -108,8 +113,8 @@
                     <i class="ti-layers-alt"></i>
                 </div>
                 <div class="box-info">
-                    <span>Đơn Hàng</span>
-                    <span>280</span>
+                    <span>Order</span>
+                    <span style="font-size: 3rem;"><%= request.getAttribute("totalBill")%></span>
                     <span><i class="ti-arrow-up"></i>60%</span>
                 </div>
             </div>
@@ -118,8 +123,8 @@
                     <i class="ti-shopping-cart"></i>
                 </div>
                 <div class="box-info">
-                    <span>Đặt Chỗ Mới</span>
-                    <span>19</span>
+                    <span>User</span>
+                    <span style="font-size: 3rem;"><%= request.getAttribute("totalUser")%></span>
                     <span><i class="ti-arrow-up"></i>30% </span>
                 </div>
             </div>
@@ -128,8 +133,8 @@
                     <i class="ti-eye"></i>
                 </div>
                 <div class="box-info">
-                    <span>Kiểm Tra</span>
-                    <span>28</span>
+                    <span>House</span>
+                    <span style="font-size: 3rem;"><%= request.getAttribute("totalHouse")%></span>
                     <span><i class="ti-arrow-up"></i>20%</span>
                 </div>
             </div>
@@ -138,8 +143,8 @@
                     <i class="ti-money"></i>
                 </div>
                 <div class="box-info">
-                    <span>Thu Nhập</span>
-                    <span>280</span>
+                    <span>Maintenance</span>
+                    <span style="font-size: 3rem;">280</span>
                     <span><i class="ti-arrow-up"></i>10%</span>
                 </div>
             </div>
@@ -151,8 +156,8 @@
                 <tr>
                     <th>STT</th>
                     <th>Họ Và Tên</th>
-                    <th>Nhận Phòng</th>
-                    <th>Trả Phòng</th>
+                    <th>Ngày Nhận</th>
+                    <th>Ngày Trả</th>
                     <th>Trạng Thái</th>
                     <th>Điện Thoại</th>
                     <th>Chỉnh Sửa</th>

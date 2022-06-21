@@ -10,4 +10,8 @@ public interface IHouseService {
 
     List<HouseModel> select24Element(int offSet);
 
+    int totalHouse();
+
+    HouseModel selectHouseById(String id_house);
+
 }

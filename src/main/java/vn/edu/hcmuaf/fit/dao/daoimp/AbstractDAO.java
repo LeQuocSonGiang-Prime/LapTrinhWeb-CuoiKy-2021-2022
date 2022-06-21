@@ -106,6 +106,7 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
         String sqlAdmin = "SELECT COUNT(*) FROM admin";
         String sqlFavourite = "SELECT COUNT(*) FROM favourite";
         String sqlComment = "SELECT COUNT(*) FROM comment";
+        String sqlRequstBooking = "SELECT COUNT(*) FROM request_booking";
         Connection connection = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
@@ -132,6 +133,9 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
                     break;
                 case 7:
                     stm = connection.prepareStatement(sqlUser);
+                    break;
+                case 8:
+                    stm = connection.prepareStatement(sqlRequstBooking);
                     break;
             }
             assert stm != null;
