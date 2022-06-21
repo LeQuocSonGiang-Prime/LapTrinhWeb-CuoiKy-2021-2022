@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class HouseModel extends AbstractModel<HouseModel> implements Serializable {
+public class HouseModel implements Serializable {
 
     private String name;
     private String id;
@@ -17,6 +17,8 @@ public class HouseModel extends AbstractModel<HouseModel> implements Serializabl
     private int price;
     private int salePrice;
     private String image;
+
+    private List<HouseModel> listResult;
 
 
     public HouseModel() {
@@ -109,6 +111,14 @@ public class HouseModel extends AbstractModel<HouseModel> implements Serializabl
 
     public void setSalePrice(int salePrice) {
         this.salePrice = salePrice;
+    }
+
+    public List<HouseModel> getListResult() {
+        return listResult;
+    }
+
+    public void setListResult(List<HouseModel> listResult) {
+        this.listResult = listResult;
     }
 
     public String toString() {

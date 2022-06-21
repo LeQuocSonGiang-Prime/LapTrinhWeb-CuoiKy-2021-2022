@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.fit.controller.admin;
 
 import vn.edu.hcmuaf.fit.model.AdminModel;
+import vn.edu.hcmuaf.fit.model.BillModel;
 import vn.edu.hcmuaf.fit.service.IBillService;
 import vn.edu.hcmuaf.fit.service.IHouseService;
 import vn.edu.hcmuaf.fit.service.IUserService;
@@ -28,6 +29,12 @@ public class ControllerAdminServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
+
+        BillModel billModel = new BillModel();
+        billModel.setTotalBill(billService.totalBill());
+        billModel.setListNewBill(billService.newBill());
+        request.setAttribute("bill", billModel);
+
         request.setAttribute("adminCurrent", adminCurent);
         request.setAttribute("totalBill", billService.totalBill());
         request.setAttribute("totalHouse", houseService.totalHouse());

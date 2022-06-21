@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.fit.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class BillModel implements Serializable {
 
@@ -10,6 +11,10 @@ public class BillModel implements Serializable {
     private Date time_Checkin;
     private Date time_Checkout;
     private Date time_Order;
+
+    private List<BillModel> listNewBill;
+    private List<BillModel> listBill;
+    private int totalBill;
 
     public BillModel(){}
 
@@ -51,5 +56,29 @@ public class BillModel implements Serializable {
 
     public void setTime_Order(Date time_Order) {
         this.time_Order = time_Order;
+    }
+
+    public List<BillModel> getListNewBill() {
+        return listNewBill;
+    }
+
+    public void setListNewBill(List<BillModel> listNewBill) {
+        this.listNewBill = listNewBill;
+    }
+
+    public List<BillModel> getListBill() {
+        return listBill;
+    }
+
+    public void setListBill(List<BillModel> listBill) {
+        this.listBill = listBill;
+    }
+
+    public int getTotalBill() {
+        return totalBill;
+    }
+
+    public void setTotalBill(int totalBill) {
+        this.totalBill = totalBill;
     }
 }
