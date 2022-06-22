@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class HouseModel implements Serializable {
+public class HouseModel implements Serializable, Comparable<HouseModel> {
 
     private String name;
     private String id;
@@ -18,8 +18,10 @@ public class HouseModel implements Serializable {
     private int salePrice;
     private String image;
 
-    private static List<HouseModel> listResult;
+
+    private static List<HouseModel> listResult = new ArrayList<>();
     private static int totalHouse;
+    private  int totalDayOrder;
 
     public HouseModel() {
     }
@@ -31,6 +33,18 @@ public class HouseModel implements Serializable {
         this.detail = detail;
         this.price = price;
         this.salePrice = salePrice;
+    }
+
+    public static void insertListHouse(HouseModel house) {
+        listResult.add(house);
+    }
+
+    public  int getTotalDayOrder() {
+        return totalDayOrder;
+    }
+
+    public  void setTotalDayOrder(int totalDayOrder) {
+       this.totalDayOrder = totalDayOrder;
     }
 
     public String getId() {
@@ -133,4 +147,25 @@ public class HouseModel implements Serializable {
         return "{name:" + name + ",type:" + type + ",address:" + address + ",detail:" + detail + ",price:" + price + ",salePrice:" + salePrice + "}";
     }
 
+    public static boolean checkHouseExist(String id) {
+        for (HouseModel i : listResult) {
+            if (i.id.equals("id"))
+                return true;
+        }
+        return false;
+    }
+    public static HouseModel getHouseById(String id){
+        for (HouseModel i : listResult) {
+            if (i.id.equals("id"))
+                return i;
+        }
+        return null;
+    }
+
+    @Override
+    public int compareTo(HouseModel o) {
+       if(this.id.equals(o.id))
+           return 0;
+       return 1;
+    }
 }

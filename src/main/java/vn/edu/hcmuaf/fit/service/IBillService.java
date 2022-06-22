@@ -18,4 +18,6 @@ public interface IBillService {
 
     List<BillModel> newBill();
 
+    List<BillModel> findAllBill();
+
 }

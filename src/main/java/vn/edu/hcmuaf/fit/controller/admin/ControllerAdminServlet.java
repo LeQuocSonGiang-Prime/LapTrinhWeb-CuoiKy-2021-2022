@@ -15,11 +15,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "admin-trang-chu", value = "/admin-trang-chu")
 public class ControllerAdminServlet extends HttpServlet {
 
-    private AdminModel adminCurent;
+    private AdminModel adminCurrent;
     @Inject
     private IBillService billService;
     @Inject
@@ -34,16 +36,21 @@ public class ControllerAdminServlet extends HttpServlet {
 
         BillModel billModel = new BillModel();
         billModel.setTotalBill(billService.totalBill());
-        billModel.setListNewBill(billService.newBill());
+        billModel.setListNewBill(billService.findAllBill());
         UserModel.setTotalUser(userService.totalUser());
         HouseModel.setTotalHouse( houseService.totalHouse());
         request.setAttribute("bill", billModel);
         request.setAttribute("user", new UserModel());
-        request.setAttribute("house", new HouseModel());
-        request.setAttribute("adminCurrent", adminCurent);
+        request.setAttribute("listHouse", HouseModel.getListResult());
+        request.setAttribute("adminCurrent", adminCurrent);
+        List<HouseModel> listHouse = HouseModel.getListResult();
+        List<HouseModel> listAllHouse = houseService.selectAll();
+
+        System.out.println(listAllHouse.removeAll(listHouse));
+        listAllHouse.addAll(listHouse);
+        HouseModel.setListResult(listAllHouse);
         request.getRequestDispatcher("/views/admin/home.jsp").forward(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,10 +58,10 @@ public class ControllerAdminServlet extends HttpServlet {
     }
 
     public AdminModel getAdminCurent() {
-        return adminCurent;
+        return adminCurrent;
     }
 
     public void setAdminCurent(AdminModel adminCurent) {
-        this.adminCurent = adminCurent;
+        this.adminCurrent = adminCurent;
     }
 }

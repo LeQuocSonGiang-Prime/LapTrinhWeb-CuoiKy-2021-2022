@@ -41,4 +41,9 @@ public class BillServiceImp implements IBillService {
     public List<BillModel> newBill() {
         return billDAO.newBill();
     }
+
+    @Override
+    public List<BillModel> findAllBill() {
+        return billDAO.findAllBill();
+    }
 }

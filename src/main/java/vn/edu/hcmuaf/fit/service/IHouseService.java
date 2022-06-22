@@ -14,4 +14,6 @@ public interface IHouseService {
 
     HouseModel selectHouseById(String id_house);
 
+    List<HouseModel> selectAllNoneExist();
+
 }

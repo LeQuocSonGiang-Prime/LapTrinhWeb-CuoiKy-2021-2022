@@ -1,10 +1,12 @@
 package vn.edu.hcmuaf.fit.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserModel implements Serializable {
 
+    private String id;
     private String username;
     private String password;
     private String fullName;
@@ -14,7 +16,7 @@ public class UserModel implements Serializable {
     private String avatar;
     private int status;
 
-    private static List<UserModel> listUser;
+    private static List<UserModel> listUser= new ArrayList<>();
     private static List<UserModel> listUserOrderCurrent;
     private static int totalUser;
     private static int totalUserOrderCurrent;
@@ -26,7 +28,7 @@ public class UserModel implements Serializable {
         this.email = email;
     }
 
-    public UserModel(String username, String password, String fullName, String email, String phone, String address, String avatar,int status) {
+    public UserModel(String username, String password, String fullName, String email, String phone, String address, String avatar, int status) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;
@@ -62,7 +64,7 @@ public class UserModel implements Serializable {
     }
 
     public static void setTotalUserOrderCurrent(int totalUserOrderCurrent) {
-            UserModel.totalUserOrderCurrent = totalUserOrderCurrent;
+        UserModel.totalUserOrderCurrent = totalUserOrderCurrent;
     }
 
     public static List<UserModel> getListUser() {
@@ -133,7 +135,37 @@ public class UserModel implements Serializable {
         return avatar;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public static boolean checkUserExist(String id) {
+        for (UserModel i : listUser) {
+            if (i.id.equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static UserModel getUserById(String id){
+        for (UserModel i : listUser) {
+            if (i.id.equals(id)) {
+                return i;
+            }
+        }
+        return null;
+    }
+
+    public static void insertUser(UserModel user){
+        listUser.add(user);
     }
 }

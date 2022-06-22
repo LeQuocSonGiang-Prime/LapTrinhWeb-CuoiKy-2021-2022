@@ -1,4 +1,5 @@
-<%--
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -29,10 +30,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
-    <% String totalBill = "" + request.getAttribute("totalBill"); %>
     <jsp:useBean id="bill" scope="request" type="vn.edu.hcmuaf.fit.model.BillModel"/>
     <jsp:useBean id="user" scope="request" type="vn.edu.hcmuaf.fit.model.UserModel"/>
-    <jsp:useBean id="house" scope="request" type="vn.edu.hcmuaf.fit.model.HouseModel"/>
+    <% List<HouseModel> listHouse = (List<HouseModel>) request.getAttribute("listHouse");
+        System.out.println("listHouse: "+ listHouse);
+        for (HouseModel h : listHouse){
+            System.out.println("total: "+h.getTotalDayOrder());
+        }
+        %>
 
 
 </head>
@@ -189,28 +194,30 @@
         </div>
         <div class="booking-list">
             <div class="booking booking-home">
-                <h3 class="booking-title">Chi tiết Các Ngôi Nhà</h3>
+                <h3 class="booking-title">Danh sách Các Ngôi Nhà</h3>
                 <table>
                     <thead>
                     <tr>
                         <th>STT</th>
                         <th>Tên</th>
-                        <th>Trạng Thái</th>
+                        <th>Tổng số ngày được thuê</th>
                         <th>Chỉnh Sửa</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Avalon at Mission Bay</td>
-                        <td>
-                            <p class="booking-status paid">Trống</p>
-                        </td>
-                        <td>
-                            <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                            <i class="ti-trash" style="background-color: #ff7675;"></i>
-                        </td>
-                    </tr>
+                    <c:forEach var="house_item" items="<%=listHouse%>">
+                        <tr>
+                            <td>1</td>
+                            <td>${house_item.name}</td>
+                            <td>
+                                <p class="booking-status paid">${house_item.totalDayOrder}</p>
+                            </td>
+                            <td>
+                                <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
+                                <i class="ti-trash" style="background-color: #ff7675;"></i>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     <tr>
                         <td>2</td>
                         <td>Happy Home</td>
