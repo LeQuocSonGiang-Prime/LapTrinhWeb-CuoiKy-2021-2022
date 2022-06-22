@@ -29,8 +29,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
-    <% String totalBill = ""+ request.getAttribute("totalBill"); %>
-
+    <% String totalBill = "" + request.getAttribute("totalBill"); %>
+    <jsp:useBean id="bill" scope="request" type="vn.edu.hcmuaf.fit.model.BillModel"/>
+    <jsp:useBean id="user" scope="request" type="vn.edu.hcmuaf.fit.model.UserModel"/>
+    <jsp:useBean id="house" scope="request" type="vn.edu.hcmuaf.fit.model.HouseModel"/>
 
 
 </head>
@@ -38,10 +40,12 @@
 <!-- NAVBAR -->
 <div class="side-bar">
     <div class="logo">
-        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="">
+        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+             alt="">
     </div>
     <div class="admin-info">
-        <img src="https://image-us.24h.com.vn/upload/1-2021/images/2021-03-18/gia-nhap-duong-dua-bikini-tieu-thu-ha-noi-chiem-tron-song-bb9-5639403-1616037657-573-width800height999.jpg" alt="">
+        <img src="https://image-us.24h.com.vn/upload/1-2021/images/2021-03-18/gia-nhap-duong-dua-bikini-tieu-thu-ha-noi-chiem-tron-song-bb9-5639403-1616037657-573-width800height999.jpg"
+             alt="">
         <h3>${adminCurrent.name}</h3>
         <div class="admin-info-icon">
             <i class="ti-user"></i>
@@ -114,7 +118,7 @@
                 </div>
                 <div class="box-info">
                     <span>Order</span>
-                    <span style="font-size: 3rem;"><%= request.getAttribute("totalBill")%></span>
+                    <span style="font-size: 3rem;">${bill.totalBill}</span>
                     <span><i class="ti-arrow-up"></i>60%</span>
                 </div>
             </div>
@@ -124,7 +128,7 @@
                 </div>
                 <div class="box-info">
                     <span>User</span>
-                    <span style="font-size: 3rem;"><%= request.getAttribute("totalUser")%></span>
+                    <span style="font-size: 3rem;">${user.totalUser}</span>
                     <span><i class="ti-arrow-up"></i>30% </span>
                 </div>
             </div>
@@ -134,7 +138,7 @@
                 </div>
                 <div class="box-info">
                     <span>House</span>
-                    <span style="font-size: 3rem;"><%= request.getAttribute("totalHouse")%></span>
+                    <span style="font-size: 3rem;"> ${user.totalUser}</span>
                     <span><i class="ti-arrow-up"></i>20%</span>
                 </div>
             </div>
@@ -155,99 +159,31 @@
                 <thead>
                 <tr>
                     <th>STT</th>
-                    <th>Họ Và Tên</th>
+                    <th>Khách hàng</th>
                     <th>Ngày Nhận</th>
                     <th>Ngày Trả</th>
                     <th>Nhà đặt</th>
-                    <th>Điện Thoại</th>
-                    <th>Chỉnh Sửa</th>
+                    <th>Thời gian đặt</th>
+                    <th>Thao tác</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Trần Đình Danh</td>
-                    <td>28/09/2019</td>
-                    <td>07/06/2020</td>
-                    <td>
-                        <p class="booking-status paid">Đã Thanh Toán</p>
-                    </td>
-                    <td>012345678</td>
-                    <td>
-                        <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                        <i class="ti-trash" style="background-color: #ff7675;"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Phạm Công Danh</td>
-                    <td>12/12/2021</td>
-                    <td>13/12/2021</td>
-                    <td>
-                        <p class="booking-status unpaid">Chưa Thanh Toán</p>
-                    </td>
-                    <td>012345678</td>
-                    <td>
-                        <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                        <i class="ti-trash" style="background-color: #ff7675;"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Lê Quốc Sơn Giang</td>
-                    <td>20/12/2021</td>
-                    <td>24/12/2021</td>
-                    <td>
-                        <p class="booking-status pending">Chưa Giải Quyết</p>
-                    </td>
-                    <td>012345678</td>
-                    <td>
-                        <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                        <i class="ti-trash" style="background-color: #ff7675;"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Trần Đình Danh</td>
-                    <td>28/12/2021</td>
-                    <td>01/01/2022</td>
-                    <td>
-                        <p class="booking-status paid">Đã Thanh Toán</p>
-                    </td>
-                    <td>012345678</td>
-                    <td>
-                        <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                        <i class="ti-trash" style="background-color: #ff7675;"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Phạm Công Danh</td>
-                    <td>12/12/2021</td>
-                    <td>13/12/2021</td>
-                    <td>
-                        <p class="booking-status unpaid">Chưa Thanh Toán</p>
-                    </td>
-                    <td>012345678</td>
-                    <td>
-                        <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                        <i class="ti-trash" style="background-color: #ff7675;"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Lê Quốc Sơn Giang</td>
-                    <td>20/12/2021</td>
-                    <td>24/12/2021</td>
-                    <td>
-                        <p class="booking-status pending">Chưa Giải Quyết</p>
-                    </td>
-                    <td>012345678</td>
-                    <td>
-                        <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                        <i class="ti-trash" style="background-color: #ff7675;"></i>
-                    </td>
-                </tr>
+                <%! int index = 1; %>
+                <c:forEach var="bill_item" items="${bill.listNewBill}">
+                    <tr>
+                        <td><%= index++ %>
+                        </td>
+                        <td>${bill_item.user.fullName}</td>
+                        <td>${bill_item.time_Checkin}</td>
+                        <td>${bill_item.time_Checkout}</td>
+                        <td>${bill_item.house.name}</td>
+                        <td>${bill_item.time_Order}</td>
+                        <td>
+                            <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
+                            <i class="ti-trash" style="background-color: #ff7675;"></i>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>

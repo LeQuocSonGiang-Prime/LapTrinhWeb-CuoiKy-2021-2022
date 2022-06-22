@@ -223,7 +223,7 @@
                     </div>
                     <h1 class="buy-title"><span>Lựa Chọn</span> Yêu Thích</h1>
                     <div class="row">
-                        <jsp:useBean id="model" scope="request" type="vn.edu.hcmuaf.fit.model.AbstractModel"/>
+                        <jsp:useBean id="model" scope="request" type="vn.edu.hcmuaf.fit.model.HouseModel"/>
                         <c:forEach var="item" items="${model.listResult}">
                             <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up" data-aos-duration="1000">
                                 <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet">

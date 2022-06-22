@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.fit.service.serviceimp;
 
 import vn.edu.hcmuaf.fit.dao.IUserDAO;
+import vn.edu.hcmuaf.fit.dao.daoimp.UserDaoImp;
 import vn.edu.hcmuaf.fit.model.UserModel;
 import vn.edu.hcmuaf.fit.service.IUserService;
 
@@ -56,6 +57,12 @@ public class UserServiceImp implements IUserService {
         return userDAO.selectById(id_user);
     }
 
+    @Override
+    public UserModel selectByIDNoneInject(String id_user) {
+        IUserDAO userDAO = new UserDaoImp();
+        return userDAO.selectById(id_user);
+    }
+
     private String hashPasword(String pass) {
         try {
             MessageDigest ma = MessageDigest.getInstance("MD5");
@@ -69,8 +76,5 @@ public class UserServiceImp implements IUserService {
         }
     }
 
-    public static void main(String[] args) {
-        UserServiceImp userServiceImp = new UserServiceImp();
-        userServiceImp.insertUser("songiang","12345","lequocsongiang@gmail.com","Lê Quốc Sơn Giang");
-    }
+
 }

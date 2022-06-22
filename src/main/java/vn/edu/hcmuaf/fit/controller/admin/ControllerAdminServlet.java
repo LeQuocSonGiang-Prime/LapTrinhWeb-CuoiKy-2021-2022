@@ -2,6 +2,8 @@ package vn.edu.hcmuaf.fit.controller.admin;
 
 import vn.edu.hcmuaf.fit.model.AdminModel;
 import vn.edu.hcmuaf.fit.model.BillModel;
+import vn.edu.hcmuaf.fit.model.UserModel;
+import vn.edu.hcmuaf.fit.model.HouseModel;
 import vn.edu.hcmuaf.fit.service.IBillService;
 import vn.edu.hcmuaf.fit.service.IHouseService;
 import vn.edu.hcmuaf.fit.service.IUserService;
@@ -33,12 +35,12 @@ public class ControllerAdminServlet extends HttpServlet {
         BillModel billModel = new BillModel();
         billModel.setTotalBill(billService.totalBill());
         billModel.setListNewBill(billService.newBill());
+        UserModel.setTotalUser(userService.totalUser());
+        HouseModel.setTotalHouse( houseService.totalHouse());
         request.setAttribute("bill", billModel);
-
+        request.setAttribute("user", new UserModel());
+        request.setAttribute("house", new HouseModel());
         request.setAttribute("adminCurrent", adminCurent);
-        request.setAttribute("totalBill", billService.totalBill());
-        request.setAttribute("totalHouse", houseService.totalHouse());
-        request.setAttribute("totalUser", userService.totalUser());
         request.getRequestDispatcher("/views/admin/home.jsp").forward(request, response);
     }
 

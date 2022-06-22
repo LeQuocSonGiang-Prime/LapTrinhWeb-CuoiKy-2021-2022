@@ -18,4 +18,6 @@ public interface IUserService {
     void activateUser(String email);
 
     UserModel selectById(String id_user);
+
+    UserModel selectByIDNoneInject(String id_uer);
 }

@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.fit.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class UserModel implements Serializable {
 
@@ -12,6 +13,11 @@ public class UserModel implements Serializable {
     private String address;
     private String avatar;
     private int status;
+
+    private static List<UserModel> listUser;
+    private static List<UserModel> listUserOrderCurrent;
+    private static int totalUser;
+    private static int totalUserOrderCurrent;
 
     public UserModel(String username, String password, String email, String fullName) {
         this.username = username;
@@ -33,6 +39,38 @@ public class UserModel implements Serializable {
 
     public UserModel() {
 
+    }
+
+    public static List<UserModel> getListUserOrderCurrent() {
+        return listUserOrderCurrent;
+    }
+
+    public static void setListUserOrderCurrent(List<UserModel> listUserOrderCurrent) {
+        UserModel.listUserOrderCurrent = listUserOrderCurrent;
+    }
+
+    public int getTotalUser() {
+        return totalUser;
+    }
+
+    public static void setTotalUser(int totalUser) {
+        UserModel.totalUser = totalUser;
+    }
+
+    public static int getTotalUserOrderCurrent() {
+        return totalUserOrderCurrent;
+    }
+
+    public static void setTotalUserOrderCurrent(int totalUserOrderCurrent) {
+            UserModel.totalUserOrderCurrent = totalUserOrderCurrent;
+    }
+
+    public static List<UserModel> getListUser() {
+        return listUser;
+    }
+
+    public static void setListUser(List<UserModel> listUser) {
+        UserModel.listUser = listUser;
     }
 
     public int getStatus() {

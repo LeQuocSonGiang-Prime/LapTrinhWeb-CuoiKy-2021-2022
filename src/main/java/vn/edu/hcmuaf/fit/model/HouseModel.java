@@ -18,8 +18,8 @@ public class HouseModel implements Serializable {
     private int salePrice;
     private String image;
 
-    private List<HouseModel> listResult;
-
+    private static List<HouseModel> listResult;
+    private static int totalHouse;
 
     public HouseModel() {
     }
@@ -113,12 +113,20 @@ public class HouseModel implements Serializable {
         this.salePrice = salePrice;
     }
 
-    public List<HouseModel> getListResult() {
+    public static List<HouseModel> getListResult() {
         return listResult;
     }
 
-    public void setListResult(List<HouseModel> listResult) {
-        this.listResult = listResult;
+    public static void setListResult(List<HouseModel> listResult) {
+        HouseModel.listResult = listResult;
+    }
+
+    public static int getTotalHouse() {
+        return totalHouse;
+    }
+
+    public static void setTotalHouse(int totalHouse) {
+        HouseModel.totalHouse = totalHouse;
     }
 
     public String toString() {

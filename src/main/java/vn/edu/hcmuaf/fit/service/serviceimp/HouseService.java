@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.fit.service.serviceimp;
 
 import vn.edu.hcmuaf.fit.dao.IHouseDAO;
+import vn.edu.hcmuaf.fit.dao.daoimp.HouseDAOImp;
 import vn.edu.hcmuaf.fit.model.HouseModel;
 import vn.edu.hcmuaf.fit.service.IHouseService;
 
@@ -32,5 +33,10 @@ public class HouseService implements IHouseService {
     @Override
     public HouseModel selectHouseById(String id_house) {
         return houseDAO.selectById(id_house);
+    }
+
+    public HouseModel selectHouseByIdNoneInject(String id_house){
+        HouseDAOImp house = new HouseDAOImp();
+        return house.selectById(id_house);
     }
 }
