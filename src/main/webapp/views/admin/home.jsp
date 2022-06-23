@@ -53,9 +53,9 @@
              alt="">
     </div>
     <div class="admin-info">
-        <img src="https://image-us.24h.com.vn/upload/1-2021/images/2021-03-18/gia-nhap-duong-dua-bikini-tieu-thu-ha-noi-chiem-tron-song-bb9-5639403-1616037657-573-width800height999.jpg"
+        <img src="<%=currentAdmin.getAvatar()%>"
              alt="">
-        <h3>${adminCurrent.name}</h3>
+        <h3><%=currentAdmin.getName()%></h3>
         <div class="admin-info-icon">
             <i class="ti-user"></i>
             <i class="ti-email"></i>
