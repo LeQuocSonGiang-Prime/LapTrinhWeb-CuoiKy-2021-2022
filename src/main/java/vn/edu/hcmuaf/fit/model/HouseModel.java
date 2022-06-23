@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class HouseModel implements Serializable, Comparable<HouseModel> {
 
@@ -149,14 +150,14 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
 
     public static boolean checkHouseExist(String id) {
         for (HouseModel i : listResult) {
-            if (i.id.equals("id"))
+            if (i.id.equals(id))
                 return true;
         }
         return false;
     }
     public static HouseModel getHouseById(String id){
         for (HouseModel i : listResult) {
-            if (i.id.equals("id"))
+            if (i.id.equals(id))
                 return i;
         }
         return null;
@@ -164,8 +165,19 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
 
     @Override
     public int compareTo(HouseModel o) {
-       if(this.id.equals(o.id))
-           return 0;
-       return 1;
+       return  o.totalDayOrder- this.totalDayOrder;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HouseModel that = (HouseModel) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

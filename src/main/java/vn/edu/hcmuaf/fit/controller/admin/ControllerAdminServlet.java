@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @WebServlet(name = "admin-trang-chu", value = "/admin-trang-chu")
@@ -33,7 +34,8 @@ public class ControllerAdminServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-
+        HouseModel.getListResult().clear();
+        UserModel.getListUser().clear();
         BillModel billModel = new BillModel();
         billModel.setTotalBill(billService.totalBill());
         billModel.setListNewBill(billService.findAllBill());
@@ -41,14 +43,16 @@ public class ControllerAdminServlet extends HttpServlet {
         HouseModel.setTotalHouse( houseService.totalHouse());
         request.setAttribute("bill", billModel);
         request.setAttribute("user", new UserModel());
-        request.setAttribute("listHouse", HouseModel.getListResult());
         request.setAttribute("adminCurrent", adminCurrent);
         List<HouseModel> listHouse = HouseModel.getListResult();
         List<HouseModel> listAllHouse = houseService.selectAll();
-
-        System.out.println(listAllHouse.removeAll(listHouse));
+        for(HouseModel i : listHouse){
+            listAllHouse.removeIf(j -> j.equals(i));
+        }
         listAllHouse.addAll(listHouse);
+        Collections.sort(listAllHouse);
         HouseModel.setListResult(listAllHouse);
+        request.setAttribute("listHouse", HouseModel.getListResult());
         request.getRequestDispatcher("/views/admin/home.jsp").forward(request, response);
     }
 
