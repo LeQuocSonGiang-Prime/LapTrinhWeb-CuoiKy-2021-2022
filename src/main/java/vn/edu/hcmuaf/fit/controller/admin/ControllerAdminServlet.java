@@ -1,10 +1,8 @@
 package vn.edu.hcmuaf.fit.controller.admin;
 
-import vn.edu.hcmuaf.fit.model.AdminModel;
-import vn.edu.hcmuaf.fit.model.BillModel;
-import vn.edu.hcmuaf.fit.model.UserModel;
-import vn.edu.hcmuaf.fit.model.HouseModel;
+import vn.edu.hcmuaf.fit.model.*;
 import vn.edu.hcmuaf.fit.service.IBillService;
+import vn.edu.hcmuaf.fit.service.ICommentService;
 import vn.edu.hcmuaf.fit.service.IHouseService;
 import vn.edu.hcmuaf.fit.service.IUserService;
 
@@ -15,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,6 +28,8 @@ public class ControllerAdminServlet extends HttpServlet {
     private IHouseService houseService;
     @Inject
     private IUserService userService;
+    @Inject
+    private ICommentService commentService;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,9 +42,11 @@ public class ControllerAdminServlet extends HttpServlet {
         billModel.setListNewBill(billService.findAllBill());
         UserModel.setTotalUser(userService.totalUser());
         HouseModel.setTotalHouse( houseService.totalHouse());
+        UserModel.setListUser(userService.findAll());
         request.setAttribute("bill", billModel);
         request.setAttribute("user", new UserModel());
         request.setAttribute("adminCurrent", adminCurrent);
+
         List<HouseModel> listHouse = HouseModel.getListResult();
         List<HouseModel> listAllHouse = houseService.selectAll();
         for(HouseModel i : listHouse){
@@ -52,6 +55,9 @@ public class ControllerAdminServlet extends HttpServlet {
         listAllHouse.addAll(listHouse);
         Collections.sort(listAllHouse);
         HouseModel.setListResult(listAllHouse);
+
+        setStarForHouse();
+        request.setAttribute("listComment", CommentModel.getListComment());
         request.setAttribute("listHouse", HouseModel.getListResult());
         request.getRequestDispatcher("/views/admin/home.jsp").forward(request, response);
     }
@@ -67,5 +73,20 @@ public class ControllerAdminServlet extends HttpServlet {
 
     public void setAdminCurent(AdminModel adminCurent) {
         this.adminCurrent = adminCurent;
+    }
+
+    private void setStarForHouse(){
+        CommentModel.setListComment(commentService.findAll());
+        for(HouseModel h : HouseModel.getListResult()){
+            List<CommentModel> listCmt = CommentModel.selectCommentByIdHouse(h.getId());
+            DecimalFormat df = new DecimalFormat("#,###.##");
+            if(listCmt.size()>0){
+                int totalStar = 0;
+                for(CommentModel c : listCmt){
+                    totalStar+=c.getStar();
+                }
+                h.setStar(Double.parseDouble(String.format("%,.1f",(double)  totalStar/listCmt.size())));
+            }
+        }
     }
 }

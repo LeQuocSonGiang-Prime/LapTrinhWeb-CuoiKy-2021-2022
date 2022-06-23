@@ -1,6 +1,7 @@
 <%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.model.AdminModel" %><%--
+<%@ page import="vn.edu.hcmuaf.fit.model.AdminModel" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.CommentModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -35,6 +36,7 @@
     <jsp:useBean id="user" scope="request" type="vn.edu.hcmuaf.fit.model.UserModel"/>
     <% List<HouseModel> listHouse = (List<HouseModel>) request.getAttribute("listHouse");
         AdminModel currentAdmin = (AdminModel) request.getAttribute("adminCurrent");
+        List<CommentModel> listComment = (List<CommentModel>) request.getAttribute("listComment");
         //       System.out.println("listHouse: "+ listHouse.size());
 //        for (HouseModel h : listHouse){
 //            System.out.println("total: "+h.getTotalDayOrder());
@@ -203,6 +205,7 @@
                         <th>STT</th>
                         <th>Tên</th>
                         <th>Tổng số ngày được thuê</th>
+                        <th>Đánh giá(<i class="fas fa-star" style="color: #ff7675;"></i>)</th>
                         <th>Chỉnh Sửa</th>
                     </tr>
                     </thead>
@@ -214,6 +217,7 @@
                             <td>
                                 <p>${house_item.totalDayOrder}</p>
                             </td>
+                            <td>${house_item.star}</td>
                             <td>
                                 <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
                                 <i class="ti-trash" style="background-color: #ff7675;"></i>
@@ -227,62 +231,26 @@
                 <h3 class="booking-title">Đánh giá của khách hàng</h3>
                 <table>
                     <tbody>
+
+                    <% for (CommentModel cmt : listComment) {%>
                     <tr>
-                        <td><img src="./img/team/pexels-photo-10013224.jpeg" alt=""></td>
+                        <td><img src="<%= cmt.getUser().getAvatar()%>" alt=""></td>
                         <td class="booking-user-cmt">
-                            <span style="font-weight: bold;">Kim Pink</span>
-                            <span>Đáng kinh ngạc!!! Rất khuyến khích</span></td>
+                            <span style="font-weight: bold;"><%= cmt.getUser().getFullName()%></span>
+                            <span><%= cmt.getComment()%></span></td>
 
                         <td>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="./img/team/p1.png" alt=""></td>
-                        <td class="booking-user-cmt">
-                            <span style="font-weight: bold;">Ái Ngân</span>
-                            <span>Nhân viên tốt và tôi sẽ quay lại</span></td>
 
-                        <td>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="far fa-star" style="color: #ff7675;"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="./img/team/pexels-photo-9995662.jpeg" alt=""></td>
-                        <td class="booking-user-cmt">
-                            <span style="font-weight: bold;">An Nhiên</span>
-                            <span>Dịch vụ rất tệ :(</span></td>
+                            <% for (int i = 0; i < cmt.getStar(); i++) {%>
+                                <i class="fas fa-star" style="color: #ff7675;"></i>
+                            <%}%>
+                            <% for (int i = 0; i < 5 - cmt.getStar(); i++) {%>
+                                <i class="far fa-star" style="color: #ff7675;"></i>
+                            <%}%>
 
-                        <td>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="far fa-star" style="color: #ff7675;"></i>
-                            <i class="far fa-star" style="color: #ff7675;"></i>
-                            <i class="far fa-star" style="color: #ff7675;"></i>
                         </td>
                     </tr>
-                    <tr>
-                        <td><img src="./img/founder/user (1).jpg" alt=""></td>
-                        <td class="booking-user-cmt">
-                            <span style="font-weight: bold;">Hà Di</span>
-                            <span>Bình Thường</span></td>
-
-                        <td>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="fas fa-star" style="color: #ff7675;"></i>
-                            <i class="far fa-star" style="color: #ff7675;"></i>
-                            <i class="far fa-star" style="color: #ff7675;"></i>
-                        </td>
-                    </tr>
+                    <% }%>
                     </tbody>
                 </table>
             </div>

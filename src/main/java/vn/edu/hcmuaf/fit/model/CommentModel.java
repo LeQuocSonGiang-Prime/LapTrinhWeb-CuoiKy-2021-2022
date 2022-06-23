@@ -1,38 +1,67 @@
 package vn.edu.hcmuaf.fit.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class CommentModel implements Serializable {
 
-    private String id_user;
-    private String id_house;
+    private UserModel user;
+    private HouseModel house;
     private String comment;
-    private int start;
+    private int star;
     private Date time_cmt;
 
-    public CommentModel(String id_user, String id_house, String comment, int start, Date time_cmt) {
-        this.id_user = id_user;
-        this.id_house = id_house;
-        this.comment = comment;
-        this.start = start;
-        this.time_cmt = time_cmt;
+    private static List<CommentModel> listComment = new ArrayList<>();
+
+    public CommentModel() {
     }
 
-    public String getId_user() {
-        return id_user;
+    public UserModel getUser() {
+        return user;
     }
 
-    public void setId_user(String id_user) {
-        this.id_user = id_user;
+    public static List<CommentModel> getListComment() {
+        return listComment;
     }
 
-    public String getId_house() {
-        return id_house;
+    public static void setListComment(List<CommentModel> listComment) {
+        CommentModel.listComment = listComment;
     }
 
-    public void setId_house(String id_house) {
-        this.id_house = id_house;
+    public static void insertListComment(CommentModel commentModel) {
+        CommentModel.listComment.add(commentModel);
+    }
+
+    public static List<CommentModel> selectCommentByIdUser(String id_user) {
+        List<CommentModel> result = new ArrayList<>();
+        for (CommentModel i : listComment) {
+            if (i.user.getId().equals(id_user))
+                result.add(i);
+        }
+        return result;
+    }
+
+    public static List<CommentModel> selectCommentByIdHouse(String id_house) {
+        List<CommentModel> result = new ArrayList<>();
+        for (CommentModel i : listComment) {
+            if (i.house.getId().equals(id_house))
+                result.add(i);
+        }
+        return result;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
+    }
+
+    public HouseModel getHouse() {
+        return house;
+    }
+
+    public void setHouse(HouseModel house) {
+        this.house = house;
     }
 
     public String getComment() {
@@ -43,12 +72,12 @@ public class CommentModel implements Serializable {
         this.comment = comment;
     }
 
-    public int getStart() {
-        return start;
+    public int getStar() {
+        return star;
     }
 
-    public void setStart(int start) {
-        this.start = start;
+    public void setStar(int start) {
+        this.star = start;
     }
 
     public Date getTime_cmt() {

@@ -2,10 +2,14 @@ package vn.edu.hcmuaf.fit.service;
 
 import vn.edu.hcmuaf.fit.model.UserModel;
 
+import java.util.List;
+
 
 public interface IUserService {
 
     int totalUser();
+
+    List<UserModel> findAll();
 
     UserModel checkLogin(String username, String password);
 

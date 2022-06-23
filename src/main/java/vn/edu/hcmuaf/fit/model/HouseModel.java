@@ -18,6 +18,7 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
     private int price;
     private int salePrice;
     private String image;
+    private double star;
 
 
     private static List<HouseModel> listResult = new ArrayList<>();
@@ -34,6 +35,14 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
         this.detail = detail;
         this.price = price;
         this.salePrice = salePrice;
+    }
+
+    public double getStar() {
+        return star;
+    }
+
+    public void setStar(double star) {
+        this.star = star;
     }
 
     public static void insertListHouse(HouseModel house) {

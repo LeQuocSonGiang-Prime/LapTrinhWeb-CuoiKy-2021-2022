@@ -9,6 +9,7 @@ import javax.annotation.ManagedBean;
 import javax.inject.Inject;
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.util.List;
 
 @ManagedBean
 public class UserServiceImp implements IUserService {
@@ -18,6 +19,11 @@ public class UserServiceImp implements IUserService {
     @Override
     public int totalUser() {
         return userDAO.totalUser();
+    }
+
+    @Override
+    public List<UserModel> findAll() {
+        return userDAO.findAll();
     }
 
     @Override
