@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-Built-By: lequo
-Build-Jdk: Oracle OpenJDK version 17.0.1
+Built-By: acer
+Build-Jdk: 17.0.1
 Implementation-Title: cuoiky
 Implementation-Version: 1.0
 Implementation-Vendor-Id: com.example

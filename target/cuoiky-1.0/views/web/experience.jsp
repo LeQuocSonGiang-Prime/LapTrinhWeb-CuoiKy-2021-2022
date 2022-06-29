@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.ExperienceModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -6,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 
 <html lang="en">
 
@@ -30,9 +31,12 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <% List<ExperienceModel> listEx = (List<ExperienceModel>) request.getAttribute("listExperience"); %>
 </head>
 
 <body>
+
 <div class="modal" id="modal">
     <div class="form-box">
         <i id="close" onclick="hide()" class="login-colose-btn ti-close"></i>
@@ -126,27 +130,33 @@
             <label for="navbar-checked" class="fas fa-times icon-close"></label>
             <ul>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a-mobile"><i class="fas fa-home"></i> Trang Chủ</a>
+                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a-mobile"><i
+                            class="fas fa-home"></i> Trang Chủ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/danh-muc" class="navbar-item-a-mobile"><i class="fas fa-laptop-house"></i> Danh Mục
+                    <a href="${pageContext.request.contextPath}/danh-muc" class="navbar-item-a-mobile"><i
+                            class="fas fa-laptop-house"></i> Danh Mục
                         <span>739</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a-mobile"><i class="fas fa-running"></i> Trải
+                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a-mobile"><i
+                            class="fas fa-running"></i> Trải
                         Nghiệm<span>127</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a-mobile"><i class="far fa-handshake"></i>Dịch vụ</a>
+                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a-mobile"><i
+                            class="far fa-handshake"></i>Dịch vụ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a-mobile"><i class="fas fa-users"></i>Chúng tôi</a>
+                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a-mobile"><i
+                            class="fas fa-users"></i>Chúng tôi</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i class="fas fa-phone-alt"></i> Liên hệ</a>
+                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i
+                            class="fas fa-phone-alt"></i> Liên hệ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <button class="header__info-item-a navbar-item-a-mobile"  onclick="show()"><i
+                    <button class="header__info-item-a navbar-item-a-mobile" onclick="show()"><i
                             class="fas fa-sign-in-alt" style="display: flex;align-items: center"></i>Đăng Nhập
                     </button>
                 </li>
@@ -194,471 +204,33 @@
                 <h1 class="experience-title"><span>Trải nghiệm</span> gần bạn</h1>
                 <div class="row">
                     <!-- Item 1 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex1"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.86</p>
-                                        <p class="text-2">(44)</p>
+                    <c:forEach var="ex" items="<%=listEx%>">
+                        <%--                    <% for (ExperienceModel i : listEx) {--%>
+                        <%--                        System.out.println("link "+i.getImage()); %>--%>
+                        <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
+                            <a class="experience-singer-link-a" href="">
+                                <img src="${ex.image}" alt="" class="experience-img-slider slider-ex1"/>
+                                <i class="fas fa-heart"></i>
+                                <div class="experience-info-item">
+                                    <div class="experience-evaluate">
+                                        <i class="fas fa-star star2"></i>
+                                        <div class="text">
+                                            <p class="text-1"><%=String.format("%,.2f", Math.random() * 5)%>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <p class="experience-text">Nhiếp ảnh gia cá nhân của bạn tại Hà Nội</p>
-                                <div class="experience-price">
+                                    <p class="experience-text">${ex.name}
+                                    </p>
+                                    <div class="experience-price">
 
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex2"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.66</p>
-                                        <p class="text-2">(28)</p>
                                     </div>
                                 </div>
-                                <p class="experience-text">Hanoi's urban art galleries&best Pho</p>
-                                <div class="experience-price">
+                            </a>
+                        </div>
+                    </c:forEach>
+                    <%--                    <% }%>--%>
 
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex3"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.66</p>
-                                        <p class="text-2">(28)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">HaLong Bay One Day Tour From Hanoi</p>
-                                <div class="experience-price">
 
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex4"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.66</p>
-                                        <p class="text-2">(28)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Chuyến đi đến những khu vực hẻo lánh nhất của Hà Giang</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex5"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.82</p>
-                                        <p class="text-2">(17)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Tonkin Adventure - Hidden Hanoi with Local</p>
-                                <div class="experience-price">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 6 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex6"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.95</p>
-                                        <p class="text-2">(21)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">The Famous Ha Giang Loop Adventure</p>
-                                <div class="experience-price">
-                                    >
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 7 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex7"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">5.0</p>
-                                        <p class="text-2">(37)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Buổi chụp hình đêm tại Hà Nội</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 8 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex8"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.99</p>
-                                        <p class="text-2">(68)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">UNIQUE LOCAL BEER ADVENTURER</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 9 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex9"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.97</p>
-                                        <p class="text-2">(523)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">HanoiSoul-Street Food With Local Guide</p>
-                                <div class="experience-price">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 10 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex10"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.94</p>
-                                        <p class="text-2">(36)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Học chụp ảnh với máy ảnh phim tại Hà Nội</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 11 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex11"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.89</p>
-                                        <p class="text-2">(57)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Biking & Foodie Tour around Old Quarter</p>
-                                <div class="experience-price">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 12 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex12"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.96</p>
-                                        <p class="text-2">(47)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Hanoi Street Food Tour with Real Foodie</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 13 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex13"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.86</p>
-                                        <p class="text-2">(28)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Street Foodtour with Expert Tourguide</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 14 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex14"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.80</p>
-                                        <p class="text-2">(20)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">FOOD WALKING TOUR THROUGH BACK ALLEYS</p>
-                                <div class="experience-price">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 15 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex15"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.94</p>
-                                        <p class="text-2">(16)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Touching Hanoi - veg/vegan food tour</p>
-                                <div class="experience-price">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 16 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex16"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.81</p>
-                                        <p class="text-2">(75)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">ULTIMATE STREET FOOD & HIDDEN MUSIC</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 17 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex17"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.34</p>
-                                        <p class="text-2">(29)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">DragonSails Luxury Halong Day Trip</p>
-                                <div class="experience-price">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 18 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex18"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <p class="experience-text">Khám phá sáng sớm Hà Nội bằng xe máy</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 19 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex19"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.45</p>
-                                        <p class="text-2">(31)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Hoa Lu- Mua Cave-Tam Coc Luxury Trip</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 20 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex20"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.45</p>
-                                        <p class="text-2">(20)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Bai Dinh Pagoda- Trang An Boat Cave Tour</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 21 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex21"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.92</p>
-                                        <p class="text-2">(38)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Ultimate Street Tour on a Motorbike</p>
-                                <div class="experience-price">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 22 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex22"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">5.0</p>
-                                        <p class="text-2">(2)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Hanoi's Vegan Culinary Treasures</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 23 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex23"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.69</p>
-                                        <p class="text-2">(13)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">French culture & Maison Centrale</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Item 24 -->
-                    <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <a class="experience-singer-link-a" href="">
-                            <div class="experience-img-slider slider-ex24"></div>
-                            <i class="fas fa-heart"></i>
-                            <div class="experience-info-item">
-                                <div class="experience-evaluate">
-                                    <i class="fas fa-star star2"></i>
-                                    <div class="text">
-                                        <p class="text-1">4.80</p>
-                                        <p class="text-2">(5)</p>
-                                    </div>
-                                </div>
-                                <p class="experience-text">Street Food Tour Eating till Surrendered</p>
-                                <div class="experience-price">
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
