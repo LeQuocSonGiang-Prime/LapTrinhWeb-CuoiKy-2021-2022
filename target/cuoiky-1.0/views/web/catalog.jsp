@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -31,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- AOS ANIMATION -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <% List<HouseModel> houseModels = ( List<HouseModel>) request.getAttribute("listHouse");%>
 </head>
 
 <body>
@@ -212,7 +213,6 @@
                             <option value="">Nha Trang</option>
                             <option value="">Phú Quốc</option>
                             <option value="">Bình Định</option>
-
                         </select>
                         <!-- <div class="slider-bar">
                             <input type="range" min="0" max="1000" class="slider-bar-price">
@@ -223,8 +223,9 @@
                     </div>
                     <h1 class="buy-title"><span>Lựa Chọn</span> Yêu Thích</h1>
                     <div class="row">
-                        <jsp:useBean id="model" scope="request" type="vn.edu.hcmuaf.fit.model.HouseModel"/>
-                        <c:forEach var="item" items="${model.listResult}">
+
+
+                        <c:forEach var="item" items="<%=houseModels%>">
                             <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up" data-aos-duration="1000">
                                 <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet">
                                     <img src="${item.image}" alt="" class="buy-img">

@@ -203,10 +203,7 @@
             <div class="experience ">
                 <h1 class="experience-title"><span>Trải nghiệm</span> gần bạn</h1>
                 <div class="row">
-                    <!-- Item 1 -->
                     <c:forEach var="ex" items="<%=listEx%>">
-                        <%--                    <% for (ExperienceModel i : listEx) {--%>
-                        <%--                        System.out.println("link "+i.getImage()); %>--%>
                         <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
                             <a class="experience-singer-link-a" href="">
                                 <img src="${ex.image}" alt="" class="experience-img-slider slider-ex1"/>
@@ -228,9 +225,6 @@
                             </a>
                         </div>
                     </c:forEach>
-                    <%--                    <% }%>--%>
-
-
                 </div>
             </div>
         </div>

@@ -23,9 +23,7 @@ public class ControllerCatalog extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        HouseModel houseModel = new HouseModel();
-        houseModel.setListResult(houseService.select24Element(1));
-        request.setAttribute("model", houseModel);
+        request.setAttribute("listHouse", houseService.select24Element(1));
         request.getRequestDispatcher("/views/web/catalog.jsp").forward(request, response);
     }
 
