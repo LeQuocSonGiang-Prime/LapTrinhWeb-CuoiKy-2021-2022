@@ -32,4 +32,9 @@ public class AdminServiceImp implements IAdminService {
     public boolean updateAdmin(String email, String password, String avatar) {
         return false;
     }
+
+    @Override
+    public AdminModel getFirstAdmin() {
+        return adminDAO.getFirstAdmin();
+    }
 }

@@ -11,4 +11,6 @@ public interface IAdminService {
     boolean insertAdmin(String email, String password);
 
     boolean updateAdmin(String email, String password, String avatar);
+
+    AdminModel getFirstAdmin();
 }

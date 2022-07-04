@@ -33,4 +33,10 @@ public class AdminDAOImp extends AbstractDAO<AdminModel> implements IAdminDAO {
     public boolean updateAdmin(String email, String password, String avatar) {
         return false;
     }
+
+    @Override
+    public AdminModel getFirstAdmin() {
+        String sql = "SELECT * FROM admin WHERE id_admin = 'ADMIN00001'";
+            return query(sql, new AdminMapper()).get(0);
+    }
 }

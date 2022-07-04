@@ -1,10 +1,7 @@
 package vn.edu.hcmuaf.fit.controller.admin;
 
 import vn.edu.hcmuaf.fit.model.*;
-import vn.edu.hcmuaf.fit.service.IBillService;
-import vn.edu.hcmuaf.fit.service.ICommentService;
-import vn.edu.hcmuaf.fit.service.IHouseService;
-import vn.edu.hcmuaf.fit.service.IUserService;
+import vn.edu.hcmuaf.fit.service.*;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -30,12 +27,15 @@ public class ControllerAdminServlet extends HttpServlet {
     private IUserService userService;
     @Inject
     private ICommentService commentService;
+    @Inject
+    private IAdminService adminService;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         HouseModel.getListResult().clear();
+        setAdminCurent(adminService.getFirstAdmin());
         UserModel.getListUser().clear();
         BillModel billModel = new BillModel();
         billModel.setTotalBill(billService.totalBill());
@@ -59,6 +59,7 @@ public class ControllerAdminServlet extends HttpServlet {
         setStarForHouse();
         request.setAttribute("listComment", CommentModel.getListComment());
         request.setAttribute("listHouse", HouseModel.getListResult());
+
         request.getRequestDispatcher("/views/admin/home.jsp").forward(request, response);
     }
 
