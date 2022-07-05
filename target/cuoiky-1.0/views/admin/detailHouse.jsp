@@ -1,4 +1,4 @@
-<%--
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 
 <html>
 <head>
@@ -30,7 +30,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <jsp:useBean scope="request" id="currentHouse" type="vn.edu.hcmuaf.fit.model.HouseModel"/>
+    <% HouseModel house = (HouseModel) request.getAttribute("currentHouse");%>
+
 </head>
 
 <body>
@@ -43,9 +44,12 @@
             <button type="button" class="toggle-btn" onclick="register()">Đăng Kí</button>
         </div>
         <div class="social-icons">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd" alt="">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94" alt="">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680"
+                 alt="">
         </div>
         <form id="login" class="input-group" action="">
             <input type="text" class="input-field" placeholder="Tài Khoản" required>
@@ -88,7 +92,8 @@
         </div>
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                     alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -116,7 +121,8 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                 alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>
@@ -124,27 +130,33 @@
             <label for="navbar-checked" class="fas fa-times icon-close"></label>
             <ul>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a-mobile"><i class="fas fa-home"></i> Trang Chủ</a>
+                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a-mobile"><i
+                            class="fas fa-home"></i> Trang Chủ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/danh-muc" class="navbar-item-a-mobile"><i class="fas fa-laptop-house"></i> Danh Mục
+                    <a href="${pageContext.request.contextPath}/danh-muc" class="navbar-item-a-mobile"><i
+                            class="fas fa-laptop-house"></i> Danh Mục
                         <span>739</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a-mobile"><i class="fas fa-running"></i> Trải
+                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a-mobile"><i
+                            class="fas fa-running"></i> Trải
                         Nghiệm<span>127</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a-mobile"><i class="far fa-handshake"></i>Dịch vụ</a>
+                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a-mobile"><i
+                            class="far fa-handshake"></i>Dịch vụ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a-mobile"><i class="fas fa-users"></i>Chúng tôi</a>
+                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a-mobile"><i
+                            class="fas fa-users"></i>Chúng tôi</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i class="fas fa-phone-alt"></i> Liên hệ</a>
+                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i
+                            class="fas fa-phone-alt"></i> Liên hệ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <button class="header__info-item-a navbar-item-a-mobile"  onclick="show()"><i
+                    <button class="header__info-item-a navbar-item-a-mobile" onclick="show()"><i
                             class="fas fa-sign-in-alt" style="display: flex;align-items: center"></i>Đăng Nhập
                     </button>
                 </li>
@@ -191,40 +203,37 @@
     <div class="grid wide">
         <div class="detail">
             <div class="detail-info">
-                <h1>An Nhiên / 928K - Ngày</h1>
+                <h1><%=house.getName()%>
+                </h1>
                 <div class="detail-info-list">
-                    <i class="fas fa-star">4.8</i>
-                    <span> (19 Đánh Giá)</span>
-                    <span>Vũng Tàu</span>
-                    <span>100M², 4 Người, 2 Phòng Ngủ, 2 Giường, 1 Phòng Tắm</span>
+                    <i class="fas fa-star"><%=house.getStar()%>
+                    </i>
+                    <span> (<%=house.getTotalAssess()%> Đánh Giá)</span>
+                    <span><%=house.getAddress()%></span>
+                    <span><%=house.getDetail()%></span>
                 </div>
             </div>
             <!-- Slideshow container -->
             <div class="slideshow-container">
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade" style="display: block;">
-                    <img src="./img/buy/buy-4.jpg" alt="">
-                </div>
-                <div class="mySlides fade">
-                    <img src="./img/buy/buy-item.jpg" alt="">
+                    <img src="<%=house.getImage().get(0)%>" alt="">
                 </div>
 
+                <% for (int i = 1; i < house.getImage().size(); i++) { %>
                 <div class="mySlides fade">
-                    <img src="./img/buy/buy-25.jpg" alt="">
+                    <img src="<%=house.getImage().get(i)%>" alt="">
                 </div>
+                <%}%>
 
-                <div class="mySlides fade">
-                    <img src="./img/buy/buy-item3.jpg" alt="">
-                </div>
                 <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
+            <div style="text-align:center; margin-top: 10px;">
+                <% for (int i = 1; i <= house.getImage().size(); i++) { %>
+                <span class="dot" onclick="currentSlide(<%=i%>)"></span>
+                <% }%>
             </div>
             <br>
             <!-- The dots/circles -->
@@ -427,51 +436,17 @@
             <div class="grid wide detail-comment">
                 <h1>ĐÁNH GIÁ <i class="fas fa-star">4.8</i></h1>
                 <div class="row">
-                    <div class="col c-12 m-12 l-6 about-company-comment-content">
-                        <div>
-                            <img src="./img/founder/user (1).jpg" alt="" class="comment-content-img">
+                    <c:forEach var="comment" items="<%=house.getListComment()%>">
+                        <div class="col c-12 m-12 l-6 about-company-comment-content">
+                            <div>
+                                <img src="${comment.user.avatar}" alt="" class="comment-content-img">
+                            </div>
+                            <div class="comment-content-info">
+                                <p class="comment-content-info-text">${comment.comment}</p>
+                                <h4 class="comment-content-info-name">${comment.user.fullName}</h4>
+                            </div>
                         </div>
-                        <div class="comment-content-info">
-                            <p class="comment-content-info-text">
-                                Đây thật sự là 1 nơi tuyệt vời để đến. Nó đem cho tôi cảm giác bình yên và
-                                thoải mái.
-                                Rất thích hợp để trải nghiệm 1 nơi tuyệt vời như thế này</p>
-                            <h4 class="comment-content-info-name">-Lisa Phạm</h4>
-                        </div>
-                    </div>
-                    <div class="col c-12 m-12 l-6 about-company-comment-content">
-                        <div>
-                            <img src="./img/founder/user (2).jpg" alt="" class="comment-content-img">
-                        </div>
-                        <div class="comment-content-info">
-                            <p class="comment-content-info-text">Tôi chỉ muốn cảm ơn vì sự giúp đỡ của bạn. Tôi rất hài
-                                lòng và biết ơn. hãy luôn làm tốt như vậy nhé! Trang web của bạn cung cấp sự hỗ trợ tốt
-                                nhất mà tôi từng gặp.</p>
-                            <h4 class="comment-content-info-name">-Nicholas Lane</h4>
-                        </div>
-                    </div>
-                    <div class="col c-12 m-12 l-6 about-company-comment-content">
-                        <div>
-                            <img src="./img/founder/user (5).jpg" alt="" class="comment-content-img">
-                        </div>
-                        <div class="comment-content-info">
-                            <p class="comment-content-info-text">Cảm ơn bạn rất nhiều vì phản hồi nhanh chóng của bạn.
-                                Không nghi ngờ gì nữa, Đây là 1 trong những địa điểm đẹp nhất tôi từng ghé qua.
-                                I love You 3000</p>
-                            <h4 class="comment-content-info-name">-An Nhiên</h4>
-                        </div>
-                    </div>
-                    <div class="col c-12 m-12 l-6 about-company-comment-content">
-                        <div>
-                            <img src="./img/founder/user (4).jpg" alt="" class="comment-content-img">
-                        </div>
-                        <div class="comment-content-info">
-                            <p class="comment-content-info-text">Tôi chỉ muốn nói lời cảm ơn vì dịch vụ nhanh chóng và
-                                hiệu quả của bạn, vì đội ngũ nhân viên hỗ trợ thân thiện và chuyên nghiệp của bạn! Tôi
-                                rất thoải mái và hạnh phúc</p>
-                            <h4 class="comment-content-info-name">-Hà Di</h4>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
                 <div class="buy">
                     <h1 class="buy-title" data-aos="zoom-in-up">Các <span>Lựa Chọn</span> Khác</h1>
@@ -659,6 +634,44 @@
         });
     });
 
+</script>
+
+<script>
+
+    // Next/previous controls
+    let slideIndex = 1
+
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+
+    }
 </script>
 
 <script src="<c:url value='/template/web/js/appfunction.js' />">showSlides();</script>

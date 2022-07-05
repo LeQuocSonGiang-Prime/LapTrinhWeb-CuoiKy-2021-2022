@@ -19,7 +19,8 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
     private int salePrice;
     private List<String> image= new ArrayList<>();
     private double star;
-
+    private int totalAssess; // danh gia
+    private List<CommentModel> listComment = new ArrayList<>();
 
     private static List<HouseModel> listResult = new ArrayList<>();
     private static int totalHouse;
@@ -35,6 +36,26 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
         this.detail = detail;
         this.price = price;
         this.salePrice = salePrice;
+    }
+
+    public List<CommentModel> getListComment() {
+        return listComment;
+    }
+
+    public void setListComment(List<CommentModel> listComment) {
+        this.listComment = listComment;
+    }
+
+    public void insertListComment(CommentModel comment){
+        this.listComment.add(comment);
+    }
+
+    public int getTotalAssess() {
+        return totalAssess;
+    }
+
+    public void setTotalAssess(int totalAssess) {
+        this.totalAssess = totalAssess;
     }
 
     public double getStar() {

@@ -85,6 +85,7 @@ public class ControllerAdminServlet extends HttpServlet {
                 int totalStar = 0;
                 for(CommentModel c : listCmt){
                     totalStar+=c.getStar();
+                    h.insertListComment(c);
                 }
                 h.setStar(Double.parseDouble(String.format("%,.1f",(double)  totalStar/listCmt.size())));
             }

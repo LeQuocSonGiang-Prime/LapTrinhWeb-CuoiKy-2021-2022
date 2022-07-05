@@ -20,7 +20,7 @@ public class ControllerDetailHouseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        HouseModel currentHouse = houseService.selectHouseById(request.getParameter("id_house"));
+        HouseModel currentHouse = HouseModel.getHouseById(request.getParameter("id_house"));
         request.setAttribute("currentHouse", currentHouse);
         request.getRequestDispatcher("/views/admin/detailHouse.jsp").forward(request, response);
     }
