@@ -1,4 +1,5 @@
-<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %><%--
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -23,14 +24,16 @@
     <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
 
-    <link rel="stylesheet" href="<c:url value='/template/web/css/cssforbookroom.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/admin/css/cssforbookroomadmin.css'/>">
 
     <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <% HouseModel house = (HouseModel) request.getAttribute("currentHouse");%>
+    <% HouseModel house = (HouseModel) request.getAttribute("currentHouse");
+        List<HouseModel> houseModelList = HouseModel.getListResult();
+    %>
 
 </head>
 
@@ -285,148 +288,46 @@
                         <div id="sg-book-room">
                             <div class="book-room-header">
                                 <div class="book-room-header-price">
-                                    <span>$28</span> / đêm
+                                    <span>$<%=house.getPrice()%></span> / đêm
                                 </div>
                                 <div class="book-room-assess">
                                     <i class="fas fa-star" style="color: #ff385c ;"></i>
-                                    <h3>4,78</h3>
-                                    <p>(183 đánh giá)</p>
+                                    <h3><%=house.getStar()%>
+                                    </h3>
+                                    <p>(<%=house.getTotalAssess()%> đánh giá)</p>
                                 </div>
 
                             </div>
-                            <div class="book-room">
-                                <div class="book-room-main">
-                                    <div class="book-room-calendar">
-                                        <div class="book-room-calendar-title">
-                                            <div class="book-room-checkin">
-                                                <div class="book-room-title">NHẬN PHÒNG</div>
-                                                <div class="book-room-detail" id="checkin-title">Thêm ngày</div>
-                                            </div>
-                                            <div class="book-room-checkout">
-                                                <div class="book-room-title">TRẢ PHÒNG</div>
-                                                <div class="book-room-detail" id="checkout-title">Thêm ngày</div>
-                                            </div>
-                                        </div>
-                                        <div class="book-room-calendar">
-                                            <div id="sg-control" class="light" style="z-index: 1;">
-                                                <div class="calendar">
-                                                    <div class="calendar-header">
-                                                        <span class="month-picker" id="month-picker">February</span>
-                                                        <div class="year-picker">
+                            <div id="sg-control" class="light show-calendar" style="z-index: 1;">
+                                <div class="calendar">
+                                    <div class="calendar-header">
+                                        <span class="month-picker" id="month-picker">February</span>
+                                        <div class="year-picker">
                                                                 <span class="year-change" id="prev-year">
-                                                                    <pre></pre>
+                                                                    <pre style="margin: 0;"><</pre>
                                                                 </span>
-                                                            <span class="year">2001</span>
-                                                            <span class="year-change" id="next-year">
-                                                                    <pre>></pre>
+                                            <span class="year">2001</span>
+                                            <span class="year-change" id="next-year">
+                                                                    <pre style="margin: 0;">></pre>
                                                                 </span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="calendar-body">
-                                                        <div class="calendar-week-day">
-                                                            <div>CN</div>
-                                                            <div>T2</div>
-                                                            <div>T3</div>
-                                                            <div>T4</div>
-                                                            <div>T5</div>
-                                                            <div>T6</div>
-                                                            <div>T7</div>
-                                                        </div>
-                                                        <div class="calendar-days"></div>
-                                                    </div>
-                                                    <div class="calendar-footer">
-                                                        <h3>Xóa ngày</h3>
-                                                        <button>Đóng</button>
-                                                    </div>
-                                                    <div class="month-list"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="customer">
-                                        <div class="s">
-                                            <div class="customer-select">
-                                                <div class="book-room-title">KHÁCH</div>
-                                                <div class="book-room-detail">1 người</div>
-                                            </div>
-                                            <i class="fas fa-chevron-down" style="margin-right:15px;"></i>
-                                        </div>
-                                        <div class="customer-order">
-                                            <div class="customer-order-main">
-                                                <div id="order-adults" class="order">
-                                                    <div class="order-title">
-                                                        <h3>Người lớn</h3>
-                                                        <p>Từ 13 tuổi trở lên</p>
-                                                    </div>
-                                                    <div class="order-button">
-                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">
-                                                            -</h3>
-                                                        <h3 class="order-button-number">1</h3>
-                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-enable">
-                                                            +</h3>
-                                                    </div>
-                                                </div>
-                                                <div id="order-children" class="order">
-                                                    <div class="order-title">
-                                                        <h3>Trẻ em</h3>
-                                                        <p>Độ tuổi 2 - 12</p>
-                                                    </div>
-                                                    <div class="order-button">
-                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">
-                                                            -</h3>
-                                                        <h3 class="order-button-number">0</h3>
-                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-enable">
-                                                            +</h3>
-                                                    </div>
-                                                </div>
-                                                <div id="order_babys" class="order">
-                                                    <div class="order-title">
-                                                        <h3>Em bé</h3>
-                                                        <p>Dưới 2 tuổi</p>
-                                                    </div>
-                                                    <div class="order-button">
-                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">
-                                                            -</h3>
-                                                        <h3 class="order-button-number">0</h3>
-                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-disable">
-                                                            +</h3>
-                                                    </div>
-                                                </div>
-                                                <div id="order-babys" class="order">
-                                                    <div class="order-title">
-                                                        <h3>Thú cưng</h3>
-                                                        <p></p>
-                                                    </div>
-                                                    <div class="order-button">
-                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">
-                                                            -</h3>
-                                                        <h3 class="order-button-number">0</h3>
-                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-disable">
-                                                            +</h3>
-                                                    </div>
-                                                </div>
-                                                <p>Chỗ ở này cho phép tối đa 2 khách, không tính em bé. Không được phép
-                                                    mang theo thú cưng.</p>
-                                            </div>
-                                            <div class="customer-footer">
-                                                <button>ok</button>
-                                            </div>
                                         </div>
                                     </div>
 
-                                </div>
-                                <div class="infoDetailRoom">
-                                    <div class="priceOnTime infoDetail"></div>
-                                    <div class="service-charge infoDetail"></div>
-                                    <div class="sale infoDetail"></div>
+                                    <div class="calendar-body">
+                                        <div class="calendar-week-day">
+                                            <div>CN</div>
+                                            <div>T2</div>
+                                            <div>T3</div>
+                                            <div>T4</div>
+                                            <div>T5</div>
+                                            <div>T6</div>
+                                            <div>T7</div>
+                                        </div>
+                                        <div class="calendar-days"></div>
+                                    </div>
+                                    <div class="month-list"></div>
                                 </div>
                             </div>
-                            <div class="book-room-submit">
-                                <button type="button" class="book-room-submit-btn">Kiểm tra tình trạng còn phòng
-                                </button>
-                            </div>
-
                         </div>
 
 
@@ -434,7 +335,8 @@
                 </div>
             </div>
             <div class="grid wide detail-comment">
-                <h1>ĐÁNH GIÁ <i class="fas fa-star">4.8</i></h1>
+                <h1>ĐÁNH GIÁ <i class="fas fa-star"><%=house.getStar()%>
+                </i></h1>
                 <div class="row">
                     <c:forEach var="comment" items="<%=house.getListComment()%>">
                         <div class="col c-12 m-12 l-6 about-company-comment-content">
@@ -448,91 +350,7 @@
                         </div>
                     </c:forEach>
                 </div>
-                <div class="buy">
-                    <h1 class="buy-title" data-aos="zoom-in-up">Các <span>Lựa Chọn</span> Khác</h1>
-                    <div class="row">
-                        <!-- Item 1 -->
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-22.jpg" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#D980FA">591k / Ngày</h6>
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Mây HomeStay</h5>
-                                    <h6>Phường 9 - Đà Lạt</h6>
 
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">220m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Mây HomeStay – homestay được gọi là “ngôi nhà trên mây” bởi
-                                        không gian được bao phủ bởi màu sơn trắng, những vật dụng décor bằng màu trắng
-                                        tinh tế và hài hòa.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Item 2 -->
-
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-23.jpg" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#fab1a0">922k / Ngày</h6>
-
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">FLy HomeStay</h5>
-                                    <h6>Bãi Sau - Vũng Tàu</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">100m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Ngôi nhà mang gam màu trầm của gỗ cùng với lối thiết kế tinh tế
-                                        mang lại cho bạn cảm giác thanh bình, những chiếc đèn lồng chùm tạo cảm giác đê
-                                        mê huyền ảo.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Item 3 -->
-
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-13.jpg" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#f0932b">591k / Ngày</h6>
-
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Lêu Lêu HomeStay</h5>
-                                    <h6>Phú Quốc</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">100m2</li>
-                                        <li class="list-room">2 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Đặc biệt, đây là HomeStay duy nhất có thiết kế giường Dorm đôi
-                                        độc nhất vô nhị, phù hợp với các bạn trẻ, nhóm bạn phượt hoặc đi trăng mật.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-12.jpg" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#badc58">280k / Ngày</h6>
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Pink HomeStay</h5>
-                                    <h6>Quy Nhơn</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">300m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ,
-                                        mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.</p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>
@@ -542,78 +360,8 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-    <div class="grid wide">
-        <div class="row">
-            <div class="col l-3 m-6 c-6">
-                <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">Trung Tâm Trợ Giúp</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">Hướng Dẫn Mua Hàng</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">Hoàn Tiền</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">Chính Sách Bảo Hành</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col l-3 m-6 c-6">
-                <h3 class="footer__heading">THANH TOÁN</h3>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">Giới Thiệu</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">Tuyển Dụng</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">Người Bán</a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">Sale</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col l-3 m-6 c-6">
-                <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">
-                            <i class="footer-item__icon ti-facebook"></i> Facebook
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">
-                            <i class="footer-item__icon ti-instagram"></i> Instagram
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item__link">
-                            <i class="footer-item__icon ti-linkedin"></i> LinkedIn
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col l-3 m-6 c-6">
-                <h3 class="footer__heading">BẢNG TIN</h3>
-                <ul class="footer-list">
-                    <p class="footer__text2">Cập nhật những tin tức và sự kiện mới nhất của công ty. Nhập e-mail của
-                        bạn và đăng ký nhận</p>
-                    <div class="footer-li">
-                        <input type="email" class="footer__input contact-input" placeholder="Email" required>
-                        <button class="footer-btn">Đăng Kí</button>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="footer__bottom">
         <div class="grid">
-
             <p class="footer__text">Đại Học Nông Lâm TP.HCM</p>
             <p class="footer__text">Lập Trình Web: Lê Quốc Sơn Giang - Trần Đình Danh - Phạm Công Danh</p>
 
