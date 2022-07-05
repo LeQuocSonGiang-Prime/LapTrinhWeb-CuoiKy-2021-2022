@@ -17,7 +17,7 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
     private String forYou;
     private int price;
     private int salePrice;
-    private String image;
+    private List<String> image= new ArrayList<>();
     private double star;
 
 
@@ -65,11 +65,11 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
         this.id = id;
     }
 
-    public String getImage() {
+    public List<String> getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(List<String> image) {
         this.image = image;
     }
 

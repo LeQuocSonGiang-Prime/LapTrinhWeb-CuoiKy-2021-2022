@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %><%--
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
+<%@ page import="java.util.StringTokenizer" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -32,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- AOS ANIMATION -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <% List<HouseModel> houseModels = ( List<HouseModel>) request.getAttribute("listHouse");%>
+    <% List<HouseModel> houseModels = (List<HouseModel>) request.getAttribute("listHouse");%>
 </head>
 
 <body>
@@ -225,25 +226,29 @@
                     <div class="row">
 
 
-                        <c:forEach var="item" items="<%=houseModels%>">
-                            <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up" data-aos-duration="1000">
+
+                            <% for (HouseModel item : houseModels) { %>
+                            <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up"
+                                 data-aos-duration="1000">
                                 <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet">
-                                    <img src="${item.image}" alt="" class="buy-img">
-                                    <h6 class="buy-item-price" style="--h:#74b9ff">${item.price}đ / Ngày</h6>
+                                    <img src="<%=item.getImage().get(0)%>" alt="" class="buy-img">
+                                    <h6 class="buy-item-price" style="--h:#74b9ff"><%=item.getPrice()%>đ / Ngày</h6>
                                     <div class="buy-info-item">
-                                        <h5 class="buy-item-name">${item.name}</h5>
-                                        <h6>${item.address}</h6>
+                                        <h5 class="buy-item-name"><%=item.getName()%></h5>
+                                        <h6><%=item.getAddress()%></h6>
                                         <ul class="buy-item-list">
-                                            <c:set var="d" value="${fn:split(item.detail,',')}"/>
-                                            <li class="list-room">${d[0]}</li>
-                                            <li class="list-room">${d[1]}</li>
-                                            <li class="list-room">${d[2]}</li>
+
+                                             <% StringTokenizer str = new StringTokenizer(item.getDetail(),","); %>
+                                            <li class="list-room"><%=str.nextToken()%></li>
+                                            <li class="list-room"><%=str.nextToken()%></li>
+                                            <li class="list-room"><%=str.nextToken()%></li>
                                         </ul>
-                                        <p class="buy-text">${item.tutorial}</p>
+                                        <p class="buy-text"><%=item.getTutorial()%></p>
                                     </div>
                                 </a>
                             </div>
-                        </c:forEach>
+                            <%}%>
+
                     </div>
                     <div class="num-page" style="display: flex;justify-content: center;margin-top: 3rem;">
                         <ul class="pagination" id="pagination" style="font-size: 2rem;"></ul>

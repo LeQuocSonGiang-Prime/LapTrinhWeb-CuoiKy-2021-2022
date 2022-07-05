@@ -1,74 +1,90 @@
-body{
-    margin: 0; padding: 0;
+body {
+    margin: 0;
+    padding: 0;
 }
-.side-bar{
+
+.side-bar {
     position: fixed;
     height: 100%;
     width: 240px;
     padding: 2rem 1rem;
-    background-color:#353b48  ;
+    background-color: #353b48;
     text-align: center;
 }
-.side-bar .logo img{
+
+.side-bar .logo img {
     width: 180px;
     object-fit: cover;
 }
-.admin-info{
+
+.admin-info {
     margin-top: 20px;
     text-align: center;
 }
-.admin-info img{
- height: 80px;
- width: 80px;
- object-fit: cover;
- border-radius: 50%;
- border: 3px solid #fff;
+
+.admin-info img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
 }
-.admin-info h3{
+
+.admin-info h3 {
     font-size: 1.8rem;
     color: rgb(226, 226, 226);
 }
-.admin-info .admin-info-icon{
+
+.admin-info .admin-info-icon {
     font-size: 1.5rem;
     color: rgb(226, 226, 226);
 }
-.admin-info .admin-info-icon i{
+
+.admin-info .admin-info-icon i {
     margin: 0 1rem;
 }
-.side-bar .nav-link{
+
+.side-bar .nav-link {
     margin-top: 15px;
 }
-.side-bar .nav-link li{
+
+.side-bar .nav-link li {
     height: 50px;
     width: 100%;
     list-style: none;
 }
-.side-bar .nav-link li a{
+
+.side-bar .nav-link li a {
     height: 100%;
     color: rgb(226, 226, 226);
     width: 100%;
     display: flex;
     align-items: center;
 }
+
 .side-bar .nav-link li a:hover,
 .admin-info .admin-info-icon i:hover {
     color: #000;
 }
+
 .side-bar .nav-link li a i {
     font-size: 1.5rem;
     text-align: center;
 }
-.side-bar .nav-link li a i span{
+
+.side-bar .nav-link li a i span {
     margin-left: 10px;
 }
-.home-content{
+
+.home-content {
     background-color: #f5f5f5;
     position: relative;
     height: 100%;
     width: calc(100% - 240px);
     left: 240px;
 }
-.home-content nav{
+
+.home-content nav {
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -76,19 +92,23 @@ body{
     background-color: #fff;
     box-shadow: 0 2px 4px #e1e5ee;
 }
-.side-bar-button{
+
+.side-bar-button {
     color: var(--text-color);
     padding-left: 1rem;
 }
-.side-bar-button i{
+
+.side-bar-button i {
     font-size: 2.5rem;
 }
-.search-admin{
+
+.search-admin {
     position: relative;
     height: 35px;
     width: 350px;
 }
-.search-admin input{
+
+.search-admin input {
     position: absolute;
     border-radius: 15px;
     height: 100%;
@@ -98,40 +118,47 @@ body{
     outline: none;
     border: 2px solid #EFEEF1;
 }
-.search-admin i{
+
+.search-admin i {
     position: absolute;
     font-size: 1.5rem;
     right: 2rem;
     top: 50%;
     transform: translateY(-50%);
 }
-.profile-admin{
+
+.profile-admin {
     display: flex;
     gap: 20px;
     color: var(--text-color);
     padding-right: 2rem;
-    font-size: 1.4rem;    
+    font-size: 1.4rem;
 }
-.profile-admin-icon i{
+
+.profile-admin-icon i {
     margin: 0 10px;
 }
+
 /* MAIN */
-.home-main{
+.home-main {
     position: relative;
 }
-.home-main h2{
+
+.home-main h2 {
     text-transform: uppercase;
     color: #353b48;
     font-size: 2.5rem;
     padding-left: 30px;
 }
+
 .home-main-info {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
-.home-main-info .box{
+
+.home-main-info .box {
     width: 250px;
     height: 150px;
     display: flex;
@@ -142,7 +169,8 @@ body{
     box-shadow: 0 2px 4px #505050;
 
 }
-.home-main-info .box .box-icon{
+
+.home-main-info .box .box-icon {
     width: 60px;
     height: 60px;
     text-align: center;
@@ -152,21 +180,25 @@ body{
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
 }
-.home-main-info .box .box-info{
+
+.home-main-info .box .box-info {
     display: flex;
     flex-direction: column;
 }
-.home-main-info .box .box-icon i{
-    color: #353b48 ;
+
+.home-main-info .box .box-icon i {
+    color: #353b48;
 }
-.home-main-info .box .box-info span{
+
+.home-main-info .box .box-info span {
     font-size: 1.7rem;
     margin: 1rem 0;
     font-weight: bold;
     color: var(--white-color);
     text-transform: uppercase;
 }
-.home-main-info .box .box-info span i{
+
+.home-main-info .box .box-info span i {
     margin-right: 10px;
     font-weight: bold;
     color: #ffffff;
@@ -174,13 +206,16 @@ body{
     padding: 1rem 1rem;
     border-radius: 50%;
 }
+
 /* TABLE */
-.booking-list{
+.booking-list {
 }
-.booking-home{
+
+.booking-home {
 }
-.booking-title{
-    text-transform:capitalize;
+
+.booking-title {
+    text-transform: capitalize;
     text-align: left;
     padding: 2rem;
     font-size: 1.8rem;
@@ -189,7 +224,8 @@ body{
     border-radius: 5px;
     background-color: #353b48;
 }
-.booking{
+
+.booking {
     padding: 1rem;
     background-color: rgb(255, 255, 255);
     border-collapse: collapse;
@@ -199,15 +235,18 @@ body{
     text-align: center;
     border-radius: 5px;
 }
-.booking table{
+
+.booking table {
     width: 100%;
 }
-.booking thead{
+
+.booking thead {
     box-shadow: 0 2px 4px #e1e5ee;
-    
+
 }
+
 .booking thead tr th {
-    padding: 1rem 2rem ;
+    padding: 1rem 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1.4rem;
@@ -215,11 +254,13 @@ body{
     border-bottom: 1px solid #999;
 
 }
+
 .booking tbody tr td {
-    padding: 1rem 2rem ;
+    padding: 1rem 2rem;
     font-size: 1.3rem;
     border-bottom: 1px solid #999;
 }
+
 .booking-status {
     margin: 0;
     border-radius: 4px;
@@ -228,34 +269,46 @@ body{
     text-align: center;
     color: #fff;
 }
-.paid{
+
+.paid {
     background: linear-gradient(
-45deg,#2ed8b6,#59e0c5)
+            45deg, #2ed8b6, #59e0c5)
 }
-.unpaid{
+
+.unpaid {
     background: linear-gradient(
-45deg,#FF5370,#ff869a)
+            45deg, #FF5370, #ff869a)
 }
-.pending{
+
+.pending {
     background: linear-gradient(
-        45deg,#FFB64D,#ffcb80) 
+            45deg, #FFB64D, #ffcb80)
 }
-.booking tbody tr td i{
+
+.booking tbody tr td i {
     padding: 0.7rem;
     font-size: 1.3rem;
     border-radius: 50%;
 }
-.booking tbody tr td i:hover{
+
+.booking tbody tr td i:hover {
     box-shadow: 0 2px 10px #5a5a5a;
 
 }
-.booking-coment table tbody img{
+
+.booking-coment table tbody img {
     height: 30px;
     width: 30px;
     object-fit: cover;
     border-radius: 50%;
 }
-.booking-user-cmt span{
+
+.booking-user-cmt span {
     display: block;
     text-align: left;
+}
+
+.item_link:hover {
+    text-decoration: underline;
+    color: red;
 }

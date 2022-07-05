@@ -1,5 +1,7 @@
 package vn.edu.hcmuaf.fit.mapper.imp;
 
+import vn.edu.hcmuaf.fit.dao.ImageDAO;
+import vn.edu.hcmuaf.fit.dao.daoimp.ImageDAOImp;
 import vn.edu.hcmuaf.fit.mapper.IRowMapper;
 import vn.edu.hcmuaf.fit.model.HouseModel;
 import vn.edu.hcmuaf.fit.model.UserModel;
@@ -22,7 +24,9 @@ public class HouseMapper implements IRowMapper<HouseModel> {
             house.setForYou(resultSet.getString("foryou"));
             house.setPrice(resultSet.getInt("price"));
             house.setSalePrice(resultSet.getInt("saleprice"));
-            house.setImage(resultSet.getString("image"));
+            ImageDAO imageDAO = new ImageDAOImp();
+            house.setImage(imageDAO.findImageById_House(resultSet.getString("id_house")));
+            System.out.println("list image house: "+ imageDAO.findImageById_House(resultSet.getString("id_house")));
             return house;
         } catch (SQLException e) {
             e.printStackTrace();

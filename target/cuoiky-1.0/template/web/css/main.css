@@ -856,7 +856,7 @@
 .about-img {
     width: 100%;
     height: 400px;
-    background: url(../../../image/basic/home/header.jpg) center center/cover no-repeat;
+    background: url(https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhome%2Fheader.jpg?alt=media&token=2c84fe54-c877-43ed-ac75-2a03b9d0b290) center center/cover no-repeat;
     position: relative;
 }
 

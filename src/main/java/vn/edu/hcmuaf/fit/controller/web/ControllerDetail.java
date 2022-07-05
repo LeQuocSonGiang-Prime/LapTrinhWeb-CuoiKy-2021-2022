@@ -13,7 +13,7 @@ public class ControllerDetail extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        request.getRequestDispatcher("/views/web/detail.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/web/detailHouse.jsp").forward(request, response);
     }
 
     @Override

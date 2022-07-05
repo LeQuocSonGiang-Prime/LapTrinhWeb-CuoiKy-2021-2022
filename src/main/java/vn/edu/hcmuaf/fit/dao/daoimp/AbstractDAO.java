@@ -17,16 +17,15 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-           // String URL = "jdbc:mysql://localhost:3306/database?useUnicode=true&characterEncoding=utf-8";
-            String URL = "https://web-batdongsan-default-rtdb.asia-southeast1.firebasedatabase.app/";
+            String URL = "jdbc:mysql://localhost:3306/database?useUnicode=true&characterEncoding=utf-8";
+         //   String URL = "https://web-batdongsan-default-rtdb.asia-southeast1.firebasedatabase.app/";
             String user = "root";
             String password = "";
-           // return DriverManager.getConnection(URL, user, password);
-           return DriverManager.getConnection(
-                    "jdbc:mysql://ok0icvve03b7.us-east-1.psdb.cloud/database?sslMode=VERIFY_IDENTITY",
-                    "wod0p3spzxp7",
-                    "pscale_pw_zPAAMRae_dxJ4mKmFQMwoARofY4fQHDUnxtjrKtJ160");
-
+            return DriverManager.getConnection(URL, user, password);
+//           return DriverManager.getConnection(
+//                   "jdbc:mysql://ok0icvve03b7.us-east-1.psdb.cloud/database?sslMode=VERIFY_IDENTITY",
+//                   "05o4orummmow",
+//                   "pscale_pw_Xp7uE8NCtUsZ5LXoia9IEccdDeoIDYrlXmEMEM6qNbE");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

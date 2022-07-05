@@ -55,7 +55,8 @@
     <div class="admin-info">
         <img src="<%=currentAdmin.getAvatar()%>"
              alt="">
-        <h3><%=currentAdmin.getName()%></h3>
+        <h3><%=currentAdmin.getName()%>
+        </h3>
         <div class="admin-info-icon">
             <i class="ti-user"></i>
             <i class="ti-email"></i>
@@ -182,7 +183,7 @@
                     <tr>
                         <td><%= index++ %>
                         </td>
-                        <td>${bill_item.user.fullName}</td>
+                        <td><a class="item_link" href="" style="color:black;">${bill_item.user.fullName}</a></td>
                         <td>${bill_item.time_Checkin}</td>
                         <td>${bill_item.time_Checkout}</td>
                         <td>${bill_item.house.name}</td>
@@ -213,7 +214,7 @@
                     <c:forEach var="house_item" items="<%=listHouse%>">
                         <tr>
                             <td>1</td>
-                            <td>${house_item.name}</td>
+                            <td><a class="item_link" href="admin-detail-house?id_house=${house_item.id}" style="color:black;"> ${house_item.name} </a></td>
                             <td>
                                 <p>${house_item.totalDayOrder}</p>
                             </td>
@@ -234,10 +235,13 @@
 
                     <% for (CommentModel cmt : listComment) {%>
                     <tr>
-                        <td><img src="<%= cmt.getUser().getAvatar()%>" alt=""></td>
+                        <td><a class="item_link" href="" style="color:black;"><img src="<%= cmt.getUser().getAvatar()%>"
+                                                                                   alt=""></a></td>
                         <td class="booking-user-cmt">
-                            <span style="font-weight: bold;"><%= cmt.getUser().getFullName()%></span>
-                            <span><%= cmt.getComment()%></span></td>
+                            <a class="item_link" href="" style="color:black;"> <span
+                                    style="font-weight: bold;"><%= cmt.getUser().getFullName()%></span></a>
+                            <a class="item_link" href="" style="color:black;"> <span><%= cmt.getComment()%></span></a>
+                        </td>
 
                         <td>
                             <% for (int i = 0; i < cmt.getStar(); i++) {%>

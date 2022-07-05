@@ -4,7 +4,7 @@ import vn.edu.hcmuaf.fit.mapper.IRowMapper;
 import vn.edu.hcmuaf.fit.model.BillModel;
 import vn.edu.hcmuaf.fit.model.HouseModel;
 import vn.edu.hcmuaf.fit.model.UserModel;
-import vn.edu.hcmuaf.fit.service.serviceimp.HouseService;
+import vn.edu.hcmuaf.fit.service.serviceimp.HouseServiceImp;
 import vn.edu.hcmuaf.fit.service.serviceimp.UserServiceImp;
 
 import java.sql.ResultSet;
@@ -25,7 +25,7 @@ public class BillMapper implements IRowMapper<BillModel> {
                 UserModel.insertUser(user);
                 result.setUser(user);
             }
-            HouseService houseService = new HouseService();
+            HouseServiceImp houseService = new HouseServiceImp();
             String id_house = rs.getString("id_house");
             if (HouseModel.checkHouseExist(id_house)) {
                 HouseModel houseModel = HouseModel.getHouseById(id_house);
