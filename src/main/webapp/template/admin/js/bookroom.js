@@ -91,6 +91,7 @@ month_names.forEach((e, index) => {
     month.onclick = () => {
         month_list.classList.remove('show')
         generateCalendar(index, currYear.value)
+        handlingTimeOrder(arrayDay, arrayElement)
     }
     month_list.appendChild(month);
 })
@@ -209,14 +210,6 @@ updateTitle = () => {
     }
 }
 
-buttonCloseCelendar.onclick = () => {
-    document.querySelector('#sg-control').classList.remove('show-calendar')
-    if (document.querySelector(".book-room-checkin").classList.contains('selecting')) {
-        document.querySelector(".book-room-checkin").classList.remove('selecting')
-    } else {
-        document.querySelector(".book-room-checkout").classList.remove('selecting')
-    }
-}
 
 buttonDeleteDateSelect.onclick = () => {
         dateCheckin = undefined
@@ -227,103 +220,9 @@ buttonDeleteDateSelect.onclick = () => {
         updateTitle()
         changeTitleButtonChecking()
     }
-    //order customer
-document.querySelector('.customer .s').onclick = () => {
-    document.querySelector('.customer-order').classList.toggle('show')
-    if (document.querySelector('.customer-order').classList.contains('show')) {
-        document.querySelector('.customer .s').classList.add('selecting')
-        document.querySelector('.customer .s i').classList.remove('fa-chevron-down')
-        document.querySelector('.customer .s i').classList.add('fa-chevron-up')
-    } else {
-        document.querySelector('.customer .s').classList.remove('selecting')
-        document.querySelector('.customer .s i').classList.add('fa-chevron-down')
-        document.querySelector('.customer .s i').classList.remove('fa-chevron-up')
-    }
-}
 
-document.querySelector('.customer-footer button').onclick = () => {
-    document.querySelector('.customer-order').classList.toggle('show')
-    document.querySelector('.customer .s').classList.remove('selecting')
-}
 
-document.querySelector('.book-room-submit').onclick = () => {
-    if (dateCheckin === undefined) {
-        document.querySelector(".book-room-checkin").classList.add('selecting')
-        document.querySelector("#sg-control").classList.add('show-calendar')
-    } else if (dateCheckout === undefined) {
-        document.querySelector(".book-room-checkout").classList.add('selecting')
-        document.querySelector("#sg-control").classList.add('show-calendar')
-    }
-}
 
-changeTitleButtonChecking = () => {
-    if (dateCheckout !== undefined && dateCheckin !== undefined) {
-        let buttonSubmit = document.querySelector('.book-room-submit-btn')
-        buttonSubmit.innerText = 'Đặt phòng'
-        let priceOnTime = document.querySelector('.priceOnTime')
-        while (priceOnTime.hasChildNodes()) {
-            priceOnTime.removeChild(priceOnTime.firstChild);
-        }
-        buttonSubmit.onclick = function() {
-            console.log("hehehehe")
-            location.assign('./confirm.html');
-
-        }
-        createElementDetail()
-    } else {
-        document.querySelector('.book-room-submit-btn').innerText = 'Kiểm tra tình trạng còn phòng'
-        let priceOnTime = document.querySelector('.priceOnTime')
-        while (priceOnTime.hasChildNodes()) {
-            priceOnTime.removeChild(priceOnTime.firstChild);
-        }
-        let serviceChange = document.querySelector('.service-charge')
-        while (serviceChange.hasChildNodes()) {
-            serviceChange.removeChild(serviceChange.firstChild);
-        }
-        let sale = document.querySelector('.sale')
-        while (sale.hasChildNodes()) {
-            sale.removeChild(sale.firstChild);
-        }
-    }
-}
-
-createElementDetail = () => {
-    let headerPrice = document.querySelector('.book-room-header-price>span')
-    let timeOrder = lessTime()
-        // Price on Time
-    let priceOnTime = document.querySelector('.priceOnTime')
-
-    let elementTimeSPAN = document.createElement("span")
-    elementTimeSPAN.innerText = `${headerPrice.innerText} x ${timeOrder} đêm`
-    priceOnTime.appendChild(elementTimeSPAN)
-
-    let elementPriceSPAN = document.createElement("span")
-    elementPriceSPAN.innerText = `$${parseInt(headerPrice.innerText.slice(1, headerPrice.innerText.length)) * timeOrder}`
-    priceOnTime.appendChild(elementPriceSPAN)
-
-    //Sale
-    let serviceCharge = document.querySelector('.service-charge')
-
-    let elementService = document.createElement("span")
-    elementService.innerText = 'Phí dịch vụ'
-    serviceCharge.appendChild(elementService)
-
-    let elementServicePrice = document.createElement("span")
-    elementServicePrice.innerText = '$8'
-    serviceCharge.appendChild(elementServicePrice)
-
-    if (timeOrder > 7) {
-        let sale = document.querySelector('.sale')
-
-        let elementSale = document.createElement("span")
-        elementSale.innerText = 'Giảm theo tuần'
-        sale.appendChild(elementSale)
-
-        let elementSalePrice = document.createElement("span")
-        elementSalePrice.innerText = `$${parseInt(lessTime() / 7 + '') * 2}`
-        sale.appendChild(elementSalePrice)
-    }
-}
 
 lessTime = () => {
     if (dateCheckin.getFullYear() === dateCheckout.getFullYear()) {
