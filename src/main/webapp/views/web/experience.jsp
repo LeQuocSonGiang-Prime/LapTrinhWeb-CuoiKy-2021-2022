@@ -206,13 +206,13 @@
                     <c:forEach var="ex" items="<%=listEx%>">
                         <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
                             <a class="experience-singer-link-a" href="">
-                                <img src="${ex.image}" alt="" class="experience-img-slider slider-ex1"/>
+                                <img src="${ex.image}" alt="" class="experience-img-slider"/>
                                 <i class="fas fa-heart"></i>
                                 <div class="experience-info-item">
                                     <div class="experience-evaluate">
                                         <i class="fas fa-star star2"></i>
                                         <div class="text">
-                                            <p class="text-1"><%=String.format("%,.2f", Math.random() * 5)%>
+                                            <p class="text-1"><%=String.format("%,.2f", Math.random() + 4)%>
                                             </p>
                                         </div>
                                     </div>
