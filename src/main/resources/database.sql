@@ -116,12 +116,26 @@ CREATE TABLE `house`  (
 -- ----------------------------
 -- Records of house
 -- ----------------------------
-INSERT INTO `house` VALUES ('HOUSE00000', 'Phú Thuận', '4', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên làng đại học', 'tp.Thủ Đức, tp.Hồ Chí Minh', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 279, NULL);
-INSERT INTO `house` VALUES ('HOUSE00001', 'An Nhiên ', '1', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', ' Vũng Tàu', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 200, NULL);
+INSERT INTO `house` VALUES ('HOUSE00000', 'Phú Thuận', '4', 'Phú Thuận là HomeStay rất đặc biệt, căn nhà gỗ bên làng đại học', 'tp.Thủ Đức, tp.Hồ Chí Minh', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 279, NULL);
+INSERT INTO `house` VALUES ('HOUSE00001', 'An Nhiên ', '1', 'Là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', ' Vũng Tàu', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 200, NULL);
 INSERT INTO `house` VALUES ('HOUSE00002', 'Jubiter Long An', '2', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 199, NULL);
 INSERT INTO `house` VALUES ('HOUSE00003', 'APPS Hà Nội', '3', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Hà Nội', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 299, NULL);
 INSERT INTO `house` VALUES ('HOUSE00004', 'TURAL Bình Định', '2', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Bình Định', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 349, NULL);
 INSERT INTO `house` VALUES ('HOUSE00005', 'DIUQWGDIQWG', '2', 'CIJQAWGDIYUASGDCIASB', 'ICHWUICGHQWUICG', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 564, NULL);
+
+INSERT INTO `house` VALUES ('HOUSE00006', 'Lá Phong', '4', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '', 229, NULL);
+INSERT INTO `house` VALUES ('HOUSE00007', 'Cù lao ', '3', 'Căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Q.12 TP.HCM', ' 80M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 220, NULL);
+INSERT INTO `house` VALUES ('HOUSE00008', 'Sunshine Tím', '2', 'Bao gồm các studio và căn hộ 1 và 2 phòng ngủ có thiết kế lấy cảm hứng từ đô thị mở rộng ra ngoài các bức tường của bạn và trong toàn bộ cộng đồng.', ' 100M², 2 Phòng Ngủ, 2 Giường, 2 Phòng Tắm,4 Người', '', 183, NULL);
+INSERT INTO `house` VALUES ('HOUSE00009', 'Rosemary – Bed & Coffee House', '2', 'Ngôi nhà mang gam màu trầm của gỗ cùng với lối thiết kế tinh tế mang lại cho bạn cảm giác thanh bình.', 'Hà Nội', ' 200M², 3 Phòng Ngủ, 3 Giường, 1 Phòng Tắm,4 Người', '', 202, NULL);
+INSERT INTO `house` VALUES ('HOUSE00010', 'LeuLeu', '2', 'Có 1 vị trí hướng thằng toàn bộ view nhìn từ phòng ngủ tuyệt đẹp', 'Đà Lạt', ' 100M², 1 Phòng Ngủ, 1 Giường, 1 Phòng Tắm,2 Người', '', 300, NULL);
+INSERT INTO `house` VALUES ('HOUSE00011', 'AiNg', '2', 'Không gì tuyệt vời hơn khi đến đây để thư giãn', 'Quy Nhơn', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 564, NULL);
+INSERT INTO `house` VALUES ('HOUSE00012', 'Cũ kỹ-Vintage', '4', 'Có thiết kế mang phong cách hoài cỗ, làm ta cảm nhận trờ về những năm 1990', 'TPHCM', '150M², 2 Phòng Ngủ, 2 Giường, 1 Phòng Tắm,4 Người', '', 229, NULL);
+INSERT INTO `house` VALUES ('HOUSE00013', 'Nhà Gió', '1', 'Như tên gọi, ngôi nhà này đón gió cả 1 ngày, tuyệt vời để nghĩ ngơi', 'Bình Thạnh - TP.HCM', ' 70M², 1 Phòng Ngủ, 1 Giường, 1 Phòng Tắm,2 Người', '', 220, NULL);
+INSERT INTO `house` VALUES ('HOUSE00014', 'Tree House', '2', 'Tận hưởng thiên nhiên cây cối ở và cả tiếng chim khi đến đây nha', ' 150M², 2 Phòng Ngủ, 2 Giường, 2 Phòng Tắm,4 Người', '', 183, NULL);
+INSERT INTO `house` VALUES ('HOUSE00015', 'Ngân Nga', '3', 'Nằm trên con đường biển tuyệt vời nhất nơi đây sẽ không làm bạn thất vọng', 'Quy Nhơn', ' 100M², 4 Phòng Ngủ, 3 Giường, 1 Phòng Tắm,4 Người', '', 202, NULL);
+INSERT INTO `house` VALUES ('HOUSE00016', 'Chậm Homestay', '4', 'Cuộc sống đã quá hối hả hãy đến đây để chậm lại và nạp thêm năng lượng cho những trải nghiệm sắp đến nào', 'Đà Lạt', ' 100M², 1 Phòng Ngủ, 1 Giường, 1 Phòng Tắm,2 Người', '', 300, NULL);
+INSERT INTO `house` VALUES ('HOUSE00017', 'Fly Homestay', '2', 'Cứ tận hưởng chuyến du lịch của bạn, nơi ở cứ để chúng tôi lo', 'Quy Nhơn', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '', 564, NULL);
+
 
 -- ----------------------------
 -- Table structure for image_house
@@ -146,6 +160,18 @@ INSERT INTO `image_house` VALUES ('IMAGE20004', 'HOUSE00004', 'https://firebases
 INSERT INTO `image_house` VALUES ('IMAGE20398', 'HOUSE00000', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-11.jpg?alt=media&token=c7d9b314-5346-486b-8518-9ea8fdc8608a', 'TUYET');
 INSERT INTO `image_house` VALUES ('IMAGED1001', 'HOUSE00001', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-1.jpg?alt=media&token=3f06eab3-0a46-4e02-9b5b-b0937fec96ff', 'img1');
 
+INSERT INTO `image_house` VALUES ('IMAGE10007', 'HOUSE00007', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-3.jpg?alt=media&token=4182ce6a-ddcb-4a4f-a095-38e89ebd983e', 'Nice');
+INSERT INTO `image_house` VALUES ('IMAGE10008', 'HOUSE00008', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-2.jpg?alt=media&token=9dd527c7-0d90-4b45-8750-90241c981f0e', 'Tuyệt');
+INSERT INTO `image_house` VALUES ('IMAGE10009', 'HOUSE00009', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-4.jpg?alt=media&token=42012a1e-b000-4d6f-9e62-c35b6326bbb4', 'Nơi này thật tuyệt vời');
+INSERT INTO `image_house` VALUES ('IMAGE10010', 'HOUSE00010', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-9.jpg?alt=media&token=ce81b244-fe09-4aaa-86dd-e36ab5e4f286', 'Rất xứng đáng để trải nghiệm');
+INSERT INTO `image_house` VALUES ('IMAGE10011', 'HOUSE00011', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-13.jpg?alt=media&token=1f1f6c48-a183-4a5f-87bc-05c4433a8376', 'Love All!!!');
+INSERT INTO `image_house` VALUES ('IMAGE10012', 'HOUSE00012', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-14.jpg?alt=media&token=e31ff122-d7dc-477e-87cb-d1b4c316d6d5', 'Very good <3');
+INSERT INTO `image_house` VALUES ('IMAGE10013', 'HOUSE00013', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-15.jpg?alt=media&token=6867a063-9a4d-40a0-b08d-fac8035b2f03', 'Giá thành hợp lý');
+INSERT INTO `image_house` VALUES ('IMAGE10014', 'HOUSE00014', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-16.jpg?alt=media&token=96ff7d9f-9a24-4b31-ac9a-fe868a5c53db', 'Thật tốt');
+INSERT INTO `image_house` VALUES ('IMAGE10015', 'HOUSE00015', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-17.jpg?alt=media&token=b736ff49-20c8-4d1f-b285-d9ff3f5c0764', 'Thư giãn nào');
+INSERT INTO `image_house` VALUES ('IMAGE10016', 'HOUSE00016', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-18.jpg?alt=media&token=33872302-31a1-45a8-900a-b763830c47c7', 'Rất xứng đáng để trải nghiệm');
+INSERT INTO `image_house` VALUES ('IMAGE10017', 'HOUSE00017', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-19.jpg?alt=media&token=a2aa6c0c-8fd7-4adc-b3b3-da13a7f17f9a', 'Love All!!!');
+INSERT INTO `image_house` VALUES ('IMAGE10018', 'HOUSE00018', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-20.jpg?alt=media&token=bd6cff3d-1ca8-4ecf-8ef7-41b04952f8be', 'Very good <3');
 -- ----------------------------
 -- Table structure for place
 -- ----------------------------
