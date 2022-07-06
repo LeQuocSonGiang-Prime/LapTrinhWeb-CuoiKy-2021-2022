@@ -160,16 +160,16 @@ CREATE TABLE `place`  (
 -- ----------------------------
 -- Records of place
 -- ----------------------------
-INSERT INTO `place` VALUES ('PLACE00001', 'Nhiếp ảnh gia cá nhân của bạn tại Hà Nội','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2FUntitled.png?alt=media&token=336f2309-d882-4923-8b4c-9bbb4d0418b2');
-INSERT INTO `place` VALUES ('PLACE00002', 'Hanoi\s urban art galleries&best Pho','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2FUntitled.png?alt=media&token=336f2309-d882-4923-8b4c-9bbb4d0418b2');
-INSERT INTO `place` VALUES ('PLACE00003', 'HaLong Bay One Day Tour From Hanoi','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2FUntitled.png?alt=media&token=336f2309-d882-4923-8b4c-9bbb4d0418b2');
-INSERT INTO `place` VALUES ('PLACE00004', 'Chuyến đi đến những khu vực hẻo lánh nhất của Hà Giang','');
-INSERT INTO `place` VALUES ('PLACE00005', 'Tonkin Adventure - Hidden Hanoi with Local','');
-INSERT INTO `place` VALUES ('PLACE00006', 'The Famous Ha Giang Loop Adventure','');
-INSERT INTO `place` VALUES ('PLACE00007', 'Buổi chụp hình đêm tại Hà Nội','');
-INSERT INTO `place` VALUES ('PLACE00008', 'UNIQUE LOCAL BEER ADVENTURER','');
-INSERT INTO `place` VALUES ('PLACE00009', 'HanoiSoul-Street Food With Local Guide','');
-INSERT INTO `place` VALUES ('PLACE00010', 'Học chụp ảnh với máy ảnh phim tại Hà Nội','');
+INSERT INTO `place` VALUES ('PLACE00001', 'ẨM THỰC ĐƯỜNG PHỐ ĐI BỘ HÀ NỘI','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_01.webp?alt=media&token=ebabb8c9-61a5-4f22-9d80-69beb87e39ff');
+INSERT INTO `place` VALUES ('PLACE00002', 'Lớp học nấu ăn tại Hà Nội tại Biệt thự Pháp','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_02.webp?alt=media&token=c555bd9d-262e-467f-9a97-d66f2e463c74');
+INSERT INTO `place` VALUES ('PLACE00003', 'Lê la khắp các quán bar trong khu phố cổ tuyệt vời','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_03.webp?alt=media&token=12ff0be9-2b9b-4167-9ea8-c3ae14361b94');
+INSERT INTO `place` VALUES ('PLACE00004', 'Tận hưởng Hà Nội với một nhiếp ảnh gia','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_04.webp?alt=media&token=5f822f16-c404-4a91-80f8-e0012f6a38ee');
+INSERT INTO `place` VALUES ('PLACE00005', 'Tonkin Adventure - Hidden Hanoi with Local','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_05.webp?alt=media&token=ac930c17-9e48-4f08-a27b-f4622f4bc1c6');
+INSERT INTO `place` VALUES ('PLACE00006', 'The Famous Ha Giang Loop Adventure','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_06.webp?alt=media&token=c4ef82aa-321c-49ad-aaaf-9caa2da56780');
+INSERT INTO `place` VALUES ('PLACE00007', 'Buổi chụp hình đêm tại Hà Nội','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_07.webp?alt=media&token=063d129b-316e-4e19-986b-374a0f8b493f');
+INSERT INTO `place` VALUES ('PLACE00008', 'UNIQUE LOCAL BEER ADVENTURER','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_08.webp?alt=media&token=13d27c68-5302-49da-9e70-e5c36cfe9233');
+INSERT INTO `place` VALUES ('PLACE00009', 'HanoiSoul-Street Food With Local Guide','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_09.webp?alt=media&token=c9e82f74-5d53-426b-8e49-757bad6973a9');
+INSERT INTO `place` VALUES ('PLACE00010', 'Học chụp ảnh với máy ảnh phim tại Hà Nội','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_10.webp?alt=media&token=1af136bf-ea8b-4132-8d92-9db175e1c94d');
 INSERT INTO `place` VALUES ('PLACE00011', 'Biking & Foodie Tour around Old Quarter','');
 INSERT INTO `place` VALUES ('PLACE00012', 'Hanoi Street Food Tour with Real Foodie','');
 INSERT INTO `place` VALUES ('PLACE00013', 'Street Foodtour with Expert Tourguide','');
