@@ -1,5 +1,7 @@
 <%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.StringTokenizer" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.BillModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -32,7 +34,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <% HouseModel house = (HouseModel) request.getAttribute("currentHouse");
-        List<HouseModel> houseModelList = HouseModel.getListResult();
+        List<BillModel> listBill = (List<BillModel>) request.getAttribute("listBill");
     %>
 
 </head>
@@ -262,24 +264,37 @@
                         </div>
                         <h1>NƠI NÀY CÓ NHỮNG GÌ CHO BẠN</h1>
                         <div class="house-detail2">
+                            <% StringTokenizer stk = new StringTokenizer(house.getForYou(), ","); %>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-thought "></i> Hướng nhìn ra vịnh</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-car"></i> Chỗ đỗ xe miễn phí tại nơi ở</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-star"></i> Sân hiên hoặc ban công riêng</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-pin2"></i> Cho phép thú cưng</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-key"></i> Tự nhận phòng</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-car"></i> Máy phát hiện khí CO </p>
                             </div>
+                            <%}%>
                         </div>
                     </div>
                     <!-- ĐẶT PHÒNG -->
@@ -288,7 +303,7 @@
                         <div id="sg-book-room">
                             <div class="book-room-header">
                                 <div class="book-room-header-price">
-                                    <span>$<%=house.getPrice()%></span> / đêm
+                                    <span style="color: #ff385c;">đ <%=house.getPrice()%>.000</span> / đêm
                                 </div>
                                 <div class="book-room-assess">
                                     <i class="fas fa-star" style="color: #ff385c ;"></i>
@@ -423,6 +438,17 @@
 </script>
 
 <script src="<c:url value='/template/web/js/appfunction.js' />">showSlides();</script>
-<script src="<c:url value='/template/web/js/bookroom.js' />"></script>
+<script src="<c:url value='/template/admin/js/bookroom.js' />"></script>
+
+<script>
+
+    <% for(BillModel bill : listBill){ %>
+
+
+
+    <%}%>
+
+</script>
+
 </body>
 </html>

@@ -12,8 +12,8 @@ public class BillModel implements Serializable {
     private Date time_Checkout;
     private Date time_Order;
 
-    private List<BillModel> listNewBill;
-    private List<BillModel> listBill;
+    private static List<BillModel> listNewBill;
+    private static List<BillModel> listBill;
     private int totalBill;
 
     public BillModel(){}
@@ -58,20 +58,20 @@ public class BillModel implements Serializable {
         this.time_Order = time_Order;
     }
 
-    public List<BillModel> getListNewBill() {
+    public static List<BillModel> getListNewBill() {
         return listNewBill;
     }
 
-    public void setListNewBill(List<BillModel> listNewBill) {
-        this.listNewBill = listNewBill;
+    public static void setListNewBill(List<BillModel> listNewBill) {
+        BillModel.listNewBill = listNewBill;
     }
 
-    public List<BillModel> getListBill() {
+    public static List<BillModel> getListBill() {
         return listBill;
     }
 
-    public void setListBill(List<BillModel> listBill) {
-        this.listBill = listBill;
+    public static void setListBill(List<BillModel> listBill) {
+        BillModel.listBill = listBill;
     }
 
     public int getTotalBill() {

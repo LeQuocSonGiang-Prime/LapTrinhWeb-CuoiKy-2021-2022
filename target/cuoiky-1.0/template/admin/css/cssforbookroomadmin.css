@@ -216,7 +216,7 @@ button.book-room-submit:hover {
 .calendar-week-day div {
     display: grid;
     place-items: center;
-    color: var(--bg-second);
+    color: #717171;
 }
 
 .calendar-days {

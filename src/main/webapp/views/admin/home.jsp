@@ -1,7 +1,8 @@
 <%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
 <%@ page import="java.util.List" %>
 <%@ page import="vn.edu.hcmuaf.fit.model.AdminModel" %>
-<%@ page import="vn.edu.hcmuaf.fit.model.CommentModel" %><%--
+<%@ page import="vn.edu.hcmuaf.fit.model.CommentModel" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.BillModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -32,11 +33,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
-    <jsp:useBean id="bill" scope="request" type="vn.edu.hcmuaf.fit.model.BillModel"/>
     <jsp:useBean id="user" scope="request" type="vn.edu.hcmuaf.fit.model.UserModel"/>
     <% List<HouseModel> listHouse = (List<HouseModel>) request.getAttribute("listHouse");
         AdminModel currentAdmin = (AdminModel) request.getAttribute("adminCurrent");
         List<CommentModel> listComment = (List<CommentModel>) request.getAttribute("listComment");
+        BillModel bill = (BillModel) request.getAttribute("bill");
         //       System.out.println("listHouse: "+ listHouse.size());
 //        for (HouseModel h : listHouse){
 //            System.out.println("total: "+h.getTotalDayOrder());
@@ -179,21 +180,21 @@
                 </thead>
                 <tbody>
                 <%! int index = 1; %>
-                <c:forEach var="bill_item" items="${bill.listNewBill}">
+                    <% for(BillModel  item : BillModel.getListBill()){%>
                     <tr>
                         <td><%= index++ %>
                         </td>
-                        <td><a class="item_link" href="" style="color:black;">${bill_item.user.fullName}</a></td>
-                        <td>${bill_item.time_Checkin}</td>
-                        <td>${bill_item.time_Checkout}</td>
-                        <td>${bill_item.house.name}</td>
-                        <td>${bill_item.time_Order}</td>
+                        <td><a class="item_link" href="" style="color:black;"><%=bill.getUser().getFullName()%></a></td>
+                        <td><%=bill.getTime_Checkin()%></td>
+                        <td><%=bill.getTime_Checkout()%></td>
+                        <td><%=bill.getHouse().getName()%></td>
+                        <td><%=bill.getTime_Order()%></td>
                         <td>
                             <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
                             <i class="ti-trash" style="background-color: #ff7675;"></i>
                         </td>
                     </tr>
-                </c:forEach>
+                    <%}%>
                 </tbody>
             </table>
         </div>
@@ -214,7 +215,8 @@
                     <c:forEach var="house_item" items="<%=listHouse%>">
                         <tr>
                             <td>1</td>
-                            <td><a class="item_link" href="admin-detail-house?id_house=${house_item.id}" style="color:black;"> ${house_item.name} </a></td>
+                            <td><a class="item_link" href="admin-detail-house?id_house=${house_item.id}"
+                                   style="color:black;"> ${house_item.name} </a></td>
                             <td>
                                 <p>${house_item.totalDayOrder}</p>
                             </td>
@@ -263,6 +265,7 @@
 </div>
 <script src="./assets/js/appfunction.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </body>
 </html>
