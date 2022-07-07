@@ -24,7 +24,7 @@ public class ControllerDetailHouseServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         HouseModel currentHouse = HouseModel.getHouseById(request.getParameter("id_house"));
         request.setAttribute("currentHouse", currentHouse);
-        List<BillModel> listBill = BillModel.getListNewBill();
+        List<BillModel> listBill = BillModel.getListBill();
         request.setAttribute("listBill", listBill);
         request.getRequestDispatcher("/views/admin/detailHouse.jsp").forward(request, response);
     }

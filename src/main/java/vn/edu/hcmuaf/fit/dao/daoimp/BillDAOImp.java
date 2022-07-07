@@ -36,11 +36,7 @@ public class BillDAOImp extends AbstractDAO<BillModel>  implements IBillDAO {
         return query(sql, new BillMapper(), id_user);
     }
 
-    @Override
-    public List<BillModel> newBill() {
-        String sql = "SELECT * FROM bill WHERE time_checkout > CURRENT_DATE";
-        return query(sql, new BillMapper());
-    }
+
 
     @Override
     public List<BillModel> findAllBill() {

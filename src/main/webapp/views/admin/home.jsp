@@ -38,10 +38,7 @@
         AdminModel currentAdmin = (AdminModel) request.getAttribute("adminCurrent");
         List<CommentModel> listComment = (List<CommentModel>) request.getAttribute("listComment");
         BillModel bill = (BillModel) request.getAttribute("bill");
-        //       System.out.println("listHouse: "+ listHouse.size());
-//        for (HouseModel h : listHouse){
-//            System.out.println("total: "+h.getTotalDayOrder());
-//        }
+
     %>
 
 

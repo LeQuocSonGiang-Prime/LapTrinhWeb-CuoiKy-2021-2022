@@ -40,7 +40,6 @@ public class ControllerAdminServlet extends HttpServlet {
 
         BillModel billModel = new BillModel();
         billModel.setTotalBill(billService.totalBill());
-        BillModel.setListNewBill(billService.newBill());
         BillModel.setListBill(billService.findAllBill());
 
         UserModel.setTotalUser(userService.totalUser());

@@ -37,10 +37,6 @@ public class BillServiceImp implements IBillService {
         return billDAO.findBillByHouse(id_house);
     }
 
-    @Override
-    public List<BillModel> newBill() {
-        return billDAO.newBill();
-    }
 
     @Override
     public List<BillModel> findAllBill() {

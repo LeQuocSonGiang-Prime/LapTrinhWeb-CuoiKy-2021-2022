@@ -16,8 +16,6 @@ public interface IBillService {
 
     List<BillModel> findBillByHouse(String id_house);
 
-    List<BillModel> newBill();
-
     List<BillModel> findAllBill();
 
 }
