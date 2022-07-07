@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="<c:url value='/template/web/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/experience.css'/>">
+
     <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
