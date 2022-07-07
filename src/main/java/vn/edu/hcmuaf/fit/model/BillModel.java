@@ -72,4 +72,9 @@ public class BillModel implements Serializable {
     public void setTotalBill(int totalBill) {
         this.totalBill = totalBill;
     }
+
+    @Override
+    public String toString() {
+        return "id: "+house.getId();
+    }
 }

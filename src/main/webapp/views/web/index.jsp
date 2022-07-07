@@ -527,16 +527,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-    $(document).ready(function () {
-        $("img[loading != 'lazy']").attr("loading", "lazy");
-    });
-</script>
-<script src="<c:url value='/template/web/js/appfunction.js' />"></script>
 
-<script>
-
-</script>
+<script src="<c:url value='/template/web/js/appfunction.js' />" type="text/javascript" >console.log("100000")</script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
