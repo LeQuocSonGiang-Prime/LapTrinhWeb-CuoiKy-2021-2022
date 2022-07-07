@@ -27,6 +27,7 @@ public class ControllerDetailHouseServlet extends HttpServlet {
         List<BillModel> listBill = BillModel.getListBill();
         System.out.println(listBill);
         request.setAttribute("listBill", listBill);
+
         request.getRequestDispatcher("/views/admin/detailHouse.jsp").forward(request, response);
     }
 
