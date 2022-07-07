@@ -47,9 +47,9 @@
             <button type="button" class="toggle-btn" onclick="register()">Đăng Kí</button>
         </div>
         <div class="social-icons">
-            <img src="${pageContext.request.contextPath}/image/basic/icon/fb.png" alt="">
-            <img src="${pageContext.request.contextPath}/image/basic/icon/gp.png" alt="">
-            <img src="${pageContext.request.contextPath}/image/basic/icon/tw.png" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680" alt="">
         </div>
         <form id="login" name="form-signin" class="input-group">
             <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
@@ -209,7 +209,7 @@
                 <div class="row">
 
                     <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <img src="${pageContext.request.contextPath}/image/basic/typeHouse/nature.jpeg" alt="" class="introduce-img">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fnature.jpeg?alt=media&token=87bf6075-c5b0-4dbf-be2c-18c33a8ea548" alt="" class="introduce-img">
                         <div class="intro-content">
                             <h3 class="intro-content-title">Thiên Nhiên</h3>
                             <p class="intro-option">5 Lựa Chọn</p>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div class="introduce-backgroud col l-3 m-6 c-12 " data-aos="fade-up" data-aos-duration="1000">
-                        <img src="${pageContext.request.contextPath}/image/basic/typeHouse/intimate.jpg" alt="" class="introduce-img">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fintimate.jpg?alt=media&token=4e95efcb-9c77-4a13-9061-6ec42bb9f47d" alt="" class="introduce-img">
                         <div class="intro-content">
                             <h3 class="intro-content-title">Ấm Cúng</h3>
                             <p class="intro-option">28 Lựa Chọn</p>
@@ -225,7 +225,7 @@
                         </div>
                     </div>
                     <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="fade-up" data-aos-duration="1000">
-                        <img src="${pageContext.request.contextPath}/image/basic/typeHouse/studio.jpg" alt="" class="introduce-img">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fstudio.jpg?alt=media&token=a0b42942-39fe-4d0b-aaad-433941d7aa64" alt="" class="introduce-img">
                         <div class="intro-content">
                             <h3 class="intro-content-title">Studio</h3>
                             <p class="intro-option">9 Lựa Chọn</p>
@@ -233,7 +233,7 @@
                         </div>
                     </div>
                     <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <img src="${pageContext.request.contextPath}/image/basic/typeHouse/formal.jpg" alt=""
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fformal.jpg?alt=media&token=6e81412e-b777-4521-80ab-bc9ca88e85ad " alt=""
                              class="introduce-img">
                         <div class="intro-content">
                             <h3 class="intro-content-title">Sang Trọng</h3>
@@ -255,7 +255,7 @@
                         <!-- Item 1 -->
                         <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
                             <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-4.jpg" alt="" class="buy-img1">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-4.jpg?alt=media&token=42012a1e-b000-4d6f-9e62-c35b6326bbb4" alt="" class="buy-img1">
                                 <h6 class="buy-item-price" style="--h:#D980FA">2000$ / Ngày</h6>
                                 <div class="buy-info-item">
                                     <h5 class="buy-item-name">Alchemy by Alta</h5>
@@ -275,7 +275,7 @@
 
                         <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
                             <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-5.jpg" alt="" class="buy-img1">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-17.jpg?alt=media&token=b736ff49-20c8-4d1f-b285-d9ff3f5c0764" alt="" class="buy-img1">
                                 <h6 class="buy-item-price" style="--h:#fab1a0">1500$ / Ngày</h6>
 
                                 <div class="buy-info-item">
@@ -295,7 +295,7 @@
 
                         <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
                             <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-6.jpg" alt="" class="buy-img1">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-16.jpg?alt=media&token=96ff7d9f-9a24-4b31-ac9a-fe868a5c53db" alt="" class="buy-img1">
                                 <h6 class="buy-item-price" style="--h:#f0932b">1918$ / Ngày</h6>
 
                                 <div class="buy-info-item">
@@ -313,7 +313,7 @@
                         </div>
                         <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
                             <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-12.jpg" alt="" class="buy-img1">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-12.jpg?alt=media&token=61e24745-e494-400b-9c1c-3469eae48f2f" alt="" class="buy-img1">
                                 <h6 class="buy-item-price" style="--h:#badc58">2809$ / Ngày</h6>
                                 <div class="buy-info-item">
                                     <h5 class="buy-item-name">AVA Nob Hill</h5>
@@ -389,7 +389,7 @@
         <h1 class="team-section-title" data-aos="zoom-in-down"><span>Nhóm</span> Làm Việc</h1>
         <div class="team-section">
             <div class="person">
-                <img src="img/team/p1.png" alt="" class="person-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp1.png?alt=media&token=5ed59f1b-482e-4ebe-894e-8c879388d161" alt="" class="person-img">
                 <div class="person-info">
                     <h2>Ái Ngân</h2>
                     <p>Designer & Developer</p>
@@ -402,7 +402,7 @@
                 </div>
             </div>
             <div class="person">
-                <img src="img/team/p2.png" alt="" class="person-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp2.png?alt=media&token=899c9168-ab2b-4f2f-bc65-40484653ead7" alt="" class="person-img">
                 <div class="person-info">
                     <h2>Kim Pink</h2>
                     <p>Digital Marketing</p>
@@ -415,7 +415,7 @@
                 </div>
             </div>
             <div class="person">
-                <img src="img/team/p3.png" alt="" class="person-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp3.png?alt=media&token=d2dde336-c89b-465f-93e0-ad09dc48e325" alt="" class="person-img">
                 <div class="person-info">
                     <h2>Đình Danh</h2>
                     <p>Business Analyst</p>
@@ -428,7 +428,7 @@
                 </div>
             </div>
             <div class="person">
-                <img src="img/team/p4.png" alt="" class="person-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp4.png?alt=media&token=ada887ce-fbd8-4fb2-b746-54d3c9334ee7" alt="" class="person-img">
                 <div class="person-info">
                     <h2>Lisa Phạm</h2>
                     <p>Developer</p>
