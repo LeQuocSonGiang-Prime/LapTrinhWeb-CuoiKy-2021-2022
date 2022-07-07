@@ -171,7 +171,6 @@
         <!-- </div> -->
     </div>
 
-
     <div class="about">
         <div class="about-img">
             <h1 class="about-img-name">Chi Tiết</h1>
@@ -198,7 +197,8 @@
                         <span>Youtube</span>
                     </div>
                 </div>
-                <div class="about-title-link"><a href="./index.html">Trang Chủ</a> / <span>Chi Tiết</span></div>
+                <div class="about-title-link"><a href="${pageContext.request.contextPath}/trang-chu">Trang Chủ</a> /
+                    <span>Chi Tiết</span></div>
             </div>
         </div>
     </div>
@@ -369,24 +369,19 @@
             </div>
         </div>
     </div>
-</div>
-</div>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__bottom">
+            <div class="grid">
+                <p class="footer__text">Đại Học Nông Lâm TP.HCM</p>
+                <p class="footer__text">Lập Trình Web: Lê Quốc Sơn Giang - Trần Đình Danh - Phạm Công Danh</p>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer__bottom">
-        <div class="grid">
-            <p class="footer__text">Đại Học Nông Lâm TP.HCM</p>
-            <p class="footer__text">Lập Trình Web: Lê Quốc Sơn Giang - Trần Đình Danh - Phạm Công Danh</p>
-
+            </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
 
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
         $(".navbar-btn").click(function () {
@@ -399,56 +394,10 @@
 
 </script>
 
-<script>
-
-    // Next/previous controls
-    let slideIndex = 1
-
-
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {
-            slideIndex = 1
-        }
-        if (n < 1) {
-            slideIndex = slides.length
-        }
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-
-    }
-</script>
-
-<script src="<c:url value='/template/web/js/appfunction.js' />">showSlides();</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="<c:url value='/template/web/js/appfunction.js' />"></script>
 <script src="<c:url value='/template/admin/js/bookroom.js' />"></script>
 
-<script>
-
-    <% for(BillModel bill : listBill){ %>
-
-
-
-    <%}%>
-
-</script>
 
 </body>
 </html>
