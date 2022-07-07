@@ -126,7 +126,7 @@
                 </div>
                 <div class="box-info">
                     <span>Order</span>
-                    <span style="font-size: 3rem;">${bill.totalBill}</span>
+                    <span style="font-size: 3rem;"><%=bill.getTotalBill()%></span>
                     <span><i class="ti-arrow-up"></i>60%</span>
                 </div>
             </div>
@@ -177,21 +177,26 @@
                 </thead>
                 <tbody>
                 <%! int index = 1; %>
-                    <% for(BillModel  item : BillModel.getListBill()){%>
-                    <tr>
-                        <td><%= index++ %>
-                        </td>
-                        <td><a class="item_link" href="" style="color:black;"><%=bill.getUser().getFullName()%></a></td>
-                        <td><%=bill.getTime_Checkin()%></td>
-                        <td><%=bill.getTime_Checkout()%></td>
-                        <td><%=bill.getHouse().getName()%></td>
-                        <td><%=bill.getTime_Order()%></td>
-                        <td>
-                            <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                            <i class="ti-trash" style="background-color: #ff7675;"></i>
-                        </td>
-                    </tr>
-                    <%}%>
+                <% for (BillModel item : BillModel.getListBill()) {%>
+                <tr>
+                    <td><%= index++ %>
+                    </td>
+                    <td><a class="item_link" href="" style="color:black;"><%=item.getUser().getFullName()%>
+                    </a></td>
+                    <td><%=item.getTime_Checkin()%>
+                    </td>
+                    <td><%=item.getTime_Checkout()%>
+                    </td>
+                    <td><%=item.getHouse().getName()%>
+                    </td>
+                    <td><%=item.getTime_Order()%>
+                    </td>
+                    <td>
+                        <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
+                        <i class="ti-trash" style="background-color: #ff7675;"></i>
+                    </td>
+                </tr>
+                <%}%>
                 </tbody>
             </table>
         </div>
