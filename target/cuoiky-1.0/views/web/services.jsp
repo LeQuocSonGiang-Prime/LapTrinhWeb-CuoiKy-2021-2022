@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="<c:url value='/template/web/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
-    <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">

@@ -328,6 +328,8 @@
     box-shadow: inset 110px 0 0 0 #ff5252;
 }
 
+
+
 .content {
     position: relative;
 }
@@ -1001,6 +1003,7 @@
 
 .about-company-comment-content {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .about-company-comment-content.l-6 {

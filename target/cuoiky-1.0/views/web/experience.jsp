@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="<c:url value='/template/web/css/base.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/web/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/web/css/experience.css'/>">
 
