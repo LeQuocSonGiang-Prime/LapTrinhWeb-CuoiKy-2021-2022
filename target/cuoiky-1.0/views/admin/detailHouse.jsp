@@ -35,7 +35,6 @@
 
     <% HouseModel house = (HouseModel) request.getAttribute("currentHouse");
         List<BillModel> listBill = (List<BillModel>) request.getAttribute("listBill");
-        System.out.println("bill : " + listBill);
     %>
 
 </head>
@@ -268,7 +267,7 @@
                             <% StringTokenizer stk = new StringTokenizer(house.getForYou(), ","); %>
                             <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
-                                <p><i class="ti-thought "></i> Hướng nhìn ra vịnh</p>
+                                <p><i class="ti-thought "></i>Hướng nhìn ra vịnh</p>
                             </div>
                             <%}%>
                             <% if (stk.nextToken().equals("1")) {%>
@@ -370,7 +369,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- FOOTER -->
     <footer class="footer">

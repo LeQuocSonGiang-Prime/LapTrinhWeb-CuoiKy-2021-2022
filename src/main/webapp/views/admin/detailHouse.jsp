@@ -267,7 +267,7 @@
                             <% StringTokenizer stk = new StringTokenizer(house.getForYou(), ","); %>
                             <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
-                                <p><i class="ti-thought "></i> Hướng nhìn ra vịnh</p>
+                                <p><i class="ti-thought "></i>Hướng nhìn ra vịnh</p>
                             </div>
                             <%}%>
                             <% if (stk.nextToken().equals("1")) {%>
