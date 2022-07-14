@@ -176,20 +176,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                <%! int index = 1; %>
-                <% for (BillModel item : BillModel.getListBill()) {%>
+
+                <% for (int i = 0; i < BillModel.getListBill().size(); i++) {%>
                 <tr>
-                    <td><%= index++ %>
+                    <td style="padding: 7px;"><%= i +1%>
                     </td>
-                    <td><a class="item_link" href="" style="color:black;"><%=item.getUser().getFullName()%>
+                    <td><a class="item_link" href=""
+                           style="color:black;"><%=BillModel.getListBill().get(i).getUser().getFullName()%>
                     </a></td>
-                    <td><%=item.getTime_Checkin()%>
+                    <td><%=BillModel.getListBill().get(i).getTime_Checkin()%>
                     </td>
-                    <td><%=item.getTime_Checkout()%>
+                    <td><%=BillModel.getListBill().get(i).getTime_Checkout()%>
                     </td>
-                    <td><%=item.getHouse().getName()%>
+                    <td><%=BillModel.getListBill().get(i).getHouse().getName()%>
                     </td>
-                    <td><%=item.getTime_Order()%>
+                    <td><%=BillModel.getListBill().get(i).getTime_Order()%>
                     </td>
                     <td>
                         <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
