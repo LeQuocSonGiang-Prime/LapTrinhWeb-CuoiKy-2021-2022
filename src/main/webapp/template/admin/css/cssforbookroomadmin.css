@@ -416,6 +416,11 @@ button.book-room-submit:hover {
     display: none;
 }
 
+
+.calendar-days div.last-day {
+    color: rgb(163, 160, 160);
+}
+
 .calendar-days div.selecting {
     background-color: #f13255;
     color: var(--white);
@@ -427,8 +432,21 @@ button.book-room-submit:hover {
 }
 
 .calendar-days div.betweenSelecting {
-    background-color: #e6e3e4;
-    color: rgb(29, 151, 56);
+    background-color: #d7d6d6;
+    color: rgb(18, 161, 51);
+    border-radius: 50%;
+}
+
+.calendar-days div.betweenSelecting.last-day {
+    background-color: #f5eeee;
+    color: rgb(18, 161, 51);
+    border-radius: 50%;
+}
+
+
+.calendar-days div.curr-date.betweenSelecting {
+    background-color: #aa0404;
+    color: rgb(18, 161, 51);
     border-radius: 50%;
 }
 
@@ -436,9 +454,6 @@ button.book-room-submit:hover {
     display: none;
 }
 
-.calendar-days div.last-day {
-    color: rgb(163, 160, 160);
-}
 
 .month-list {
     border-radius: 20px;

@@ -1,17 +1,10 @@
-let dateCheckinElement
-let dateCheckoutElement
-    // date
 let dateCheckin
+
 let dateCheckout
-let titleDateCheckin = document.querySelector('#checkin-title')
-let titleDateCheckout = document.querySelector('#checkout-title')
-let buttonCloseCelendar = document.querySelector('.calendar-footer button')
-let buttonDeleteDateSelect = document.querySelector('.calendar-footer h3')
 
 //CHECK LEAP YEAR
 isLeapYear = (year) => {
-    return (year % 4 === 0 && year % 100 !== 100 && year % 400 !== 0) ||
-        (year % 100 === 0 && year % 400 === 0);
+    return (year % 4 === 0 && year % 100 !== 100 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0);
 }
 
 getFedDays = (year) => {
@@ -21,26 +14,22 @@ let arrayDay
 let arrayElement
 let calendar = document.querySelector(".calendar");
 
-// const month_names = ['January', 'February', 'March', 'April', 'May', 'June ',
-//     'July', 'August', 'September', 'October', 'November', 'December'];
-
-const month_names = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8',
-    'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'
-];
+const month_names = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'];
 
 let month_picker = document.querySelector('.month-picker');
+
 month_picker.onclick = () => {
-        month_list.classList.add('show');
-    }
-    //GENETATE CALENDAR
+    month_list.classList.add('show');
+}
+//GENETATE CALENDAR
 generateCalendar = (month, year) => {
     let calendar_days = document.querySelector('.calendar-days');
     calendar_days.innerHTML = ''
     let calendar_header_year = document.querySelector('.year');
     let dayOfMonth = [31, getFedDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-     arrayDay = [];
-     arrayElement = [];
+    arrayDay = [];
+    arrayElement = [];
 
     let currDate = new Date();
     month_picker.innerHTML = month_names[month];
@@ -52,8 +41,7 @@ generateCalendar = (month, year) => {
             day.classList.add('calendar-day-hover');
             day.innerHTML = i - firstDay.getDay() + 1 + ''
             day.innerHTML += '<span></span><span></span><span></span><span></span>'
-            if (i - firstDay.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() &&
-                month === currDate.getMonth()) {
+            if (i - firstDay.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() && month === currDate.getMonth()) {
                 day.classList.add('curr-date')
             }
         }
@@ -64,22 +52,21 @@ generateCalendar = (month, year) => {
             if (month < currDate.getMonth()) {
                 day.classList.add('last-day')
             } else if (month === currDate.getMonth()) {
-                if (i - firstDay.getDay() + 1 < currDate.getDate())
-                    day.classList.add('last-day')
+                if (i - firstDay.getDay() + 1 < currDate.getDate()) day.classList.add('last-day')
             }
         }
-        if (!day.classList.contains('last-day')) {
-            arrayDay.push(new Date(year, month, i - firstDay.getDay() + 1))
-            arrayElement.push(day)
-            day.onclick = () => {
-               // handlingSelectDay(day, year, month, i - firstDay.getDay() + 1, arrayDay, arrayElement)
+        // if (!day.classList.contains('last-day')) {
+        arrayDay.push(new Date(year, month, i - firstDay.getDay() + 1))
+        arrayElement.push(day)
+        //    day.onclick = () => {
+        // handlingSelectDay(day, year, month, i - firstDay.getDay() + 1, arrayDay, arrayElement)
 
-            }
-        }
+        //    }
+        //}
         calendar_days.appendChild(day)
     }
     if (dateCheckin !== undefined && dateCheckout !== undefined) {
-        betweenSelected(arrayDay, arrayElement);
+        handlingTimeOrder(arrayDay, arrayElement);
     }
 }
 
@@ -105,123 +92,14 @@ document.querySelector('#next-year').onclick = () => {
     generateCalendar(currMon.value, currYear.value)
 }
 let currDate = new Date();
-let currMon = { value: currDate.getMonth() }
-let currYear = { value: currDate.getFullYear() }
+let currMon = {value: currDate.getMonth()}
+let currYear = {value: currDate.getFullYear()}
 generateCalendar(currMon.value, currYear.value)
 
-// Hide or show calendar
 
-let switchToggle = true; //if switchToggle ==true=> checkin just pressed and vice versa
-
-document.querySelector(".book-room-checkin").onclick = () => {
-    if (document.querySelector("#sg-control").classList.contains('show-calendar')) {
-        if (switchToggle) {
-            document.querySelector("#sg-control").classList.remove('show-calendar')
-        }
-    } else {
-        document.querySelector("#sg-control").classList.add('show-calendar')
-    }
-    switchToggle = true
-    checkingSelecting()
-}
-
-document.querySelector(".book-room-checkout").onclick = () => {
-    if (document.querySelector("#sg-control").classList.contains('show-calendar')) {
-        if (!switchToggle) {
-            document.querySelector("#sg-control").classList.remove('show-calendar')
-        }
-    } else {
-        document.querySelector("#sg-control").classList.add('show-calendar')
-    }
-    switchToggle = false
-    checkingSelecting()
-}
-
-checkingSelecting = () => {
-    if (document.querySelector("#sg-control").classList.contains('show-calendar')) {
-        if (switchToggle) {
-            document.querySelector(".book-room-checkin").classList.add('selecting')
-            document.querySelector(".book-room-checkout").classList.remove('selecting')
-        } else {
-            document.querySelector(".book-room-checkout").classList.add('selecting')
-            document.querySelector(".book-room-checkin").classList.remove('selecting')
-        }
-    } else {
-        document.querySelector(".book-room-checkin").classList.remove('selecting')
-        document.querySelector(".book-room-checkout").classList.remove('selecting')
-    }
-}
-
-handlingSelectDay = (element, year, month, day, arrayDay, arrayElement) => {
-    if (document.querySelector(".book-room-checkin").classList.contains('selecting')) {
-        if (dateCheckinElement === undefined) {
-            element.classList.add('selecting')
-            dateCheckinElement = element;
-        } else {
-            dateCheckinElement.classList.remove('selecting');
-            dateCheckinElement = element;
-            dateCheckinElement.classList.add('selecting')
-        }
-        dateCheckin = new Date(year, month, day)
-    } else if (document.querySelector(".book-room-checkout").classList.contains('selecting')) {
-        let checkout = new Date(year, month, day)
-        if (checkout >= dateCheckin) {
-            if (dateCheckoutElement === undefined) {
-                element.classList.add('selecting')
-                dateCheckoutElement = element;
-            } else {
-                dateCheckoutElement.classList.remove('selecting');
-                dateCheckoutElement = element;
-                dateCheckoutElement.classList.add('selecting')
-            }
-            dateCheckout = new Date(year, month, day)
-            betweenSelected(arrayDay, arrayElement);
-        }
-    }
-    changeTitleButtonChecking()
-    updateTitle()
-}
-let array
-betweenSelected = (arrayDay, arrayElement) => {
-    for (let i = 0; i < arrayDay.length; i++) {
-        if (arrayDay[i] > dateCheckin && arrayDay[i] < dateCheckout && arrayElement[i].innerText !== "") {
-            arrayElement[i].classList.add('betweenSelecting')
-        }
-        if (dateEqualss(arrayDay[i], dateCheckin) || dateEqualss(arrayDay[i], dateCheckout)) {
-            arrayElement[i].classList.add('selecting')
-        }
-    }
-    array = arrayDay
-}
 dateEqualss = (a, b) => {
     return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 }
-
-updateTitle = () => {
-    if (dateCheckin !== undefined) {
-        titleDateCheckin.innerText = dateCheckin.getDate() + '/' + dateCheckin.getMonth() + '/' + dateCheckin.getFullYear()
-    } else {
-        titleDateCheckin.innerText = 'Thêm ngày'
-    }
-    if (dateCheckout !== undefined) {
-        titleDateCheckout.innerText = dateCheckout.getDate() + '/' + dateCheckout.getMonth() + '/' + dateCheckout.getFullYear()
-    } else {
-        titleDateCheckout.innerText = 'Thêm ngày'
-    }
-}
-
-
-buttonDeleteDateSelect.onclick = () => {
-        dateCheckin = undefined
-        dateCheckout = undefined
-        dateCheckinElement = undefined
-        dateCheckoutElement = undefined
-        generateCalendar(currMon.value, currYear.value)
-        updateTitle()
-        changeTitleButtonChecking()
-    }
-
-
 
 
 lessTime = () => {
@@ -287,13 +165,11 @@ lessTime = () => {
 
 handlingTimeOrder = (arrayDay, arrayElement) => {
     for (let i = 0; i < arrayDay.length; i++) {
-        if (arrayDay[i] > dateCheckin && arrayDay[i] < dateCheckout && arrayElement[i].innerText !== "") {
-            arrayElement[i].classList.add('betweenSelecting')
-        }
-        if (dateEqualss(arrayDay[i], dateCheckin) || dateEqualss(arrayDay[i], dateCheckout)) {
+        if ((arrayDay[i] > dateCheckin && arrayDay[i] < dateCheckout && arrayElement[i].innerText !== "")
+            || (dateEqualss(arrayDay[i], dateCheckin) || dateEqualss(arrayDay[i], dateCheckout))) {
             arrayElement[i].classList.add('betweenSelecting')
         }
     }
-    array = arrayDay
 }
-handlingTimeOrder(arrayDay, arrayElement)
+
+

@@ -246,6 +246,7 @@ body {
 }
 
 .booking thead tr th {
+    padding:4px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1.4rem;

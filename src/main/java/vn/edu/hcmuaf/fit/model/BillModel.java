@@ -1,7 +1,7 @@
 package vn.edu.hcmuaf.fit.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 public class BillModel implements Serializable {

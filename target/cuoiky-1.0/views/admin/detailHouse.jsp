@@ -1,7 +1,8 @@
 <%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.StringTokenizer" %>
-<%@ page import="vn.edu.hcmuaf.fit.model.BillModel" %><%--
+<%@ page import="vn.edu.hcmuaf.fit.model.BillModel" %>
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -397,7 +398,21 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="<c:url value='/template/web/js/appfunction.js' />"></script>
-<script src="<c:url value='/template/admin/js/bookroom.js' />"></script>
+<script src="<c:url value='/template/admin/js/bookroom.js' />">
+</script>
+<script>
+    <%for(BillModel bill : listBill){
+       Date checkin = bill.getTime_Checkin();
+       Date checkout = bill.getTime_Checkout();
+       System.out.println(checkin);
+       System.out.println("year: "+checkin.getYear());
+   %>
+    dateCheckin = new Date(<%=checkin.getYear()+1900%>, <%=checkin.getMonth()%>, <%=checkin.getDate()%>)
+    dateCheckout = new Date(<%=checkout.getYear()+1900%>, <%=checkout.getMonth()%>, <%=checkout.getDate()%>)
+    console.log("timecheckin"+dateCheckin)
+    handlingTimeOrder(arrayDay, arrayElement)
+    <%}%>
+</script>
 
 
 </body>
