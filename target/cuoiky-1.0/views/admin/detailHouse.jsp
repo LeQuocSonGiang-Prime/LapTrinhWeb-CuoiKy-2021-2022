@@ -404,12 +404,9 @@
     <%for(BillModel bill : listBill){
        Date checkin = bill.getTime_Checkin();
        Date checkout = bill.getTime_Checkout();
-       System.out.println(checkin);
-       System.out.println("year: "+checkin.getYear());
    %>
     dateCheckin = new Date(<%=checkin.getYear()+1900%>, <%=checkin.getMonth()%>, <%=checkin.getDate()%>)
     dateCheckout = new Date(<%=checkout.getYear()+1900%>, <%=checkout.getMonth()%>, <%=checkout.getDate()%>)
-    console.log("timecheckin"+dateCheckin)
     handlingTimeOrder(arrayDay, arrayElement)
     <%}%>
 </script>

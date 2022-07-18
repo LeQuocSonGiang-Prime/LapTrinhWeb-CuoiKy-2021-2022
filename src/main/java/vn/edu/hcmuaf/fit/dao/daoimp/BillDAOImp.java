@@ -7,10 +7,10 @@ import vn.edu.hcmuaf.fit.model.BillModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BillDAOImp extends AbstractDAO<BillModel>  implements IBillDAO {
+public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
     @Override
     public int totalBill() {
-        System.out.println("totalBill: "+sizeTable(2));
+        System.out.println("totalBill: " + sizeTable(2));
         return sizeTable(2);
     }
 
@@ -37,10 +37,21 @@ public class BillDAOImp extends AbstractDAO<BillModel>  implements IBillDAO {
     }
 
 
-
     @Override
     public List<BillModel> findAllBill() {
+        String sql = "SELECT *, DATEDIFF(time_checkout, time_checkin) as datediff FROM bill ORDER BY confirm ASC";
+        return query(sql, new BillMapper());
+    }
+
+    @Override
+    public List<BillModel> findAllNewBill() {
         String sql = "SELECT *, DATEDIFF(time_checkout, time_checkin) as datediff FROM bill WHERE time_checkout > CURRENT_DATE";
         return query(sql, new BillMapper());
+    }
+
+    @Override
+    public void confirmOrder(String id_Bill) {
+        String sql = "UPDATE bill SET confirm = 1 WHERE id_bill = ?";
+        update(sql, id_Bill);
     }
 }

@@ -12,7 +12,9 @@ public class BillModel implements Serializable {
     private Date time_Checkout;
     private Date time_Order;
 
-    private static List<BillModel> listBill;
+    private int confirm;
+
+    private static List<BillModel> listNewBill;
     private int totalBill;
 
     public BillModel(){}
@@ -57,12 +59,20 @@ public class BillModel implements Serializable {
         this.time_Order = time_Order;
     }
 
-    public static List<BillModel> getListBill() {
-        return listBill;
+    public int getConfirm() {
+        return confirm;
     }
 
-    public static void setListBill(List<BillModel> listBill) {
-        BillModel.listBill = listBill;
+    public void setConfirm(int confirm) {
+        this.confirm = confirm;
+    }
+
+    public static List<BillModel> getListNewBill() {
+        return listNewBill;
+    }
+
+    public static void setListNewBill(List<BillModel> listBill) {
+        BillModel.listNewBill = listBill;
     }
 
     public int getTotalBill() {

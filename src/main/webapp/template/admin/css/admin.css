@@ -256,7 +256,6 @@ body {
 }
 
 .booking tbody tr td {
-    padding: 1rem 2rem;
     font-size: 1.3rem;
     border-bottom: 1px solid #999;
 }
@@ -312,3 +311,21 @@ body {
     text-decoration: underline;
     color: red;
 }
+
+
+.confirm-order-admin {
+    background-color: #379b56;
+    padding:5px 20px;
+    border-radius: 20px;
+    width: fit-content;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+.confirm-order-admin:hover{
+    background-color: #3aca67;
+}
+
+.confirm-order-admin.confirmed{
+    background-color: #969c98;
+}
+

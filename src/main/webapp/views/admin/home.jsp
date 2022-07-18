@@ -177,24 +177,27 @@
                 </thead>
                 <tbody>
 
-                <% for (int i = 0; i < BillModel.getListBill().size(); i++) {%>
+                <% for (int i = 0; i < BillModel.getListNewBill().size(); i++) {%>
                 <tr>
-                    <td style="padding: 7px;"><%= i +1%>
+                    <td style="padding: 7px;"><%= i + 1%>
                     </td>
                     <td><a class="item_link" href=""
-                           style="color:black;"><%=BillModel.getListBill().get(i).getUser().getFullName()%>
+                           style="color:black;"><%=BillModel.getListNewBill().get(i).getUser().getFullName()%>
                     </a></td>
-                    <td><%=BillModel.getListBill().get(i).getTime_Checkin()%>
+                    <td><%=BillModel.getListNewBill().get(i).getTime_Checkin()%>
                     </td>
-                    <td><%=BillModel.getListBill().get(i).getTime_Checkout()%>
+                    <td><%=BillModel.getListNewBill().get(i).getTime_Checkout()%>
                     </td>
-                    <td><%=BillModel.getListBill().get(i).getHouse().getName()%>
+                    <td><%=BillModel.getListNewBill().get(i).getHouse().getName()%>
                     </td>
-                    <td><%=BillModel.getListBill().get(i).getTime_Order()%>
+                    <td><%=BillModel.getListNewBill().get(i).getTime_Order()%>
                     </td>
-                    <td>
-                        <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                        <i class="ti-trash" style="background-color: #ff7675;"></i>
+                    <td style="display: flex; justify-content: center;">
+                        <%if (BillModel.getListNewBill().get(i).getConfirm() == 0) {%>
+                        <div class="confirm-order-admin">Xác nhận</div>
+                        <%} else {%>
+                        <div class="confirm-order-admin confirmed">Đã xác nhận</div>
+                        <%}%>
                     </td>
                 </tr>
                 <%}%>

@@ -40,8 +40,7 @@ public class ControllerAdminServlet extends HttpServlet {
 
         BillModel billModel = new BillModel();
         billModel.setTotalBill(billService.totalBill());
-        BillModel.setListBill(billService.findAllBill());
-        System.out.println(BillModel.getListBill());
+        BillModel.setListNewBill(billService.findAllBill());
 
         UserModel.setTotalUser(userService.totalUser());
         HouseModel.setTotalHouse( houseService.totalHouse());

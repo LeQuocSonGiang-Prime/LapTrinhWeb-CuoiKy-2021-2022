@@ -42,4 +42,9 @@ public class BillServiceImp implements IBillService {
     public List<BillModel> findAllBill() {
         return billDAO.findAllBill();
     }
+
+    @Override
+    public void confirmOrder(String id) {
+        billDAO.confirmOrder(id);
+    }
 }

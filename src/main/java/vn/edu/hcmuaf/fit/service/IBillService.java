@@ -18,4 +18,6 @@ public interface IBillService {
 
     List<BillModel> findAllBill();
 
+    void confirmOrder(String id);
+
 }

@@ -15,4 +15,7 @@ public interface IBillDAO extends IGenericDAO<BillModel> {
     List<BillModel> findBillByUser(String id_user);
 
     List<BillModel> findAllBill();
+    List<BillModel> findAllNewBill();
+
+    void confirmOrder(String id_Bill);
 }

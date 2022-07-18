@@ -163,11 +163,12 @@ lessTime = () => {
 
 // for SJP
 
-handlingTimeOrder = (arrayDay, arrayElement) => {
+handlingTimeOrder = (arrayDay, arrayElement, user) => {
     for (let i = 0; i < arrayDay.length; i++) {
         if ((arrayDay[i] > dateCheckin && arrayDay[i] < dateCheckout && arrayElement[i].innerText !== "")
             || (dateEqualss(arrayDay[i], dateCheckin) || dateEqualss(arrayDay[i], dateCheckout))) {
             arrayElement[i].classList.add('betweenSelecting')
+
         }
     }
 }

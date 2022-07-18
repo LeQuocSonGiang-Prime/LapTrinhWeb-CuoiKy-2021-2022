@@ -42,6 +42,7 @@ public class BillMapper implements IRowMapper<BillModel> {
             result.setTime_Order(rs.getDate("time_order"));
             result.setTime_Checkin(rs.getDate("time_checkin"));
             result.setTime_Checkout(rs.getDate("time_checkout"));
+            result.setConfirm(rs.getInt("confirm"));
             return result;
         } catch (SQLException e) {
             e.printStackTrace();
