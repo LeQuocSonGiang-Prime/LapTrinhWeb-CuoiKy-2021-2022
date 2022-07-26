@@ -176,67 +176,79 @@
                 </tr>
                 </thead>
                 <tbody>
+                <form action="ConfirmOrderServlet">
+                    <% for (int i = 0; i < BillModel.getListNewBill().size(); i++) {%>
+                    <tr>
+                        <td style="padding: 7px;"><%= i + 1%>
+                        </td>
+                        <td style="padding: 7px 0 ;"><a class="item_link" href=""
+                                                        style="color:black;"><%=BillModel.getListNewBill().get(i).getUser().getFullName()%>
+                        </a></td>
+                        <td><%=BillModel.getListNewBill().get(i).getTime_Checkin()%>
+                        </td>
+                        <td><%=BillModel.getListNewBill().get(i).getTime_Checkout()%>
+                        </td>
+                        <td><a class="item_link"
+                               href="admin-detail-house?id_house=<%=BillModel.getListNewBill().get(i).getHouse().getId()%>"
+                               style="color:black;"><%=BillModel.getListNewBill().get(i).getHouse().getName()%>
+                        </a></td>
+                        <td><%=BillModel.getListNewBill().get(i).getTime_Order()%>
+                        </td>
+                        <td style="display: flex; justify-content: center;">
+                            <%if (BillModel.getListNewBill().get(i).getConfirm() == 0) {%>
+                            <i class="fa-solid fa-check"
+                               style="background-color: #dfe6e9;color: #0d6520;margin-right: 5px;"></i>
+                            <i class="ti-trash" style="background-color: #ff7675;"></i>
+                            <%} else {%>
+                            <div class="confirm-order-admin confirmed" style="cursor: not-allowed">Đã xác nhận</div>
+                            <%}%>
 
-                <% for (int i = 0; i < BillModel.getListNewBill().size(); i++) {%>
-                <tr>
-                    <td style="padding: 7px;"><%= i + 1%>
-                    </td>
-                    <td><a class="item_link" href=""
-                           style="color:black;"><%=BillModel.getListNewBill().get(i).getUser().getFullName()%>
-                    </a></td>
-                    <td><%=BillModel.getListNewBill().get(i).getTime_Checkin()%>
-                    </td>
-                    <td><%=BillModel.getListNewBill().get(i).getTime_Checkout()%>
-                    </td>
-                    <td><%=BillModel.getListNewBill().get(i).getHouse().getName()%>
-                    </td>
-                    <td><%=BillModel.getListNewBill().get(i).getTime_Order()%>
-                    </td>
-                    <td style="display: flex; justify-content: center;">
-                        <%if (BillModel.getListNewBill().get(i).getConfirm() == 0) {%>
-                        <div class="confirm-order-admin">Xác nhận</div>
-                        <%} else {%>
-                        <div class="confirm-order-admin confirmed">Đã xác nhận</div>
-                        <%}%>
-                    </td>
-                </tr>
-                <%}%>
+
+                        </td>
+                    </tr>
+                    <%}%>
+                </form>
                 </tbody>
             </table>
         </div>
         <div class="booking-list">
-            <div class="booking booking-home">
+            <div class="booking booking-home" style="flex-grow: 7;">
                 <h3 class="booking-title">Danh sách Các Ngôi Nhà</h3>
                 <table>
                     <thead>
                     <tr>
                         <th>STT</th>
                         <th>Tên</th>
-                        <th>Tổng số ngày được thuê</th>
-                        <th>Đánh giá(<i class="fas fa-star" style="color: #ff7675;"></i>)</th>
-                        <th>Chỉnh Sửa</th>
+                        <th>Số ngày thuê</th>
+                        <th>Đánh giá (<i class="fas fa-star" style="color: #ff7675;"></i>)</th>
+                        <th>Thao tác</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="house_item" items="<%=listHouse%>">
-                        <tr>
-                            <td>1</td>
-                            <td><a class="item_link" href="admin-detail-house?id_house=${house_item.id}"
-                                   style="color:black;"> ${house_item.name} </a></td>
-                            <td>
-                                <p>${house_item.totalDayOrder}</p>
-                            </td>
-                            <td>${house_item.star}</td>
-                            <td>
-                                <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                                <i class="ti-trash" style="background-color: #ff7675;"></i>
-                            </td>
-                        </tr>
-                    </c:forEach>
+                    <%for (int i = 0; i < listHouse.size(); i++) {%>
+                    <tr>
+                        <td><%=i + 1%>
+                        </td>
+                        <td style="padding: 7px 0 ;"><a class="item_link"
+                                                        href="admin-detail-house?id_house=<%=listHouse.get(i).getId()%>"
+                                                        style="color:black;"><%=listHouse.get(i).getName()%>
+                        </a></td>
+                        <td>
+                            <%=listHouse.get(i).getTotalDayOrder()%>
+
+                        </td>
+                        <td><%=listHouse.get(i).getStar()%>
+                        </td>
+                        <td>
+                            <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
+                            <i class="ti-trash" style="background-color: #ff7675;"></i>
+                        </td>
+                    </tr>
+                    <%}%>
                     </tbody>
                 </table>
             </div>
-            <div class="booking booking-home booking-coment" id="user">
+            <div class="booking booking-home booking-coment" id="user" style="margin-left: 0;flex-grow: 6;">
                 <h3 class="booking-title">Đánh giá của khách hàng</h3>
                 <table>
                     <tbody>
@@ -271,7 +283,9 @@
 </div>
 <script src="./assets/js/appfunction.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
 
+</script>
 
 </body>
 </html>

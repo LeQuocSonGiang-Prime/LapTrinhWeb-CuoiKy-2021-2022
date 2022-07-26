@@ -6,6 +6,7 @@ import java.util.List;
 
 public class BillModel implements Serializable {
 
+    private String id;
     private HouseModel house;
     private UserModel user;
     private Date time_Checkin;
@@ -18,6 +19,14 @@ public class BillModel implements Serializable {
     private int totalBill;
 
     public BillModel(){}
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public HouseModel getHouse() {
         return house;
@@ -81,6 +90,13 @@ public class BillModel implements Serializable {
 
     public void setTotalBill(int totalBill) {
         this.totalBill = totalBill;
+    }
+
+    public static BillModel getBillById(String id){
+        for(BillModel bill : listNewBill){
+            if(bill.getId().equals(id))
+                return bill;
+        }return null;
     }
 
     @Override

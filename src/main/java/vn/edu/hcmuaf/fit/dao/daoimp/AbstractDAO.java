@@ -76,7 +76,6 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
 
     @Override
     public void update(String sql, Object... parameter) {
-        System.out.println("update");
         Connection connection = null;
         PreparedStatement stm = null;
         try {
@@ -86,7 +85,6 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
             setParameter(stm, parameter);
             stm.executeUpdate();
             connection.commit();
-            System.out.println("method update in Abstract class");
         } catch (SQLException e) {
             e.printStackTrace();
             try {

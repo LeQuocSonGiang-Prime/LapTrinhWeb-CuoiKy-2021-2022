@@ -54,4 +54,10 @@ public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
         String sql = "UPDATE bill SET confirm = 1 WHERE id_bill = ?";
         update(sql, id_Bill);
     }
+
+    @Override
+    public BillModel findBillById(String id) {
+
+        return null;
+    }
 }

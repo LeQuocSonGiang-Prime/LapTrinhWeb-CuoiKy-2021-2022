@@ -47,4 +47,9 @@ public class BillServiceImp implements IBillService {
     public void confirmOrder(String id) {
         billDAO.confirmOrder(id);
     }
+
+    @Override
+    public BillModel findBillById(String id) {
+        return billDAO.findBillById( id);
+    }
 }

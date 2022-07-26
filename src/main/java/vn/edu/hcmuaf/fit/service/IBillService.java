@@ -20,4 +20,6 @@ public interface IBillService {
 
     void confirmOrder(String id);
 
+    BillModel findBillById(String id);
+
 }

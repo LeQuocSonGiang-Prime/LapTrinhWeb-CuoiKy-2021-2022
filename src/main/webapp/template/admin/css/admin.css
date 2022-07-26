@@ -209,10 +209,9 @@ body {
 
 /* TABLE */
 .booking-list {
+    display: flex;
 }
 
-.booking-home {
-}
 
 .booking-title {
     text-transform: capitalize;
@@ -230,12 +229,14 @@ body {
     background-color: rgb(255, 255, 255);
     border-collapse: collapse;
     margin: 3rem;
-    min-width: 700px;
     box-shadow: 0 5px 10px #e1e5ee;
     text-align: center;
     border-radius: 5px;
 }
 
+.booking-home {
+    margin-top: 0;
+}
 .booking table {
     width: 100%;
 }
