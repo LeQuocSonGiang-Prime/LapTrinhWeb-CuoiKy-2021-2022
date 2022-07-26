@@ -10,7 +10,7 @@ public interface IGenericDAO<T> {
 
     <T> List<T> query(String sql, IRowMapper<T> row, Object... parameter);
 
-    void update(String sql, Object... parameter);
+    boolean update(String sql, Object... parameter);
 
     int sizeTable(int nameTable);
 

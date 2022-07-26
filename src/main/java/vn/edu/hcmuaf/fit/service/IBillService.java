@@ -18,8 +18,10 @@ public interface IBillService {
 
     List<BillModel> findAllBill();
 
-    void confirmOrder(String id);
+    boolean confirmOrder(String id);
 
     BillModel findBillById(String id);
+
+    boolean removeBill(String id_bill);
 
 }

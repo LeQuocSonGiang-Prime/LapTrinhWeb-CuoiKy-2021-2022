@@ -4,7 +4,6 @@ import vn.edu.hcmuaf.fit.dao.IBillDAO;
 import vn.edu.hcmuaf.fit.mapper.imp.BillMapper;
 import vn.edu.hcmuaf.fit.model.BillModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
@@ -50,14 +49,20 @@ public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
     }
 
     @Override
-    public void confirmOrder(String id_Bill) {
+    public boolean confirmOrder(String id_Bill) {
         String sql = "UPDATE bill SET confirm = 1 WHERE id_bill = ?";
-        update(sql, id_Bill);
+        return update(sql, id_Bill);
     }
 
     @Override
     public BillModel findBillById(String id) {
 
         return null;
+    }
+
+    @Override
+    public boolean removeBill(String id_bill) {
+        String sql = "DELETE FROM bill WHERE id_bill = ?";
+        return update(sql, id_bill);
     }
 }

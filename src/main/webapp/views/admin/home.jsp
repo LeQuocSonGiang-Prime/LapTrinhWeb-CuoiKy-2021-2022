@@ -175,39 +175,41 @@
                     <th>Thao tác</th>
                 </tr>
                 </thead>
-                <tbody>
-                <form action="<c:url value='/ConfirmOrderServlet' />">
-                    <% for (int i = 0; i < BillModel.getListNewBill().size(); i++) {%>
-                    <tr>
-                        <td style="padding: 7px;"><%= i + 1%>
-                        </td>
-                        <td style="padding: 7px 0 ;"><a class="item_link" href=""
-                                                        style="color:black;"><%=BillModel.getListNewBill().get(i).getUser().getFullName()%>
-                        </a></td>
-                        <td><%=BillModel.getListNewBill().get(i).getTime_Checkin()%>
-                        </td>
-                        <td><%=BillModel.getListNewBill().get(i).getTime_Checkout()%>
-                        </td>
-                        <td><a class="item_link"
-                               href="admin-detail-house?id_house=<%=BillModel.getListNewBill().get(i).getHouse().getId()%>"
-                               style="color:black;"><%=BillModel.getListNewBill().get(i).getHouse().getName()%>
-                        </a></td>
-                        <td><%=BillModel.getListNewBill().get(i).getTime_Order()%>
-                        </td>
-                        <td style="display: flex; justify-content: center;">
-                            <%if (BillModel.getListNewBill().get(i).getConfirm() == 0) {%>
-                            <i class="fa-solid fa-check" onclick="confirmOrder(1)"
-                               style="background-color: #dfe6e9;color: #0d6520;margin-right: 5px;"></i>
-                            <i class="ti-trash" style="background-color: #ff7675;"  onclick="confirmOrder(1)"></i>
-                            <%} else {%>
-                            <div class="confirm-order-admin confirmed" style="cursor: not-allowed">Đã xác nhận</div>
-                            <%}%>
+                <tbody id="table-bill">
+                <% for (int i = 0; i < BillModel.getListNewBill().size(); i++) {%>
+                <tr>
+                    <td style="padding: 7px;"><%= i + 1%>
+                    </td>
+                    <td style="padding: 7px 0 ;"><a class="item_link" href=""
+                                                    style="color:black;"><%=BillModel.getListNewBill().get(i).getUser().getFullName()%>
+                    </a></td>
+                    <td><%=BillModel.getListNewBill().get(i).getTime_Checkin()%>
+                    </td>
+                    <td><%=BillModel.getListNewBill().get(i).getTime_Checkout()%>
+                    </td>
+                    <td><a class="item_link"
+                           href="admin-detail-house?id_house=<%=BillModel.getListNewBill().get(i).getHouse().getId()%>"
+                           style="color:black;"><%=BillModel.getListNewBill().get(i).getHouse().getName()%>
+                    </a></td>
+                    <td><%=BillModel.getListNewBill().get(i).getTime_Order()%>
+                    </td>
+                    <td style="display: flex; justify-content: center;">
+                        <%if (BillModel.getListNewBill().get(i).getConfirm() == 0) {%>
+                        <i class="fa-solid fa-check"
+                           onclick="confirmOrder(1, '<%=BillModel.getListNewBill().get(i).getId()%>')"
+                           style="background-color: #dfe6e9;color: #0d6520;margin-right: 5px;"></i>
+                        <i class="ti-trash" style="background-color: #ff7675;"
+                           onclick="confirmOrder(1, '<%=BillModel.getListNewBill().get(i).getId()%>')"></i>
+                        <%} else {%>
+                        <div class="confirm-order-admin confirmed" style="cursor: not-allowed">Đã xác nhận</div>
+                        <%}%>
+                    </td>
+                </tr>
+                <%}%>
 
 
-                        </td>
-                    </tr>
-                    <%}%>
-                </form>
+
+
                 </tbody>
             </table>
         </div>
@@ -281,12 +283,27 @@
     </div>
 
 </div>
-<script src="./assets/js/appfunction.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-function confirmOrder(x){
+    let w
 
-}
+    function confirmOrder(x, id_bill) {
+        if (x === 1) {
+            $.ajax({
+                url: "ConfirmOrderServlet",
+                type: "get",
+                data: {index: 1, id_bill: id_bill},
+                success(data) {
+                    $('#table-bill')[0].innerHTML = data
+                    w = data
+                    console.log(w)
+                },
+                error: function (error) {
+                    console.log("error" + error)
+                }
+            })
+        }
+    }
 </script>
 
 </body>
