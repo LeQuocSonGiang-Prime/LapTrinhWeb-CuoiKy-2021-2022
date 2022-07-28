@@ -16,4 +16,6 @@ public interface IHouseService {
 
     List<HouseModel> selectAllNoneExist();
 
+    boolean removeHouseById(String id_house);
+
 }

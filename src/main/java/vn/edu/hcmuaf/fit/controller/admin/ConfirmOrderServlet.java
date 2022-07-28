@@ -40,7 +40,7 @@ public class ConfirmOrderServlet extends HttpServlet {
 
                             "<td>" + BillModel.getListNewBill().get(i).getTime_Order() + "</td>\n" +
 
-                            "<td style=\"display: flex; justify-content: center;\">\n";
+                            "<td style=\"display: flex; justify-content: center;padding-bottom: 3px;\">\n";
                     if (BillModel.getListNewBill().get(i).getConfirm() == 0) {
                         data += "<i class=\"fa-solid fa-check\" onclick=\"confirmOrder(1, '" + BillModel.getListNewBill().get(i).getId() + "')\"\n" +
                                 "          style=\"background-color: #dfe6e9;color: #0d6520;margin-right: 5px;\"></i>\n" +
@@ -68,7 +68,7 @@ public class ConfirmOrderServlet extends HttpServlet {
                             "           href=\"admin-detail-house?id_house=" + BillModel.getListNewBill().get(i).getHouse().getId() + "\"\n" +
                             "           style=\"color:black;\">" + BillModel.getListNewBill().get(i).getHouse().getName() + "</a></td>\n" +
                             "<td>" + BillModel.getListNewBill().get(i).getTime_Order() + "</td>\n" +
-                            "<td style=\"display: flex; justify-content: center;\">\n";
+                            "<td style=\"display: flex; justify-content: center;padding-bottom: 3px;\">\n";
                     if (BillModel.getListNewBill().get(i).getConfirm() == 0) {
                         data += "<i class=\"fa-solid fa-check\" onclick=\"confirmOrder(1, '" + BillModel.getListNewBill().get(i).getId() + "')\"\n" +
                                 "          style=\"background-color: #dfe6e9;color: #0d6520;margin-right: 5px;\"></i>\n" +

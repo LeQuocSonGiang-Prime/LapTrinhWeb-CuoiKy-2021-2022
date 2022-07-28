@@ -193,13 +193,13 @@
                     </a></td>
                     <td><%=BillModel.getListNewBill().get(i).getTime_Order()%>
                     </td>
-                    <td style="display: flex; justify-content: center;">
+                    <td style="display: flex; justify-content: center;padding-bottom: 3px">
                         <%if (BillModel.getListNewBill().get(i).getConfirm() == 0) {%>
                         <i class="fa-solid fa-check"
                            onclick="confirmOrder(1, '<%=BillModel.getListNewBill().get(i).getId()%>')"
                            style="background-color: #dfe6e9;color: #0d6520;margin-right: 5px;"></i>
                         <i class="ti-trash" style="background-color: #ff7675;"
-                           onclick="confirmOrder(1, '<%=BillModel.getListNewBill().get(i).getId()%>')"></i>
+                           onclick="confirmOrder(2, '<%=BillModel.getListNewBill().get(i).getId()%>')"></i>
                         <%} else {%>
                         <div class="confirm-order-admin confirmed" style="cursor: not-allowed">Đã xác nhận</div>
                         <%}%>
@@ -207,8 +207,15 @@
                 </tr>
                 <%}%>
 
-
-
+                <div id="over-plane">
+                    <div id="question">
+                        <p>Xác nhận dơn hàng</p>
+                        <div>
+                            <div id="question-no">Hủy</div>
+                            <div id="question-yes">Xác nhận</div>
+                        </div>
+                    </div>
+                </div>
 
                 </tbody>
             </table>
@@ -221,12 +228,12 @@
                     <tr>
                         <th>STT</th>
                         <th>Tên</th>
-                        <th>Số ngày thuê</th>
+                        <th>Số ngày  thuê</th>
                         <th>Đánh giá (<i class="fas fa-star" style="color: #ff7675;"></i>)</th>
                         <th>Thao tác</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="table-house">
                     <%for (int i = 0; i < listHouse.size(); i++) {%>
                     <tr>
                         <td><%=i + 1%>
@@ -242,8 +249,8 @@
                         <td><%=listHouse.get(i).getStar()%>
                         </td>
                         <td>
-                            <i class="ti-pencil" style="background-color: #dfe6e9;"></i>
-                            <i class="ti-trash" style="background-color: #ff7675;"></i>
+                            <i class="ti-pencil" style="background-color: #dfe6e9;" onclick="confirmChange(1, '<%=listHouse.get(i).getId()%>')"></i>
+                            <i class="ti-trash" style="background-color: #ff7675;"  onclick="confirmChange(2, '<%=listHouse.get(i).getId()%>')"></i>
                         </td>
                     </tr>
                     <%}%>
@@ -283,28 +290,10 @@
     </div>
 
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    let w
 
-    function confirmOrder(x, id_bill) {
-        if (x === 1) {
-            $.ajax({
-                url: "ConfirmOrderServlet",
-                type: "get",
-                data: {index: 1, id_bill: id_bill},
-                success(data) {
-                    $('#table-bill')[0].innerHTML = data
-                    w = data
-                    console.log(w)
-                },
-                error: function (error) {
-                    console.log("error" + error)
-                }
-            })
-        }
-    }
-</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/template/admin/js/home.js"></script>
 
 </body>
 </html>

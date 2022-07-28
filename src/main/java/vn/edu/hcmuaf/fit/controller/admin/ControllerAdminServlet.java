@@ -40,15 +40,15 @@ public class ControllerAdminServlet extends HttpServlet {
 
         BillModel billModel = new BillModel();
         billModel.setTotalBill(billService.totalBill());
-        BillModel.setListNewBill(billService.findAllBill());
-
+        BillModel.setListNewBill(billService.findAllBill());System.out.println(BillModel.getListNewBill().size());
+        System.out.println("2");
         UserModel.setTotalUser(userService.totalUser());
         HouseModel.setTotalHouse( houseService.totalHouse());
         UserModel.setListUser(userService.findAll());
         request.setAttribute("bill", billModel);
         request.setAttribute("user", new UserModel());
         request.setAttribute("adminCurrent", adminCurrent);
-
+        System.out.println("3");
         List<HouseModel> listHouse = HouseModel.getListResult();
         List<HouseModel> listAllHouse = houseService.selectAll();
         for(HouseModel i : listHouse){

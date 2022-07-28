@@ -37,4 +37,10 @@ public class HouseDAOImp extends AbstractDAO<HouseModel> implements IHouseDAO {
         return query(sql, new HouseMapper());
     }
 
+    @Override
+    public boolean removeHouseById(String id_house) {
+        String sql = "DELETE FROM house WHERE id_house = ?";
+        return update(sql, id_house);
+    }
+
 }

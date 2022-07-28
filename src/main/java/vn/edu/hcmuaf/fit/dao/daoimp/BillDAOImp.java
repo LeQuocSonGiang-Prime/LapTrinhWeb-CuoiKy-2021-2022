@@ -9,7 +9,6 @@ import java.util.List;
 public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
     @Override
     public int totalBill() {
-        System.out.println("totalBill: " + sizeTable(2));
         return sizeTable(2);
     }
 

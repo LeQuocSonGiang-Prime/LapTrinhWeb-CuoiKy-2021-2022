@@ -40,6 +40,11 @@ public class HouseServiceImp implements IHouseService {
         return houseDAO.selectAllNoneExist();
     }
 
+    @Override
+    public boolean removeHouseById(String id_house) {
+        return houseDAO.removeHouseById(id_house);
+    }
+
     public HouseModel selectHouseByIdNoneInject(String id_house){
         HouseDAOImp house = new HouseDAOImp();
         return house.selectById(id_house);

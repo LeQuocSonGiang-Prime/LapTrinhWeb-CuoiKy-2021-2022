@@ -297,8 +297,8 @@ body {
 }
 
 .booking-coment table tbody img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -330,3 +330,60 @@ body {
     background-color: #969c98;
 }
 
+#over-plane{
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+
+#question{
+    background-color: white;
+    height: 130px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 5px;
+    width: 300px;
+}
+
+#question p {
+    font-size: 28px;
+    font-weight:bold;
+    display: flex;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#question>div{
+    display: flex;
+}
+
+#question>div>div{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight:bold;
+    background-color: rgb(165, 165, 165);
+    padding: 10px 20px;
+    border-radius:  30px;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+#question>div>div:hover{
+    box-shadow: 0 0 5px 5px rgb(197, 197, 197);
+}
+
+#question>div>div:nth-child(2){
+    background-color: rgb(24, 159, 62);
+}

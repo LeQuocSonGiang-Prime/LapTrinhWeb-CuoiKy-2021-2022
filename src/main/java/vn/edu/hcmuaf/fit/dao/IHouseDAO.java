@@ -19,4 +19,6 @@ public interface IHouseDAO extends IGenericDAO<HouseModel> {
 
     List<HouseModel> selectAllNoneExist();
 
+
+    boolean removeHouseById(String id_house);
 }
