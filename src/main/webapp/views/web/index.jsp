@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
+<%@ page import="java.util.StringTokenizer" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -32,7 +34,9 @@
 
     <!-- AOS ANIMATION -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <%
+        List<HouseModel> list4House = (List<HouseModel>) request.getAttribute("list4House");
+    %>
 
 </head>
 
@@ -47,9 +51,12 @@
             <button type="button" class="toggle-btn" onclick="register()">Đăng Kí</button>
         </div>
         <div class="social-icons">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd" alt="">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94" alt="">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680"
+                 alt="">
         </div>
         <form id="login" name="form-signin" class="input-group">
             <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
@@ -116,7 +123,8 @@
 
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                     alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -206,42 +214,50 @@
         <!-- LỰA CHỌN KIỂU NHÀ -->
         <div class="introduce">
             <div class="grid wide">
-                <div class="row">
-
-                    <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fnature.jpeg?alt=media&token=87bf6075-c5b0-4dbf-be2c-18c33a8ea548" alt="" class="introduce-img">
-                        <div class="intro-content">
-                            <h3 class="intro-content-title">Thiên Nhiên</h3>
-                            <p class="intro-option">5 Lựa Chọn</p>
-                            <button href="" class="intro-btn">Chọn nhà</button>
+                <form id="form-kind-of-house" action="danh-muc">
+                    <div class="row">
+                        <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up"
+                             data-aos-duration="1000">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fnature.jpeg?alt=media&token=87bf6075-c5b0-4dbf-be2c-18c33a8ea548"
+                                 alt="" class="introduce-img">
+                            <div class="intro-content">
+                                <h3 class="intro-content-title">Thiên Nhiên</h3>
+                                <p class="intro-option">5 Lựa Chọn</p>
+                                <button href="" class="intro-btn">Chọn nhà</button>
+                            </div>
+                        </div>
+                        <div class="introduce-backgroud col l-3 m-6 c-12 " data-aos="fade-up" data-aos-duration="1000">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fintimate.jpg?alt=media&token=4e95efcb-9c77-4a13-9061-6ec42bb9f47d"
+                                 alt="" class="introduce-img">
+                            <div class="intro-content">
+                                <h3 class="intro-content-title">Ấm Cúng</h3>
+                                <p class="intro-option">28 Lựa Chọn</p>
+                                <button href="" class="intro-btn">Chọn nhà</button>
+                            </div>
+                        </div>
+                        <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="fade-up" data-aos-duration="1000">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fstudio.jpg?alt=media&token=a0b42942-39fe-4d0b-aaad-433941d7aa64"
+                                 alt="" class="introduce-img">
+                            <div class="intro-content">
+                                <h3 class="intro-content-title">Studio</h3>
+                                <p class="intro-option">9 Lựa Chọn</p>
+                                <button href="" class="intro-btn">Chọn nhà</button>
+                            </div>
+                        </div>
+                        <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up"
+                             data-aos-duration="1000">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fformal.jpg?alt=media&token=6e81412e-b777-4521-80ab-bc9ca88e85ad "
+                                 alt=""
+                                 class="introduce-img">
+                            <div class="intro-content">
+                                <h3 class="intro-content-title">Sang Trọng</h3>
+                                <p class="intro-option">19 Lựa Chọn</p>
+                                <button href="" class="intro-btn">Chọn nhà</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="introduce-backgroud col l-3 m-6 c-12 " data-aos="fade-up" data-aos-duration="1000">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fintimate.jpg?alt=media&token=4e95efcb-9c77-4a13-9061-6ec42bb9f47d" alt="" class="introduce-img">
-                        <div class="intro-content">
-                            <h3 class="intro-content-title">Ấm Cúng</h3>
-                            <p class="intro-option">28 Lựa Chọn</p>
-                            <button href="" class="intro-btn">Chọn nhà</button>
-                        </div>
-                    </div>
-                    <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="fade-up" data-aos-duration="1000">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fstudio.jpg?alt=media&token=a0b42942-39fe-4d0b-aaad-433941d7aa64" alt="" class="introduce-img">
-                        <div class="intro-content">
-                            <h3 class="intro-content-title">Studio</h3>
-                            <p class="intro-option">9 Lựa Chọn</p>
-                            <button href="" class="intro-btn">Chọn nhà</button>
-                        </div>
-                    </div>
-                    <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fformal.jpg?alt=media&token=6e81412e-b777-4521-80ab-bc9ca88e85ad " alt=""
-                             class="introduce-img">
-                        <div class="intro-content">
-                            <h3 class="intro-content-title">Sang Trọng</h3>
-                            <p class="intro-option">19 Lựa Chọn</p>
-                            <button href="" class="intro-btn">Chọn nhà</button>
-                        </div>
-                    </div>
-                </div>
+                    <input type="hidden" id="kind-of-house" name="kind-of-house">
+                </form>
             </div>
         </div>
 
@@ -252,82 +268,33 @@
                 <div class="buy">
                     <h1 class="buy-title" data-aos="zoom-in-up"><span>Lựa Chọn</span> Gần Đây</h1>
                     <div class="row">
-                        <!-- Item 1 -->
+                        <% for (HouseModel item : list4House) { %>
                         <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-4.jpg?alt=media&token=42012a1e-b000-4d6f-9e62-c35b6326bbb4" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#D980FA">2000$ / Ngày</h6>
+                            <a class="catalog-singer-link-a"
+                               href="${pageContext.request.contextPath}/chi-tiet?id_house=<%=item.getId()%>">
+                                <img src="<%=item.getImage().get(0)%>" alt="" class="buy-img1">
+                                <h6 class="buy-item-price" style="--h:#D980FA"><%=item.getPrice()%>k / Ngày</h6>
                                 <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Alchemy by Alta</h5>
-                                    <h6>Phường 9 - Đà Lạt</h6>
+                                    <h5 class="buy-item-name"><%=item.getName()%>
+                                    </h5>
+                                    <h6><%=item.getAddress()%>></h6>
 
                                     <ul class="buy-item-list">
-                                        <li class="list-room">220m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
+                                        <% StringTokenizer str = new StringTokenizer(item.getDetail(), ","); %>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
                                     </ul>
-                                    <p class="buy-text">Bao gồm các studio và căn hộ 1 và 2 phòng ngủ có thiết kế lấy
-                                        cảm hứng từ đô thị.</p>
+                                    <p class="buy-text"><%=item.getTutorial()%>
+                                    </p>
                                 </div>
                             </a>
                         </div>
-                        <!-- Item 2 -->
+                        <%}%>
 
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-17.jpg?alt=media&token=b736ff49-20c8-4d1f-b285-d9ff3f5c0764" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#fab1a0">1500$ / Ngày</h6>
-
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Bayside Village Apartments</h5>
-                                    <h6>Bãi Sau - Vũng Tàu</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">100m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Hãy tận hưởng niềm vui của bạn từ một vị trí thuận lợi có thể dễ
-                                        dàng tiếp cận tất cả những gì tốt nhất của khu South Beach.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Item 3 -->
-
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-16.jpg?alt=media&token=96ff7d9f-9a24-4b31-ac9a-fe868a5c53db" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#f0932b">1918$ / Ngày</h6>
-
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Avalon at Mission Bay</h5>
-                                    <h6>Phú Quốc</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">100m2</li>
-                                        <li class="list-room">2 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Avalon tại Đảo Kim Cương nằm ở Q2.TP HCM cung cấp studio được
-                                        thiết kế chu đáo</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-12.jpg?alt=media&token=61e24745-e494-400b-9c1c-3469eae48f2f" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#badc58">2809$ / Ngày</h6>
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">AVA Nob Hill</h5>
-                                    <h6>Quy Nhơn</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">300m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Mang đến cơ hội duy nhất để sống và tận hưởng những khu dân cư
-                                        yên tĩnh, vị trí thuận tiện, không gian thoáng đẹp.</p>
-                                </div>
-                            </a>
-                        </div>
 
                     </div>
                     <div class="buy-view-search">
@@ -389,7 +356,8 @@
         <h1 class="team-section-title" data-aos="zoom-in-down"><span>Nhóm</span> Làm Việc</h1>
         <div class="team-section">
             <div class="person">
-                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp1.png?alt=media&token=5ed59f1b-482e-4ebe-894e-8c879388d161" alt="" class="person-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp1.png?alt=media&token=5ed59f1b-482e-4ebe-894e-8c879388d161"
+                     alt="" class="person-img">
                 <div class="person-info">
                     <h2>Ái Ngân</h2>
                     <p>Designer & Developer</p>
@@ -402,7 +370,8 @@
                 </div>
             </div>
             <div class="person">
-                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp2.png?alt=media&token=899c9168-ab2b-4f2f-bc65-40484653ead7" alt="" class="person-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp2.png?alt=media&token=899c9168-ab2b-4f2f-bc65-40484653ead7"
+                     alt="" class="person-img">
                 <div class="person-info">
                     <h2>Kim Pink</h2>
                     <p>Digital Marketing</p>
@@ -415,7 +384,8 @@
                 </div>
             </div>
             <div class="person">
-                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp3.png?alt=media&token=d2dde336-c89b-465f-93e0-ad09dc48e325" alt="" class="person-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp3.png?alt=media&token=d2dde336-c89b-465f-93e0-ad09dc48e325"
+                     alt="" class="person-img">
                 <div class="person-info">
                     <h2>Đình Danh</h2>
                     <p>Business Analyst</p>
@@ -428,7 +398,8 @@
                 </div>
             </div>
             <div class="person">
-                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp4.png?alt=media&token=ada887ce-fbd8-4fb2-b746-54d3c9334ee7" alt="" class="person-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp4.png?alt=media&token=ada887ce-fbd8-4fb2-b746-54d3c9334ee7"
+                     alt="" class="person-img">
                 <div class="person-info">
                     <h2>Lisa Phạm</h2>
                     <p>Developer</p>
@@ -528,7 +499,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-<script src="<c:url value='/template/web/js/appfunction.js' />" type="text/javascript" >console.log("100000")</script>
+<script src="<c:url value='/template/web/js/appfunction.js' />" type="text/javascript">console.log("100000")</script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>

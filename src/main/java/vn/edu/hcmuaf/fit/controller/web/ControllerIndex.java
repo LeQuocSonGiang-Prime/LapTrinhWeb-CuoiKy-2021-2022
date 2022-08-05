@@ -20,7 +20,7 @@ public class ControllerIndex extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        List<HouseModel> listHouse = houseService.select4Element();
+        List<HouseModel> listHouse = houseService.select4Element(0);
         request.setAttribute("list4House", listHouse);
         request.getRequestDispatcher("/views/web/index.jsp").forward(request,response);
     }

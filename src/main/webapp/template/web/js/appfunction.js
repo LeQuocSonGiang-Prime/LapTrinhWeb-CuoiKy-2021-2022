@@ -113,7 +113,21 @@ document.querySelector("#btn-login").onclick = function (e) {
                 console.log(data.name)
                 document.querySelector("#modal").style.display = "none"
                 document.querySelector("#header__info-item-a").style.display = "none"
-                document.querySelector("#header__info-login").innerHTML = data.name;
+                // document.querySelector("#header__info-login").style.display = "none"
+                document.querySelector(".header__info").innerHTML = ""
+                let avatarUser = document.createElement("img")
+                avatarUser.src = data.avatar
+                console.log(data.avatar)
+                document.querySelector(".header__info").appendChild(avatarUser)
+                avatarUser.style.borderRadius = "50%"
+                avatarUser.style.height = "20px"
+                avatarUser.style.width = "20px"
+                avatarUser.style.marginRight = "5px"
+                let labelName = document.createElement("div")
+                labelName.innerText = data.name
+                document.querySelector(".header__info").appendChild(labelName)
+
+
             } else {
                 document.querySelector("#login").innerHTML =
                     '            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>\n' +
@@ -163,7 +177,7 @@ document.querySelector("#btn-signup").onclick = function (e) {
                     '            <p>Email đã được sử dụng, vui lòng nhập lại</p>' +
                     '            <button type="submit" class="submit-btn" id="btn-signup">Đăng Kí</button>'
             } else {
-               //day la noi ong su ly JS cua phan hide, show cua phan nay
+                //day la noi ong su ly JS cua phan hide, show cua phan nay
             }
         }
     })
@@ -176,11 +190,11 @@ function Validator(options) {
     if (formelement) {
         options.rules.forEach(function (rule) {
             var inputElement = formelement.querySelector(rule.selector)
-            if(inputElement){
-                inputElement.onBlur = function(){
+            if (inputElement) {
+                inputElement.onBlur = function () {
                     var messError = rule.test(inputElement.value);
                     var inputError = inputElement.parentElement.querySelector("")
-                    if(messError){
+                    if (messError) {
 
                     }
                 }
@@ -193,7 +207,7 @@ Validator.isRequired = function (selector) {
     return {
         selector: selector,
         test: function (value) {
-            return value.trim() ? undefined: "Vui lòng nhập trường này"
+            return value.trim() ? undefined : "Vui lòng nhập trường này"
         }
     };
 }
@@ -205,4 +219,17 @@ Validator.isEmail = function (selector) {
 
         }
     };
+}
+
+
+// file index.jsp
+
+
+let btnKindHouse = document.querySelectorAll(".intro-btn")
+let input_kindOfHouse = document.querySelector("#kind-of-house")
+for (let i = 0; i < 4; i++) {
+    btnKindHouse[i].onClick = function () {
+        input_kindOfHouse.value = (i + 1)
+        document.querySelector("#form-kind-of-house").submit()
+    }
 }

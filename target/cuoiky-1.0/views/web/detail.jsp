@@ -299,7 +299,7 @@
                         <div id="sg-book-room">
                             <div class="book-room-header">
                                 <div class="book-room-header-price">
-                                    <span><%=house.getPrice()%>đ</span> / đêm
+                                    <span><%=house.getPrice()%>k</span> / đêm
                                 </div>
                                 <div class="book-room-assess">
                                     <i class="fas fa-star" style="color: #ff385c ;"></i>

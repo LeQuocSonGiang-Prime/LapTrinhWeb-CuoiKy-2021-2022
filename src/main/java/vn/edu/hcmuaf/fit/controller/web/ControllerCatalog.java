@@ -23,7 +23,12 @@ public class ControllerCatalog extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        request.setAttribute("listHouse", houseService.select24Element(1));
+        String kindOfHouse = request.getParameter("kind-of-house");
+        if(kindOfHouse==null) {
+            request.setAttribute("listHouse", houseService.select24Element(1));
+        }else{
+            request.setAttribute("listHouse", houseService.selectHouseByKind(Integer.parseInt(kindOfHouse)));
+        }
         request.getRequestDispatcher("/views/web/catalog.jsp").forward(request, response);
     }
 

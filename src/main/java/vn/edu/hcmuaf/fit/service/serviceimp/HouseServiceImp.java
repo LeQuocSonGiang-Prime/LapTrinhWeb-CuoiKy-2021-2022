@@ -46,8 +46,13 @@ public class HouseServiceImp implements IHouseService {
     }
 
     @Override
-    public List<HouseModel> select4Element() {
-        return houseDAO.select4Element();
+    public List<HouseModel> select4Element(int index) {
+        return houseDAO.select4Element(index);
+    }
+
+    @Override
+    public List<HouseModel> selectHouseByKind(int index) {
+        return houseDAO.selectHouseByKind(index);
     }
 
     public HouseModel selectHouseByIdNoneInject(String id_house){

@@ -29,7 +29,7 @@ public class ControllerDetail extends HttpServlet {
         request.setAttribute("currentHouse", currentHouse);
         List<BillModel> listBill = billService.findBillByHouse(request.getParameter("id_house"));
         request.setAttribute("listBill", listBill);
-        List<HouseModel> listHouse = houseService.select4Element();
+        List<HouseModel> listHouse = houseService.select4Element(2);
         request.setAttribute("listHouse", listHouse);
         request.getRequestDispatcher("/views/web/detail.jsp").forward(request, response);
     }

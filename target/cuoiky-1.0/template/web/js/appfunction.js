@@ -113,7 +113,21 @@ document.querySelector("#btn-login").onclick = function (e) {
                 console.log(data.name)
                 document.querySelector("#modal").style.display = "none"
                 document.querySelector("#header__info-item-a").style.display = "none"
-                document.querySelector("#header__info-login").innerHTML = data.name;
+               // document.querySelector("#header__info-login").style.display = "none"
+                document.querySelector(".header__info").innerHTML = ""
+                let avatarUser = document.createElement("img")
+                avatarUser.src = data.avatar
+                console.log(data.avatar)
+                document.querySelector(".header__info").appendChild(avatarUser)
+                avatarUser.style.borderRadius = "50%"
+                avatarUser.style.height = "20px"
+                avatarUser.style.width = "20px"
+                avatarUser.style.marginRight = "5px"
+                let labelName = document.createElement("div")
+                labelName.innerText = data.name
+                document.querySelector(".header__info").appendChild(labelName)
+
+
             } else {
                 document.querySelector("#login").innerHTML =
                     '            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>\n' +

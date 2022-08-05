@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
+<%@ page import="java.util.StringTokenizer" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -32,7 +34,9 @@
 
     <!-- AOS ANIMATION -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <%
+        List<HouseModel> list4House = (List<HouseModel>) request.getAttribute("list4House");
+    %>
 
 </head>
 
@@ -252,82 +256,33 @@
                 <div class="buy">
                     <h1 class="buy-title" data-aos="zoom-in-up"><span>Lựa Chọn</span> Gần Đây</h1>
                     <div class="row">
-                        <!-- Item 1 -->
+                        <% for (HouseModel item : list4House) { %>
                         <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-4.jpg?alt=media&token=42012a1e-b000-4d6f-9e62-c35b6326bbb4" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#D980FA">2000$ / Ngày</h6>
+                            <a class="catalog-singer-link-a"
+                               href="${pageContext.request.contextPath}/chi-tiet?id_house=<%=item.getId()%>">
+                                <img src="<%=item.getImage().get(0)%>" alt="" class="buy-img1">
+                                <h6 class="buy-item-price" style="--h:#D980FA"><%=item.getPrice()%>k / Ngày</h6>
                                 <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Alchemy by Alta</h5>
-                                    <h6>Phường 9 - Đà Lạt</h6>
+                                    <h5 class="buy-item-name"><%=item.getName()%>
+                                    </h5>
+                                    <h6><%=item.getAddress()%>></h6>
 
                                     <ul class="buy-item-list">
-                                        <li class="list-room">220m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
+                                        <% StringTokenizer str = new StringTokenizer(item.getDetail(), ","); %>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
                                     </ul>
-                                    <p class="buy-text">Bao gồm các studio và căn hộ 1 và 2 phòng ngủ có thiết kế lấy
-                                        cảm hứng từ đô thị.</p>
+                                    <p class="buy-text"><%=item.getTutorial()%>
+                                    </p>
                                 </div>
                             </a>
                         </div>
-                        <!-- Item 2 -->
-
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-17.jpg?alt=media&token=b736ff49-20c8-4d1f-b285-d9ff3f5c0764" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#fab1a0">1500$ / Ngày</h6>
-
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Bayside Village Apartments</h5>
-                                    <h6>Bãi Sau - Vũng Tàu</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">100m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Hãy tận hưởng niềm vui của bạn từ một vị trí thuận lợi có thể dễ
-                                        dàng tiếp cận tất cả những gì tốt nhất của khu South Beach.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Item 3 -->
-
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-16.jpg?alt=media&token=96ff7d9f-9a24-4b31-ac9a-fe868a5c53db" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#f0932b">1918$ / Ngày</h6>
-
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Avalon at Mission Bay</h5>
-                                    <h6>Phú Quốc</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">100m2</li>
-                                        <li class="list-room">2 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Avalon tại Đảo Kim Cương nằm ở Q2.TP HCM cung cấp studio được
-                                        thiết kế chu đáo</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse%2Fbuy-12.jpg?alt=media&token=61e24745-e494-400b-9c1c-3469eae48f2f" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#badc58">2809$ / Ngày</h6>
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">AVA Nob Hill</h5>
-                                    <h6>Quy Nhơn</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">300m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Mang đến cơ hội duy nhất để sống và tận hưởng những khu dân cư
-                                        yên tĩnh, vị trí thuận tiện, không gian thoáng đẹp.</p>
-                                </div>
-                            </a>
-                        </div>
+                        <%}%>
+                       
 
                     </div>
                     <div class="buy-view-search">
