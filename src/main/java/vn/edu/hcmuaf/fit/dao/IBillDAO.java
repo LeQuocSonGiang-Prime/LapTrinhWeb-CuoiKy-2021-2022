@@ -22,4 +22,8 @@ public interface IBillDAO extends IGenericDAO<BillModel> {
     BillModel findBillById(String id);
 
     boolean removeBill(String id_bill);
+
+    boolean removeBillByIdHouse(String id_house);
+
+    boolean removeBillByIdUser(String id_user);
 }

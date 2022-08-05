@@ -29,4 +29,16 @@ public class CommentDAOImp extends AbstractDAO<CommentModel> implements IComment
         String sql = "SELECT * FROM comment WHERE id_house = ?";
         return query(sql, new CommentMapper(), id_house);
     }
+
+    @Override
+    public boolean removeCommentByIdHouse(String id_house) {
+        String sql = "DELETE FROM comment WHERE id_house = ?";
+        return update(sql, id_house);
+    }
+
+    @Override
+    public boolean removeCommentByIdUser(String id_user) {
+        String sql = "DELETE FROM comment WHERE id_user = ?";
+        return update(sql, id_user);
+    }
 }

@@ -185,7 +185,6 @@ button.book-room-submit:hover {
     width: max-content;
     background-color: var(--bg-main);
     border-radius: 10px;
-    padding: 20px;
     position: relative;
     overflow: hidden;
 }
@@ -213,7 +212,7 @@ button.book-room-submit:hover {
 }
 
 .calendar-body {
-    padding: 10px;
+    padding: 0 10px 0 10px;
 }
 
 .calendar-week-day {
@@ -226,7 +225,8 @@ button.book-room-submit:hover {
 .calendar-week-day div {
     display: grid;
     place-items: center;
-    color: var(--bg-second);
+    color: #717171;
+    font-size: 15px;
 }
 
 .calendar-days {
@@ -278,7 +278,7 @@ button.book-room-submit:hover {
 }
 
 .calendar-footer {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -306,8 +306,11 @@ button.book-room-submit:hover {
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
+    margin-right: 15px;
 }
-
+.calendar-day-hover{
+    font-size: 15px;
+}
 .calendar-footer button:hover {
     box-shadow: 0 0 10px 2px rgb(187, 182, 182);
 }

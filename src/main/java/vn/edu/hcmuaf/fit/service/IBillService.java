@@ -24,4 +24,8 @@ public interface IBillService {
 
     boolean removeBill(String id_bill);
 
+    boolean removeBillByIdHouse(String id_house);
+
+    boolean removeBillByUser(String id_user);
+
 }

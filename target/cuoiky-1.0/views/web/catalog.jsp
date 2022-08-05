@@ -225,20 +225,16 @@
                     </div>
                     <h1 class="buy-title"><span>Lựa Chọn</span> Yêu Thích</h1>
                     <div class="row">
-
-
-
                             <% for (HouseModel item : houseModels) { %>
                             <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up"
                                  data-aos-duration="1000">
-                                <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet">
+                                <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet?id_house=<%=item.getId()%>">
                                     <img src="<%=item.getImage().get(0)%>" alt="" class="buy-img">
                                     <h6 class="buy-item-price" style="--h:#74b9ff"><%=item.getPrice()%>đ / Ngày</h6>
                                     <div class="buy-info-item">
                                         <h5 class="buy-item-name"><%=item.getName()%></h5>
                                         <h6><%=item.getAddress()%></h6>
                                         <ul class="buy-item-list">
-
                                              <% StringTokenizer str = new StringTokenizer(item.getDetail(),","); %>
                                             <li class="list-room"><%=str.nextToken()%></li>
                                             <li class="list-room"><%=str.nextToken()%></li>

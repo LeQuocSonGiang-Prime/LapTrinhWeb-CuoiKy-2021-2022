@@ -24,13 +24,13 @@ public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
 
     @Override
     public List<BillModel> findBillByHouse(String id_house) {
-        String sql = "SELECT id_bill, id_house, email, time_checkin, time_checkout, time_order FROM bill INNER JOIN user WHERE user.id_user = bill.id_user AND id_house = ?";
+        String sql = "SELECT * , DATEDIFF(time_checkout, time_checkin) as datediff FROM bill WHERE id_house = ?";
         return query(sql, new BillMapper(), id_house);
     }
 
     @Override
     public List<BillModel> findBillByUser(String id_user) {
-        String sql = "SELECT id_bill, id_house, email, time_checkin, time_checkout, time_order FROM bill INNER JOIN user WHERE user.id_user = bill.id_user AND bill.id_user = ?";
+        String sql = "SELECT * , DATEDIFF(time_checkout, time_checkin) as datediff FROM bill WHERE id_user = ?";
         return query(sql, new BillMapper(), id_user);
     }
 
@@ -63,5 +63,17 @@ public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
     public boolean removeBill(String id_bill) {
         String sql = "DELETE FROM bill WHERE id_bill = ?";
         return update(sql, id_bill);
+    }
+
+    @Override
+    public boolean removeBillByIdHouse(String id_house) {
+        String sql = "DELETE FROM bill WHERE id_house = ?";
+        return update(sql, id_house);
+    }
+
+    @Override
+    public boolean removeBillByIdUser(String id_user) {
+        String sql = "DELETE FROM bill WHERE id_user = ?";
+        return update(sql, id_user);
     }
 }

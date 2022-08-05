@@ -58,5 +58,15 @@ public class BillServiceImp implements IBillService {
         return billDAO.removeBill(id_bill);
     }
 
+    @Override
+    public boolean removeBillByIdHouse(String id_house) {
+        return billDAO.removeBillByIdHouse(id_house);
+    }
+
+    @Override
+    public boolean removeBillByUser(String id_user) {
+        return billDAO.removeBillByIdUser(id_user);
+    }
+
 
 }

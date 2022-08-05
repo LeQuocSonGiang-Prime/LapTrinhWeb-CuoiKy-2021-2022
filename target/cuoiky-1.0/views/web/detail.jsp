@@ -1,4 +1,7 @@
-<%--
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.BillModel" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.StringTokenizer" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -6,7 +9,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 
 <html>
 <head>
@@ -21,8 +24,9 @@
     <link rel="stylesheet" href="<c:url value='/template/web/css/base.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/web/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
-    <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
-
+    <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/admin/css/detailHouse.css'/>">
 
     <link rel="stylesheet" href="<c:url value='/template/web/css/cssforbookroom.css'/>">
 
@@ -30,6 +34,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <% HouseModel house = (HouseModel) request.getAttribute("currentHouse");
+        List<BillModel> listBill = (List<BillModel>) request.getAttribute("listBill");
+        List<HouseModel> listHouse = (List<HouseModel>) request.getAttribute("listHouse");
+    %>
 
 </head>
 
@@ -124,27 +133,33 @@
             <label for="navbar-checked" class="fas fa-times icon-close"></label>
             <ul>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a-mobile"><i class="fas fa-home"></i> Trang Chủ</a>
+                    <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a-mobile"><i
+                            class="fas fa-home"></i> Trang Chủ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/danh-muc" class="navbar-item-a-mobile"><i class="fas fa-laptop-house"></i> Danh Mục
+                    <a href="${pageContext.request.contextPath}/danh-muc" class="navbar-item-a-mobile"><i
+                            class="fas fa-laptop-house"></i> Danh Mục
                         <span>739</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a-mobile"><i class="fas fa-running"></i> Trải
+                    <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a-mobile"><i
+                            class="fas fa-running"></i> Trải
                         Nghiệm<span>127</span></a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a-mobile"><i class="far fa-handshake"></i>Dịch vụ</a>
+                    <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a-mobile"><i
+                            class="far fa-handshake"></i>Dịch vụ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a-mobile"><i class="fas fa-users"></i>Chúng tôi</a>
+                    <a href="${pageContext.request.contextPath}/chung-toi" class="navbar-item-a-mobile"><i
+                            class="fas fa-users"></i>Chúng tôi</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i class="fas fa-phone-alt"></i> Liên hệ</a>
+                    <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i
+                            class="fas fa-phone-alt"></i> Liên hệ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <button class="header__info-item-a navbar-item-a-mobile"  onclick="show()"><i
+                    <button class="header__info-item-a navbar-item-a-mobile" onclick="show()"><i
                             class="fas fa-sign-in-alt" style="display: flex;align-items: center"></i>Đăng Nhập
                     </button>
                 </li>
@@ -191,40 +206,35 @@
     <div class="grid wide">
         <div class="detail">
             <div class="detail-info">
-                <h1>An Nhiên / 928K - Ngày</h1>
+                <h1><%=house.getName()%> / <%=house.getPrice()%>K - Ngày</h1>
                 <div class="detail-info-list">
-                    <i class="fas fa-star">4.8</i>
-                    <span> (19 Đánh Giá)</span>
-                    <span>Vũng Tàu</span>
-                    <span>100M², 4 Người, 2 Phòng Ngủ, 2 Giường, 1 Phòng Tắm</span>
+                    <i class="fas fa-star"><%=house.getStar()%>
+                    </i>
+                    <span> (<%=house.getTotalAssess()%> Đánh Giá)</span>
+                    <span><%=house.getAddress()%></span>
+                    <span><%=house.getDetail()%></span>
                 </div>
             </div>
             <!-- Slideshow container -->
             <div class="slideshow-container">
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade" style="display: block;">
-                    <img src="./img/buy/buy-4.jpg" alt="">
-                </div>
-                <div class="mySlides fade">
-                    <img src="./img/buy/buy-item.jpg" alt="">
+                    <img src="<%=house.getImage().get(0)%>" alt="">
                 </div>
 
+                <% for (int i = 1; i < house.getImage().size(); i++) { %>
                 <div class="mySlides fade">
-                    <img src="./img/buy/buy-25.jpg" alt="">
+                    <img src="<%=house.getImage().get(i)%>" alt="">
                 </div>
-
-                <div class="mySlides fade">
-                    <img src="./img/buy/buy-item3.jpg" alt="">
-                </div>
+                <%}%>
                 <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
+            <div style="text-align:center; margin-top: 10px;">
+                <% for (int i = 1; i <= house.getImage().size(); i++) { %>
+                <span class="dot" onclick="currentSlide(<%=i%>)"></span>
+                <% }%>
             </div>
             <br>
             <!-- The dots/circles -->
@@ -250,24 +260,37 @@
                         </div>
                         <h1>NƠI NÀY CÓ NHỮNG GÌ CHO BẠN</h1>
                         <div class="house-detail2">
+                            <% StringTokenizer stk = new StringTokenizer(house.getForYou(), ","); %>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
-                                <p><i class="ti-thought "></i> Hướng nhìn ra vịnh</p>
+                                <p><i class="ti-thought "></i>Hướng nhìn ra vịnh</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-car"></i> Chỗ đỗ xe miễn phí tại nơi ở</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-star"></i> Sân hiên hoặc ban công riêng</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-pin2"></i> Cho phép thú cưng</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-key"></i> Tự nhận phòng</p>
                             </div>
+                            <%}%>
+                            <% if (stk.nextToken().equals("1")) {%>
                             <div class="house-info house-info2">
                                 <p><i class="ti-car"></i> Máy phát hiện khí CO </p>
                             </div>
+                            <%}%>
                         </div>
                     </div>
                     <!-- ĐẶT PHÒNG -->
@@ -276,12 +299,13 @@
                         <div id="sg-book-room">
                             <div class="book-room-header">
                                 <div class="book-room-header-price">
-                                    <span>$28</span> / đêm
+                                    <span><%=house.getPrice()%>đ</span> / đêm
                                 </div>
                                 <div class="book-room-assess">
                                     <i class="fas fa-star" style="color: #ff385c ;"></i>
-                                    <h3>4,78</h3>
-                                    <p>(183 đánh giá)</p>
+                                    <h3><%=house.getStar()%>
+                                    </h3>
+                                    <p>(<%=listBill.size()%> đánh giá)</p>
                                 </div>
 
                             </div>
@@ -305,11 +329,11 @@
                                                         <span class="month-picker" id="month-picker">February</span>
                                                         <div class="year-picker">
                                                                 <span class="year-change" id="prev-year">
-                                                                    <pre></pre>
+                                                                    <pre style="margin: 0;"><</pre>
                                                                 </span>
                                                             <span class="year">2001</span>
                                                             <span class="year-change" id="next-year">
-                                                                    <pre>></pre>
+                                                                    <pre style="margin: 0;">></pre>
                                                                 </span>
                                                         </div>
                                                     </div>
@@ -425,135 +449,51 @@
                 </div>
             </div>
             <div class="grid wide detail-comment">
-                <h1>ĐÁNH GIÁ <i class="fas fa-star">4.8</i></h1>
+                <h1>ĐÁNH GIÁ <i class="fas fa-star"><%=house.getStar()%>
+                </i></h1>
                 <div class="row">
-                    <div class="col c-12 m-12 l-6 about-company-comment-content">
-                        <div>
-                            <img src="./img/founder/user (1).jpg" alt="" class="comment-content-img">
+                    <c:forEach var="comment" items="<%=house.getListComment()%>">
+                        <div class="col c-12 m-12 l-6 about-company-comment-content">
+                            <div>
+                                <img src="${comment.user.avatar}" alt="" class="comment-content-img">
+                            </div>
+                            <div class="comment-content-info">
+                                <p class="comment-content-info-text">${comment.comment}</p>
+                                <h4 class="comment-content-info-name">${comment.user.fullName}</h4>
+                            </div>
                         </div>
-                        <div class="comment-content-info">
-                            <p class="comment-content-info-text">
-                                Đây thật sự là 1 nơi tuyệt vời để đến. Nó đem cho tôi cảm giác bình yên và
-                                thoải mái.
-                                Rất thích hợp để trải nghiệm 1 nơi tuyệt vời như thế này</p>
-                            <h4 class="comment-content-info-name">-Lisa Phạm</h4>
-                        </div>
-                    </div>
-                    <div class="col c-12 m-12 l-6 about-company-comment-content">
-                        <div>
-                            <img src="./img/founder/user (2).jpg" alt="" class="comment-content-img">
-                        </div>
-                        <div class="comment-content-info">
-                            <p class="comment-content-info-text">Tôi chỉ muốn cảm ơn vì sự giúp đỡ của bạn. Tôi rất hài
-                                lòng và biết ơn. hãy luôn làm tốt như vậy nhé! Trang web của bạn cung cấp sự hỗ trợ tốt
-                                nhất mà tôi từng gặp.</p>
-                            <h4 class="comment-content-info-name">-Nicholas Lane</h4>
-                        </div>
-                    </div>
-                    <div class="col c-12 m-12 l-6 about-company-comment-content">
-                        <div>
-                            <img src="./img/founder/user (5).jpg" alt="" class="comment-content-img">
-                        </div>
-                        <div class="comment-content-info">
-                            <p class="comment-content-info-text">Cảm ơn bạn rất nhiều vì phản hồi nhanh chóng của bạn.
-                                Không nghi ngờ gì nữa, Đây là 1 trong những địa điểm đẹp nhất tôi từng ghé qua.
-                                I love You 3000</p>
-                            <h4 class="comment-content-info-name">-An Nhiên</h4>
-                        </div>
-                    </div>
-                    <div class="col c-12 m-12 l-6 about-company-comment-content">
-                        <div>
-                            <img src="./img/founder/user (4).jpg" alt="" class="comment-content-img">
-                        </div>
-                        <div class="comment-content-info">
-                            <p class="comment-content-info-text">Tôi chỉ muốn nói lời cảm ơn vì dịch vụ nhanh chóng và
-                                hiệu quả của bạn, vì đội ngũ nhân viên hỗ trợ thân thiện và chuyên nghiệp của bạn! Tôi
-                                rất thoải mái và hạnh phúc</p>
-                            <h4 class="comment-content-info-name">-Hà Di</h4>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
                 <div class="buy">
                     <h1 class="buy-title" data-aos="zoom-in-up">Các <span>Lựa Chọn</span> Khác</h1>
                     <div class="row">
                         <!-- Item 1 -->
+                        <%for (HouseModel item : listHouse) {%>
                         <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-22.jpg" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#D980FA">591k / Ngày</h6>
+                            <a class="catalog-singer-link-a"
+                               href="${pageContext.request.contextPath}/chi-tiet?id_house=<%=item.getId()%>">
+                                <img src="<%=item.getImage().get(0)%>" alt="" class="buy-img1">
+                                <h6 class="buy-item-price" style="--h:#D980FA"><%=item.getPrice()%>k / Ngày</h6>
                                 <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Mây HomeStay</h5>
-                                    <h6>Phường 9 - Đà Lạt</h6>
+                                    <h5 class="buy-item-name"><%=item.getName()%>
+                                    </h5>
+                                    <h6><%=item.getAddress()%>></h6>
 
                                     <ul class="buy-item-list">
-                                        <li class="list-room">220m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
+                                        <% StringTokenizer str = new StringTokenizer(item.getDetail(), ","); %>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
                                     </ul>
-                                    <p class="buy-text">Mây HomeStay – homestay được gọi là “ngôi nhà trên mây” bởi
-                                        không gian được bao phủ bởi màu sơn trắng, những vật dụng décor bằng màu trắng
-                                        tinh tế và hài hòa.</p>
+                                    <p class="buy-text"><%=item.getTutorial()%>
+                                    </p>
                                 </div>
                             </a>
                         </div>
-                        <!-- Item 2 -->
-
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-23.jpg" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#fab1a0">922k / Ngày</h6>
-
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">FLy HomeStay</h5>
-                                    <h6>Bãi Sau - Vũng Tàu</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">100m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Ngôi nhà mang gam màu trầm của gỗ cùng với lối thiết kế tinh tế
-                                        mang lại cho bạn cảm giác thanh bình, những chiếc đèn lồng chùm tạo cảm giác đê
-                                        mê huyền ảo.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Item 3 -->
-
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-down" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-13.jpg" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#f0932b">591k / Ngày</h6>
-
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Lêu Lêu HomeStay</h5>
-                                    <h6>Phú Quốc</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">100m2</li>
-                                        <li class="list-room">2 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Đặc biệt, đây là HomeStay duy nhất có thiết kế giường Dorm đôi
-                                        độc nhất vô nhị, phù hợp với các bạn trẻ, nhóm bạn phượt hoặc đi trăng mật.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col l-3 m-6 c-12 buy-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="catalog-singer-link-a" href="./detail.html">
-                                <img src="./img/buy/buy-12.jpg" alt="" class="buy-img1">
-                                <h6 class="buy-item-price" style="--h:#badc58">280k / Ngày</h6>
-                                <div class="buy-info-item">
-                                    <h5 class="buy-item-name">Pink HomeStay</h5>
-                                    <h6>Quy Nhơn</h6>
-                                    <ul class="buy-item-list">
-                                        <li class="list-room">300m2</li>
-                                        <li class="list-room">4 P.Ngủ</li>
-                                        <li class="list-room">2 P.Tắm</li>
-                                    </ul>
-                                    <p class="buy-text">Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ,
-                                        mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.</p>
-                                </div>
-                            </a>
-                        </div>
+                        <%}%>
 
                     </div>
 

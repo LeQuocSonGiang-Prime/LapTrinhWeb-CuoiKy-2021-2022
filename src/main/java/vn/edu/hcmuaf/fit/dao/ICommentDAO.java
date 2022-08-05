@@ -13,4 +13,8 @@ public interface ICommentDAO {
     List<CommentModel> selectCommentByUser(String id_user);
 
     List<CommentModel> selectCommentByHouse(String id_house);
+
+    boolean removeCommentByIdHouse(String id_house);
+
+    boolean removeCommentByIdUser(String id_user);
 }

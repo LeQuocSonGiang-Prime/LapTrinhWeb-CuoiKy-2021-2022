@@ -18,4 +18,5 @@ public interface IHouseService {
 
     boolean removeHouseById(String id_house);
 
+    List<HouseModel> select4Element();
 }

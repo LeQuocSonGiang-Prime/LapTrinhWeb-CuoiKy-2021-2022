@@ -22,9 +22,10 @@ public class ConfirmDeleteHouseServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         String id_house = request.getParameter("id_house");
         PrintWriter out = response.getWriter();
+
         String data = "";
         if (houseService.removeHouseById(id_house)) {
-            HouseModel.setListResult(houseService.selectAll());
+            HouseModel.setListResult(houseService.selectAll());System.out.println("1");
             for (int i = 0; i < HouseModel.getTotalHouse(); i++) {
                 data += "<tr>\n" +
                         "                        <td>" + (i + 1) + "\n" +
@@ -47,6 +48,7 @@ public class ConfirmDeleteHouseServlet extends HttpServlet {
         }else{
             data+=1;
         }
+        System.out.println("2");
         out.print(data);
         out.close();
     }

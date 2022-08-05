@@ -13,4 +13,8 @@ public interface ICommentService {
     List<CommentModel> selectByUser(String id_user);
 
     List<CommentModel> selectByHouse(String id_house);
+
+    boolean removeCommentByIdHouse(String id_house);
+
+    boolean removeCommentByIdUser(String id_user);
 }

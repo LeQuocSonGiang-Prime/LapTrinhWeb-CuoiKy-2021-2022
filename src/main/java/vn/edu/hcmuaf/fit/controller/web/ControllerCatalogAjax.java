@@ -30,7 +30,7 @@ public class ControllerCatalogAjax extends HttpServlet {
             StringTokenizer stk = new StringTokenizer(h.getDetail(), ","); // error nam ngay day
             data += "<div class=\"col l-4 m-6 c-12 buy-list\" id=\"house-item\" data-aos=\"zoom-in-up\" data-aos-duration=\"1000\">\n" +
                     "                                <a class=\"catalog-singer-link-a\" href=\"${pageContext.request.contextPath}/chi-tiet\">\n" +
-                    "                                    <img src=\"" + h.getImage() + "\" alt=\"\" class=\"buy-img\">\n" +
+                    "                                    <img src=\"" + h.getImage().get(0) + "\" alt=\"\" class=\"buy-img\">\n" +
                     "                                    <h6 class=\"buy-item-price\" style=\"--h:#74b9ff\">" + h.getPrice() + "đ / Ngày</h6>\n" +
                     "                                    <div class=\"buy-info-item\">\n" +
                     "                                        <h5 class=\"buy-item-name\">" + h.getName() + "</h5>\n" +
