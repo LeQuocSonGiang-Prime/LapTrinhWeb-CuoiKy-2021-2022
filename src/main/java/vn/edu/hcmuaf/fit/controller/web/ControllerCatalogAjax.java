@@ -9,6 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.StringTokenizer;
 
 @WebServlet(name = "ControllerCatalogAjax", value = "/ControllerCatalogAjax")
@@ -18,15 +19,19 @@ public class ControllerCatalogAjax extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String pageNumber = request.getParameter("currentPage");
-        int ipageNumber = Integer.parseInt(pageNumber);
+        int ipageNumber = Integer.parseInt(request.getParameter("currentPage"));
+        String typeOfHouse = request.getParameter("type-of-house");
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        HouseModel houseModel = new HouseModel();
-        houseModel.setListResult(houseService.select24Element(ipageNumber));
+        List<HouseModel> listHouse;
+        if (typeOfHouse == null) {
+            listHouse = houseService.select24Element(ipageNumber);
+        } else {
+            listHouse = houseService.selectHouseByKind(Integer.parseInt(typeOfHouse), ipageNumber);
+        }
         PrintWriter out = response.getWriter();
         String data = "";
-        for (HouseModel h : houseModel.getListResult()) {
+        for (HouseModel h : listHouse) {
             StringTokenizer stk = new StringTokenizer(h.getDetail(), ","); // error nam ngay day
             data += "<div class=\"col l-4 m-6 c-12 buy-list\" id=\"house-item\" data-aos=\"zoom-in-up\" data-aos-duration=\"1000\">\n" +
                     "                                <a class=\"catalog-singer-link-a\" href=\"${pageContext.request.contextPath}/chi-tiet\">\n" +

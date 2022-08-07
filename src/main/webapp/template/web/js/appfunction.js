@@ -228,7 +228,7 @@ Validator.isEmail = function (selector) {
 let btnKindHouse = document.querySelectorAll(".intro-btn")
 let input_kindOfHouse = document.querySelector("#kind-of-house")
 for (let i = 0; i < 4; i++) {
-    btnKindHouse[i].onClick = function () {
+    btnKindHouse[i].onclick = function (e) {
         input_kindOfHouse.value = (i + 1)
         document.querySelector("#form-kind-of-house").submit()
     }

@@ -214,48 +214,49 @@
         <!-- LỰA CHỌN KIỂU NHÀ -->
         <div class="introduce">
             <div class="grid wide">
-                <form id="form-kind-of-house" action="danh-muc">
-                    <div class="row">
-                        <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up"
-                             data-aos-duration="1000">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fnature.jpeg?alt=media&token=87bf6075-c5b0-4dbf-be2c-18c33a8ea548"
-                                 alt="" class="introduce-img">
-                            <div class="intro-content">
-                                <h3 class="intro-content-title">Thiên Nhiên</h3>
-                                <p class="intro-option">5 Lựa Chọn</p>
-                                <button href="" class="intro-btn">Chọn nhà</button>
-                            </div>
-                        </div>
-                        <div class="introduce-backgroud col l-3 m-6 c-12 " data-aos="fade-up" data-aos-duration="1000">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fintimate.jpg?alt=media&token=4e95efcb-9c77-4a13-9061-6ec42bb9f47d"
-                                 alt="" class="introduce-img">
-                            <div class="intro-content">
-                                <h3 class="intro-content-title">Ấm Cúng</h3>
-                                <p class="intro-option">28 Lựa Chọn</p>
-                                <button href="" class="intro-btn">Chọn nhà</button>
-                            </div>
-                        </div>
-                        <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="fade-up" data-aos-duration="1000">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fstudio.jpg?alt=media&token=a0b42942-39fe-4d0b-aaad-433941d7aa64"
-                                 alt="" class="introduce-img">
-                            <div class="intro-content">
-                                <h3 class="intro-content-title">Studio</h3>
-                                <p class="intro-option">9 Lựa Chọn</p>
-                                <button href="" class="intro-btn">Chọn nhà</button>
-                            </div>
-                        </div>
-                        <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up"
-                             data-aos-duration="1000">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fformal.jpg?alt=media&token=6e81412e-b777-4521-80ab-bc9ca88e85ad "
-                                 alt=""
-                                 class="introduce-img">
-                            <div class="intro-content">
-                                <h3 class="intro-content-title">Sang Trọng</h3>
-                                <p class="intro-option">19 Lựa Chọn</p>
-                                <button href="" class="intro-btn">Chọn nhà</button>
-                            </div>
+
+                <div class="row">
+                    <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up"
+                         data-aos-duration="1000">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fnature.jpeg?alt=media&token=87bf6075-c5b0-4dbf-be2c-18c33a8ea548"
+                             alt="" class="introduce-img">
+                        <div class="intro-content">
+                            <h3 class="intro-content-title">Thiên Nhiên</h3>
+                            <p class="intro-option">5 Lựa Chọn</p>
+                            <button class="intro-btn">Chọn nhà</button>
                         </div>
                     </div>
+                    <div class="introduce-backgroud col l-3 m-6 c-12 " data-aos="fade-up" data-aos-duration="1000">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fintimate.jpg?alt=media&token=4e95efcb-9c77-4a13-9061-6ec42bb9f47d"
+                             alt="" class="introduce-img">
+                        <div class="intro-content">
+                            <h3 class="intro-content-title">Ấm Cúng</h3>
+                            <p class="intro-option">28 Lựa Chọn</p>
+                            <button class="intro-btn">Chọn nhà</button>
+                        </div>
+                    </div>
+                    <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fstudio.jpg?alt=media&token=a0b42942-39fe-4d0b-aaad-433941d7aa64"
+                             alt="" class="introduce-img">
+                        <div class="intro-content">
+                            <h3 class="intro-content-title">Studio</h3>
+                            <p class="intro-option">9 Lựa Chọn</p>
+                            <button class="intro-btn">Chọn nhà</button>
+                        </div>
+                    </div>
+                    <div class="introduce-backgroud col l-3 m-6 c-12" data-aos="zoom-in-up"
+                         data-aos-duration="1000">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ftype_house%2Fformal.jpg?alt=media&token=6e81412e-b777-4521-80ab-bc9ca88e85ad "
+                             alt=""
+                             class="introduce-img">
+                        <div class="intro-content">
+                            <h3 class="intro-content-title">Sang Trọng</h3>
+                            <p class="intro-option">19 Lựa Chọn</p>
+                            <button class="intro-btn">Chọn nhà</button>
+                        </div>
+                    </div>
+                </div>
+                <form id="form-kind-of-house" action="danh-muc" method="get">
                     <input type="hidden" id="kind-of-house" name="kind-of-house">
                 </form>
             </div>

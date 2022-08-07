@@ -24,10 +24,11 @@ public class ControllerCatalog extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         String kindOfHouse = request.getParameter("kind-of-house");
-        if(kindOfHouse==null) {
+        if (kindOfHouse == null || kindOfHouse.equals("")) {
             request.setAttribute("listHouse", houseService.select24Element(1));
-        }else{
-            request.setAttribute("listHouse", houseService.selectHouseByKind(Integer.parseInt(kindOfHouse)));
+        } else {
+            request.setAttribute("listHouse", houseService.selectHouseByKind(Integer.parseInt(kindOfHouse), 1));
+            request.setAttribute("typeOfHouse", kindOfHouse);
         }
         request.getRequestDispatcher("/views/web/catalog.jsp").forward(request, response);
     }

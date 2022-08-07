@@ -20,5 +20,5 @@ public interface IHouseService {
 
     List<HouseModel> select4Element(int index);
 
-    List<HouseModel> selectHouseByKind(int parseInt);
+    List<HouseModel> selectHouseByKind(int type, int index);
 }

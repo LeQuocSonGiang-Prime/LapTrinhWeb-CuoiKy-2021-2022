@@ -41,3 +41,6 @@
     font-weight: 500;
     color: var(--black-color);
 }
+.num-page-item.active{
+    background: #f8b452;
+}

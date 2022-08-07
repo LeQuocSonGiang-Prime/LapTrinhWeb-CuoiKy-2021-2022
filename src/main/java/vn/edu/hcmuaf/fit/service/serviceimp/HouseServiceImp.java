@@ -21,8 +21,7 @@ public class HouseServiceImp implements IHouseService {
 
     @Override
     public List<HouseModel> select24Element(int offSet) {
-
-        return houseDAO.select24Element((offSet - 1) * 24 + 1);
+        return houseDAO.select24Element((offSet - 1) * 24);
     }
 
     @Override
@@ -51,11 +50,11 @@ public class HouseServiceImp implements IHouseService {
     }
 
     @Override
-    public List<HouseModel> selectHouseByKind(int index) {
-        return houseDAO.selectHouseByKind(index);
+    public List<HouseModel> selectHouseByKind(int type, int index) {
+        return houseDAO.selectHouseByKind(type, (index - 1) * 24);
     }
 
-    public HouseModel selectHouseByIdNoneInject(String id_house){
+    public HouseModel selectHouseByIdNoneInject(String id_house) {
         HouseDAOImp house = new HouseDAOImp();
         return house.selectById(id_house);
     }
