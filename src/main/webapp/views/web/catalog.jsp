@@ -36,7 +36,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <% List<HouseModel> houseModels = (List<HouseModel>) request.getAttribute("listHouse");
         String typeOfHouse = (String) request.getAttribute("typeOfHouse");
-        int totalPage = (int) (houseModels.size() / 24 + 1);
+        int totalHouse = (int) request.getAttribute("totalHouse");
+        int totalPage = (int) (totalHouse / 24 + 1);
     %>
 </head>
 
@@ -382,16 +383,28 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
+
 </script>
 <script src="<c:url value='/template/web/js/appfunction.js' />"></script>
-<script src="<c:url value='/template/web/js/dividePage.js' />">
-
-//    document.querySelector('#select-type-of-house').value =
-
-
-</script>
+<script src="<c:url value='/template/web/js/dividePage.js' />"></script>
 <script>
-    //maxPageShow =
+    maxPageShow = <%=totalPage%>;
+    showNumPage()
+
+    for (let i = 0; i < numPage.length; i++) {
+        numPage[i].children[0].onclick = function () {
+            if (!numPage[i].classList.contains("active")) {
+                numPage[i].classList.add("active")
+                currentPage = i + 1
+            }
+            for (let j = 0; j < numPage.length; j++) {
+                if (j !== i && numPage[j].classList.contains("active")) {
+                    numPage[j].classList.remove("active")
+                }
+            }
+            setValueForInputPageCurrent()
+        }
+    }
 </script>
 
 </body>

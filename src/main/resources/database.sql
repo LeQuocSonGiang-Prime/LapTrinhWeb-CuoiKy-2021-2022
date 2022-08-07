@@ -217,7 +217,7 @@ INSERT INTO `image_house` (`id_image`, `id_house`, `image`, `alt`) VALUES
 ('IMAGE29001', 'HOUSE00029', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse-2%2Fhouse%20(29).jpg?alt=media&token=bda43451-23af-4ec4-a275-c3c1b789a932', 'QWEDQWD'),
 ('IMAGE30001', 'HOUSE00030', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse-2%2Fhouse%20(30).jpg?alt=media&token=cc7e2d3e-f98f-48ad-b4f8-e15dcb5f41fe', 'RGE'),
 ('IMAGE31001', 'HOUSE00031', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse-2%2Fhouse%20(31).jpg?alt=media&token=52a8a5ff-e187-41b2-8b95-b18d8b45f98c', 'GIANG'),
-('IMAGE32001', 'HOUSE00032', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse-2%2Fhouse%20(32).jpg?alt=media&token=b81c194f-7858-4973-85fa-aaef5cf60593', 'DGWUI\\'),
+('IMAGE32001', 'HOUSE00032', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse-2%2Fhouse%20(32).jpg?alt=media&token=b81c194f-7858-4973-85fa-aaef5cf60593', 'DGWUI\\');
 
 
 

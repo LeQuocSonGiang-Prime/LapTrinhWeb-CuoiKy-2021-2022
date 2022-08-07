@@ -18,7 +18,7 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String URL = "jdbc:mysql://localhost:3306/database?useUnicode=true&characterEncoding=utf-8";
-         //   String URL = "https://web-batdongsan-default-rtdb.asia-southeast1.firebasedatabase.app/";
+            //   String URL = "https://web-batdongsan-default-rtdb.asia-southeast1.firebasedatabase.app/";
             String user = "root";
             String password = "";
             return DriverManager.getConnection(URL, user, password);
@@ -31,7 +31,6 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
         }
         return null;
     }
-
 
 
     public static void main(String[] args) {
@@ -84,14 +83,16 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
             stm = connection.prepareStatement(sql);
             setParameter(stm, parameter);
             stm.executeUpdate();
-            connection.commit();return true;
+            connection.commit();
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
             try {
                 connection.rollback();
             } catch (SQLException f) {
                 f.printStackTrace();
-            }return false;
+            }
+            return false;
         } finally {
             try {
                 if (connection != null) {
@@ -108,7 +109,6 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
 
     @Override
     public int sizeTable(int nameTable) {
-
         String sqlUser = "SELECT COUNT(*) FROM user";
         String sqlBill = "SELECT COUNT(*) FROM bill";
         String sqlHouse = "SELECT COUNT(*) FROM house";
@@ -165,6 +165,42 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
                 }
                 if (rs != null) {
                     rs.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public int totalItem(String sql, Object... parameter) {
+        Connection connection = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            connection = getConnection();
+            connection.setAutoCommit(false);
+            stm = connection.prepareStatement(sql);
+            setParameter(stm, parameter);
+            connection.commit();
+            rs = stm.executeQuery();
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            try {
+                connection.rollback();
+            } catch (SQLException f) {
+                f.printStackTrace();
+            }
+            return -1;
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+                if (stm != null) {
+                    stm.close();
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

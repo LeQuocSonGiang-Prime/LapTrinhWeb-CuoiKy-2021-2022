@@ -25,4 +25,6 @@ public interface IHouseDAO extends IGenericDAO<HouseModel> {
     List<HouseModel> select4Element(int index);
 
     List<HouseModel> selectHouseByKind(int type,int index);
+
+    int countHouseByType(int type);
 }

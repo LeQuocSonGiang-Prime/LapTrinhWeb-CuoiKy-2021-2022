@@ -1,9 +1,7 @@
 let currentPage = 1
 let data
-let totalPage = Math.ceil()
-let perPage = 24;
 let minPageShow = 1
-let maxPageShow=10
+let maxPageShow
 let numPage = document.getElementsByClassName("num-page-item")
 let arrowElement = document.getElementsByClassName("num-page-item-arrow")  // get 2 arrow
 
@@ -38,22 +36,7 @@ function showNumPage() {
     arrowElement[0].style.cursor = "not-allowed"
 }
 
-showNumPage()
 
-for (let i = 0; i < numPage.length; i++) {
-    numPage[i].children[0].onclick = function () {
-        if (!numPage[i].classList.contains("active")) {
-            numPage[i].classList.add("active")
-            currentPage = i + 1
-        }
-        for (let j = 0; j < numPage.length; j++) {
-            if (j !== i && numPage[j].classList.contains("active")) {
-                numPage[j].classList.remove("active")
-            }
-        }
-        setValueForInputPageCurrent()
-    }
-}
 
 function clickArrowChangeNumPage(n) {
     numPage[currentPage - 1].classList.remove("active");

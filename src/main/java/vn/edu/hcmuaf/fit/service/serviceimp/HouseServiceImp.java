@@ -54,6 +54,11 @@ public class HouseServiceImp implements IHouseService {
         return houseDAO.selectHouseByKind(type, (index - 1) * 24);
     }
 
+    @Override
+    public int countHouseByType(int type) {
+        return houseDAO.countHouseByType(type);
+    }
+
     public HouseModel selectHouseByIdNoneInject(String id_house) {
         HouseDAOImp house = new HouseDAOImp();
         return house.selectById(id_house);

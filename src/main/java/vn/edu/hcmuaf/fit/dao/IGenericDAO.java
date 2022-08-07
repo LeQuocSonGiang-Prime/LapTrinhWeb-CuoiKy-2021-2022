@@ -14,4 +14,6 @@ public interface IGenericDAO<T> {
 
     int sizeTable(int nameTable);
 
+    int totalItem(String sql,Object... parameter);
+
 }
