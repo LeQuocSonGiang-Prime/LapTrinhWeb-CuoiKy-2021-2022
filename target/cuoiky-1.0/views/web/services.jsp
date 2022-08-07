@@ -42,9 +42,12 @@
             <button type="button" class="toggle-btn" onclick="register()">Đăng Kí</button>
         </div>
         <div class="social-icons">
-            <img src="img/login-reg-img/fb.png" alt="">
-            <img src="img/login-reg-img/gp.png" alt="">
-            <img src="img/login-reg-img/tw.png" alt="">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd"
+                     alt="">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94"
+                     alt="">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680"
+                     alt="">
         </div>
         <form id="login" class="input-group" action="">
             <input type="text" class="input-field" placeholder="Tài Khoản" required>
@@ -88,7 +91,7 @@
         </div>
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -116,7 +119,7 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="./img/logo-dark.png" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>
@@ -190,7 +193,7 @@
             <!--ABOUT OVERVIEW -->
             <div class="grid wide">
                 <div class="about-company-overview ">
-                    <img src="./img/about/aerial-view-business-data-analysis-graph_53876-13390.jpg" alt=""
+                    <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fteam.jpg?alt=media&token=218afb2e-e652-4465-aabb-e90d8a016ee7" alt=""
                          class="about-company-content-img">
                     <div class="about-company-content">
                         <p class="about-company-content-text">
@@ -298,7 +301,7 @@
                 <div class="grid wide">
                     <div class="row">
                         <div class="col l-4 m-4 c-12 about-company-comment-content">
-                            <div><img src="./img/founder/user (6).jpg" alt="" class="comment-content-img"></div>
+                            <div><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(6).jpg?alt=media&token=668c226c-90f6-4c2d-9920-bd1d341dd843" alt="" class="comment-content-img"></div>
                             <div class="comment-content-info">
                                 <p class="comment-content-info-text">Tôi chỉ muốn nói lời cảm ơn vì dịch vụ nhanh chóng
                                     và hiệu quả của bạn, vì đội ngũ nhân viên hỗ trợ thân thiện và chuyên nghiệp của
@@ -307,7 +310,7 @@
                             </div>
                         </div>
                         <div class="col l-4 m-4 c-12 about-company-comment-content">
-                            <div><img src="./img/founder/user (5).jpg" alt="" class="comment-content-img"></div>
+                            <div><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(5).jpg?alt=media&token=26fbc4c7-d80f-424d-b4c4-2b993779ee20" alt="" class="comment-content-img"></div>
                             <div class="comment-content-info">
                                 <p class="comment-content-info-text">Wow, tôi rất hài lòng với dịch vụ của bạn. Bạn đã
                                     quản lý để vượt quá mong đợi của tôi! Các bạn làm việc rất hiệu quả và tôi sẽ giới
@@ -316,7 +319,7 @@
                             </div>
                         </div>
                         <div class="col l-4 m-4 c-12 about-company-comment-content">
-                            <div><img src="./img/founder/user (4).jpg" alt="" class="comment-content-img"></div>
+                            <div><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(4).jpg?alt=media&token=615de7b9-a3fd-41cd-a732-69f13e05861f" alt="" class="comment-content-img"></div>
                             <div class="comment-content-info">
                                 <p class="comment-content-info-text">Tôi chỉ không biết làm thế nào để mô tả các dịch vụ
                                     của bạn ... Chúng thật phi thường! Tôi khá hài lòng với họ! Chỉ cần tiếp tục đi theo

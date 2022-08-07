@@ -51,9 +51,12 @@
             </button>
         </div>
         <div class="social-icons">
-            <img src="img/login-reg-img/fb.png" alt="" />
-            <img src="img/login-reg-img/gp.png" alt="" />
-            <img src="img/login-reg-img/tw.png" alt="" />
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680"
+                 alt="">
         </div>
         <form id="login" class="input-group" action="">
             <input
@@ -130,7 +133,7 @@
         </div>
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -158,7 +161,7 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="./img/logo-dark.png" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>
