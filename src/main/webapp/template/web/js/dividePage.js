@@ -1,9 +1,9 @@
 let currentPage = 1
 let data
 let totalPage = Math.ceil()
-let perPage = 12;
+let perPage = 24;
 let minPageShow = 1
-let maxPageShow = 10
+let maxPageShow=10
 let numPage = document.getElementsByClassName("num-page-item")
 let arrowElement = document.getElementsByClassName("num-page-item-arrow")  // get 2 arrow
 

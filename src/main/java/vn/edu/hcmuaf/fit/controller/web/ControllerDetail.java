@@ -1,8 +1,10 @@
 package vn.edu.hcmuaf.fit.controller.web;
 
 import vn.edu.hcmuaf.fit.model.BillModel;
+import vn.edu.hcmuaf.fit.model.CommentModel;
 import vn.edu.hcmuaf.fit.model.HouseModel;
 import vn.edu.hcmuaf.fit.service.IBillService;
+import vn.edu.hcmuaf.fit.service.ICommentService;
 import vn.edu.hcmuaf.fit.service.IHouseService;
 
 import javax.inject.Inject;
@@ -21,6 +23,8 @@ public class ControllerDetail extends HttpServlet {
     private IBillService billService;
     @Inject
     private IHouseService houseService;
+    @Inject
+    private ICommentService commentService;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -31,6 +35,8 @@ public class ControllerDetail extends HttpServlet {
         request.setAttribute("listBill", listBill);
         List<HouseModel> listHouse = houseService.select4Element(2);
         request.setAttribute("listHouse", listHouse);
+        List<CommentModel> listComment = commentService.selectByHouse(request.getParameter("id_house"));
+        request.setAttribute("listComment", listComment);
         request.getRequestDispatcher("/views/web/detail.jsp").forward(request, response);
     }
 

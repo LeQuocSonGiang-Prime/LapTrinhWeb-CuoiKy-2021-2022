@@ -1,7 +1,8 @@
 <%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
 <%@ page import="vn.edu.hcmuaf.fit.model.BillModel" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.StringTokenizer" %><%--
+<%@ page import="java.util.StringTokenizer" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.CommentModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -38,6 +39,7 @@
     <% HouseModel house = (HouseModel) request.getAttribute("currentHouse");
         List<BillModel> listBill = (List<BillModel>) request.getAttribute("listBill");
         List<HouseModel> listHouse = (List<HouseModel>) request.getAttribute("listHouse");
+        List<CommentModel> listComment= (List<CommentModel>) request.getAttribute("listComment");
     %>
 
 </head>
@@ -452,7 +454,7 @@
                 <h1>ĐÁNH GIÁ <i class="fas fa-star"><%=house.getStar()%>
                 </i></h1>
                 <div class="row">
-                    <c:forEach var="comment" items="<%=house.getListComment()%>">
+                    <c:forEach var="comment" items="<%=listComment%>">
                         <div class="col c-12 m-12 l-6 about-company-comment-content">
                             <div>
                                 <img src="${comment.user.avatar}" alt="" class="comment-content-img">

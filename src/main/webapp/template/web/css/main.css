@@ -1099,6 +1099,7 @@
     position: absolute;
     left: 20px;
     top: 50%;
+    width: 100px;
     transform: translateY(-50%);
     display: none;
 }

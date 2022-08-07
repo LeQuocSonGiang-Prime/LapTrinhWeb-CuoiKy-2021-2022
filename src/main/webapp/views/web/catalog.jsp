@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/web/css/dividePage.css'/>">
-    <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
-
+    <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -36,7 +36,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <% List<HouseModel> houseModels = (List<HouseModel>) request.getAttribute("listHouse");
         String typeOfHouse = (String) request.getAttribute("typeOfHouse");
-        System.out.println(typeOfHouse);
+        int totalPage = (int) (houseModels.size() / 24 + 1);
     %>
 </head>
 
@@ -98,7 +98,6 @@
 </div>
 
 
-
 <div class="root">
     <div class="header">
 
@@ -123,7 +122,8 @@
         </div>
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                     alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -152,7 +152,8 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="./img/logo-dark.png" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                 alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>
@@ -258,26 +259,33 @@
                     </div>
                     <h1 class="buy-title"><span>Lựa Chọn</span> Yêu Thích</h1>
                     <div class="row">
-                            <% for (HouseModel item : houseModels) { %>
-                            <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up"
-                                 data-aos-duration="1000">
-                                <a class="catalog-singer-link-a" href="${pageContext.request.contextPath}/chi-tiet?id_house=<%=item.getId()%>">
-                                    <img src="<%=item.getImage().get(0)%>" alt="" class="buy-img">
-                                    <h6 class="buy-item-price" style="--h:#74b9ff"><%=item.getPrice()%>đ / Ngày</h6>
-                                    <div class="buy-info-item">
-                                        <h5 class="buy-item-name"><%=item.getName()%></h5>
-                                        <h6><%=item.getAddress()%></h6>
-                                        <ul class="buy-item-list">
-                                             <% StringTokenizer str = new StringTokenizer(item.getDetail(),","); %>
-                                            <li class="list-room"><%=str.nextToken()%></li>
-                                            <li class="list-room"><%=str.nextToken()%></li>
-                                            <li class="list-room"><%=str.nextToken()%></li>
-                                        </ul>
-                                        <p class="buy-text"><%=item.getTutorial()%></p>
-                                    </div>
-                                </a>
-                            </div>
-                            <%}%>
+                        <% for (HouseModel item : houseModels) { %>
+                        <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up"
+                             data-aos-duration="1000">
+                            <a class="catalog-singer-link-a"
+                               href="${pageContext.request.contextPath}/chi-tiet?id_house=<%=item.getId()%>">
+                                <img src="<%=item.getImage().get(0)%>" alt="" class="buy-img">
+                                <h6 class="buy-item-price" style="--h:#74b9ff"><%=item.getPrice()%>đ / Ngày</h6>
+                                <div class="buy-info-item">
+                                    <h5 class="buy-item-name"><%=item.getName()%>
+                                    </h5>
+                                    <h6><%=item.getAddress()%>
+                                    </h6>
+                                    <ul class="buy-item-list">
+                                        <% StringTokenizer str = new StringTokenizer(item.getDetail(), ","); %>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                        <li class="list-room"><%=str.nextToken()%>
+                                        </li>
+                                    </ul>
+                                    <p class="buy-text"><%=item.getTutorial()%>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <%}%>
 
                     </div>
                     <div class="num-page" style="display: flex;justify-content: center;margin-top: 3rem;">
@@ -377,9 +385,13 @@
 </script>
 <script src="<c:url value='/template/web/js/appfunction.js' />"></script>
 <script src="<c:url value='/template/web/js/dividePage.js' />">
-    console.log("hello")
-     document.querySelector('#select-type-of-house').value = <%=typeOfHouse%>
-    console.log(document.querySelector('#select-type-of-house').selectedIndex)
+
+//    document.querySelector('#select-type-of-house').value =
+
+
+</script>
+<script>
+    //maxPageShow =
 </script>
 
 </body>

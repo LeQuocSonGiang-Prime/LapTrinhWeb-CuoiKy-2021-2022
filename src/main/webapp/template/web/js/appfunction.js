@@ -224,12 +224,13 @@ Validator.isEmail = function (selector) {
 
 // file index.jsp
 
-
-let btnKindHouse = document.querySelectorAll(".intro-btn")
-let input_kindOfHouse = document.querySelector("#kind-of-house")
-for (let i = 0; i < 4; i++) {
-    btnKindHouse[i].onclick = function (e) {
-        input_kindOfHouse.value = (i + 1)
-        document.querySelector("#form-kind-of-house").submit()
+function typeOfHouse(){
+    let btnKindHouse = document.querySelectorAll(".intro-btn")
+    let input_kindOfHouse = document.querySelector("#kind-of-house")
+    for (let i = 0; i < 4; i++) {
+        btnKindHouse[i].onclick = function (e) {
+            input_kindOfHouse.value = (i + 1)
+            document.querySelector("#form-kind-of-house").submit()
+        }
     }
 }
