@@ -37,9 +37,12 @@
             <button type="button" class="toggle-btn" onclick="register()">Đăng Kí</button>
         </div>
         <div class="social-icons">
-            <img src="img/login-reg-img/fb.png" alt="">
-            <img src="img/login-reg-img/gp.png" alt="">
-            <img src="img/login-reg-img/tw.png" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680"
+                 alt="">
         </div>
         <form id="login" class="input-group" action="">
             <input type="text" class="input-field" placeholder="Tài Khoản" required>
@@ -79,7 +82,7 @@
         </div>
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -107,7 +110,7 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="./img/logo-dark.png" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>
@@ -217,7 +220,7 @@
                             kiếm và dịch vụ xứng đáng.
                         </p>
                     </div>
-                    <img src="./img/about/photo-1450101499163-c8848c66ca85.jpg" alt="" class="about-company-content-img" >
+                    <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fteam.jpg?alt=media&token=218afb2e-e652-4465-aabb-e90d8a016ee7" alt="" class="about-company-content-img" >
 
                 </div>
             </div>
@@ -226,7 +229,7 @@
             <div class="display-none-soulof" style="display: none;">
                 <div class="about-company-soulof"  >
                     <div class="founder-info1">
-                        <img src="./img/founder/user9.jpg    " alt="" class="founder-img">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(1).webp?alt=media&token=0340a590-fd9b-4068-8160-82220f2fd01d" alt="" class="founder-img">
                         <div class="founder-item">
                             <span class="founder-name">Carl Bishop</span>
                             <h3 class="souof-fouder">Nhà Sáng Lập</h3>
@@ -260,7 +263,7 @@
                             <div class="row">
                                 <!-- TEAM 1 -->
                                 <div class="col l-3 m-6 c-6 founder-info">
-                                    <img src="./img/team/p1.png" alt="" class="founder-img">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp1.png?alt=media&token=5ed59f1b-482e-4ebe-894e-8c879388d161" alt="" class="founder-img">
                                     <div class="founder-item">
                                         <span class="founder-name">Ashley Mason</span>
                                         <a href="" class="founder-phone">
@@ -275,7 +278,7 @@
                                 <!-- TEAM 2 -->
                                 <div class="col l-3 m-6 c-6 founder-info">
                                     <div class="fouder-image">
-                                        <img src="./img/team/p2.png" alt="" class="founder-img">
+                                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp2.png?alt=media&token=899c9168-ab2b-4f2f-bc65-40484653ead7" alt="" class="founder-img">
                                     </div>
                                     <div class="founder-item">
                                         <span class="founder-name">Russell Myers</span>
@@ -290,7 +293,7 @@
 
                                 <!-- TEAM 3 -->
                                 <div class="col l-3 m-6 c-6 founder-info">
-                                    <img src="./img/team/p3.png" alt="" class="founder-img">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp3.png?alt=media&token=d2dde336-c89b-465f-93e0-ad09dc48e325" alt="" class="founder-img">
                                     <div class="founder-item">
                                         <span class="founder-name">Shirley Vasquez</span>
                                         <a href="" class="founder-phone">
@@ -304,7 +307,7 @@
 
                                 <!-- TEAM 4 -->
                                 <div class="col l-3 m-6 c-6 founder-info">
-                                    <img src="./img/team/pexels-photo-9986396.jpeg" alt="" class="founder-img">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(4).jpg?alt=media&token=615de7b9-a3fd-41cd-a732-69f13e05861f" alt="" class="founder-img">
                                     <div class="founder-item">
                                         <span class="founder-name">Terry Sandoval</span>
                                         <a href="" class="founder-phone">
@@ -318,7 +321,7 @@
 
                                 <!-- TEAM 5 -->
                                 <div class="col l-3 m-6 c-6 founder-info">
-                                    <img src="./img/team/p4.png" alt="" class="founder-img">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fp4.png?alt=media&token=ada887ce-fbd8-4fb2-b746-54d3c9334ee7" alt="" class="founder-img">
                                     <div class="founder-item">
                                         <span class="founder-name">Randy Schneider</span>
                                         <a href="" class="founder-phone">
@@ -332,7 +335,7 @@
 
                                 <!-- TEAM 6 -->
                                 <div class="col l-3 m-6 c-6 founder-info">
-                                    <img src="./img/team/pexels-photo-10013224.jpeg" alt="" class="founder-img">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fperson%20(4).jpeg?alt=media&token=efae8f64-6962-4467-879c-75a32e7bd532" alt="" class="founder-img">
                                     <div class="founder-item">
                                         <span class="founder-name">Maria Georgel</span>
                                         <a href="" class="founder-phone">
@@ -346,7 +349,7 @@
 
                                 <!-- TEAM 7 -->
                                 <div class="col l-3 m-6 c-6 founder-info">
-                                    <img src="./img/team/pexels-photo-10030258.jpeg" alt="" class="founder-img">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fperson%20(5).jpeg?alt=media&token=d462a8ba-9a92-4dad-bb8d-8143029ef2a2" alt="" class="founder-img">
                                     <div class="founder-item">
                                         <span class="founder-name">Olivia Marshall</span>
                                         <a href="" class="founder-phone">
@@ -361,7 +364,7 @@
                                 <!-- TEAM 8 -->
                                 <div class="col l-3 m-6 c-6 founder-info">
                                     <div class="fouder-image">
-                                        <img src="./img/team/pexels-photo-9995662.jpeg" alt="" class="founder-img">
+                                        <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fperson%20(1).jpeg?alt=media&token=7b5dfda1-d24f-4fac-8f9c-a9e763e14a62" alt="" class="founder-img">
                                     </div>
                                     <div class="founder-item">
                                         <span class="founder-name">Samantha Nelson</span>
@@ -385,7 +388,7 @@
                     <div class="grid wide">
                         <div class="row">
                             <div class="col l-6 m-12 c-12 about-company-comment-content">
-                                <div ><img src="./img/founder/user (1).jpg" alt="" class="comment-content-img"></div>
+                                <div ><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(1).jpg?alt=media&token=86cfc3e9-3b22-4ef8-9307-b73cf005b6f5" alt="" class="comment-content-img"></div>
                                 <div class="comment-content-info">
                                     <p class="comment-content-info-text">
                                         Cảm ơn bạn đã phản hồi nhanh chóng và sự giúp đỡ mà bạn đã cho tôi. Bạn luôn có một giải pháp nhanh chóng cho mọi vấn đề. Thật là một mức độ dịch vụ khách hàng tuyệt vời</p>
@@ -393,35 +396,35 @@
                                 </div>
                             </div>
                             <div class="col l-6 m-12 c-12 about-company-comment-content">
-                                <div ><img src="./img/founder/user (8).jpg" alt="" class="comment-content-img"></div>
+                                <div ><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(2).jpg?alt=media&token=c8c824ab-e69d-4134-b6c3-02bb4ab2e90c" alt="" class="comment-content-img"></div>
                                 <div class="comment-content-info">
                                     <p class="comment-content-info-text">Tôi chỉ muốn cảm ơn vì sự giúp đỡ của bạn. Tôi rất hài lòng và biết ơn. hãy luôn làm tốt như vậy nhé! Trang web của bạn cung cấp sự hỗ trợ tốt nhất mà tôi từng gặp.</p>
                                     <h4 class="comment-content-info-name">-Nicholas Lane</h4>
                                 </div>
                             </div>
                             <div class="col l-6 m-12 c-12 about-company-comment-content">
-                                <div ><img src="./img/founder/user (7).jpg" alt="" class="comment-content-img"></div>
+                                <div ><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(7).jpg?alt=media&token=9d54428a-de2e-4844-b8f2-cbffeb64c76b" alt="" class="comment-content-img"></div>
                                 <div class="comment-content-info">
                                     <p class="comment-content-info-text">Cảm ơn bạn rất nhiều vì phản hồi nhanh chóng của bạn. Không nghi ngờ gì nữa, công ty của bạn rất đáng để ngưỡng mộ! Tôi đã trải nghiệm hỗ trợ nhanh nhất từ ​​trước đến nay. ort bao giờ hết. Cảm ơn bạn một nghìn</p>
                                     <h4 class="comment-content-info-name">-Ethan Dean</h4>
                                 </div>
                             </div>
                             <div class="col l-6 m-12 c-12 about-company-comment-content">
-                                <div ><img src="./img/founder/user (6).jpg" alt="" class="comment-content-img"></div>
+                                <div ><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(6).jpg?alt=media&token=668c226c-90f6-4c2d-9920-bd1d341dd843" alt="" class="comment-content-img"></div>
                                 <div class="comment-content-info">
                                     <p class="comment-content-info-text">Tôi chỉ muốn nói lời cảm ơn vì dịch vụ nhanh chóng và hiệu quả của bạn, vì đội ngũ nhân viên hỗ trợ thân thiện và chuyên nghiệp của bạn! Tôi sẽ giới thiệu công ty chuyên gia của bạn cho tất cả bạn bè của tôi</p>
                                     <h4 class="comment-content-info-name">-Pamela Hansen</h4>
                                 </div>
                             </div>
                             <div class="col l-6 m-12 c-12 about-company-comment-content">
-                                <div ><img src="./img/founder/user (5).jpg" alt="" class="comment-content-img"></div>
+                                <div ><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(5).jpg?alt=media&token=26fbc4c7-d80f-424d-b4c4-2b993779ee20" alt="" class="comment-content-img"></div>
                                 <div class="comment-content-info">
                                     <p class="comment-content-info-text">Wow, tôi rất hài lòng với dịch vụ của bạn. Bạn đã quản lý để vượt quá mong đợi của tôi! Các bạn làm việc rất hiệu quả và tôi sẽ giới thiệu nhiều người hơn đến công ty của bạn!</p>
                                     <h4 class="comment-content-info-name">-Donald Webb</h4>
                                 </div>
                             </div>
                             <div class="col l-6 m-12 c-12 about-company-comment-content">
-                                <div ><img src="./img/founder/user (4).jpg" alt="" class="comment-content-img"></div>
+                                <div ><img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fteam%2Fuser%20(3).jpg?alt=media&token=321847ad-16cf-4f25-954f-f1eb444431bf" alt="" class="comment-content-img"></div>
                                 <div class="comment-content-info">
                                     <p class="comment-content-info-text">Tôi chỉ không biết làm thế nào để mô tả các dịch vụ của bạn ... Chúng thật phi thường! Tôi khá hài lòng với họ! Chỉ cần tiếp tục đi theo cách này!</p>
                                     <h4 class="comment-content-info-name">-Donna Keller</h4>
