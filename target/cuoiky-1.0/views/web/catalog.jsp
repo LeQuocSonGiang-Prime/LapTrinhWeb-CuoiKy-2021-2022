@@ -405,9 +405,9 @@
             setValueForInputPageCurrent()
         }
     }
-<%if(typeOfHouse!=null){%>
-     document.querySelector("#select-type-of-house").value = <%=typeOfHouse%>
-<%}%>
+    <%if(typeOfHouse!=null){%>
+    document.querySelector("#select-type-of-house").value =<%=typeOfHouse%>;
+    <%}%>
 </script>
 
 </body>
