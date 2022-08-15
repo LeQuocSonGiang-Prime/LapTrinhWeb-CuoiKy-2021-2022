@@ -37,6 +37,7 @@
     font-weight: bold;
     border: none;
     outline: none;
+    transition: .4s;
 }
 .confirm-content-info button:hover{
     color: #fd274e;
