@@ -256,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-                <form id="form-kind-of-house" action="danh-muc" method="get">
+                <form id="form-kind-of-house" action="danh-muc" method="post">
                     <input type="hidden" id="kind-of-house" name="kind-of-house">
                 </form>
             </div>
@@ -299,7 +299,7 @@
 
                     </div>
                     <div class="buy-view-search">
-                        <a href="./catalog.html" class="buy-btn">Xem Tất Cả</a>
+                        <a href="${pageContext.request.contextPath}/danh-muc" class="buy-btn">Xem Tất Cả</a>
                     </div>
                 </div>
             </div>

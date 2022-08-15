@@ -209,7 +209,7 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
     }
 
 
-    private void setParameter(PreparedStatement stm, Object... parameters) {
+    public void setParameter(PreparedStatement stm, Object... parameters) {
         try {
             for (int i = 0; i < parameters.length; i++) {
                 Object parameter = parameters[i];
@@ -224,6 +224,12 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
                     stm.setDate(index, (java.sql.Date) parameter);
                 } else if (parameter instanceof Integer) {
                     stm.setInt(index, (Integer) parameter);
+                }else if(parameter instanceof List){
+                    for(int j = 0; j < ((List<?>) parameter).size();j++){
+                        String p =(String)  ((List<?>) parameter).get(j);
+                        int index2 = index + j;
+                        stm.setString(index2, p);
+                    }
                 }
             }
         } catch (SQLException e) {

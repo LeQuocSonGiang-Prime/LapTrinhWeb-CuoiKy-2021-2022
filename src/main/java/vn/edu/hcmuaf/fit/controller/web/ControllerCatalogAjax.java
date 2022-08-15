@@ -20,14 +20,26 @@ public class ControllerCatalogAjax extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int ipageNumber = Integer.parseInt(request.getParameter("currentPage"));
-        String typeOfHouse = request.getParameter("type-of-house");
+        String typeOfHouse = request.getParameter("typeHouse");
+        String locationHouse = request.getParameter("locationHouse");
+        System.out.println("typeOfHouse"+typeOfHouse);
+        System.out.println("locationHouse"+locationHouse);
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         List<HouseModel> listHouse;
         if (typeOfHouse == null) {
-            listHouse = houseService.select24Element(ipageNumber);
+            if(locationHouse == null){
+                listHouse = houseService.select24Element(ipageNumber);
+            }else{
+                listHouse = houseService.select24ElementByLocation(locationHouse, ipageNumber);
+            }
         } else {
-            listHouse = houseService.selectHouseByKind(Integer.parseInt(typeOfHouse), ipageNumber);
+            if(locationHouse==null){
+                listHouse = houseService.select24HouseByKind(Integer.parseInt(typeOfHouse), ipageNumber);
+            }else{
+                listHouse = houseService.select24HouseByTypeAndLocation(typeOfHouse, locationHouse, ipageNumber);
+            }
+
         }
         PrintWriter out = response.getWriter();
         String data = "";

@@ -18,8 +18,8 @@ import javax.mail.internet.MimeMessage;
 public class SendMail {
 
 
-    private static final String username = "homestayprime365@gmail.com";
-    private static final String password = "a123456789A@";
+    private static final String username = "laptrinhwebnlu@gmail.com";
+    private static final String password = "12345678aA";
 
     public void sendMail(String to, String subject, String content) {
         Session session = connect();

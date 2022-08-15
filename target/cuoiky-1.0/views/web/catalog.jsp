@@ -235,31 +235,31 @@
             <div class="grid wide">
                 <div class="buy ">
                     <div class="select">
-                        <select class="select-option" id="select-type-of-house">
-                            <option disabled selected>ALL</option>
-                            <option value="1">Thiên Nhiên</option>
-                            <option value="2">Ấm Cúng</option>
-                            <option value="3">Studio</option>
-                            <option value="4">Sang Trọng</option>
-                        </select>
-                        <select class="select-option">
-                            <option disabled selected>Tỉnh-Thành Phố</option>
-                            <option value="">Hồ Chí Minh</option>
-                            <option value="">Đà Lạt</option>
-                            <option value="">Vũng Tàu</option>
-                            <option value="">Nha Trang</option>
-                            <option value="">Phú Quốc</option>
-                            <option value="">Bình Định</option>
-                        </select>
+                            <select class="select-option" id="select-type-of-house">
+                                <option disabled selected>ALL</option>
+                                <option value="1">Thiên Nhiên</option>
+                                <option value="2">Ấm Cúng</option>
+                                <option value="3">Studio</option>
+                                <option value="4">Sang Trọng</option>
+                            </select>
+                            <select class="select-option" id="select-location-of-house">
+                                <option disabled selected>Tỉnh-Thành Phố</option>
+                                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                                <option value="Đà Lạt">Đà Lạt</option>
+                                <option value="Vũng Tàu">Vũng Tàu</option>
+                                <option value="Nha Trang">Nha Trang</option>
+                                <option value="Phú Quốc">Phú Quốc</option>
+                                <option value="Bình Định">Bình Định</option>
+                            </select>
                         <!-- <div class="slider-bar">
                             <input type="range" min="0" max="1000" class="slider-bar-price">
                             <div>1000$</div>
                         </div> -->
 
-                        <button>Tìm Kiếm</button>
+                        <button id="btn-find-house">Tìm Kiếm</button>
                     </div>
                     <h1 class="buy-title"><span>Lựa Chọn</span> Yêu Thích</h1>
-                    <div class="row">
+                    <div class="row" id="contain-house">
                         <% for (HouseModel item : houseModels) { %>
                         <div class="col l-4 m-6 c-12 buy-list" id="house-item" data-aos="zoom-in-up"
                              data-aos-duration="1000">
@@ -388,6 +388,7 @@
 <script src="<c:url value='/template/web/js/appfunction.js' />"></script>
 <script src="<c:url value='/template/web/js/dividePage.js' />"></script>
 <script>
+    findHouse()
     maxPageShow = <%=totalPage%>;
     showNumPage()
 
@@ -408,6 +409,7 @@
     <%if(typeOfHouse!=null){%>
     document.querySelector("#select-type-of-house").value =<%=typeOfHouse%>;
     <%}%>
+
 </script>
 
 </body>

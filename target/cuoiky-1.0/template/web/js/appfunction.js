@@ -224,7 +224,7 @@ Validator.isEmail = function (selector) {
 
 // file index.jsp
 
-function typeOfHouse(){
+function typeOfHouse() {
     let btnKindHouse = document.querySelectorAll(".intro-btn")
     let input_kindOfHouse = document.querySelector("#kind-of-house")
     for (let i = 0; i < 4; i++) {
@@ -233,4 +233,32 @@ function typeOfHouse(){
             document.querySelector("#form-kind-of-house").submit()
         }
     }
+}
+
+function findHouse() {
+    let btnFindHouse = document.querySelector("#btn-find-house")
+    let typeOfHouse = document.querySelector("#select-type-of-house")
+    let locationOfHouse = document.getElementById("select-location-of-house")
+    btnFindHouse.onclick = function (e) {
+        e.preventDefault()
+        $.ajax({
+            url: "ControllerCatalogAjax",
+            // data: {typeOfHouse: typeOfHouse, locationOfHouse: locationOfHouse},
+            data: {typeHouse: typeOfHouse, locationHouse: locationOfHouse},
+            type: "get",
+            success(data) {
+                $('.row')[0].innerHTML = data
+            }, error: function (error) {
+                console.log("error" + error)
+            }
+        })
+
+    }
+}
+
+function addHouse() {
+    let input_address = $('#address-house')
+    let input_name = $('#name-house')
+    let input_type = $('#type-house')
+    let input_typ = $('#type-house')
 }

@@ -103,6 +103,8 @@ public class HouseModel implements Serializable, Comparable<HouseModel> {
         this.image = image;
     }
 
+    public void addImage(String image){this.image.add(image);}
+
     public String getTutorial() {
         return tutorial;
     }
