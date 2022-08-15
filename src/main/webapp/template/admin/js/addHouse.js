@@ -8,7 +8,9 @@ document.querySelector("#file").addEventListener("change", function (e) {
             pickReader.addEventListener("load", (e) => {
                 let picFile = e.target;
                 let div = document.createElement("div")
-                div.innerHTML = `<img class="thunnail" src="${picFile.result}" title="${picFile.name}"/>`;
+                div.style.position = "relative";
+                div.innerHTML = `<img class="thunnail" src="${picFile.result}" title="${picFile.name}"/>
+                                   <i onclick="removeImg(${files},${i})" class="fas fa-times thum-icon"/>`;
                 output.appendChild(div)
             })
             pickReader.readAsDataURL(files[i])
@@ -17,3 +19,7 @@ document.querySelector("#file").addEventListener("change", function (e) {
         alert("Your browser does not support the File API")
     }
 })
+let removeImg = (arr,i)=>{
+        arr.splice(i,1);
+        console.log(arr);
+}
