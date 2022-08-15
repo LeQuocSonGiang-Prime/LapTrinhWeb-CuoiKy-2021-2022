@@ -409,7 +409,10 @@
     <%if(typeOfHouse!=null){%>
     document.querySelector("#select-type-of-house").value =<%=typeOfHouse%>;
     <%}%>
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd65eb81a8363a7beadfe2f304730a9406fc7174
 </script>
 
 </body>

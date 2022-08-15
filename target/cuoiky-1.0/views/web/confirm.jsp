@@ -42,9 +42,12 @@
             <button type="button" class="toggle-btn" onclick="register()">Đăng Kí</button>
         </div>
         <div class="social-icons">
-            <img src="img/login-reg-img/fb.png" alt="">
-            <img src="img/login-reg-img/gp.png" alt="">
-            <img src="img/login-reg-img/tw.png" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680"
+                 alt="">
         </div>
         <form id="login" class="input-group" action="">
             <input type="text" class="input-field" placeholder="Tài Khoản" required>
@@ -87,7 +90,7 @@
         </div>
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="./img/logo-dark.png" alt="" class="navbar__logo-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -115,7 +118,7 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="./img/logo-dark.png" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>
@@ -215,8 +218,8 @@
                     </div>
                 </div>
                 <div class="confirm-content-login">
-                    <h3>Đăng Nhập Hoặc Đăng Kí Để Đặt Chỗ</h3>
-                    <span>Số Điện Thoại</span>
+
+                    <span>Vui Lòng nhập số điện thoại</span>
                     <input type="text">
                     <p>Chúng tôi sẽ gọi điện hoặc nhắn tin cho bạn để xác nhận số điện thoại. Có áp dụng phí dữ liệu và
                         phí tin nhắn tiêu chuẩn. <a href="">Chính sách về quyền riêng tư</a></p>
