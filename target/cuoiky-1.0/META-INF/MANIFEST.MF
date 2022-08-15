@@ -1,6 +1,10 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
+<<<<<<< HEAD
+Built-By: acer
+=======
 Built-By: lequo
+>>>>>>> 69a4cb21ec9c6edc0fd7680eec56fba62592bbb3
 Build-Jdk: 17.0.1
 Implementation-Title: cuoiky
 Implementation-Version: 1.0
