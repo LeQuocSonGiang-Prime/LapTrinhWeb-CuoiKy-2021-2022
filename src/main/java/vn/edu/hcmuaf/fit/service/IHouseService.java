@@ -20,7 +20,16 @@ public interface IHouseService {
 
     List<HouseModel> select4Element(int index);
 
-    List<HouseModel> selectHouseByKind(int type, int index);
+    List<HouseModel> select24HouseByKind(int type, int index);
 
     int countHouseByType(int type);
+
+    List<HouseModel> select24ElementByLocation(String locationHouse, int ipageNumber);
+
+    List<HouseModel> select24HouseByTypeAndLocation(String typeOfHouse, String locationHouse, int ipageNumber);
+
+    boolean findHouseByID(String id_house);
+
+    boolean addHouse(HouseModel house);
+
 }

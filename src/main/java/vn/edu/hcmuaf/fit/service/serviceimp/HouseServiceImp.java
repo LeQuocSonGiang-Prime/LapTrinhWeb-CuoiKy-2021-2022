@@ -50,8 +50,8 @@ public class HouseServiceImp implements IHouseService {
     }
 
     @Override
-    public List<HouseModel> selectHouseByKind(int type, int index) {
-        return houseDAO.selectHouseByKind(type, (index - 1) * 24);
+    public List<HouseModel> select24HouseByKind(int type, int index) {
+        return houseDAO.select24HouseByKind(type, (index - 1) * 24);
     }
 
     @Override
@@ -59,8 +59,31 @@ public class HouseServiceImp implements IHouseService {
         return houseDAO.countHouseByType(type);
     }
 
+    @Override
+    public List<HouseModel> select24ElementByLocation(String locationHouse, int ipageNumber) {
+        return houseDAO.select24ElementByLocation(locationHouse, (ipageNumber-1)*24);
+    }
+
+    @Override
+    public List<HouseModel> select24HouseByTypeAndLocation(String typeOfHouse, String locationHouse, int ipageNumber) {
+        return houseDAO.select24HouseByTypeAndLocation(typeOfHouse, locationHouse, (ipageNumber-1)*24);
+    }
+
+    @Override
+    public boolean findHouseByID(String id_house) {
+        return houseDAO.findHouseByID(id_house)!=0;
+    }
+
+    @Override
+    public boolean addHouse(HouseModel house) {
+        return houseDAO.addHouse(house);
+    }
+
     public HouseModel selectHouseByIdNoneInject(String id_house) {
         HouseDAOImp house = new HouseDAOImp();
         return house.selectById(id_house);
     }
+
+
+
 }
