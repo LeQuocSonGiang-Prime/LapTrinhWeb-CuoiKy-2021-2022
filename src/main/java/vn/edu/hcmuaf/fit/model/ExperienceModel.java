@@ -11,9 +11,7 @@ public class ExperienceModel {
     private String link;
     private int heart;
 
-
     private static List<ExperienceModel> listExperience  = new ArrayList<>();
-
 
     public ExperienceModel(){}
 
