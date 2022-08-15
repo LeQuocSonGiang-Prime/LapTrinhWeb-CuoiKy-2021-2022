@@ -98,7 +98,7 @@
             <a href="${pageContext.request.contextPath}/trang-chu">
                 <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
                      alt="" class="navbar__logo-img">
-                  </a>
+            </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
                     <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a">Trang Chủ</a>
@@ -209,9 +209,9 @@
                 <div class="row">
                     <c:forEach var="ex" items="<%=listEx%>">
                         <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="experience-singer-link-a" href="">
+                            <i class="fas fa-heart icon-heart"></i>
+                            <a class="experience-singer-link-a" href="${ex.link}">
                                 <img src="${ex.image}" alt="" class="experience-img-slider"/>
-                                <i class="fas fa-heart"></i>
                                 <div class="experience-info-item">
                                     <div class="experience-evaluate">
                                         <i class="fas fa-star star2"></i>
@@ -306,15 +306,27 @@
         </div>
         <div class="footer__bottom">
             <div class="grid">
-
                 <p class="footer__text">Đại Học Nông Lâm TP.HCM</p>
                 <p class="footer__text">Lập Trình Web: Lê Quốc Sơn Giang - Trần Đình Danh - Phạm Công Danh</p>
-
             </div>
         </div>
     </footer>
-
 </div>
+<script>
+    let icon = document.querySelectorAll(".icon-heart");
+    icon.forEach(function (e) {
+        let flag = 0;
+        e.onclick = function () {
+            if (flag == 1) {
+                e.classList.remove("red");
+                flag = 0;
+            } else {
+                e.classList.add("red");
+                flag = 1;
+            }
+        }
+    })
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>

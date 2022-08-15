@@ -9,6 +9,7 @@ public class ExperienceModel {
     private String id;
     private String image;
     private String link;
+    private int heart;
 
 
     private static List<ExperienceModel> listExperience  = new ArrayList<>();
@@ -56,4 +57,11 @@ public class ExperienceModel {
         this.link = link;
     }
 
+    public int getHeart() {
+        return heart;
+    }
+
+    public void setHeart(int heart) {
+        this.heart = heart;
+    }
 }
