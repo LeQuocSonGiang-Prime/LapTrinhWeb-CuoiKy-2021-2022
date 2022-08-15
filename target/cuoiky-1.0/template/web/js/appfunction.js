@@ -97,14 +97,14 @@ function showSlides(n) {
 document.querySelector("#btn-login").onclick = function (e) {
     e.preventDefault();
 
-    let data = $("#login").serialize()
+    let username = $('#login-username').val()
+    let password = $('#login-password').val()
     let msg = null
-    console.log(data)
 
     $.ajax({
         url: "dang-nhap",
         type: "POST",
-        data: data,
+        data: {user: username, pass: password},
         dataType: "JSON",
         success(data) {
             msg = data.msg;
