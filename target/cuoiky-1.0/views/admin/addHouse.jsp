@@ -38,18 +38,11 @@
 
         }
 
-<<<<<<< HEAD
         .thunnail {
-            height: 200px;
+            height: 100px;
+            width: 100px;
         }
     </style>
-=======
-    .thunnail{
-      height: 100px;
-      width: 100px;
-    }
-  </style>
->>>>>>> e20ca31645e441463f4da99dffa9d620d6d0d7ab
 
 </head>
 <body>
@@ -209,7 +202,6 @@
 
     </div>
 
-<<<<<<< HEAD
 </div>
     <script src="./assets/js/appfunction.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -234,69 +226,5 @@
             }
         })
     </script>
-=======
-    <div class="form__admin">
-      <div class="container">
-        <form id="contact" action="" method="post">
-          <h3>Add House</h3>
-          <h4></h4>
-          <fieldset>
-            <input placeholder="Id House" type="text" tabindex="1" required autofocus>
-          </fieldset>
-          <fieldset>
-            <input placeholder="Name House" type="text" tabindex="2" required>
-          </fieldset>
-          <fieldset>
-            <input placeholder="Type" type="text" tabindex="3" required>
-          </fieldset>
-          <fieldset>
-            <input placeholder="Address" type="text" tabindex="4" required>
-          </fieldset>
-          <fieldset>
-            <input placeholder="Detail" type="text" tabindex="2" required>
-          </fieldset>
-          <fieldset>
-            <input placeholder="Price" type="text" tabindex="2" required>
-          </fieldset>
-          <fieldset>
-            <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
-          </fieldset>
-          <div>
-            <input type="file" id="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg">
-          </div>
-          <div id="result"></div>
-          <fieldset  style="width:95%">
-            <button name="submit"  type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-          </fieldset>
-
-        </form>
-      </div>
-    </div>
-  </div>
-  </div>
-  <script src="./assets/js/appfunction.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    document.querySelector("#file").addEventListener("change", function(e){
-      if(window.File && window.FileReader && window.FileList && window.Blob){
-        const files = e.target.files
-        const output= document.querySelector("#result")
-        for(let i = 0; i < files.length; i++){
-          if(!files[i].type.match("image")) continue
-          const pickReader = new FileReader()
-          pickReader.addEventListener("load", (e)=>{
-            const picFile = e.target;
-            const div =document.createElement("div")
-            div.innerHTML = `<img class="thunnail" src="${picFile.result}" title="${picFile.name}"/>`;
-            output.appendChild(div)
-          })
-          pickReader.readAsDataURL(files[i])
-        }
-      }else{
-        alert("Your browser does not support the File API")
-      }
-    })
-  </script>
->>>>>>> e20ca31645e441463f4da99dffa9d620d6d0d7ab
 </body>
 </html>

@@ -39,7 +39,8 @@
         }
 
         .thunnail {
-            height: 200px;
+            height: 100px;
+            width: 100px;
         }
     </style>
 
