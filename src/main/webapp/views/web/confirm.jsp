@@ -264,7 +264,7 @@
                                 <span>Tổng</span>
                                 <span><%=house.getPrice() * date_diff - 5%>k</span>
                             </div>
-                            <input type="hidden" name="input-price" value="<%=house.getPrice() * date_diff - 5%>">
+
                             <input type="hidden" name="time-checkin" value="<%=st_time_checkin%>">
                             <input type="hidden" name="time-checkout" value="<%=st_time_checkout%>">
                             <input type="hidden" name="house" value="<%=house.getId()%>">

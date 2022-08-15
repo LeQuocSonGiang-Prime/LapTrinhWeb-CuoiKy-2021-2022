@@ -1,7 +1,9 @@
 package vn.edu.hcmuaf.fit.controller.web;
 
 import vn.edu.hcmuaf.fit.dao.IBillDAO;
+import vn.edu.hcmuaf.fit.dao.IUserDAO;
 import vn.edu.hcmuaf.fit.model.BillModel;
+import vn.edu.hcmuaf.fit.service.IUserService;
 
 import javax.inject.Inject;
 import javax.servlet.*;
@@ -16,6 +18,8 @@ import java.util.Random;
 public class ControllerAddBillOrder extends HttpServlet {
     @Inject
     private IBillDAO billDAO;
+    @Inject
+    private IUserService userService;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,11 +31,12 @@ public class ControllerAddBillOrder extends HttpServlet {
         String time_checkout = request.getParameter("time-checkout");
         java.util.Date time_checkin_util =  new  java.util.Date(time_checkin);
         java.util.Date time_checkout_util =  new  java.util.Date(time_checkout);
+        String phone = request.getParameter("input-phone");
 
         int price = Integer.parseInt(request.getParameter("price"));
         java.util.Date time_order = new  java.util.Date();
         billDAO.addBill(createID(), id_house, id_user, new Date(time_checkin_util.getTime()), new Date(time_checkout_util.getTime()), new Date(time_order.getTime()), price);
-
+userService.updatePhone(id_user, phone);
     }
 
     public String createID() {
