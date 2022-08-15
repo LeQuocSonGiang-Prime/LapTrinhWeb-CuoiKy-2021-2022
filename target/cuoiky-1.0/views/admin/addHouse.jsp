@@ -36,7 +36,8 @@
     }
 
     .thunnail{
-      height: 200px;
+      height: 100px;
+      width: 100px;
     }
   </style>
 
@@ -183,17 +184,18 @@
           <fieldset>
             <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
           </fieldset>
-          <fieldset  style="width:95%">
-            <button name="submit"  type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-          </fieldset>
           <div>
             <input type="file" id="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg">
           </div>
           <div id="result"></div>
+          <fieldset  style="width:95%">
+            <button name="submit"  type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
+
         </form>
       </div>
     </div>
-
+  </div>
   </div>
   <script src="./assets/js/appfunction.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
