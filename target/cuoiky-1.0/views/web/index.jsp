@@ -136,6 +136,7 @@
                 <li class="navbar-item">
                     <a href="${pageContext.request.contextPath}/trai-nghiem" class="navbar-item-a">TRẢI NGHIỆM</a>
                 </li>
+
                 <li class="navbar-item">
                     <a href="${pageContext.request.contextPath}/dich-vu" class="navbar-item-a">Dịch vụ</a>
                 </li>
