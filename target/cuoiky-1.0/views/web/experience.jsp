@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.model.ExperienceModel" %><%--
+<%@ page import="vn.edu.hcmuaf.fit.model.ExperienceModel" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.UserModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -36,6 +37,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
     <% List<ExperienceModel> listEx = (List<ExperienceModel>) request.getAttribute("listExperience"); %>
+    <% UserModel user = (UserModel) request.getSession().getAttribute("acc");%>
+
 </head>
 
 <body>
@@ -77,23 +80,32 @@
 
 
         <!-- HEADER -->
+        <%if (user == null) {%>
         <div class="header__info">
             <ul class="header__info-list">
-                <li class="header__info-item">
-                    <button href="" class="header__info-item-a" onclick="showModal()">Đăng Nhập</button>
+                <li class="header__info-item" id="header__info-login">
+                    <button id="header__info-item-a" class="header__info-item-a" style="cursor: pointer"
+                            onclick="showModal()">Đăng Nhập
+                    </button>
                 </li>
             </ul>
             <ul class="header__info-list">
                 <li class="header__info-item">
-                    <i class="ti-email"></i>
-                    info@gmail.com
+                    <i class="ti-email"></i> info@gmail.com
                 </li>
                 <li class="header__info-item">
-                    <i class="ti-mobile"></i>
-                    +84 1819289
+                    <i class="ti-mobile"></i> +84 1819289
                 </li>
             </ul>
         </div>
+        <%} else {%>
+        <div class="header__info">
+            <img src="<%=user.getAvatar()%>" alt=""
+                 style="border-radius:50%; height: 20px;width: 20px;margin-right: 5px; ">
+            <div class="header__info" style="margin-top: 0"><%=user.getFullName()%></div>
+        </div>
+        <%}%>
+
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
                 <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"

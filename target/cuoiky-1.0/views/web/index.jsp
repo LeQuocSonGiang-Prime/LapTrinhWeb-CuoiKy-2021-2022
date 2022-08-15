@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %>
-<%@ page import="java.util.StringTokenizer" %><%--
+<%@ page import="java.util.StringTokenizer" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.UserModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -36,6 +37,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <%
         List<HouseModel> list4House = (List<HouseModel>) request.getAttribute("list4House");
+        UserModel user = (UserModel) request.getSession().getAttribute("acc");
     %>
 
 </head>
@@ -59,8 +61,10 @@
                  alt="">
         </div>
         <form id="login" name="form-signin" class="input-group">
-            <input id="login-username" type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
-            <input id="login-password" type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>
+            <input id="login-username" type="text" class="input-field" placeholder="Tài Khoản" name="username"
+                   required>
+            <input id="login-password" type="password" class="input-field" placeholder="Mật Khẩu" name="password"
+                   required>
             <div>
                 <input type="checkbox" class="check-box">
                 <span class="checkbox-remember">Nhớ mật khẩu</span>
@@ -103,6 +107,7 @@
     <!-- Hết  -->
     <div class="header">
         <!-- HEADER -->
+        <%if (user == null) {%>
         <div class="header__info">
             <ul class="header__info-list">
                 <li class="header__info-item" id="header__info-login">
@@ -120,6 +125,13 @@
                 </li>
             </ul>
         </div>
+        <%} else {%>
+        <div class="header__info">
+            <img src="<%=user.getAvatar()%>" alt=""
+                 style="border-radius:50%; height: 20px;width: 20px;margin-right: 5px; ">
+            <div class="header__info" style="margin-top: 0"><%=user.getFullName()%></div>
+        </div>
+        <%}%>
 
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
@@ -155,7 +167,8 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                 alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>

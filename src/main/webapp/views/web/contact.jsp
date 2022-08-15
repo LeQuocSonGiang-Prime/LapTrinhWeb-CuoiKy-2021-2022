@@ -1,4 +1,4 @@
-<%--
+<%@ page import="vn.edu.hcmuaf.fit.model.UserModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -35,6 +35,8 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
             rel="stylesheet"
     />
+    <% UserModel user = (UserModel) request.getSession().getAttribute("acc");%>
+
 </head>
 
 <body>
@@ -112,25 +114,32 @@
 
         <!-- HEADER -->
         <!-- <div class="grid">      -->
+        <%if (user == null) {%>
         <div class="header__info">
             <ul class="header__info-list">
-                <li class="header__info-item">
-                    <button href="" class="header__info-item-a" onclick="showModal()">
-                        Đăng Nhập
+                <li class="header__info-item" id="header__info-login">
+                    <button id="header__info-item-a" class="header__info-item-a" style="cursor: pointer"
+                            onclick="showModal()">Đăng Nhập
                     </button>
                 </li>
             </ul>
             <ul class="header__info-list">
                 <li class="header__info-item">
-                    <i class="ti-email"></i>
-                    info@gmail.com
+                    <i class="ti-email"></i> info@gmail.com
                 </li>
                 <li class="header__info-item">
-                    <i class="ti-mobile"></i>
-                    +84 1819289
+                    <i class="ti-mobile"></i> +84 1819289
                 </li>
             </ul>
         </div>
+        <%} else {%>
+        <div class="header__info">
+            <img src="<%=user.getAvatar()%>" alt=""
+                 style="border-radius:50%; height: 20px;width: 20px;margin-right: 5px; ">
+            <div class="header__info" style="margin-top: 0"><%=user.getFullName()%></div>
+        </div>
+        <%}%>
+
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
                 <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
