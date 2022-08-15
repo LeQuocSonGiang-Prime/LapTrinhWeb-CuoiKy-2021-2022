@@ -307,7 +307,7 @@
                                     <i class="fas fa-star" style="color: #ff385c ;"></i>
                                     <h3><%=house.getStar()%>
                                     </h3>
-                                    <p>(<%=listBill.size()%> đánh giá)</p>
+                                    <p>(<%=listComment.size()%> đánh giá)</p>
                                 </div>
 
                             </div>
