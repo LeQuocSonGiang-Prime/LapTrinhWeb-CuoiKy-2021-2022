@@ -474,6 +474,9 @@
                         </div>
                     </c:forEach>
                 </div>
+                <div>
+                    <textarea id=""style="padding: 10px" rows="3" cols="90" placeholder="Nhập bình luận của bạn..."></textarea>
+                </div>
                 <div class="buy">
                     <h1 class="buy-title" data-aos="zoom-in-up">Các <span>Lựa Chọn</span> Khác</h1>
                     <div class="row">
