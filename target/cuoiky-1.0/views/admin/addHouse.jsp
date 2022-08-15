@@ -203,28 +203,9 @@
     </div>
 
 </div>
-    <script src="./assets/js/appfunction.js"></script>
+    <script src="<c:url value='/template/web/js/appfunction.js' />" ></script>
+    <script src="<c:url value='/template/admin/js/addHouse.js' />" ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        document.querySelector("#file").addEventListener("change", function (e) {
-            if (window.File && window.FileReader && window.FileList && window.Blob) {
-                const files = e.target.files
-                const output = document.querySelector("#result")
-                for (let i = 0; i < files.length; i++) {
-                    if (!files[i].type.match("image")) continue
-                    const pickReader = new FileReader()
-                    pickReader.addEventListener("load", (e) => {
-                        const picFile = e.target;
-                        const div = document.createElement("div")
-                        div.innerHTML = `<img class="thunnail" src="${picFile.result}" title="${picFile.name}"/>`;
-                        output.appendChild(div)
-                    })
-                    pickReader.readAsDataURL(files[i])
-                }
-            } else {
-                alert("Your browser does not support the File API")
-            }
-        })
-    </script>
+
 </body>
 </html>
