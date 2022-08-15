@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.Date" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.HouseModel" %><%--
   Created by IntelliJ IDEA.
   User: lequo
   Date: 07/01/2022
@@ -24,12 +25,18 @@
     <link rel="stylesheet" href="<c:url value='/template/web/css/main.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/grid.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/reponsive.css'/>">
-    <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-
+    <%
+        Date time_checkin = (Date) request.getAttribute("time-checkin");
+        Date time_checkout = (Date) request.getAttribute("time-checkout");
+        HouseModel house = (HouseModel) request.getAttribute("house");
+        int totalComment = (int) request.getAttribute("totalComment");
+    %>
 </head>
 
 <body>
@@ -90,7 +97,8 @@
         </div>
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
-                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                     alt="" class="navbar__logo-img">
             </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
@@ -118,7 +126,8 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                 alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>
@@ -201,21 +210,13 @@
                     <div class="confirm-content-info">
                             <span>
                                 Ngày
-                                <p>Ngày 31 tháng 12 năm 2021 - Ngày 07 tháng 1 năm 2022</p>
+                                <p>Ngày <%=time_checkin.getDate()%> tháng <%=time_checkin.getMonth()%> năm <%=time_checkin.getYear() + 1900%> - Ngày <%=time_checkout.getDate()%> tháng <%=time_checkout.getMonth()%> năm <%=time_checkout.getYear() + 1900%></p>
                             </span>
                         <button>
                             Chỉnh Sửa
                         </button>
                     </div>
-                    <div class="confirm-content-info">
-                            <span>
-                                Khách
-                                <p>2 Khách</p>
-                            </span>
-                        <button>
-                            Chỉnh Sửa
-                        </button>
-                    </div>
+
                 </div>
                 <div class="confirm-content-login">
 
@@ -229,16 +230,16 @@
             <div class="col l-5 m-12 c-12 confirm-catalog">
                 <div class="confirm-catalog-main">
                     <div class="confirm-catalog-main-up">
-                        <img src="./img/buy/buy-13.jpg" alt="">
+                        <img src="<%=house.getImage().get(0)%>" alt="">
                         <div class="confirm-up-info">
-                            <span style="color: #fd274e;font-weight: bold;">Jackfruit Cottage Treehouse</span>
-                            <span><i class="fas fa-star">4.8</i>(19 Đánh Giá)</span>
+                            <span style="color: #fd274e;font-weight: bold;"><%=house.getName()%></span>
+                            <span><i class="fas fa-star"><%=house.getStar()%></i>(<%=totalComment%> Đánh Giá)</span>
                         </div>
                     </div>
                     <div class="confirm-catalog-main-down">
                         <h3>Chi Tiết Giá</h3>
                         <div class="confirm-down-info">
-                            <span>28$/Ngày</span>
+                            <span><%=house.getPrice()%>/Ngày</span>
                             <span>28$</span>
                         </div>
                         <div class="confirm-down-info">
@@ -247,7 +248,7 @@
                         </div>
                         <div class="confirm-down-info">
                             <span>Phí Dịch Vụ</span>
-                            <span>19$</span>
+                            <span>8$</span>
                         </div>
                         <div class="confirm-down-info" style="font-weight: bold;">
                             <span>Tổng</span>
@@ -344,6 +345,7 @@
 
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -355,7 +357,6 @@
         });
     });
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="<c:url value='/template/web/js/appfunction.js' />">showSlides();</script>
 <script src="<c:url value='/template/web/js/bookroom.js' />"></script>

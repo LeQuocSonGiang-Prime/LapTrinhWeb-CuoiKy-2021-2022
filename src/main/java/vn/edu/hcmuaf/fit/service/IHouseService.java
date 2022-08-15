@@ -32,4 +32,5 @@ public interface IHouseService {
 
     boolean addHouse(HouseModel house);
 
+
 }
