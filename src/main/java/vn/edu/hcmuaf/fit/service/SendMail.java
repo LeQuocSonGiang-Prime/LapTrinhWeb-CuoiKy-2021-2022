@@ -18,8 +18,8 @@ import javax.mail.internet.MimeMessage;
 public class SendMail {
 
 
-    private static final String username = "laptrinhwebnlu@gmail.com";
-    private static final String password = "12345678aA";
+    private static final String username = "19130060@st.hcmuaf.edu.vn";
+    private static final String password = "mwvwjoanbghcfyld";
 
     public void sendMail(String to, String subject, String content) {
         Session session = connect();
@@ -125,7 +125,7 @@ public class SendMail {
                 "                <h1>Welcome To Prime HomeStay</h1>\n" +
                 "                <p>Xin Chào!!!</p>\n" +
                 "                <p>Bạn đang đăng kí tài khoản của chúng tôi</p>\n" +
-                "                <p>Vui lòng nhấp vào liên kết dưới đây để xác nhận địa chỉ email của bạn: <a href='http://localhost:8080/cuoiky/xac-nhan-dang-ky?email=" + recipient + " '>Click vào đây</a></p> \n" +
+                "                <p>Vui lòng nhấp vào liên kết dưới đây để xác nhận địa chỉ email của bạn: <a href='http://localhost:8080/cuoiky_war/xac-nhan-dang-ky?email=" + recipient + " '>Click vào đây</a></p> \n" +
                 "            </div>\n" +
                 "            <div class=\"content2\">\n" +
                 "                <p>Chúng tôi gửi email này cho bạn để xác nhận xem địa chỉ email liên kết với tài khoản Prime HomeStay của bạn.</p>\n" +

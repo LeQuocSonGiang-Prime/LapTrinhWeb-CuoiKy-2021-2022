@@ -69,6 +69,11 @@ public class UserServiceImp implements IUserService {
         return userDAO.selectById(id_user);
     }
 
+    @Override
+    public boolean updatePhone(String id_user,String phone) {
+        return userDAO.updatePhone(id_user,phone);
+    }
+
     private String hashPasword(String pass) {
         try {
             MessageDigest ma = MessageDigest.getInstance("MD5");

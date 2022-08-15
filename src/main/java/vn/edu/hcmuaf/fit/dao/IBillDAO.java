@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.fit.dao;
 
 import vn.edu.hcmuaf.fit.model.BillModel;
 
+import java.util.Date;
 import java.util.List;
 
 public interface IBillDAO extends IGenericDAO<BillModel> {
@@ -26,4 +27,6 @@ public interface IBillDAO extends IGenericDAO<BillModel> {
     boolean removeBillByIdHouse(String id_house);
 
     boolean removeBillByIdUser(String id_user);
+
+    boolean addBill(String id_bill, String id_house, String id_user, Date time_checkin, Date time_checkout,Date time_order, int price);
 }

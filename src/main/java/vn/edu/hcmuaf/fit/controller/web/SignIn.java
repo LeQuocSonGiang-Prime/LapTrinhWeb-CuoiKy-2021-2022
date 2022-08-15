@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -24,14 +25,20 @@ public class SignIn extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter os = response.getWriter();
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        String username = request.getParameter("user");
+        String password = request.getParameter("pass");
+        System.out.println("username" + username);
+        System.out.println("password"+ password);
        // response.sendRedirect("loginAdmin");
         JSONObject jsonOb = new JSONObject();
         UserModel user = userService.checkLogin(username, password);
+        System.out.println("user"+ user);
 
         String msg;
         if (user != null) {
+            System.out.println("user"+ user);
+            HttpSession session  = request.getSession();
+            session.setAttribute("acc", user);
             msg = "1";
             jsonOb.put("msg", msg);
             // if user has full name

@@ -265,6 +265,8 @@ changeTitleButtonChecking = () => {
         buttonSubmit.onclick = function() {
             document.querySelector("#input-timecheckin").value = dateCheckin
             document.querySelector("#input-timecheckout").value = dateCheckout
+            document.querySelector("#input-date-diff").value = lessTime()
+            console.log(lessTime())
             $("#form-orderHouse").submit()
 
         }

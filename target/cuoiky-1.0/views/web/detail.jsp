@@ -47,29 +47,54 @@
 <body>
 <div class="modal" id="modal">
     <div class="form-box">
-        <i id="close" onclick="hide()" class="login-colose-btn ti-close"></i>
+        <i id="close" onclick="hideModal()" class="login-colose-btn ti-close"></i>
         <div class="button-box">
             <div id="btn-login-modal"></div>
             <button type="button" class="toggle-btn" onclick="login()">Đăng Nhập</button>
             <button type="button" class="toggle-btn" onclick="register()">Đăng Kí</button>
         </div>
         <div class="social-icons">
-            <img src="img/login-reg-img/fb.png" alt="">
-            <img src="img/login-reg-img/gp.png" alt="">
-            <img src="img/login-reg-img/tw.png" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ffb.png?alt=media&token=77c279fb-5da5-43f4-9405-ee7f7eebe2cd"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Fgp.png?alt=media&token=eb88d9d0-3f44-4bb0-80e0-5a4e6e42bf94"
+                 alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Ftw.png?alt=media&token=f3e640ec-9bad-4cd2-a51a-cf2263415680"
+                 alt="">
         </div>
-        <form id="login" class="input-group" action="">
-            <input type="text" class="input-field" placeholder="Tài Khoản" required>
-            <input type="password" class="input-field" placeholder="Mật Khẩu" required>
-            <input type="checkbox" class="check-box"><span class="checkbox-remember">Nhớ mật khẩu</span>
-            <button type="submit" class="submit-btn">Đăng Nhập</button>
+        <form id="login" name="form-signin" class="input-group">
+            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
+            <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>
+            <div>
+                <input type="checkbox" class="check-box">
+                <span class="checkbox-remember">Nhớ mật khẩu</span>
+            </div>
+
+            <button class="submit-btn" id="btn-login">Đăng Nhập</button>
         </form>
-        <form id="register" class="input-group" action="">
-            <input type="text" class="input-field" placeholder="Tài Khoản" required>
-            <input type="password" class="input-field" placeholder="Mật Khẩu" required>
-            <input type="password" class="input-field" placeholder="Nhập Lại Mật Khẩu" required>
-            <input type="checkbox" class="check-box"><span class="checkbox-remember">Tôi đồng ý với các Điều khoản & Điều kiện</span>
-            <button type="submit" class="submit-btn">Đăng Kí</button>
+        <form id="register" name="form-signup" class="input-group" action="">
+            <div>
+                <input type="text" class="input-field" placeholder="Tài Khoản" name="username" id="register-username"
+                       required>
+            </div>
+            <div>
+                <input type="email" class="input-field" placeholder="email" name="email" id="register-email" required>
+            </div>
+
+            <div>
+                <input type="text" class="input-field" placeholder="họ tên" name="fullname" id="register-fullname"
+                       required>
+            </div>
+            <div>
+                <input type="password" class="input-field" placeholder="Mật Khẩu" name="password"
+                       id="register-password" required></div>
+            <div>
+                <input type="password" class="input-field" placeholder="Nhập Lại Mật Khẩu" name="repassword"
+                       id="register-repassword" required></div>
+            <div>
+                <input type="checkbox" name="checking" class="check-box" id="checkingregister">
+                <span class="checkbox-remember">Tôi đồng ý với các Điều khoản & Điều kiện</span>
+            </div>
+            <button type="submit" class="submit-btn" id="btn-signup">Đăng Kí</button>
         </form>
     </div>
 </div>
@@ -85,7 +110,7 @@
         <div class="header__info">
             <ul class="header__info-list">
                 <li class="header__info-item">
-                    <button class="header__info-item-a" onclick="show()">Đăng Nhập</button>
+                    <button class="header__info-item-a" onclick="showModal()">Đăng Nhập</button>
                 </li>
             </ul>
             <ul class="header__info-list">
@@ -161,7 +186,7 @@
                             class="fas fa-phone-alt"></i> Liên hệ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <button class="header__info-item-a navbar-item-a-mobile" onclick="show()"><i
+                    <button class="header__info-item-a navbar-item-a-mobile" onclick="showModal()"><i
                             class="fas fa-sign-in-alt" style="display: flex;align-items: center"></i>Đăng Nhập
                     </button>
                 </li>
@@ -452,6 +477,7 @@
                         <form action="xac-nhan-dat-cho?id_house=<%=house.getId()%>" method="post" id="form-orderHouse">
                             <input type="hidden" id="input-timecheckin" name="time-checkin">
                             <input type="hidden" id="input-timecheckout" name="time-checkout">
+                            <input type="hidden" id="input-date-diff" name = "date-diff">
                         </form>
 
                     </div>
@@ -472,6 +498,9 @@
                             </div>
                         </div>
                     </c:forEach>
+                </div>
+                <div>
+                    <textarea id=""style="padding: 10px" rows="3" cols="90" placeholder="Nhập bình luận của bạn..."></textarea>
                 </div>
                 <div class="buy">
                     <h1 class="buy-title" data-aos="zoom-in-up">Các <span>Lựa Chọn</span> Khác</h1>
@@ -601,10 +630,10 @@
 <script>
     $(document).ready(function () {
         $(".navbar-btn").click(function () {
-            $(".header__navbar-mobile").show();
+            $(".header__navbar-mobile").showModal();
         });
         $(".ti-close").click(function () {
-            $(".header__navbar-mobile").hide();
+            $(".header__navbar-mobile").hideModal();
         });
     });
 

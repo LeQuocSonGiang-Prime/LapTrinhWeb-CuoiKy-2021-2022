@@ -24,4 +24,6 @@ public interface IUserService {
     UserModel selectById(String id_user);
 
     UserModel selectByIDNoneInject(String id_uer);
+
+    boolean updatePhone(String id_user, String phone);
 }

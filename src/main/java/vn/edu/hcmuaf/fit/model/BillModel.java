@@ -12,13 +12,22 @@ public class BillModel implements Serializable {
     private Date time_Checkin;
     private Date time_Checkout;
     private Date time_Order;
-
     private int confirm;
+
+    private int price;
 
     private static List<BillModel> listNewBill;
     private int totalBill;
 
     public BillModel(){}
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     public String getId() {
         return id;

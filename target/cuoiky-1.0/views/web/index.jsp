@@ -59,8 +59,8 @@
                  alt="">
         </div>
         <form id="login" name="form-signin" class="input-group">
-            <input type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
-            <input type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>
+            <input id="login-username" type="text" class="input-field" placeholder="Tài Khoản" name="username" required>
+            <input id="login-password" type="password" class="input-field" placeholder="Mật Khẩu" name="password" required>
             <div>
                 <input type="checkbox" class="check-box">
                 <span class="checkbox-remember">Nhớ mật khẩu</span>

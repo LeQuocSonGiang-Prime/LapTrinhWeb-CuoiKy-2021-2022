@@ -40,7 +40,7 @@
 <body>
 <div class="modal" id="modal">
     <div class="form-box">
-        <i id="close" onclick="hide()" class="login-colose-btn ti-close"></i>
+        <i id="close" onclick="hideModal()" class="login-colose-btn ti-close"></i>
         <div class="button-box">
             <div id="btn-login-modal"></div>
             <button type="button" class="toggle-btn" onclick="login()">
@@ -115,7 +115,7 @@
         <div class="header__info">
             <ul class="header__info-list">
                 <li class="header__info-item">
-                    <button href="" class="header__info-item-a" onclick="show()">
+                    <button href="" class="header__info-item-a" onclick="showModal()">
                         Đăng Nhập
                     </button>
                 </li>
@@ -189,7 +189,7 @@
                     <a href="${pageContext.request.contextPath}/lien-he" class="navbar-item-a-mobile"><i class="fas fa-phone-alt"></i> Liên hệ</a>
                 </li>
                 <li class="navbar-item-mobile">
-                    <button class="header__info-item-a navbar-item-a-mobile"  onclick="show()"><i
+                    <button class="header__info-item-a navbar-item-a-mobile"  onclick="showModal()"><i
                             class="fas fa-sign-in-alt" style="display: flex;align-items: center"></i>Đăng Nhập
                     </button>
                 </li>
