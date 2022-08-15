@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 15, 2022 lúc 10:13 AM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Aug 15, 2022 at 09:52 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `database`
+-- Database: `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Đang đổ dữ liệu cho bảng `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `name`, `username`, `password`, `avatar`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `admin` (`id_admin`, `name`, `username`, `password`, `avatar`) VALUE
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill`
+-- Table structure for table `bill`
 --
 
 CREATE TABLE `bill` (
@@ -58,24 +58,24 @@ CREATE TABLE `bill` (
   `time_checkin` date NOT NULL,
   `time_checkout` date NOT NULL,
   `time_order` datetime NOT NULL,
-  `confirm` smallint(6) DEFAULT 0
+  `confirm` smallint(6) DEFAULT 0,
+  `price` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Đang đổ dữ liệu cho bảng `bill`
+-- Dumping data for table `bill`
 --
 
-INSERT INTO `bill` (`id_bill`, `id_user`, `id_house`, `time_checkin`, `time_checkout`, `time_order`, `confirm`) VALUES
-('BILL000001', 'USER000001', 'HOUSE00001', '2022-07-10', '2022-07-15', '2022-06-25 00:00:00', 0),
-('BILL000002', 'USER000002', 'HOUSE00002', '2022-06-24', '2022-06-30', '2022-06-15 13:21:12', 0),
-('BILL000003', 'USER000003', 'HOUSE00003', '2022-06-23', '2022-07-01', '2022-06-01 00:00:00', 0),
-('BILL000004', 'USER000004', 'HOUSE00001', '2022-07-16', '2022-07-19', '2022-05-16 00:00:00', 0),
-('BILL000005', 'USER000005', 'HOUSE00001', '2022-07-22', '2022-07-28', '2022-05-29 00:00:00', 0);
+INSERT INTO `bill` (`id_bill`, `id_user`, `id_house`, `time_checkin`, `time_checkout`, `time_order`, `confirm`, `price`) VALUES
+('BILL000001', 'USER000001', 'HOUSE00001', '2022-07-10', '2022-07-15', '2022-06-25 00:00:00', 0, NULL),
+('BILL000002', 'USER000002', 'HOUSE00002', '2022-06-24', '2022-06-30', '2022-06-15 13:21:12', 0, NULL),
+('BILL000003', 'USER000003', 'HOUSE00003', '2022-06-23', '2022-07-01', '2022-06-01 00:00:00', 0, NULL),
+('BILL000004', 'USER000004', 'HOUSE00001', '2022-07-16', '2022-07-19', '2022-05-16 00:00:00', 0, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `comment`
+-- Table structure for table `comment`
 --
 
 CREATE TABLE `comment` (
@@ -88,7 +88,7 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Đang đổ dữ liệu cho bảng `comment`
+-- Dumping data for table `comment`
 --
 
 INSERT INTO `comment` (`id_comment`, `id_house`, `id_user`, `comment`, `star`, `time_cmt`) VALUES
@@ -100,7 +100,7 @@ INSERT INTO `comment` (`id_comment`, `id_house`, `id_user`, `comment`, `star`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `favourite`
+-- Table structure for table `favourite`
 --
 
 CREATE TABLE `favourite` (
@@ -112,7 +112,7 @@ CREATE TABLE `favourite` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `house`
+-- Table structure for table `house`
 --
 
 CREATE TABLE `house` (
@@ -128,7 +128,7 @@ CREATE TABLE `house` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Đang đổ dữ liệu cho bảng `house`
+-- Dumping data for table `house`
 --
 
 INSERT INTO `house` (`id_house`, `name`, `type`, `tutorial`, `address`, `detail`, `foryou`, `price`, `saleprice`) VALUES
@@ -142,7 +142,7 @@ INSERT INTO `house` (`id_house`, `name`, `type`, `tutorial`, `address`, `detail`
 ('HOUSE00007', 'Cù Tê Homestay', '1', 'Ngôi nhà mang gam màu trầm của gỗ cùng với lối thiết kế tinh tế mang lại cho bạn cảm giác thanh bình, những chiếc đèn lồng chùm tạo cảm giác đê mê huyền ảo', 'Hồ Chí Minh ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
 ('HOUSE00008', 'Rosemary – Bed & Coffee House', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Đà Lạt', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
 ('HOUSE00009', 'Leuleu hostel & cafe', '1', 'Đặc biệt, đây là Hostel duy nhất có thiết kế giường Dorm đôi độc nhất vô nhị, phù hợp với các bạn trẻ, nhóm bạn phượt hoặc đi trăng mật.', 'Đà Lạt', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00010', 'Tre House', '1',' Tre house nằm trong góc nhỏ đường ven biển, đến đây bạn sẽ ngạc nhiên bởi lối thiết kế chẳng giống ai, nhưng lại vô cùng đặc biệt ở nơi này.', 'Hồ Chí Minh', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00010', 'Tre House', '1', ' Tre house nằm trong góc nhỏ đường ven biển, đến đây bạn sẽ ngạc nhiên bởi lối thiết kế chẳng giống ai, nhưng lại vô cùng đặc biệt ở nơi này.', 'Hồ Chí Minh', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
 ('HOUSE00011', 'Woody House', '1', 'Tận hưởng những khu dân cư yên tĩnh, vị trí thuận tiện, không gian thoáng đẹp và những tiện ích giải trí vượt trội.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
 ('HOUSE00012', 'Nhà Gió', '1', 'Là nơi không quá gần trung tâm nhưng đủ để bạn tận hưởng thiên nhiên, cây cối, nghe tiếng chim hót vào buổi sáng.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
 ('HOUSE00013', 'HaHa HomeStay', '1', 'Tọa lạc trên con đường ven biển đẹp nhất Quy Nhơn. Cho bạn hướng nhìn rất tuyệt vời khi ở đây.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
@@ -169,7 +169,7 @@ INSERT INTO `house` (`id_house`, `name`, `type`, `tutorial`, `address`, `detail`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `image_house`
+-- Table structure for table `image_house`
 --
 
 CREATE TABLE `image_house` (
@@ -180,7 +180,7 @@ CREATE TABLE `image_house` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Đang đổ dữ liệu cho bảng `image_house`
+-- Dumping data for table `image_house`
 --
 
 INSERT INTO `image_house` (`id_image`, `id_house`, `image`, `alt`) VALUES
@@ -222,19 +222,19 @@ INSERT INTO `image_house` (`id_image`, `id_house`, `image`, `alt`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `place`
+-- Table structure for table `place`
 --
 
 CREATE TABLE `place` (
-`id_place` char(10) NOT NULL,
-`name` varchar(255) NOT NULL,
-`image` varchar(1000) NOT NULL,
-`link` varchar(1000) NOT NULL,
-`heart` tinyint(1) NOT NULL DEFAULT 0
+  `id_place` char(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(1000) NOT NULL,
+  `link` varchar(1000) NOT NULL,
+  `heart` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Đang đổ dữ liệu cho bảng `place`
+-- Dumping data for table `place`
 --
 
 INSERT INTO `place` (`id_place`, `name`, `image`, `link`, `heart`) VALUES
@@ -286,10 +286,11 @@ INSERT INTO `place` (`id_place`, `name`, `image`, `link`, `heart`) VALUES
 ('PLACE00046', 'Nấu ăn tại nhà tươi ngon và nhiều cây xanh', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_46.webp?alt=media&token=7c9e9116-2867-4cbf-b67a-0bddf1c33c81', '', 0),
 ('PLACE00047', 'Vịnh Hạ Long, chèo thuyền kayak, ngắm đỉnh Titop với Arcady Cruise', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_47.webp?alt=media&token=53335f48-23c2-4168-b573-76b7b9949386', '', 0),
 ('PLACE00048', 'Chùa Bái Đính - Tour tham quan hang động Tràng An', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_48.webp?alt=media&token=4d01e3e4-171b-4604-b88e-cf2052328a65', '', 0);
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `request_booking`
+-- Table structure for table `request_booking`
 --
 
 CREATE TABLE `request_booking` (
@@ -303,7 +304,7 @@ CREATE TABLE `request_booking` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -319,7 +320,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `fullname`, `email`, `address`, `phone`, `avatar`, `status`) VALUES
@@ -330,41 +331,41 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `fullname`, `email`, `add
 ('USER000005', 'Nguyễn Minh Thi', '847dc0f7420f7d9b30abccf8729bd028', 'Nguyễn Minh Thi', 'fwef', NULL, NULL, 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Favatar%2Fuser%2F2f5ae2dbd1ad3df364bc.jpg?alt=media&token=30e264fa-845b-4d1f-8b1d-03f216967174', 0);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`) USING BTREE;
 
 --
--- Chỉ mục cho bảng `bill`
+-- Indexes for table `bill`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`id_bill`) USING BTREE;
 
 --
--- Chỉ mục cho bảng `comment`
+-- Indexes for table `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id_comment`) USING BTREE;
 
 --
--- Chỉ mục cho bảng `favourite`
+-- Indexes for table `favourite`
 --
 ALTER TABLE `favourite`
   ADD PRIMARY KEY (`id_favor`) USING BTREE;
 
 --
--- Chỉ mục cho bảng `house`
+-- Indexes for table `house`
 --
 ALTER TABLE `house`
   ADD PRIMARY KEY (`id_house`) USING BTREE;
 
 --
--- Chỉ mục cho bảng `place`
+-- Indexes for table `place`
 --
 ALTER TABLE `place`
   ADD PRIMARY KEY (`id_place`);

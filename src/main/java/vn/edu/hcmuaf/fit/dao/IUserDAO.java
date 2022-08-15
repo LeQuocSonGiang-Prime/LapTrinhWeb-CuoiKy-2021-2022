@@ -31,4 +31,6 @@ public interface IUserDAO extends IGenericDAO<UserModel>{
      void activateUser(String email);
 
      UserModel selectById(String id_user);
+
+    boolean updatePhone(String id_user, String phone);
 }

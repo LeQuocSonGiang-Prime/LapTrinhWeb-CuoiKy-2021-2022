@@ -1,7 +1,12 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
+<<<<<<< HEAD
 Built-By: WIN10
 Build-Jdk: Oracle OpenJDK version 17.0.1
+=======
+Built-By: lequo
+Build-Jdk: 17.0.1
+>>>>>>> 300d5cd2d6f849c19bb30ec70918f375e09c7c3b
 Implementation-Title: cuoiky
 Implementation-Version: 1.0
 Implementation-Vendor-Id: com.example

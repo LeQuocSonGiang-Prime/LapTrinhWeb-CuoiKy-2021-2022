@@ -4,6 +4,7 @@ import vn.edu.hcmuaf.fit.dao.IBillDAO;
 import vn.edu.hcmuaf.fit.mapper.imp.BillMapper;
 import vn.edu.hcmuaf.fit.model.BillModel;
 
+import java.util.Date;
 import java.util.List;
 
 public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
@@ -76,4 +77,12 @@ public class BillDAOImp extends AbstractDAO<BillModel> implements IBillDAO {
         String sql = "DELETE FROM bill WHERE id_user = ?";
         return update(sql, id_user);
     }
+
+    @Override
+    public boolean addBill(String id_bill, String id_house, String id_user, Date time_checkin, Date time_checkout, Date time_order, int price) {
+        String sql = "INSERT INTO bill (`id_bill`, `id_house`, `id_user`, `time_checkin`, `time_checkout`, `time_order`, `price`) VALUES(?,?,?,?,?,?,?)";
+        return update(sql,id_bill, id_house, id_user, time_checkin, time_checkout, time_order, price);
+    }
+
+
 }

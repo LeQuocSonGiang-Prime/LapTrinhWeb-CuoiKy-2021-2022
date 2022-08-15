@@ -70,6 +70,12 @@ public class UserDaoImp extends AbstractDAO<UserModel> implements IUserDAO {
     }
 
     @Override
+    public boolean updatePhone(String id_user, String phone) {
+        String sql = "UPDATE user SET phone = ? WHERE id_user=?";
+        return update(sql, id_user, phone);
+    }
+
+    @Override
     public void deleteUser(UserModel user) {
 
     }
