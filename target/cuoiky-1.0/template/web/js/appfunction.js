@@ -177,7 +177,7 @@ document.querySelector("#btn-signup").onclick = function (e) {
                     '            <p>Email đã được sử dụng, vui lòng nhập lại</p>' +
                     '            <button type="submit" class="submit-btn" id="btn-signup">Đăng Kí</button>'
             } else {
-                //day la noi ong su ly JS cua phan hide, show cua phan nay
+                alert("Đăng ký thành công")
             }
         }
     })
