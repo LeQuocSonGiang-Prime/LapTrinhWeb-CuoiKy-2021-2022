@@ -27,6 +27,18 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <style>
+
+    #result{
+      display: flex;
+      gap: 10px;
+
+    }
+
+    .thunnail{
+      height: 200px;
+    }
+  </style>
 
 </head>
 <body>
@@ -174,6 +186,10 @@
           <fieldset  style="width:95%">
             <button name="submit"  type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
           </fieldset>
+          <div>
+            <input type="file" id="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg">
+          </div>
+          <div id="result"></div>
         </form>
       </div>
     </div>
@@ -181,6 +197,26 @@
   </div>
   <script src="./assets/js/appfunction.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+  <script>
+    document.querySelector("#file").addEventListener("change", function(e){
+      if(window.File && window.FileReader && window.FileList && window.Blob){
+        const files = e.target.files
+        const output= document.querySelector("#result")
+        for(let i = 0; i < files.length; i++){
+          if(!files[i].type.match("image")) continue
+          const pickReader = new FileReader()
+          pickReader.addEventListener("load", (e)=>{
+            const picFile = e.target;
+            const div =document.createElement("div")
+            div.innerHTML = `<img class="thunnail" src="${picFile.result}" title="${picFile.name}"/>`;
+            output.appendChild(div)
+          })
+          pickReader.readAsDataURL(files[i])
+        }
+      }else{
+        alert("Your browser does not support the File API")
+      }
+    })
+  </script>
 </body>
 </html>

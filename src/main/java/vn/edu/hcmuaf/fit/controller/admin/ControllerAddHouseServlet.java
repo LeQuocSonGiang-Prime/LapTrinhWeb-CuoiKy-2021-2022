@@ -21,7 +21,7 @@ public class ControllerAddHouseServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 
-        request.getRequestDispatcher("/views/web/addHouse.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/addHouse.jsp").forward(request, response);
     }
 
     @Override
