@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -30,8 +31,11 @@ public class SignIn extends HttpServlet {
         JSONObject jsonOb = new JSONObject();
         UserModel user = userService.checkLogin(username, password);
 
+
         String msg;
         if (user != null) {
+            HttpSession session  = request.getSession();
+            session.setAttribute("acc", user);
             msg = "1";
             jsonOb.put("msg", msg);
             // if user has full name

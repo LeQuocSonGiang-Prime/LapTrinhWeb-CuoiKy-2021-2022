@@ -32,8 +32,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <%
-        Date time_checkin = (Date) request.getAttribute("time-checkin");
-        Date time_checkout = (Date) request.getAttribute("time-checkout");
+        String st_time_checkin = (String) request.getAttribute("time-checkin");
+        String st_time_checkout = (String) request.getAttribute("time-checkout");
+        Date time_checkin = new Date(st_time_checkin);
+        Date time_checkout = new Date(st_time_checkout);
         HouseModel house = (HouseModel) request.getAttribute("house");
         int totalComment = (int) request.getAttribute("totalComment");
         int date_diff = (int) request.getAttribute("date-diff");
@@ -199,71 +201,82 @@
             </div>
         </div>
     </div>
+    <form action="ControllerAddBillOrder" method="post">
+        <!-- SUBMIT -->
+        <div class="grid wide confirm">
+            <div class="row">
 
-    <!-- SUBMIT -->
-    <div class="grid wide confirm">
-        <div class="row">
-            <div class="col l-6 m-12 c-12 confirm-content">
-                <a href="detail.html"><i class="ti-angle-left"> </i></a>
-                <h2>Xác Nhận Đơn Đặt Chỗ</h2>
-                <div class="confirm-content-trip">
-                    <h3>Chuyến Đi Của Bạn</h3>
-                    <div class="confirm-content-info">
+                <div class="col l-6 m-12 c-12 confirm-content">
+                    <a href="detail.html"><i class="ti-angle-left"> </i></a>
+                    <h2>Xác Nhận Đơn Đặt Chỗ</h2>
+                    <div class="confirm-content-trip">
+                        <h3>Chuyến Đi Của Bạn</h3>
+                        <div class="confirm-content-info">
                             <span>
                                 Ngày
                                 <p>Ngày <%=time_checkin.getDate()%> tháng <%=time_checkin.getMonth()%> năm <%=time_checkin.getYear() + 1900%> - Ngày <%=time_checkout.getDate()%> tháng <%=time_checkout.getMonth()%> năm <%=time_checkout.getYear() + 1900%></p>
                             </span>
-                        <button>
-                            Chỉnh Sửa
-                        </button>
-                    </div>
+                            <a href="chi-tiet?id_house=<%=house.getId()%>">
+                                Chỉnh Sửa
+                            </a>
+                        </div>
 
-                </div>
-                <div class="confirm-content-login">
+                    </div>
+                    <div class="confirm-content-login">
 
-                    <span>Vui Lòng nhập số điện thoại</span>
-                    <input type="text">
-                    <p>Chúng tôi sẽ gọi điện hoặc nhắn tin cho bạn để xác nhận số điện thoại. Có áp dụng phí dữ liệu và
-                        phí tin nhắn tiêu chuẩn. <a href="">Chính sách về quyền riêng tư</a></p>
-                    <button>Xác Nhận</button>
-                </div>
-            </div>
-            <div class="col l-5 m-12 c-12 confirm-catalog">
-                <div class="confirm-catalog-main">
-                    <div class="confirm-catalog-main-up">
-                        <img src="<%=house.getImage().get(0)%>" alt="">
-                        <div class="confirm-up-info">
-                            <span style="color: #fd274e;font-weight: bold;"><%=house.getName()%></span>
-                            <span><i class="fas fa-star"><%=house.getStar()%></i>(<%=totalComment%> Đánh Giá)</span>
-                        </div>
-                    </div>
-                    <div class="confirm-catalog-main-down">
-                        <h3>Chi Tiết Giá</h3>
-                        <div class="confirm-down-info">
-                            <span>Giá một ngày</span>
-                            <span><%=house.getPrice()%>k</span>
-                        </div>
-                        <div class="confirm-down-info">
-                            <span><%=date_diff%> ngày</span>
-                            <span><%=house.getPrice() * date_diff%>k</span>
-                        </div>
-                        <div class="confirm-down-info">
-                            <span>Giảm Giá</span>
-                            <span>35k</span>
-                        </div>
-                        <div class="confirm-down-info">
-                            <span>Phí Dịch Vụ</span>
-                            <span>30k</span>
-                        </div>
-                        <div class="confirm-down-info" style="font-weight: bold;">
-                            <span>Tổng</span>
-                            <span><%=house.getPrice() * date_diff - 5%>k</span>
-                        </div>
+                        <span>Vui Lòng nhập số điện thoại</span>
+                        <input type="text" name="input-phone">
+                        <p>Chúng tôi sẽ gọi điện hoặc nhắn tin cho bạn để xác nhận số điện thoại. Có áp dụng phí dữ liệu
+                            và
+                            phí tin nhắn tiêu chuẩn. <a href="">Chính sách về quyền riêng tư</a></p>
+                        <button>Xác Nhận</button>
                     </div>
                 </div>
+                <div class="col l-5 m-12 c-12 confirm-catalog">
+                    <div class="confirm-catalog-main">
+                        <div class="confirm-catalog-main-up">
+                            <img src="<%=house.getImage().get(0)%>" alt="">
+                            <div class="confirm-up-info">
+                                <span style="color: #fd274e;font-weight: bold;"><%=house.getName()%></span>
+                                <span><i
+                                        class="fas fa-star"><%=house.getStar()%></i>(<%=totalComment%> Đánh Giá)</span>
+                            </div>
+                        </div>
+                        <div class="confirm-catalog-main-down">
+                            <h3>Chi Tiết Giá</h3>
+                            <div class="confirm-down-info">
+                                <span>Giá một ngày</span>
+                                <span><%=house.getPrice()%>k</span>
+                            </div>
+                            <div class="confirm-down-info">
+                                <span><%=date_diff%> ngày</span>
+                                <span><%=house.getPrice() * date_diff%>k</span>
+                            </div>
+                            <div class="confirm-down-info">
+                                <span>Giảm Giá</span>
+                                <span>35k</span>
+                            </div>
+                            <div class="confirm-down-info">
+                                <span>Phí Dịch Vụ</span>
+                                <span>30k</span>
+                            </div>
+                            <div class="confirm-down-info" style="font-weight: bold;">
+                                <span>Tổng</span>
+                                <span><%=house.getPrice() * date_diff - 5%>k</span>
+                            </div>
+                            <input type="hidden" name="input-price" value="<%=house.getPrice() * date_diff - 5%>">
+                            <input type="hidden" name="time-checkin" value="<%=st_time_checkin%>">
+                            <input type="hidden" name="time-checkout" value="<%=st_time_checkout%>">
+                            <input type="hidden" name="house" value="<%=house.getId()%>">
+                            <input type="hidden" name="user" value="USER000001">
+                            <input type="hidden" name="price" value="<%=house.getPrice() * date_diff - 5%>">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 

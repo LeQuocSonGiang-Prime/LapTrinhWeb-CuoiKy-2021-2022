@@ -28,12 +28,11 @@ public class ControllerConfirmOrder extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        Date time_Checkin = new Date(request.getParameter("time-checkin"));
-        Date time_Checkout = new Date(request.getParameter("time-checkout"));
+
         int date_diff = Integer.parseInt(request.getParameter("date-diff"));
         String id_house = request.getParameter("id_house");
-        request.setAttribute("time-checkin", time_Checkin);
-        request.setAttribute("time-checkout", time_Checkout);
+        request.setAttribute("time-checkin", request.getParameter("time-checkin"));
+        request.setAttribute("time-checkout", request.getParameter("time-checkout"));
         HouseModel house = houseService.selectHouseById(id_house);
         house.setStar(setStar(id_house));
         request.setAttribute("house", house);
