@@ -14,6 +14,7 @@ public class ExperienceMapper implements IRowMapper<ExperienceModel> {
             result.setId(rs.getString("id_place"));
             result.setName(rs.getString("name"));
             result.setImage(rs.getString("image"));
+            result.setLink(rs.getString("link"));
             return result;
         }catch(SQLException e){
             e.printStackTrace();
