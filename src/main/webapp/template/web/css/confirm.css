@@ -1,0 +1,138 @@
+.confirm{
+    padding: 20px;
+}
+
+.confirm-content a i{
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: #000;
+    border-radius: 50%;
+}
+.confirm-content a i:hover{
+    color: #fd274e;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.confirm-content h2{
+    color: #fd274e;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-align: center;
+
+}
+.confirm-content-trip{
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+.confirm-content-trip h3, .confirm-content-login h3{
+    font-size: 2rem;   
+    margin-bottom: 35px;
+}
+.confirm-content-info{
+    display: flex;
+    justify-content: space-between;
+}
+.confirm-content-info button{
+    background-color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+.confirm-content-info button:hover{
+    color: #fd274e;
+}
+.confirm-content-info span{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.confirm-content-login{
+    border-bottom: 1px solid #000;
+    margin-bottom: 50px;
+}
+.confirm-content-info span p{
+    margin: 7px 0 20px 0 ;
+    font-weight: 400;
+}
+.confirm-content-login span{
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.confirm-content-login input{
+    height: 30px;
+    outline: none;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding-left: 20px;
+    font-size: 1.3rem;
+}
+.confirm-content-login p{
+    font-size: 1.3rem;
+    margin: 15px 0;
+}
+.confirm-content-login p a{
+    font-size: 1.3rem;
+    color: #000;
+    font-weight: 500;
+    border-bottom: 1px solid #000;
+}
+.confirm-content-login button{
+    width: 100%;
+    background-color: #fd274e;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    height: 35px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+.confirm-catalog{
+    margin: 50px 0 0 50px ;
+}
+.confirm-catalog-main{
+    height: 390px;
+    border-radius: 10px;
+    border: 1px solid #999;
+    padding: 30px;
+}
+.confirm-catalog-main-up{
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #999;
+}
+.confirm-catalog-main-up img{
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.confirm-up-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.confirm-up-info span{
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+.confirm-up-info span i {
+    color: #fd274e;
+    margin-right: 10px;
+}
+.confirm-catalog-main-down h3{
+    font-size: 2rem;
+}
+.confirm-down-info{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+}
+.confirm-down-info span{
+    margin: 12px 0;
+    letter-spacing: 2px;
+}
