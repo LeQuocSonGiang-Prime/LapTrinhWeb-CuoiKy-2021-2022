@@ -30,6 +30,7 @@ public class ControllerConfirmOrder extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         Date time_Checkin = new Date(request.getParameter("time-checkin"));
         Date time_Checkout = new Date(request.getParameter("time-checkout"));
+        int date_diff = Integer.parseInt(request.getParameter("date-diff"));
         String id_house = request.getParameter("id_house");
         request.setAttribute("time-checkin", time_Checkin);
         request.setAttribute("time-checkout", time_Checkout);
@@ -37,6 +38,7 @@ public class ControllerConfirmOrder extends HttpServlet {
         house.setStar(setStar(id_house));
         request.setAttribute("house", house);
         request.setAttribute("totalComment", commentService.selectByHouse(id_house).size());
+        request.setAttribute("date-diff", date_diff);
 
 
         request.getRequestDispatcher("/views/web/confirm.jsp").forward(request, response);

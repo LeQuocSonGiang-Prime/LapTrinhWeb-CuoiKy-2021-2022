@@ -452,6 +452,7 @@
                         <form action="xac-nhan-dat-cho?id_house=<%=house.getId()%>" method="post" id="form-orderHouse">
                             <input type="hidden" id="input-timecheckin" name="time-checkin">
                             <input type="hidden" id="input-timecheckout" name="time-checkout">
+                            <input type="hidden" id="input-date-diff" name = "date-diff">
                         </form>
 
                     </div>

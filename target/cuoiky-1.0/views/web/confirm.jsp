@@ -36,6 +36,7 @@
         Date time_checkout = (Date) request.getAttribute("time-checkout");
         HouseModel house = (HouseModel) request.getAttribute("house");
         int totalComment = (int) request.getAttribute("totalComment");
+        int date_diff = (int) request.getAttribute("date-diff");
     %>
 </head>
 
@@ -239,20 +240,24 @@
                     <div class="confirm-catalog-main-down">
                         <h3>Chi Tiết Giá</h3>
                         <div class="confirm-down-info">
-                            <span><%=house.getPrice()%>/Ngày</span>
-                            <span>28$</span>
+                            <span>Giá một ngày</span>
+                            <span><%=house.getPrice()%>k</span>
+                        </div>
+                        <div class="confirm-down-info">
+                            <span><%=date_diff%> ngày</span>
+                            <span><%=house.getPrice() * date_diff%>k</span>
                         </div>
                         <div class="confirm-down-info">
                             <span>Giảm Giá</span>
-                            <span>8$</span>
+                            <span>35k</span>
                         </div>
                         <div class="confirm-down-info">
                             <span>Phí Dịch Vụ</span>
-                            <span>8$</span>
+                            <span>30k</span>
                         </div>
                         <div class="confirm-down-info" style="font-weight: bold;">
                             <span>Tổng</span>
-                            <span>39$</span>
+                            <span><%=house.getPrice() * date_diff - 5%>k</span>
                         </div>
                     </div>
                 </div>
