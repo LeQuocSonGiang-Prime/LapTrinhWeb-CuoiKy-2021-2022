@@ -58,10 +58,6 @@
     border-bottom: 1px rgb(148, 148, 148) solid;
 }
 
-.book-room-checkin {
-    border-right: 1px rgb(148, 148, 148) solid;
-}
-
 .book-room-checkin,
 .book-room-checkout {
     padding: 10px 20px;

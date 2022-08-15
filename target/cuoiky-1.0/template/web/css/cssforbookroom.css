@@ -47,20 +47,19 @@
 }
 
 .book-room-main {
-    border: 1px rgb(148, 148, 148) solid;
     border-radius: 10px;
     box-sizing: border-box;
     margin: 25px 0;
 }
-
+.book-room-calendar-css{
+    border-radius: 10px;
+    border: 1px solid rgb(148,148,148);
+}
 .book-room-calendar-title {
     display: flex;
     font-family: 'Roboto', sans-serif;
 }
 
-.book-room-calendar-title {
-    border-bottom: 1px rgb(148, 148, 148) solid;
-}
 
 .book-room-checkin {
     border-right: 1px rgb(148, 148, 148) solid;
@@ -605,6 +604,7 @@ button.book-room-submit:hover {
 }
 
 .infoDetailRoom {
+    margin-top: 13px;
     display: flex;
     flex-direction: column;
 }
