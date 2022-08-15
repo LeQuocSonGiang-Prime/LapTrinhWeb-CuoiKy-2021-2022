@@ -33,14 +33,24 @@
     <style>
 
         #result {
-            display: flex;
-            gap: 10px;
-
+            display: grid;
+            grid-template-columns: auto auto auto auto;
         }
 
         .thunnail {
             height: 100px;
             width: 100px;
+        }
+        .thum-icon{
+            right: 10px;
+            position: absolute;
+            font-size: 20px;
+            color: #c70808;
+            top: 5px;
+            transition: .4s ;
+        }
+        .thum-icon:hover{
+            transform: rotate(90deg);
         }
     </style>
 
