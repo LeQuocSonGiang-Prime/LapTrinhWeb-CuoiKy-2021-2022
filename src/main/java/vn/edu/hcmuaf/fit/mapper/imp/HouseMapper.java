@@ -28,10 +28,13 @@ public class HouseMapper implements IRowMapper<HouseModel> {
             house.setSalePrice(resultSet.getInt("saleprice"));
             house.setImage(new ImageDAOImp().findImageById_House(resultSet.getString("id_house")));
             house.setTotalAssess(new CommentDAOImp().selectCommentByHouse(resultSet.getString("id_house")).size());
+//            house.setStar();
             return house;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
+
+
 }

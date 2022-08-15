@@ -39,7 +39,7 @@
     <% HouseModel house = (HouseModel) request.getAttribute("currentHouse");
         List<BillModel> listBill = (List<BillModel>) request.getAttribute("listBill");
         List<HouseModel> listHouse = (List<HouseModel>) request.getAttribute("listHouse");
-        List<CommentModel> listComment= (List<CommentModel>) request.getAttribute("listComment");
+        List<CommentModel> listComment = (List<CommentModel>) request.getAttribute("listComment");
     %>
 
 </head>
@@ -361,77 +361,81 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="customer">
-                                        <div class="s">
-                                            <div class="customer-select">
-                                                <div class="book-room-title">KHÁCH</div>
-                                                <div class="book-room-detail">1 người</div>
-                                            </div>
-                                            <i class="fas fa-chevron-down" style="margin-right:15px;"></i>
-                                        </div>
-                                        <div class="customer-order">
-                                            <div class="customer-order-main">
-                                                <div id="order-adults" class="order">
-                                                    <div class="order-title">
-                                                        <h3>Người lớn</h3>
-                                                        <p>Từ 13 tuổi trở lên</p>
-                                                    </div>
-                                                    <div class="order-button">
-                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">
-                                                            -</h3>
-                                                        <h3 class="order-button-number">1</h3>
-                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-enable">
-                                                            +</h3>
-                                                    </div>
-                                                </div>
-                                                <div id="order-children" class="order">
-                                                    <div class="order-title">
-                                                        <h3>Trẻ em</h3>
-                                                        <p>Độ tuổi 2 - 12</p>
-                                                    </div>
-                                                    <div class="order-button">
-                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">
-                                                            -</h3>
-                                                        <h3 class="order-button-number">0</h3>
-                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-enable">
-                                                            +</h3>
-                                                    </div>
-                                                </div>
-                                                <div id="order_babys" class="order">
-                                                    <div class="order-title">
-                                                        <h3>Em bé</h3>
-                                                        <p>Dưới 2 tuổi</p>
-                                                    </div>
-                                                    <div class="order-button">
-                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">
-                                                            -</h3>
-                                                        <h3 class="order-button-number">0</h3>
-                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-disable">
-                                                            +</h3>
-                                                    </div>
-                                                </div>
-                                                <div id="order-babys" class="order">
-                                                    <div class="order-title">
-                                                        <h3>Thú cưng</h3>
-                                                        <p></p>
-                                                    </div>
-                                                    <div class="order-button">
-                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">
-                                                            -</h3>
-                                                        <h3 class="order-button-number">0</h3>
-                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-disable">
-                                                            +</h3>
-                                                    </div>
-                                                </div>
-                                                <p>Chỗ ở này cho phép tối đa 2 khách, không tính em bé. Không được phép
-                                                    mang theo thú cưng.</p>
-                                            </div>
-                                            <div class="customer-footer">
-                                                <button>ok</button>
-                                            </div>
-                                        </div>
+                                    <%--                                    <div class="customer">--%>
+                                    <%--                                        <div class="s">--%>
+                                    <%--                                            <div class="customer-select">--%>
+                                    <%--                                                <div class="book-room-title">KHÁCH</div>--%>
+                                    <%--                                                <div class="book-room-detail">1 người</div>--%>
+                                    <%--                                            </div>--%>
+                                    <%--                                            <i class="fas fa-chevron-down" style="margin-right:15px;"></i>--%>
+                                    <%--                                        </div>--%>
+                                    <%--                                        <div class="customer-order">--%>
+                                    <%--                                            <div class="customer-order-main">--%>
+                                    <%--                                                <div id="order-adults" class="order">--%>
+                                    <%--                                                    <div class="order-title">--%>
+                                    <%--                                                        <h3>Người lớn</h3>--%>
+                                    <%--                                                        <p>Từ 13 tuổi trở lên</p>--%>
+                                    <%--                                                    </div>--%>
+                                    <%--                                                    <div class="order-button">--%>
+                                    <%--                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">--%>
+                                    <%--                                                            -</h3>--%>
+                                    <%--                                                        <h3 class="order-button-number">1</h3>--%>
+                                    <%--                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-enable">--%>
+                                    <%--                                                            +</h3>--%>
+                                    <%--                                                    </div>--%>
+                                    <%--                                                </div>--%>
+                                    <%--                                                <div id="order-children" class="order">--%>
+                                    <%--                                                    <div class="order-title">--%>
+                                    <%--                                                        <h3>Trẻ em</h3>--%>
+                                    <%--                                                        <p>Độ tuổi 2 - 12</p>--%>
+                                    <%--                                                    </div>--%>
+                                    <%--                                                    <div class="order-button">--%>
+                                    <%--                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">--%>
+                                    <%--                                                            -</h3>--%>
+                                    <%--                                                        <h3 class="order-button-number">0</h3>--%>
+                                    <%--                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-enable">--%>
+                                    <%--                                                            +</h3>--%>
+                                    <%--                                                    </div>--%>
+                                    <%--                                                </div>--%>
+                                    <%--                                                <div id="order_babys" class="order">--%>
+                                    <%--                                                    <div class="order-title">--%>
+                                    <%--                                                        <h3>Em bé</h3>--%>
+                                    <%--                                                        <p>Dưới 2 tuổi</p>--%>
+                                    <%--                                                    </div>--%>
+                                    <%--                                                    <div class="order-button">--%>
+                                    <%--                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">--%>
+                                    <%--                                                            -</h3>--%>
+                                    <%--                                                        <h3 class="order-button-number">0</h3>--%>
+                                    <%--                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-disable">--%>
+                                    <%--                                                            +</h3>--%>
+                                    <%--                                                    </div>--%>
+                                    <%--                                                </div>--%>
+                                    <%--                                                <div id="order-babys" class="order">--%>
+                                    <%--                                                    <div class="order-title">--%>
+                                    <%--                                                        <h3>Thú cưng</h3>--%>
+                                    <%--                                                        <p></p>--%>
+                                    <%--                                                    </div>--%>
+                                    <%--                                                    <div class="order-button">--%>
+                                    <%--                                                        <h3 class="order-button-ed order-button-ed- order-button-ed-disable">--%>
+                                    <%--                                                            -</h3>--%>
+                                    <%--                                                        <h3 class="order-button-number">0</h3>--%>
+                                    <%--                                                        <h3 class="order-button-ed order-button-ed-- order-button-ed-disable">--%>
+                                    <%--                                                            +</h3>--%>
+                                    <%--                                                    </div>--%>
+                                    <%--                                                </div>--%>
+                                    <%--                                                <p>Chỗ ở này cho phép tối đa 2 khách, không tính em bé. Không được phép--%>
+                                    <%--                                                    mang theo thú cưng.</p>--%>
+                                    <%--                                            </div>--%>
+                                    <%--                                            <div class="customer-footer">--%>
+                                    <%--                                                <button>ok</button>--%>
+                                    <%--                                            </div>--%>
+                                    <%--                                        </div>--%>
+                                    <%--                                    </div>--%>
+                                    <div class="infoDetailRoom">
+                                        <div class="priceOnTime infoDetail"></div>
+                                        <div class="service-charge infoDetail"></div>
+                                        <div class="sale infoDetail"></div>
                                     </div>
-
                                 </div>
                                 <div class="infoDetailRoom">
                                     <div class="priceOnTime infoDetail"></div>
@@ -445,7 +449,10 @@
                             </div>
 
                         </div>
-
+                        <form action="xac-nhan-dat-cho?id_house=<%=house.getId()%>" method="post" id="form-orderHouse">
+                            <input type="hidden" id="input-timecheckin" name="time-checkin">
+                            <input type="hidden" id="input-timecheckout" name="time-checkout">
+                        </form>
 
                     </div>
                 </div>
@@ -605,5 +612,6 @@
 
 <script src="<c:url value='/template/web/js/appfunction.js' />">showSlides();</script>
 <script src="<c:url value='/template/web/js/bookroom.js' />"></script>
+
 </body>
 </html>

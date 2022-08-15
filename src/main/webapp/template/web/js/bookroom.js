@@ -225,24 +225,24 @@ buttonDeleteDateSelect.onclick = () => {
         updateTitle()
         changeTitleButtonChecking()
     }
-    //order customer
-document.querySelector('.customer .s').onclick = () => {
-    document.querySelector('.customer-order').classList.toggle('show')
-    if (document.querySelector('.customer-order').classList.contains('show')) {
-        document.querySelector('.customer .s').classList.add('selecting')
-        document.querySelector('.customer .s i').classList.remove('fa-chevron-down')
-        document.querySelector('.customer .s i').classList.add('fa-chevron-up')
-    } else {
-        document.querySelector('.customer .s').classList.remove('selecting')
-        document.querySelector('.customer .s i').classList.add('fa-chevron-down')
-        document.querySelector('.customer .s i').classList.remove('fa-chevron-up')
-    }
-}
-
-document.querySelector('.customer-footer button').onclick = () => {
-    document.querySelector('.customer-order').classList.toggle('show')
-    document.querySelector('.customer .s').classList.remove('selecting')
-}
+//     //order customer
+// document.querySelector('.customer .s').onclick = () => {
+//     document.querySelector('.customer-order').classList.toggle('show')
+//     if (document.querySelector('.customer-order').classList.contains('show')) {
+//         document.querySelector('.customer .s').classList.add('selecting')
+//         document.querySelector('.customer .s i').classList.remove('fa-chevron-down')
+//         document.querySelector('.customer .s i').classList.add('fa-chevron-up')
+//     } else {
+//         document.querySelector('.customer .s').classList.remove('selecting')
+//         document.querySelector('.customer .s i').classList.add('fa-chevron-down')
+//         document.querySelector('.customer .s i').classList.remove('fa-chevron-up')
+//     }
+// }
+//
+// document.querySelector('.customer-footer button').onclick = () => {
+//     document.querySelector('.customer-order').classList.toggle('show')
+//     document.querySelector('.customer .s').classList.remove('selecting')
+// }
 
 document.querySelector('.book-room-submit').onclick = () => {
     if (dateCheckin === undefined) {
@@ -263,8 +263,9 @@ changeTitleButtonChecking = () => {
             priceOnTime.removeChild(priceOnTime.firstChild);
         }
         buttonSubmit.onclick = function() {
-            console.log("hehehehe")
-            location.assign('./confirm.html');
+            document.querySelector("#input-timecheckin").value = dateCheckin
+            document.querySelector("#input-timecheckout").value = dateCheckout
+            $("#form-orderHouse").submit()
 
         }
         createElementDetail()
