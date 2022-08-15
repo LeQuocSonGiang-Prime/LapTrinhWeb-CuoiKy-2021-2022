@@ -8,6 +8,7 @@ public class ExperienceModel {
     private String name;
     private String id;
     private String image;
+    private String link;
 
 
     private static List<ExperienceModel> listExperience  = new ArrayList<>();
@@ -45,6 +46,14 @@ public class ExperienceModel {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
 }

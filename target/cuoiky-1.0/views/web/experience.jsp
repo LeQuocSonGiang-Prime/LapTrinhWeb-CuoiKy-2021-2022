@@ -98,7 +98,7 @@
             <a href="${pageContext.request.contextPath}/trang-chu">
                 <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
                      alt="" class="navbar__logo-img">
-                  </a>
+            </a>
             <ul class="navbar-list">
                 <li class="navbar-item">
                     <a href="${pageContext.request.contextPath}/trang-chu" class="navbar-item-a">Trang Chủ</a>
@@ -126,7 +126,8 @@
             <i class="ti-view-list"></i>
         </label>
         <a href="${pageContext.request.contextPath}/trang-chu">
-            <img src="./img/logo-dark.png" alt="" class="navbar__logo-img2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018"
+                 alt="" class="navbar__logo-img2">
         </a>
         <input type="checkbox" id="navbar-checked" hidden>
         <label for="navbar-checked" class="navbar-mobile-over"></label>
@@ -209,9 +210,9 @@
                 <div class="row">
                     <c:forEach var="ex" items="<%=listEx%>">
                         <div class="col l-2 m-4 c-6 experience-list" data-aos="zoom-in-up" data-aos-duration="1000">
-                            <a class="experience-singer-link-a" href="">
+                            <i id="" onclick="clickIcon()" class="fas fa-heart exper-icon"></i>
+                            <a class="experience-singer-link-a" href="${ex.link}">
                                 <img src="${ex.image}" alt="" class="experience-img-slider"/>
-                                <i class="fas fa-heart"></i>
                                 <div class="experience-info-item">
                                     <div class="experience-evaluate">
                                         <i class="fas fa-star star2"></i>
@@ -315,6 +316,22 @@
     </footer>
 
 </div>
+<script>
+    let icon = document.querySelectorAll(".exper-icon");
+    let flag = 0;
+    icon.forEach((e) => {
+        e.onclick = () => {
+            if (flag == 1) {
+                e.classList.remove("red");
+                flag = 0
+            }
+            if (flag == 0) {
+                e.classlist.add("red");
+                flag = 1
+            }
+        }
+    })
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>

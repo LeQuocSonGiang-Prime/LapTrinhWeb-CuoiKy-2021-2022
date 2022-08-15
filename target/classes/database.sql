@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 07, 2022 at 02:30 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th8 15, 2022 lúc 10:13 AM
+-- Phiên bản máy phục vụ: 10.4.24-MariaDB
+-- Phiên bản PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `database`
+-- Cơ sở dữ liệu: `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Cấu trúc bảng cho bảng `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `admin`
+-- Đang đổ dữ liệu cho bảng `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `name`, `username`, `password`, `avatar`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `admin` (`id_admin`, `name`, `username`, `password`, `avatar`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bill`
+-- Cấu trúc bảng cho bảng `bill`
 --
 
 CREATE TABLE `bill` (
@@ -62,7 +62,7 @@ CREATE TABLE `bill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `bill`
+-- Đang đổ dữ liệu cho bảng `bill`
 --
 
 INSERT INTO `bill` (`id_bill`, `id_user`, `id_house`, `time_checkin`, `time_checkout`, `time_order`, `confirm`) VALUES
@@ -75,7 +75,7 @@ INSERT INTO `bill` (`id_bill`, `id_user`, `id_house`, `time_checkin`, `time_chec
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Cấu trúc bảng cho bảng `comment`
 --
 
 CREATE TABLE `comment` (
@@ -88,7 +88,7 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `comment`
+-- Đang đổ dữ liệu cho bảng `comment`
 --
 
 INSERT INTO `comment` (`id_comment`, `id_house`, `id_user`, `comment`, `star`, `time_cmt`) VALUES
@@ -100,7 +100,7 @@ INSERT INTO `comment` (`id_comment`, `id_house`, `id_user`, `comment`, `star`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favourite`
+-- Cấu trúc bảng cho bảng `favourite`
 --
 
 CREATE TABLE `favourite` (
@@ -112,7 +112,7 @@ CREATE TABLE `favourite` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `house`
+-- Cấu trúc bảng cho bảng `house`
 --
 
 CREATE TABLE `house` (
@@ -128,7 +128,7 @@ CREATE TABLE `house` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `house`
+-- Đang đổ dữ liệu cho bảng `house`
 --
 
 INSERT INTO `house` (`id_house`, `name`, `type`, `tutorial`, `address`, `detail`, `foryou`, `price`, `saleprice`) VALUES
@@ -138,15 +138,15 @@ INSERT INTO `house` (`id_house`, `name`, `type`, `tutorial`, `address`, `detail`
 ('HOUSE00003', 'APPS Hà Nội', '3', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Hà Nội', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '1,1,1,1,1,1,1,1,1,1', 299, NULL),
 ('HOUSE00004', 'TURAL Bình Định', '2', 'Pink là HomeStay rất đặc biệt, căn nhà gỗ bên mảnh vườn nhỏ, mọi thứ đều tạo cho ta cảm giác an nhiên và bình yên vô cùng.', 'Bình Định', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '1,1,1,1,1,1,1,1,1,1', 349, NULL),
 ('HOUSE00005', 'DIUQWGDIQWG', '2', 'CIJQAWGDIYUASGDCIASB', 'ICHWUICGHQWUICG', ' 100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,4 Người', '1,1,1,1,1,1,1,1,1,1', 564, NULL),
-('HOUSE00006', 'Sunshine Tím', '4', 'Bao gồm các studio và căn hộ 1 và 2 phòng ngủ có thiết kế lấy cảm hứng từ đô thị mở rộng ra ngoài các bức tường của bạn và trong toàn bộ cộng đồng.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00007', 'Cù Tê Homestay', '1', 'Ngôi nhà mang gam màu trầm của gỗ cùng với lối thiết kế tinh tế mang lại cho bạn cảm giác thanh bình, những chiếc đèn lồng chùm tạo cảm giác đê mê huyền ảo', 'Hồ Chí Minh ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00008', 'Rosemary – Bed & Coffee House', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Đà Lạt', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00009', 'Leuleu hostel & cafe', '1', 'Đặc biệt, đây là Hostel duy nhất có thiết kế giường Dorm đôi độc nhất vô nhị, phù hợp với các bạn trẻ, nhóm bạn phượt hoặc đi trăng mật.', 'Đà Lạt', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00010', 'Tre''s House', '1', 'Tre'' house nằm trong góc nhỏ đường ven biển, đến đây bạn sẽ ngạc nhiên bởi lối thiết kế chẳng giống ai, nhưng lại vô cùng đặc biệt ở nơi này.', 'Hồ Chí Minh', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00011', 'Woody House', '1', 'Tận hưởng những khu dân cư yên tĩnh, vị trí thuận tiện, không gian thoáng đẹp và những tiện ích giải trí vượt trội.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00012', 'Nhà Gió', '1', 'Là nơi không quá gần trung tâm nhưng đủ để bạn tận hưởng thiên nhiên, cây cối, nghe tiếng chim hót vào buổi sáng.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00013', 'HaHa HomeStay', '1', 'Tọa lạc trên con đường ven biển đẹp nhất Quy Nhơn. Cho bạn hướng nhìn rất tuyệt vời khi ở đây.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
-('HOUSE00014', 'Phượng Tím', '1', 'Hãy tận hưởng niềm vui của bạn từ một vị trí thuận lợi có thể dễ dàng tiếp cận tất cả những gì tốt nhất của khu South Beach sôi động của thành phố.', 'Vũng Tàu', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00006', 'Lá Phong', '4', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00007', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00008', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00009', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00010', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00011', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00012', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00013', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
+('HOUSE00014', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
 ('HOUSE00015', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
 ('HOUSE00016', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
 ('HOUSE00017', 'Lá Phong', '1', 'Mang đến cơ hội duy nhất để sống trong khung cảnh công viên quốc gia và tận hưởng những khu dân cư yên tĩnh.', 'Bình Định ', '100M², 4 Phòng Ngủ, 6 Giường, 1 Phòng Tắm,3 Người', '1,1,1,1,1,1,1,1,1,1', 229, NULL),
@@ -169,7 +169,7 @@ INSERT INTO `house` (`id_house`, `name`, `type`, `tutorial`, `address`, `detail`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `image_house`
+-- Cấu trúc bảng cho bảng `image_house`
 --
 
 CREATE TABLE `image_house` (
@@ -180,7 +180,7 @@ CREATE TABLE `image_house` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `image_house`
+-- Đang đổ dữ liệu cho bảng `image_house`
 --
 
 INSERT INTO `image_house` (`id_image`, `id_house`, `image`, `alt`) VALUES
@@ -219,78 +219,77 @@ INSERT INTO `image_house` (`id_image`, `id_house`, `image`, `alt`) VALUES
 ('IMAGE31001', 'HOUSE00031', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse-2%2Fhouse%20(31).jpg?alt=media&token=52a8a5ff-e187-41b2-8b95-b18d8b45f98c', 'GIANG'),
 ('IMAGE32001', 'HOUSE00032', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fhouse-2%2Fhouse%20(32).jpg?alt=media&token=b81c194f-7858-4973-85fa-aaef5cf60593', 'DGWUI\\');
 
-
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `place`
+-- Cấu trúc bảng cho bảng `place`
 --
 
 CREATE TABLE `place` (
   `id_place` char(10) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `image` varchar(1000) NOT NULL
+  `image` varchar(1000) NOT NULL,
+  `link` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `place`
+-- Đang đổ dữ liệu cho bảng `place`
 --
 
-INSERT INTO `place` (`id_place`, `name`, `image`) VALUES
-('PLACE00001', 'ẨM THỰC ĐƯỜNG PHỐ ĐI BỘ HÀ NỘI', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_01.webp?alt=media&token=ebabb8c9-61a5-4f22-9d80-69beb87e39ff'),
-('PLACE00002', 'Lớp học nấu ăn tại Hà Nội tại Biệt thự Pháp', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_02.webp?alt=media&token=c555bd9d-262e-467f-9a97-d66f2e463c74'),
-('PLACE00003', 'Lê la khắp các quán bar trong khu phố cổ tuyệt vời', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_03.webp?alt=media&token=12ff0be9-2b9b-4167-9ea8-c3ae14361b94'),
-('PLACE00004', 'Tận hưởng Hà Nội với một nhiếp ảnh gia', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_04.webp?alt=media&token=5f822f16-c404-4a91-80f8-e0012f6a38ee'),
-('PLACE00005', 'Tonkin Adventure - Hidden Hanoi with Local', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_05.webp?alt=media&token=ac930c17-9e48-4f08-a27b-f4622f4bc1c6'),
-('PLACE00006', 'The Famous Ha Giang Loop Adventure', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_06.webp?alt=media&token=c4ef82aa-321c-49ad-aaaf-9caa2da56780'),
-('PLACE00007', 'Buổi chụp hình đêm tại Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_07.webp?alt=media&token=063d129b-316e-4e19-986b-374a0f8b493f'),
-('PLACE00008', 'UNIQUE LOCAL BEER ADVENTURER', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_08.webp?alt=media&token=13d27c68-5302-49da-9e70-e5c36cfe9233'),
-('PLACE00009', 'HanoiSoul-Street Food With Local Guide', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_09.webp?alt=media&token=c9e82f74-5d53-426b-8e49-757bad6973a9'),
-('PLACE00010', 'Học chụp ảnh với máy ảnh phim tại Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_10.webp?alt=media&token=1af136bf-ea8b-4132-8d92-9db175e1c94d'),
-('PLACE00011', 'Tour khám phá ẩm thực và lịch sử ăn⭐ chay Hà Nội','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_11.webp?alt=media&token=5364a7c4-881a-484c-9aaa-3ff9a16856fe'),
-('PLACE00012', 'Tour ẩm thực đường phố địa phương với người Hà Nội','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_12.webp?alt=media&token=cc30aff9-0dd6-4a17-895d-0bbaa3248c49'),
-('PLACE00013', 'Thích làm gốm ở Phố cổ!','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_13.webp?alt=media&token=ac173b44-2398-443e-b6dd-34a12115fb26'),
-('PLACE00014', 'Tour tham quan khu phố Pháp - Quá khứ và hiện tại','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_14.webp?alt=media&token=d4ca8c22-43bd-4c84-b9f3-6a9c7409cb39'),
-('PLACE00015', 'Tour khám phá ẩm thực khi đi bộ với hướng dẫn viên riêng','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_15.webp?alt=media&token=8b62e92c-a9bb-4d6e-ac30-d241cccd8ce0'),
-('PLACE00016', 'Chuyến phiêu lưu bằng xe máy Hà Giang nổi tiếng','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_16.webp?alt=media&token=44f936e9-2a79-47ad-8574-53bda1170405'),
-('PLACE00017', 'NHÀ TƯ VẤN BIA ĐỊA PHƯƠNG ĐỘC ĐÁO','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_17.webp?alt=media&token=4125d484-1063-4ecc-bc85-b35c6e490136'),
-('PLACE00018', 'Lớp học nấu ăn chay đích thực của Việt Nam','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_18.webp?alt=media&token=e32a20ea-e37e-41e2-9a1f-ba7e5791eb93'),
-('PLACE00019', 'Lớp học nấu ăn Hà Nội và tham quan chợ địa phương','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_19.webp?alt=media&token=2d4ead2e-e635-4ed5-bf26-9355853f6182'),
-('PLACE00020', 'Ẩm thực đường phố và âm nhạc ẩn tối ưu','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_20.webp?alt=media&token=cce7f744-64cf-42dc-a525-a3535c1c1d9a'),
-('PLACE00021', 'Chuyến đi Sapa2day1nite (homestay) từ Hà Nội','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_21.webp?alt=media&token=fb610fe6-9abf-42a3-bd1b-7deb03c4a619'),
-('PLACE00022', 'Bốn làng thủ công bí mật của Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_22.webp?alt=media&token=49a8c2e2-6cf1-499f-b49d-505343b61d98'),
-('PLACE00023', 'Ninh Bình - Tam Cốc - Xe buýt Limo hang động Mua','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_23.webp?alt=media&token=c7a81120-8b81-4d5f-b688-9a7ea39b45f9'),
-('PLACE00024', 'Chuyến đi DragonSails Luxury Hạ Long Day','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_24.webp?alt=media&token=754c5e64-d194-4a53-bfad-b9a04f55dc16'),
-('PLACE00025', 'NYNA Coffee_Lớp học cà phê trứng độc đáo với người dân địa phương','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_25.webp?alt=media&token=33485762-2ac2-40b0-8178-ebd836467582'),
-('PLACE00026', 'Đi xe đạp đường trường hoặc đi xe đạp đường trường với tour đi bộ khám phá ẩm thực tuyệt vời','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_26.webp?alt=media&token=3caa6ca1-233e-482d-9cf6-1a6e78398505'),
-('PLACE00027', 'Các phòng trưng bày nghệ thuật đô thị của Hà Nội và Phở ngon nhất','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_27.webp?alt=media&token=bc13eaa2-fb3d-4b9e-a3d1-a981e95d8f24'),
-('PLACE00028', 'Chuyến tham quan Hoa Lư - Tam Cốc cổ điển trong ngày','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_28.webp?alt=media&token=0e6e4354-befb-4a37-9c92-fe02b9f7c8b3'),
-('PLACE00029', 'TOUR ĐI BỘ KHÁM PHÁ ẨM THỰC QUA CÁC CON HẺM PHÍA SAU','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_29.jpeg?alt=media&token=ccee40fd-a566-4cf8-aff8-48c2f14c5a0e'),
-('PLACE00030', 'Tour đi bộ Khu phố cổ Hà Nội nửa ngày','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_30.webp?alt=media&token=7d1b1ee7-1fce-41c6-8273-2a59416d7d8a'),
-('PLACE00031', 'Tìm hiểu cách quay phim tại Hà Nội với một người dân địa phương','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_31.webp?alt=media&token=0e51e022-802d-42b9-aed0-4e3acb663ca1'),
-('PLACE00032', 'Chuyến du lịch Vịnh Hạ Long cả ngày','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_32.webp?alt=media&token=60e639c5-d3c3-477a-8867-2353dad445ad'),
-('PLACE00033', 'Chuyến phiêu lưu trong ngày tùy chỉnh','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_33.webp?alt=media&token=50b15eec-ce53-4922-b330-86627afb8cf0'),
-('PLACE00034', 'Nấu các món ăn Việt Nam đích thực','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_34.webp?alt=media&token=3e1b3e02-6ebf-4ebd-ae0f-721832226f6c'),
-('PLACE00035', 'Tour tham quan Hoa Lư, Tam Cốc, Hang Mua một ngày','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_35.webp?alt=media&token=aec11718-fa81-459c-8e56-d3400f28e53b'),
-('PLACE00036', 'Trà đạo Việt Nam do bậc thầy trà cung cấp','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_36.webp?alt=media&token=3387f1d5-5e04-4a8c-b39a-4d4b65dcad85'),
-('PLACE00037', 'Ẩm thực đường phố Hà Nội với hướng dẫn viên địa phương','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_37.webp?alt=media&token=1a660aae-838e-4c32-985f-e42d4cf7cd0d'),
-('PLACE00038', 'Bài học Việt Nam hữu ích cho du khách','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_38.webp?alt=media&token=1457acf9-c2a9-4e50-80fd-7c157a0903da'),
-('PLACE00039', 'Chụp ảnh ban ngày và khám phá Hà Nội với người dân địa phương','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_39.webp?alt=media&token=a2885c23-20fe-4564-9119-2c752fc8db2e'),
-('PLACE00040', 'N Y N A Coffee_Cách làm cà phê dừa theo cách của địa phương','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_40.webp?alt=media&token=4abc688f-f559-4f0f-945e-97aba3fa88f6'),
-('PLACE00041', 'HanoiSoul-Street Food với Hướng dẫn địa phương','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_41.webp?alt=media&token=04be3f54-4143-40bc-af3e-79d796aec99f'),
-('PLACE00042', 'Tour ẩm thực ba giờ và tham quan thành phố ở phía sau xe máy','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_42.webp?alt=media&token=611e70c1-e51e-4965-84ac-d1bbe2962139'),
-('PLACE00043', 'Tự tay làm các hoạt động tại làng địa phương từ Hà Nội','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_43.webp?alt=media&token=d9504db4-d221-4a92-bbb9-9164c81024cc'),
-('PLACE00044', 'Chuyến tham quan đường phố tối ưu trên xe máy','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_44.webp?alt=media&token=c474a759-392a-4058-9697-9ae0d713a482'),
-('PLACE00045', 'Tour khám phá ẩm thực đường phố với tâm hồn Hà Nội','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_45.webp?alt=media&token=38610677-18b1-4cd0-8b4a-16915e37d6d2'),
-('PLACE00046', 'Nấu ăn tại nhà tươi ngon và nhiều cây xanh', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_46.webp?alt=media&token=7c9e9116-2867-4cbf-b67a-0bddf1c33c81'),
-('PLACE00047', 'Vịnh Hạ Long, chèo thuyền kayak, ngắm đỉnh Titop với Arcady Cruise','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_47.webp?alt=media&token=53335f48-23c2-4168-b573-76b7b9949386'),
-('PLACE00048', 'Chùa Bái Đính - Tour tham quan hang động Tràng An','https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_48.webp?alt=media&token=4d01e3e4-171b-4604-b88e-cf2052328a65');
+INSERT INTO `place` (`id_place`, `name`, `image`, `link`) VALUES
+('PLACE00001', 'ẨM THỰC ĐƯỜNG PHỐ ĐI BỘ HÀ NỘI', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_01.webp?alt=media&token=ebabb8c9-61a5-4f22-9d80-69beb87e39ff', 'https://vietnammoi.vn/nguoi-dan-ha-noi-hao-huc-thuong-thuc-am-thuc-truyen-thong-cua-han-quoc-tai-pho-di-bo-20191108133223644.htm'),
+('PLACE00002', 'Lớp học nấu ăn tại Hà Nội tại Biệt thự Pháp', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_02.webp?alt=media&token=c555bd9d-262e-467f-9a97-d66f2e463c74', 'https://www.huongnghiepaau.com/hoc-nau-an?gclid=Cj0KCQjw3eeXBhD7ARIsAHjssr9Fy62TnjFPyIPdAD5nAmFB3qp9eALKsY-gEpjicYwmp482KCBV98waAqMIEALw_wcB'),
+('PLACE00003', 'Lê la khắp các quán bar trong khu phố cổ tuyệt vời', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_03.webp?alt=media&token=12ff0be9-2b9b-4167-9ea8-c3ae14361b94', 'https://www.tripadvisor.com.vn/Attractions-g293924-Activities-c20-t99-Hanoi.html'),
+('PLACE00004', 'Tận hưởng Hà Nội với một nhiếp ảnh gia', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_04.webp?alt=media&token=5f822f16-c404-4a91-80f8-e0012f6a38ee', 'https://tokyometro.vn/ha-noi-thap-nien-90-qua-ong-kinh-cua-cua-nhiep-anh-gia-nhat-ban-yuichi-kobayashi-s287526-html/'),
+('PLACE00005', 'Tonkin Adventure - Hidden Hanoi with Local', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_05.webp?alt=media&token=ac930c17-9e48-4f08-a27b-f4622f4bc1c6', 'https://tonkintravel.com/en/tours_post/hanoi/'),
+('PLACE00006', 'The Famous Ha Giang Loop Adventure', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_06.webp?alt=media&token=c4ef82aa-321c-49ad-aaaf-9caa2da56780', 'https://hagianglooptours.com/?gclid=Cj0KCQjw3eeXBhD7ARIsAHjssr_wwexAIaJchcqr4lHOAuDdYG7r2ch8ShK8tGmFl3VC2Nu_wHBEfuMaArB8EALw_wcB'),
+('PLACE00007', 'Buổi chụp hình đêm tại Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_07.webp?alt=media&token=063d129b-316e-4e19-986b-374a0f8b493f', 'https://vietnammoi.vn/nhung-diem-check-in-dep-buoi-toi-khong-nen-bo-qua-khi-du-lich-ha-noi-vao-dip-20-10-20191016135451416.htm'),
+('PLACE00008', 'UNIQUE LOCAL BEER ADVENTURER', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_08.webp?alt=media&token=13d27c68-5302-49da-9e70-e5c36cfe9233', 'https://digifood.vn/blog/quan-bia-craft/'),
+('PLACE00009', 'HanoiSoul-Street Food With Local Guide', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_09.webp?alt=media&token=c9e82f74-5d53-426b-8e49-757bad6973a9', 'https://www.wheregoesrose.com/hanoi-street-food/'),
+('PLACE00010', 'Học chụp ảnh với máy ảnh phim tại Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_10.webp?alt=media&token=1af136bf-ea8b-4132-8d92-9db175e1c94d', 'https://mimosawedding.net/hoc-chup-anh-o-dau-ha-noi/'),
+('PLACE00011', 'Tour khám phá ẩm thực và lịch sử ăn chay Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_11.webp?alt=media&token=5364a7c4-881a-484c-9aaa-3ff9a16856fe', 'https://mytour.vn/location/8515-mot-ngay-kham-pha-am-thuc-ha-noi.html'),
+('PLACE00012', 'Tour ẩm thực đường phố địa phương với người Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_12.webp?alt=media&token=cc30aff9-0dd6-4a17-895d-0bbaa3248c49', 'https://www.traveloka.com/vi-vn/activities/vietnam/product/hanoi-street-food-by-night-1000772735270'),
+('PLACE00013', 'Thích làm gốm ở Phố cổ!', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_13.webp?alt=media&token=ac173b44-2398-443e-b6dd-34a12115fb26', 'https://www.kkday.com/vi/product/119140-bat-trang-pottery-workshop-in-ha-noi-old-quarter'),
+('PLACE00014', 'Tour tham quan khu phố Pháp - Quá khứ và hiện tại', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_14.webp?alt=media&token=d4ca8c22-43bd-4c84-b9f3-6a9c7409cb39', 'https://8trip.vn/tourdetail.jsp?destination=2&tour_id=664'),
+('PLACE00015', 'Tour khám phá ẩm thực khi đi bộ với hướng dẫn viên riêng', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_15.webp?alt=media&token=8b62e92c-a9bb-4d6e-ac30-d241cccd8ce0', 'https://tcdulichtphcm.vn/chuyen-hay/dan-khach-tay-di-food-tour-quanh-pho-co-c17a31876.html'),
+('PLACE00016', 'Chuyến phiêu lưu bằng xe máy Hà Giang nổi tiếng', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_16.webp?alt=media&token=44f936e9-2a79-47ad-8574-53bda1170405', 'https://motogo.vn/phuot-ha-giang/'),
+('PLACE00017', 'NHÀ TƯ VẤN BIA ĐỊA PHƯƠNG ĐỘC ĐÁO', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_17.webp?alt=media&token=4125d484-1063-4ecc-bc85-b35c6e490136', 'https://www.sabeco.com.vn/nha-may-bia-sai-gon--nguyen-chi-thanh'),
+('PLACE00018', 'Lớp học nấu ăn chay đích thực của Việt Nam', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_18.webp?alt=media&token=e32a20ea-e37e-41e2-9a1f-ba7e5791eb93', 'https://www.huongnghiepaau.com/hoc-nau-an/mon-chay?gclid=Cj0KCQjw3eeXBhD7ARIsAHjssr_aOZvYsjZ9IQsk7ymK4U3Ds94zK3zl3GYZiz0vPD-b0AJ4Ny8FC7saAqaWEALw_wcB'),
+('PLACE00019', 'Lớp học nấu ăn Hà Nội và tham quan chợ địa phương', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_19.webp?alt=media&token=2d4ead2e-e635-4ed5-bf26-9355853f6182', 'https://vn.alongwalker.co/10-trung-tam-day-nau-an-uy-tin-nhat-o-ha-noi-s89305.html'),
+('PLACE00020', 'Ẩm thực đường phố và âm nhạc ẩn tối ưu', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_20.webp?alt=media&token=cce7f744-64cf-42dc-a525-a3535c1c1d9a', 'https://tastykitchen.vn/kham-pha-am-thuc/diem-an-tuong-ve-am-thuc-viet-nam-trong-mat-ban-be-quoc-te-p493'),
+('PLACE00021', 'Chuyến đi Sapa2day1nite (homestay) từ Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_21.webp?alt=media&token=fb610fe6-9abf-42a3-bd1b-7deb03c4a619', 'https://www.klook.com/vi/activity/10459-2d1n-sapa-tour-hanoi-halong-bay/'),
+('PLACE00022', 'Bốn làng thủ công bí mật của Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_22.webp?alt=media&token=49a8c2e2-6cf1-499f-b49d-505343b61d98', 'https://vegiagoc.com/nhung-lang-nghe-thu-cong-noi-tieng-o-viet-nam.html'),
+('PLACE00023', 'Ninh Bình - Tam Cốc - Xe buýt Limo hang động Mua', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_23.webp?alt=media&token=c7a81120-8b81-4d5f-b688-9a7ea39b45f9', ''),
+('PLACE00024', 'Chuyến đi DragonSails Luxury Hạ Long Day', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_24.webp?alt=media&token=754c5e64-d194-4a53-bfad-b9a04f55dc16', ''),
+('PLACE00025', 'NYNA Coffee_Lớp học cà phê trứng độc đáo với người dân địa phương', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_25.webp?alt=media&token=33485762-2ac2-40b0-8178-ebd836467582', ''),
+('PLACE00026', 'Đi xe đạp đường trường hoặc đi xe đạp đường trường với tour đi bộ khám phá ẩm thực tuyệt vời', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_26.webp?alt=media&token=3caa6ca1-233e-482d-9cf6-1a6e78398505', ''),
+('PLACE00027', 'Các phòng trưng bày nghệ thuật đô thị của Hà Nội và Phở ngon nhất', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_27.webp?alt=media&token=bc13eaa2-fb3d-4b9e-a3d1-a981e95d8f24', ''),
+('PLACE00028', 'Chuyến tham quan Hoa Lư - Tam Cốc cổ điển trong ngày', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_28.webp?alt=media&token=0e6e4354-befb-4a37-9c92-fe02b9f7c8b3', ''),
+('PLACE00029', 'TOUR ĐI BỘ KHÁM PHÁ ẨM THỰC QUA CÁC CON HẺM PHÍA SAU', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_29.jpeg?alt=media&token=ccee40fd-a566-4cf8-aff8-48c2f14c5a0e', ''),
+('PLACE00030', 'Tour đi bộ Khu phố cổ Hà Nội nửa ngày', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_30.webp?alt=media&token=7d1b1ee7-1fce-41c6-8273-2a59416d7d8a', ''),
+('PLACE00031', 'Tìm hiểu cách quay phim tại Hà Nội với một người dân địa phương', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_31.webp?alt=media&token=0e51e022-802d-42b9-aed0-4e3acb663ca1', ''),
+('PLACE00032', 'Chuyến du lịch Vịnh Hạ Long cả ngày', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_32.webp?alt=media&token=60e639c5-d3c3-477a-8867-2353dad445ad', ''),
+('PLACE00033', 'Chuyến phiêu lưu trong ngày tùy chỉnh', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_33.webp?alt=media&token=50b15eec-ce53-4922-b330-86627afb8cf0', ''),
+('PLACE00034', 'Nấu các món ăn Việt Nam đích thực', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_34.webp?alt=media&token=3e1b3e02-6ebf-4ebd-ae0f-721832226f6c', ''),
+('PLACE00035', 'Tour tham quan Hoa Lư, Tam Cốc, Hang Mua một ngày', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_35.webp?alt=media&token=aec11718-fa81-459c-8e56-d3400f28e53b', ''),
+('PLACE00036', 'Trà đạo Việt Nam do bậc thầy trà cung cấp', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_36.webp?alt=media&token=3387f1d5-5e04-4a8c-b39a-4d4b65dcad85', ''),
+('PLACE00037', 'Ẩm thực đường phố Hà Nội với hướng dẫn viên địa phương', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_37.webp?alt=media&token=1a660aae-838e-4c32-985f-e42d4cf7cd0d', ''),
+('PLACE00038', 'Bài học Việt Nam hữu ích cho du khách', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_38.webp?alt=media&token=1457acf9-c2a9-4e50-80fd-7c157a0903da', ''),
+('PLACE00039', 'Chụp ảnh ban ngày và khám phá Hà Nội với người dân địa phương', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_39.webp?alt=media&token=a2885c23-20fe-4564-9119-2c752fc8db2e', ''),
+('PLACE00040', 'N Y N A Coffee_Cách làm cà phê dừa theo cách của địa phương', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_40.webp?alt=media&token=4abc688f-f559-4f0f-945e-97aba3fa88f6', ''),
+('PLACE00041', 'HanoiSoul-Street Food với Hướng dẫn địa phương', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_41.webp?alt=media&token=04be3f54-4143-40bc-af3e-79d796aec99f', ''),
+('PLACE00042', 'Tour ẩm thực ba giờ và tham quan thành phố ở phía sau xe máy', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_42.webp?alt=media&token=611e70c1-e51e-4965-84ac-d1bbe2962139', ''),
+('PLACE00043', 'Tự tay làm các hoạt động tại làng địa phương từ Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_43.webp?alt=media&token=d9504db4-d221-4a92-bbb9-9164c81024cc', ''),
+('PLACE00044', 'Chuyến tham quan đường phố tối ưu trên xe máy', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_44.webp?alt=media&token=c474a759-392a-4058-9697-9ae0d713a482', ''),
+('PLACE00045', 'Tour khám phá ẩm thực đường phố với tâm hồn Hà Nội', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_45.webp?alt=media&token=38610677-18b1-4cd0-8b4a-16915e37d6d2', ''),
+('PLACE00046', 'Nấu ăn tại nhà tươi ngon và nhiều cây xanh', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_46.webp?alt=media&token=7c9e9116-2867-4cbf-b67a-0bddf1c33c81', ''),
+('PLACE00047', 'Vịnh Hạ Long, chèo thuyền kayak, ngắm đỉnh Titop với Arcady Cruise', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_47.webp?alt=media&token=53335f48-23c2-4168-b573-76b7b9949386', ''),
+('PLACE00048', 'Chùa Bái Đính - Tour tham quan hang động Tràng An', 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Fplace%2Fplace_48.webp?alt=media&token=4d01e3e4-171b-4604-b88e-cf2052328a65', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `request_booking`
+-- Cấu trúc bảng cho bảng `request_booking`
 --
 
 CREATE TABLE `request_booking` (
@@ -304,7 +303,7 @@ CREATE TABLE `request_booking` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
@@ -320,7 +319,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `fullname`, `email`, `address`, `phone`, `avatar`, `status`) VALUES
@@ -331,62 +330,44 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `fullname`, `email`, `add
 ('USER000005', 'Nguyễn Minh Thi', '847dc0f7420f7d9b30abccf8729bd028', 'Nguyễn Minh Thi', 'fwef', NULL, NULL, 'https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Favatar%2Fuser%2F2f5ae2dbd1ad3df364bc.jpg?alt=media&token=30e264fa-845b-4d1f-8b1d-03f216967174', 0);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admin`
+-- Chỉ mục cho bảng `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`) USING BTREE;
 
 --
--- Indexes for table `bill`
+-- Chỉ mục cho bảng `bill`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`id_bill`) USING BTREE;
 
 --
--- Indexes for table `comment`
+-- Chỉ mục cho bảng `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id_comment`) USING BTREE;
 
 --
--- Indexes for table `favourite`
+-- Chỉ mục cho bảng `favourite`
 --
 ALTER TABLE `favourite`
   ADD PRIMARY KEY (`id_favor`) USING BTREE;
 
 --
--- Indexes for table `house`
+-- Chỉ mục cho bảng `house`
 --
 ALTER TABLE `house`
   ADD PRIMARY KEY (`id_house`) USING BTREE;
 
 --
--- Indexes for table `image_house`
---
-ALTER TABLE `image_house`
-  ADD PRIMARY KEY (`id_image`) USING BTREE;
-
---
--- Indexes for table `place`
+-- Chỉ mục cho bảng `place`
 --
 ALTER TABLE `place`
-  ADD PRIMARY KEY (`id_place`) USING BTREE;
-
---
--- Indexes for table `request_booking`
---
-ALTER TABLE `request_booking`
-  ADD PRIMARY KEY (`id_request`) USING BTREE;
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`) USING BTREE;
+  ADD PRIMARY KEY (`id_place`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
