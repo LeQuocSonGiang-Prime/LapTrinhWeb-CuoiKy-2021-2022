@@ -80,7 +80,6 @@ public class ControllerAdminServlet extends HttpServlet {
         CommentModel.setListComment(commentService.findAll());
         for(HouseModel h : HouseModel.getListResult()){
             List<CommentModel> listCmt = CommentModel.selectCommentByIdHouse(h.getId());
-            DecimalFormat df = new DecimalFormat("#,###.##");
             if(listCmt.size()>0){
                 int totalStar = 0;
                 for(CommentModel c : listCmt){

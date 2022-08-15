@@ -4,12 +4,16 @@ import vn.edu.hcmuaf.fit.dao.ImageDAO;
 import vn.edu.hcmuaf.fit.dao.daoimp.CommentDAOImp;
 import vn.edu.hcmuaf.fit.dao.daoimp.ImageDAOImp;
 import vn.edu.hcmuaf.fit.mapper.IRowMapper;
+import vn.edu.hcmuaf.fit.model.CommentModel;
 import vn.edu.hcmuaf.fit.model.HouseModel;
 import vn.edu.hcmuaf.fit.model.UserModel;
+import vn.edu.hcmuaf.fit.service.ICommentService;
 import vn.edu.hcmuaf.fit.service.serviceimp.CommentServiceImp;
 
+import javax.inject.Inject;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class HouseMapper implements IRowMapper<HouseModel> {
 
@@ -28,10 +32,13 @@ public class HouseMapper implements IRowMapper<HouseModel> {
             house.setSalePrice(resultSet.getInt("saleprice"));
             house.setImage(new ImageDAOImp().findImageById_House(resultSet.getString("id_house")));
             house.setTotalAssess(new CommentDAOImp().selectCommentByHouse(resultSet.getString("id_house")).size());
+          //  house.setStar(setStar(house.getId()));
             return house;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
+
+
 }
