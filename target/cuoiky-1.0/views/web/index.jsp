@@ -129,7 +129,7 @@
         <a class="header__info">
             <img src="<%=user.getAvatar()%>" alt=""
                  style="border-radius:50%; height: 20px;width: 20px;margin-right: 5px; ">
-            <a  style="margin-top: 0" href="detailUser"><%=user.getFullName()%></a>
+            <div id="user__info" style="margin-top: 0" ><%=user.getFullName()%></div>
         </a>
         <%}%>
 
@@ -530,6 +530,8 @@
     });
 
     typeOfHouse()
+
+    clickButtonDetailUser()
 </script>
 
 </body>

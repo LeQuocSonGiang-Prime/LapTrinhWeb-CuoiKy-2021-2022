@@ -262,3 +262,11 @@ function addHouse() {
     let input_type = $('#type-house')
     let input_typ = $('#type-house')
 }
+
+function clickButtonDetailUser(){
+    let btn = document.querySelector("#user__info")
+    btn.onclick = function(){
+        location.href = "detailUser"
+
+    }
+}
