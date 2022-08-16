@@ -38,12 +38,13 @@
         AdminModel currentAdmin = (AdminModel) request.getAttribute("adminCurrent");
         List<CommentModel> listComment = (List<CommentModel>) request.getAttribute("listComment");
         BillModel bill = (BillModel) request.getAttribute("bill");
-
+        AdminModel admin =(AdminModel) request.getSession().getAttribute("admin");
     %>
 
 
 </head>
 <body>
+<%if(admin !=null){%>
 <!-- NAVBAR -->
 <div class="side-bar">
     <div class="logo">
@@ -180,7 +181,7 @@
                 <tr>
                     <td style="padding: 7px;"><%= i + 1%>
                     </td>
-                    <td style="padding: 7px 0 ;"><a class="item_link" href=""
+                    <td style="padding: 7px 0 ;"><a class="item_link" href="admin-detailUser?<%=BillModel.getListNewBill().get(i).getUser().getId()%>"
                                                     style="color:black;"><%=BillModel.getListNewBill().get(i).getUser().getFullName()%>
                     </a></td>
                     <td><%=BillModel.getListNewBill().get(i).getTime_Checkin()%>
@@ -290,8 +291,10 @@
     </div>
 
 </div>
-
-
+<%}else{%>
+<h1>Xin lỗi, bạn không có quyền truy cập trang này</h1>
+<h3>Vui lòng <a href="loginAdmin">đăng nhập</a> và thử lại</h3>
+<%}%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/template/admin/js/home.js"></script>
 

@@ -1,4 +1,6 @@
-<%--
+<%@ page import="vn.edu.hcmuaf.fit.model.BillModel" %>
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.fit.model.UserModel" %><%--
   Created by IntelliJ IDEA.
   User: acer
   Date: 16/08/2022
@@ -6,6 +8,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -24,12 +28,15 @@
     <link rel="stylesheet" href="<c:url value='/template/admin/css/detailHouse.css'/>">
 
     <link rel="stylesheet" href="<c:url value='/template/web/css/cssforbookroom.css'/>">
-
+    <link rel="stylesheet" href="<c:url value='/template/admin/css/thongTinuser.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
+    <link rel="stylesheet" href="<c:url value='/template/web/css/contact.css'/>">
     <link rel="stylesheet" href="<c:url value='/template/font/themify-icons/themify-icons.css'/>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <% List<BillModel> listBill = (List<BillModel>) request.getAttribute("listBill");%>
+    <% UserModel user = (UserModel) request.getSession().getAttribute("acc");%>
 
 
 </head>
@@ -72,10 +79,13 @@
 
         <!-- HEADER -->
         <!-- <div class="grid">      -->
+        <%if (user == null) {%>
         <div class="header__info">
             <ul class="header__info-list">
-                <li class="header__info-item">
-                    <button class="header__info-item-a" onclick="showModal()">Đăng Nhập</button>
+                <li class="header__info-item" id="header__info-login">
+                    <button id="header__info-item-a" class="header__info-item-a" style="cursor: pointer"
+                            onclick="showModal()">Đăng Nhập
+                    </button>
                 </li>
             </ul>
             <ul class="header__info-list">
@@ -87,6 +97,14 @@
                 </li>
             </ul>
         </div>
+        <%} else {%>
+        <a class="header__info" >
+            <img src="<%=user.getAvatar()%>" alt=""
+                 style="border-radius:50%; height: 20px;width: 20px;margin-right: 5px; ">
+            <div class="header__info" style="margin-top: 0"><%=user.getFullName()%>
+            </div>
+        </a>
+        <%}%>
         <nav class="header__navbar">
             <a href="${pageContext.request.contextPath}/trang-chu">
                 <img src="https://firebasestorage.googleapis.com/v0/b/web-batdongsan.appspot.com/o/image%2Ficon%2Flogo.png?alt=media&token=ab14d91d-f063-417b-9e61-528f1b8c4018" alt="" class="navbar__logo-img">
@@ -194,7 +212,50 @@
     </div>
 
     <!-- CATALOG -->
+    <div class="user__main" style="width: 80%; margin: 0 auto">
+        <div class="user__manage">
+            <div class="user__manager-title">Manage My Account</div>
+            <div class="user__manager-content">
+                <div class="user__manager-content-left">
+                    <h3>Address Book <span>EDIT</span></h3>
+                    <p>Default Address</p>
+                    <h4 class="user-name">${user.fullName}</h4>
+                    <h4 class="user-address">${user.address}</h4>
 
+                </div>
+                <div class="user__manager-content-right">
+                    <p>Default Billing Address</p>
+                    <h4 class="user-name">${user.fullName}</h4>
+                    <h4 class="user-address">${user.address}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="user__order">
+            <h3 class="user__order-title">Recent Oders</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Booking Date</th>
+                    <th>Check-out date</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for (BillModel i : listBill) {%>
+                <tr>
+                    <td><%=i.getId()%></td>
+                    <td><%=i.getTime_Checkin()%></td>
+                    <td><%=i.getTime_Checkout()%></td>
+                </tr>
+                <%}%>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 </div>
 </div>

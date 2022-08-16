@@ -5,36 +5,36 @@
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
-
-    $('.validate-form').on('submit', function (e) {
-        e.preventDefault();
-
-        var check = true;
-        for (var i = 0; i < input.length; i++) {
-            if (validate(input[i]) == false) {
-                showValidate(input[i]);
-                check = false;
-            }
-        }
-        if(check===true){
-            let data = $("#form-login").serialize()
-            $.ajax({
-                url:"loginAdmin",
-                type:"get",
-                data:data,
-                success(data){
-                    if (data === "1"){
-                        $('#password').val('')
-                        $('#mess-err').css("display", "flex")
-                        console.log("dang nhap sai")
-                    }
-                },
-                error(e){
-                    console.log("error"+e)
-                }
-            })
-        }
-    });
+    //
+    // $('.validate-form').on('submit', function (e) {
+    //     e.preventDefault();
+    //
+    //     var check = true;
+    //     for (var i = 0; i < input.length; i++) {
+    //         if (validate(input[i]) == false) {
+    //             showValidate(input[i]);
+    //             check = false;
+    //         }
+    //     }
+    //     if(check===true){
+    //         let data = $("#form-login").serialize()
+    //         $.ajax({
+    //             url:"loginAdmin",
+    //             type:"get",
+    //             data:data,
+    //             success(data){
+    //                 if (data === "1"){
+    //                     $('#password').val('')
+    //                     $('#mess-err').css("display", "flex")
+    //                     console.log("dang nhap sai")
+    //                 }
+    //             },
+    //             error(e){
+    //                 console.log("error"+e)
+    //             }
+    //         })
+    //     }
+    // });
 
 
     $('.validate-form .input100').each(function () {

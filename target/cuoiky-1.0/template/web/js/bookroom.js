@@ -299,7 +299,7 @@ createElementDetail = () => {
     priceOnTime.appendChild(elementTimeSPAN)
 
     let elementPriceSPAN = document.createElement("span")
-    elementPriceSPAN.innerText = `$${parseInt(headerPrice.innerText.slice(1, headerPrice.innerText.length)) * timeOrder}`
+    elementPriceSPAN.innerText = `${parseInt(headerPrice.innerText.slice(1, headerPrice.innerText.length)) * timeOrder}k`
     priceOnTime.appendChild(elementPriceSPAN)
 
     //Sale
@@ -310,7 +310,7 @@ createElementDetail = () => {
     serviceCharge.appendChild(elementService)
 
     let elementServicePrice = document.createElement("span")
-    elementServicePrice.innerText = '$8'
+    elementServicePrice.innerText = '8k'
     serviceCharge.appendChild(elementServicePrice)
 
     if (timeOrder > 7) {
@@ -321,7 +321,7 @@ createElementDetail = () => {
         sale.appendChild(elementSale)
 
         let elementSalePrice = document.createElement("span")
-        elementSalePrice.innerText = `$${parseInt(lessTime() / 7 + '') * 2}`
+        elementSalePrice.innerText = `${parseInt(lessTime() / 7 + '') * 2}k`
         sale.appendChild(elementSalePrice)
     }
 }

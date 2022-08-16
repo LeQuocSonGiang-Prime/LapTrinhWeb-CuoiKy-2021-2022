@@ -129,11 +129,11 @@
             </ul>
         </div>
         <%} else {%>
-        <div class="header__info">
+        <a class="header__info">
             <img src="<%=user.getAvatar()%>" alt=""
                  style="border-radius:50%; height: 20px;width: 20px;margin-right: 5px; ">
             <div class="header__info" style="margin-top: 0"><%=user.getFullName()%></div>
-        </div>
+        </a>
         <%}%>
 
         <nav class="header__navbar">
