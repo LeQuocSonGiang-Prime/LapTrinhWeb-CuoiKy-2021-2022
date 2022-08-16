@@ -1,6 +1,9 @@
 <%@ page import="vn.edu.hcmuaf.fit.model.BillModel" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.model.UserModel" %><%--
+<%@ page import="vn.edu.hcmuaf.fit.model.UserModel" %>
+<%@ page import="javax.inject.Inject" %>
+<%@ page import="vn.edu.hcmuaf.fit.service.serviceimp.BillServiceImp" %>
+<%@ page import="vn.edu.hcmuaf.fit.dao.daoimp.BillDAOImp" %><%--
   Created by IntelliJ IDEA.
   User: acer
   Date: 16/08/2022
@@ -35,8 +38,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <% List<BillModel> listBill = (List<BillModel>) request.getAttribute("listBill");%>
-    <% UserModel user = (UserModel) request.getSession().getAttribute("acc");%>
+    <%
+        UserModel user = (UserModel) request.getSession().getAttribute("acc");
+        List<BillModel> listBill = new BillDAOImp().findBillByUser(user.getId());
+    %>
+
 
 
 </head>
@@ -101,7 +107,7 @@
         <a class="header__info" >
             <img src="<%=user.getAvatar()%>" alt=""
                  style="border-radius:50%; height: 20px;width: 20px;margin-right: 5px; ">
-            <div class="header__info" style="margin-top: 0"><%=user.getFullName()%>
+            <a class="header__info" style="margin-top: 0" href="detailUser"><%=user.getFullName()%></a>
             </div>
         </a>
         <%}%>
@@ -206,7 +212,7 @@
                         <span>Youtube</span>
                     </div>
                 </div>
-                <div class="about-title-link"><a href="./index.html">Trang Chủ</a> / <span>Chi Tiết</span></div>
+                <div class="about-title-link"><a href="">Trang Chủ</a> / <span>Chi Tiết</span></div>
             </div>
         </div>
     </div>
@@ -219,14 +225,14 @@
                 <div class="user__manager-content-left">
                     <h3>Address Book <span>EDIT</span></h3>
                     <p>Default Address</p>
-                    <h4 class="user-name">${user.fullName}</h4>
-                    <h4 class="user-address">${user.address}</h4>
+                    <h4 class="user-name"><%=user.getFullName()%></h4>
+                    <h4 class="user-address"><%=user.getAddress()%></h4>
 
                 </div>
                 <div class="user__manager-content-right">
                     <p>Default Billing Address</p>
-                    <h4 class="user-name">${user.fullName}</h4>
-                    <h4 class="user-address">${user.address}</h4>
+                    <h4 class="user-name"><%=user.getFullName()%></h4>
+                    <h4 class="user-address"><%=user.getAddress()%></h4>
                 </div>
             </div>
         </div>
@@ -248,6 +254,7 @@
                     <td><%=i.getId()%></td>
                     <td><%=i.getTime_Checkin()%></td>
                     <td><%=i.getTime_Checkout()%></td>
+                    <td><%=i.getPrice()%></td>
                 </tr>
                 <%}%>
 

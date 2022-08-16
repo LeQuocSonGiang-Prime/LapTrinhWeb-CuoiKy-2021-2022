@@ -23,12 +23,7 @@ public class detailUser extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String id_user = request.getParameter("id_user");
-        UserModel userModel = userService.selectById("USER000001");
-        request.setAttribute("user", userModel);
 
-        List<BillModel> listBill = iBillService.findBillByUser("USER000001");
-        request.setAttribute("listBill", listBill);
         request.getRequestDispatcher("/views/web/detailUser.jsp").forward(request, response);
     }
 
